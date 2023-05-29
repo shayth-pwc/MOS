@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.HRBusinessPlanImp.controller.CopyOfAddBusinessPlan">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{HRBuisnessPlanImpi18n>addbusinessplan}" type="Standard" contentWidth="700px" contentHeight="240px" verticalScrolling="true">
+		<content>
+			<layout:Grid xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Center" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" class="sapUiMediumMarginTop" cd:w5g.dt.context="/HRBusinessPlanImp">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+						<items>
+							<Text class="sapUiTinyMarginBottom" text="{HRBuisnessPlanImpi18n>businessplancolumntitle1}:" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{HRBusinessPlanImp>DOCUMENT_TYPE_NAME}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="newtext5"/>
+							<Text class="sapUiTinyMarginBottom" text="{HRBuisnessPlanImpi18n>businessplancolumntitle3}:" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{path:'HRBusinessPlanImp>plan_start_date', type:'sap.ui.model.odata.type.DateTime', formatOptions: { style: 'short', strictParsing: true}, constraints: {displayFormat: 'Date'}}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Text class="sapUiTinyMarginBottom" text="{HRBuisnessPlanImpi18n>businessplancolumntitle4}:" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{path:'HRBusinessPlanImp>plan_end_date', type:'sap.ui.model.odata.type.DateTime', formatOptions: { style: 'short', strictParsing: true}, constraints: {displayFormat: 'Date'}}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+						<items>
+							<Text class="sapUiTinyMarginBottom" text="{HRBuisnessPlanImpi18n>businessplancolumntitle2}:" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{HRBusinessPlanImp>document_description}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="newtext8"/>
+							<Text class="sapUiTinyMarginBottom" text="{HRBuisnessPlanImpi18n>businessplancolumntitle5}:" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Link  text=" {path: 'HRBusinessPlanImp>proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${HRBusinessPlanImp>proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{HRBusinessPlanImp>proof_cmis_id}" />
+							<!--<Link class="sapUiTinyMarginBottom" text="{HRBusinessPlanImp>proof_cmis_id}" visible="{= ${HRBusinessPlanImp>proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>-->
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{HRBuisnessPlanImpi18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

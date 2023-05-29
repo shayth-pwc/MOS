@@ -1,0 +1,66 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:layout="sap.ui.layout" controllerName="pwc.portal.eval.ClubEvaluations.controller.Review">
+	<App>
+		<pages>
+			<Page title="{i18n>Review}" floatingFooter="true">
+				<content>
+				
+					<layout:BlockLayout id="bl" background="Dashboard" visible="true">
+						<layout:content>
+							<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+								<layout:content>
+									<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin"
+										titleLevel="Auto">
+										<layout:content>
+											<Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0">
+												<headerToolbar>
+													<Toolbar id="toolbar1">
+														<Title text="{i18n>EvaluationForms}"/>
+														<ToolbarSpacer/>
+													</Toolbar>
+												</headerToolbar>
+												<content>
+													<List id="list" width="auto" class="sapFDynamicPageAlignContent" items="{ path: '/FormList'}" busyIndicatorDelay="{masterView>/delay}"
+														noDataText="{masterView>/noDataText}" mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growing="true"
+														growingScrollToLoad="true" updateFinished=".onUpdateFinished" modelContextChange="onListFilter" selectionChange=".onMasterPressed">
+														<headerToolbar>
+															<OverflowToolbar>
+																<!--<SearchField id="searchField" showRefreshButton="true" tooltip="{i18n>masterSearchTooltip}" search=".onSearch" width="auto">
+																	<layoutData>
+																		<OverflowToolbarLayoutData minWidth="100%" maxWidth="100%" shrinkable="true" priority="NeverOverflow"/>
+																	</layoutData>
+																</SearchField>-->
+															</OverflowToolbar>
+														</headerToolbar>
+														<items>
+															<StandardListItem title="{path: 'Form'}" selected="{= ${device>/system/phone} ? false : ${side>selected}}" icon="sap-icon://form"
+																type="Navigation" highlight="{STATUS}" infoState="{STATUS}"
+																description="{ path: 'SelfReview_Rating', formatter: '.formatter.formDesScore' }"/>
+														</items>
+													</List>
+												</content>
+											</Panel>
+										</layout:content>
+									</layout:BlockLayoutCell>
+									<!--<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell2" width="2" title="" titleAlignment="End"
+										titleLevel="Auto">
+										<layout:content></layout:content>
+									</layout:BlockLayoutCell>-->
+								</layout:content>
+							</layout:BlockLayoutRow>
+						</layout:content>
+					</layout:BlockLayout>
+				</content>
+				<footer>
+					<Toolbar width="100%" id="toolbar2">
+						<content>
+							<ToolbarSpacer id="spacer1"/>
+							<Button id="submitEvaluation" xmlns="sap.m" text="{i18n>Submit_Evaluation}" press="onSubmitEvaluation" type="Accept"
+								icon="sap-icon://accept"/>
+						</content>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

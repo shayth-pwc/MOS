@@ -1,0 +1,98 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.BoardMeetings.controller.Review12c">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n>CreateButtonText}"
+		type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>Meeting_Title}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{RegBoardMeeting>meeting_title}" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>Meeting_Date}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{path: 'RegBoardMeeting>meeting_date', formatter: '.myFormatterDate'}" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>Meeting_Desc}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{RegBoardMeeting>meeting_description}" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>Meeting_Poof}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link href="{RegBoardMeeting>meeting_regularity_proof_cmis_id}"
+										text=" {path: 'RegBoardMeeting>meeting_regularity_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${RegBoardMeeting>meeting_regularity_proof_cmis_id} !== '' ? true : false }" target="_blank" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>Meeting_Eff}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'RegBoardMeeting>meeting_effectiveness_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${RegBoardMeeting>meeting_effectiveness_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{RegBoardMeeting>meeting_effectiveness_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>Improvement}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'RegBoardMeeting>meeting_improvements_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${RegBoardMeeting>meeting_improvements_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{RegBoardMeeting>meeting_improvements_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>Achievement}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'RegBoardMeeting>meeting_achievements_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${RegBoardMeeting>meeting_achievements_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{RegBoardMeeting>meeting_achievements_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<!--<Button text="{i18n>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress12c"/>-->
+			<Button text="{i18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress112c"
+				iconDensityAware="false"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

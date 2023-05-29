@@ -1,0 +1,85 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.marketing.controller.AddMatchdayPolicy">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{i18n>AddAttachment}" type="Standard"
+		verticalScrolling="true">
+		<content>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title/>
+				<form:formContainers>
+					<form:FormContainer xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" visible="true"
+						cd:w5g.dt.context="/MATCHPOLICIES">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>Documenttype}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<ComboBox editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%"
+										selectedKey="{ProcedureGuides>document_type}" placeholder="{ProcedureGuides>document_type}" id="document_type"
+										items="{path:'ProcedureGuides>/MATCHDAYTYPE',filters:[{path:'active',operator:'EQ',value1:'true'}]}">
+										<items>
+											<core:Item text="{ProcedureGuides>value}" enabled="true" key="{ProcedureGuides>id}"/>
+										</items>
+									</ComboBox>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>DocumentDescription}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea rows="2" cols="20" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true"
+										value="{ProcedureGuides>document_description}" placeholder="{ProcedureGuides>document_description}" id="document_description"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>matchdaydate}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="date1" required="true" fieldGroupIds="inputs" placeholder="dd/MMM/yy" dateValue="{ProcedureGuides>match_date}" width="50%"
+										value="" change="handleCreateChange"/>
+								</form:fields>
+							</form:FormElement>
+							<!-- <form:FormElement label="{i18n>FileAttachment}" id="element2">
+                            </form:FormElement>-->
+							<form:FormElement visible="true">
+								<!--<unified:FileUploader buttonText="Browse..." style="Emphasized" icon="" buttonOnly="false" enabled="true" width="auto" iconFirst="true" uploadOnChange="true" maximumFileSize="10" mimeType="image/jpeg,image/gif,image/png,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" uploadComplete="_onFileUploaderUploadComplete" change="_onFileUploaderChange" typeMissmatch="_onFileUploaderTypeMissmatch" fileSizeExceed="_onFileUploaderFileSizeExceed">
+                                	 <unified:headerParameters/>
+                <unified:parameters/>
+                <unified:xhrSettings/>
+            </unified:FileUploader>-->
+								<!--<unified:FileUploader id="myFileUploadmatchdaypolicy" uploadUrl="" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete"/>
+					
+				<Link text="{proof_cmis_id}" visible="{= ${proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>
+				<Button text="{i18n>Upload}" press="handleUploadPress" width="20%"/>
+                            -->
+								<Label text="{i18n>FileAttachment}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								<unified:FileUploader required="true" value="{ProcedureGuides>proof_cmis_id}" enabled="{appView>/enabled}" id="myFileUploadmatchdaypolicy"
+									buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+								<Link text=" {path: 'ProcedureGuides>proof_cmis_id', formatter: '.urlformatter'}"
+									visible="{= ${ProcedureGuides>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{ProcedureGuides>proof_cmis_id}"/>
+								<!--<Link text="{ProcedureGuides>proof_cmis_id}" visible="{= ${ProcedureGuides>proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>-->
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>OK}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="{i18n>Cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

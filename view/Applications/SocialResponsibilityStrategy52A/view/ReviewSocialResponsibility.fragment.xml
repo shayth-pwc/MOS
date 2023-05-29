@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SocialResponsibilityStrategy52A.controller.ReviewSocialResponsibility">
+    <Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n52A>createNewSocialResponsibilityLabel}" type="Standard" verticalScrolling="false">
+        <content>
+            <form:Form width="auto" editable="true" visible="true">
+                <form:formContainers>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+									<Label text="{i18n52A>twitterLinkLabel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+                                </form:label>
+                                <form:fields>
+									<Link text="{socialresponsibility>twitterlink_publishing_advertising}" visible="{= ${socialresponsibility>twitterlink_publishing_advertising} !== '' ? true : false }" target="_blank" press="openlink"
+										wrapping="true"/>
+                                </form:fields>
+                            </form:FormElement>
+                       </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+									<Label  text="{i18n52A>socialresponsibilitylabel}" design="Standard" width="100%" required="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+									<Link text="{socialresponsibility>socialresponsibilityprize_proof_cmis_id}" visible="{= ${socialresponsibility>socialresponsibilityprize_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										press="openlink" wrapping="true"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </content>
+        <beginButton/>
+        <buttons>
+            <!--<Button text="{i18n52A>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>-->
+            <Button text="{i18n52A>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress1" iconDensityAware="false"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

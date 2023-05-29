@@ -1,0 +1,116 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.44c.controller.Create44c">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n>AddPaymentButton}" type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>EmployeeName}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="employee_name" required="true" textFormatMode="Value" enabled="{appView>/enabled}" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest" suggestionItems="{payment>/CLUB_ORG_STRUC_EMP}" selectedKey="{payment>employee_name}" editable="false">
+										<suggestionItems>
+											<core:Item text="{payment>emp_name}" key="{payment>id}"/>
+										</suggestionItems>
+									</Input>
+									<!--<Input change="onInputChange" liveChange="_validateSaveEnablement" id="employee_name"-->
+									<!--	value="{ path : 'payment>employee_name', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength:  999999}}"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>salary}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input change="onInputChange" liveChange="_validateSaveEnablement" id="salary" value="{payment>salary}" type="Number"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n>revenueleftover}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="label7"/>
+								</form:label>
+								<form:fields>
+									<Input xmlns="sap.m" change="onInputChange" liveChange="_validateSaveEnablement" id="revenue_leftover" value="{payment>leftover_salary}" type="Number"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="false" id="element5">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n>BankStatement}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="label6"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader xmlns:unified="sap.ui.unified" id="bank_statement_cmis_id" required="true" enabled="{appView>/enabled}" value="{payment>bank_statement_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress1"/>
+									<Link xmlns="sap.m" text=" {path: 'payment>bank_statement_cmis_id', formatter: '.urlformatter'}" visible="{= ${payment>bank_statement_cmis_id} !== '' ? true : false }" target="_blank" href="{payment>bank_statement_cmis_id}" id="link2"/>
+									<!--<Label wrapping="true"/>-->
+									<!--<Text id="dateDifference" wrapping="true"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element4_1669126915660">
+							    <form:label>
+							        <Label xmlns="sap.m" text="{i18n>PaymentEvidence}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="label5_1669126915660"/>
+							        
+							    </form:label>
+							    <form:fields>
+							        <unified:FileUploader xmlns:unified="sap.ui.unified" id="Audituploader" required="true" enabled="{appView>/enabled}" value="{payment>proof_cmis_id_models}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+							        <Link xmlns="sap.m" text=" {path: 'payment>proof_cmis_id_models', formatter: '.urlformatter'}" visible="{= ${payment>proof_cmis_id_models} !== '' ? true : false }" target="_blank" href="{payment>proof_cmis_id_models}" id="link1"/>
+							        <Label xmlns="sap.m" wrapping="true" id="label6_1669126915660"/>
+							        </form:fields>
+							    </form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6_copy">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n>empcategory}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="label7_copy"/>
+								</form:label>
+								<form:fields>
+									<ComboBox xmlns="sap.m" editable="true" enabled="true" visible="true" selectedKey="{payment>emp_category}" id="emp_category" width="auto" valueState="None" maxWidth="100%">
+										<items>
+											<core:Item xmlns:core="sap.ui.core" text="اللاعبين الأجانب" enabled="true" key="اللاعبين الأجانب" id="item5"/>
+											<core:Item xmlns:core="sap.ui.core" key="اللاعبين السعوديين" text="اللاعبين السعوديين" id="item3"/>
+											<core:Item xmlns:core="sap.ui.core" key="الجهاز الفني" text="الجهاز الفني" id="item9"/>
+											<core:Item xmlns:core="sap.ui.core" key="الجهاز الطبي" text="الجهاز الطبي" id="item8"/>
+											<core:Item xmlns:core="sap.ui.core" key="الجهاز الإداري" text="الجهاز الإداري" id="item7"/>
+											<core:Item xmlns:core="sap.ui.core" key="باقي الموظفين" text="باقي الموظفين" id="item6"/>
+										</items>
+									</ComboBox>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>PaymentMonth}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="LastPaymentMonth" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="short" required="true" value="{path:'payment>last_payment_month', type: 'sap.ui.model.type.Date', formatOptions: { pattern: '01/MM/yyyy' }}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element4">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n>revnenuedescription}" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit" visible="true" id="label5"/>
+								</form:label>
+								<form:fields>
+									<TextArea xmlns="sap.m" value="{payment>leftover_salary_desc}" rows="3" id="area0"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onSubmit44c"/>
+			<Button text="{i18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onCancel44c"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

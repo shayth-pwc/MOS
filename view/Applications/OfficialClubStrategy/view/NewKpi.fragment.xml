@@ -1,0 +1,85 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OfficialClubStrategy.controller.NewKpi">
+	<Dialog contentHeight="450px" contentWidth="400px" horizontalScrolling="true" showHeader="true" state="None" stretch="false"
+		title="{OfficialClubStrategyi18n>createkpi}" type="Standard" verticalScrolling="true" class="sapUiResponsiveContentPadding">
+		<content>
+			<Label text="{OfficialClubStrategyi18n>KPIType}:" design="Standard" width="316.22393798828125px" required="true" textAlign="Begin"
+				textDirection="Inherit" visible="true"/>
+			<ComboBox selectedKey="{OfficialClub>kpi_type}" id="KPITypeCombo" enabled="{appView>/enabled}" visible="true" width="98%" valueState="None"
+				maxWidth="100%" class="sapUiTinyMargin">
+				<items>
+					<core:Item text="{OfficialClubStrategyi18n>DepartmentalKPI}" enabled="true" key="Departmental"/>
+					<core:Item text="{OfficialClubStrategyi18n>StrategicKPI}" enabled="true" key="Strategic"/>
+				</items>
+			</ComboBox>
+			<Label text="{OfficialClubStrategyi18n>kpititle}:" design="Standard" width="316.22393798828125px" required="true" textAlign="Begin"
+				textDirection="Inherit" visible="true"/>
+			<Input id="KPITitleInput" type="Text" value="{OfficialClub>kpi_title}" showValueHelp="false" enabled="{appView>/enabled}" visible="true"
+				width="98%" valueHelpOnly="false" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" maxLength="0"
+				class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>KPIDescription}:" required="true" design="Standard" width="316.22393798828125px" textAlign="Begin"
+				textDirection="Inherit" visible="true"/>
+			<TextArea id="KPIDescriptionInput" value="{OfficialClub>kpi_description}" rows="2" cols="40" maxLength="0" wrapping="None"
+				enabled="{appView>/enabled}" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" visible="true"
+				class="sapUiTinyMargin" width="98%"/>
+			<Label text="{OfficialClubStrategyi18n>KPIMethodOfMeasure}:" design="Standard" width="316.22393798828125px" required="true"
+				textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<Input id="MethodOfMeasureInput" value="{OfficialClub>kpi_method_of_measure}" type="Text" showValueHelp="false" enabled="{appView>/enabled}"
+				visible="true" width="98%" valueHelpOnly="false" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" maxLength="0"
+				class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>KPIFrequencyOfMeasure}:" design="Standard" width="316.22393798828125px" required="true"
+				textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<ComboBox selectedKey="{OfficialClub>kpi_frequency_of_measure}" id="KPIFrequencyOfMeasureCombo" enabled="{appView>/enabled}" visible="true"
+				width="98%" valueState="None" maxWidth="100%" class="sapUiTinyMargin">
+				<items>
+					<core:Item text="{OfficialClubStrategyi18n>annuallyDrop}" enabled="true" key="{OfficialClubStrategyi18n>annuallyDrop}"/>
+					<core:Item text="{OfficialClubStrategyi18n>quarterlydrop}" enabled="true" key="{OfficialClubStrategyi18n>quarterlydrop}"/>
+					<core:Item text="{OfficialClubStrategyi18n>monthlyDrop}" enabled="true" key="{OfficialClubStrategyi18n>monthlyDrop}"/>
+					<core:Item text="{OfficialClubStrategyi18n>dailyDrop}" enabled="true" key="{OfficialClubStrategyi18n>dailyDrop}"/>
+				</items>
+			</ComboBox>
+			<Label text="{OfficialClubStrategyi18n>KPIOwner}:" design="Standard" width="316.22393798828125px" required="true" textAlign="Begin"
+				textDirection="Inherit" visible="true"/>
+			<Input id="KPIOwnerCombo" required="true" textFormatMode="Value" enabled="{appView>/enabled}" showSuggestion="true" showValueHelp="true"
+				valueHelpRequest=".onValueHelpRequest" suggestionItems="{OfficialClub>/CLUB_ORG_STRUC_DEP}" selectedKey="{OfficialClub>kpi_owner}">
+				<suggestionItems>
+					<core:Item text="{OfficialClub>club_dept_name}" key="{OfficialClub>id}"/>
+				</suggestionItems>
+			</Input>
+			<!--<ComboBox required="true" items="{OfficialClub>/CLUB_ORG_STRUC_EMP}" id="KPIOwnerCombo" selectedKey="{kpi_owner}" editable="true"-->
+			<!--	enabled="{appView>/enabled}" visible="true" width="98%" valueState="None" maxWidth="100%" class="sapUiTinyMargin">-->
+			<!--	<items>-->
+			<!--		<core:Item text="{OfficialClub>emp_name}" enabled="true" key="{OfficialClub>id}"/>-->
+			<!--	</items>-->
+			<!--</ComboBox>-->
+			<Label text="{OfficialClubStrategyi18n>KPITarget}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+				visible="true"/>
+			<Input id="KPITargetInput" value="{OfficialClub>target}" type="Text" showValueHelp="false" enabled="{appView>/enabled}" visible="true"
+				width="98%" valueHelpOnly="false" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" maxLength="0"
+				class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>KPIRelationToStrategicGoal}:" design="Standard" width="100%" required="true" textAlign="Begin"
+				textDirection="Inherit" visible="true"/>
+			<Input id="RelationToStrategicGoalInput" value="{OfficialClub>related_strategic_goal}" type="Text" showValueHelp="false"
+				enabled="{appView>/enabled}" visible="true" width="98%" valueHelpOnly="false" required="true"
+				valueStateText="{OfficialClubStrategyi18n>ValueStateText}" maxLength="0" class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>KPIRelatedInitiative}:" design="Standard" width="100%" required="false" textAlign="Begin"
+				textDirection="Inherit" visible="true"/>
+			<Select enabled="{appView>/enabled}" items="{path : 'OfficialClub>/clubstrategyinitiatives', length : '5000'}"
+				selectedKey="{OfficialClub>related_initiative}" visible="true" width="98%" valueState="None" maxWidth="100%" class="sapUiTinyMargin">
+				<items>
+					<core:Item text="{OfficialClub>initiative_title}" enabled="true" key="{OfficialClub>id}"/>
+				</items>
+			</Select>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{OfficialClubStrategyi18n>save}" type="Default" iconFirst="true" width="auto" enabled="{appView>/enabled}" visible="true"
+				iconDensityAware="false" press="_onSubmit"/>
+			<Button text="{OfficialClubStrategyi18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,152 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.InvestmentMeeting.controller.Review17c">
+	<Dialog id="detailsPopover" horizontalScrolling="false" showHeader="true" state="None" contentWidth="800px" contentHeight="600px"
+		stretch="false" title="{InvestmentMeetingi18n>viewButtonText}" type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6_1662021991344">
+								<form:label>
+									<Label xmlns="sap.m" text="{InvestmentMeetingi18n>MeetingColumnid}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="label6_1662021991343"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{path: 'Investmentmeeting>meeting_id'}" wrapping="true" id="text3_1662021991343"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{InvestmentMeetingi18n>MeetingColumn1}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{Investmentmeeting>meeting_title}" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{InvestmentMeetingi18n>MeetingColumn2}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{path: 'Investmentmeeting>meeting_start_date', formatter: '.myFormatterDate'}" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="false" id="element6_1655202407621">
+								<form:label>
+									<Label xmlns="sap.m" text="{InvestmentMeetingi18n>MeetingColumn2}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="label6_1655202407620"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{path: 'Investmentmeeting>meeting_end_date', formatter: '.myFormatterDate'}" wrapping="true" id="text3"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{InvestmentMeetingi18n>MeetingColumn3}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{Investmentmeeting>meeting_description}" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6_1657698662635">
+								<form:label>
+									<Label xmlns="sap.m" text="{InvestmentMeetingi18n>MeetingColumn7}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="label6_1657698662635"/>
+								</form:label>
+								<form:fields>
+									<!--<Link xmlns="sap.m" text="{Investmentmeeting>regularity_proof_cmis_id}" visible="{= ${Investmentmeeting>meeting_effectiveness_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true" id="link3_1657698662635"/>-->
+									<Link text=" {path: 'Investmentmeeting>regularity_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${Investmentmeeting>regularity_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{Investmentmeeting>regularity_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{InvestmentMeetingi18n>MeetingColumn4}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'Investmentmeeting>achievements_evidence_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${Investmentmeeting>achievements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{Investmentmeeting>achievements_evidence_proof_cmis_id}"/>
+									<!--<Link text="{Investmentmeeting>achievements_evidence_proof_cmis_id}" visible="{= ${Investmentmeeting>meeting_effectiveness_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{InvestmentMeetingi18n>MeetingColumn5}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="false"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'Investmentmeeting>quarterly_review_proof_cmis_id', formatter: '.urlformatter'}" visible="false" target="_blank"
+										href="{Investmentmeeting>quarterly_review_proof_cmis_id}"/>
+									<!--<Link text="{Investmentmeeting>quarterly_review_proof_cmis_id}" visible="{= ${Investmentmeeting>meeting_improvements_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{InvestmentMeetingi18n>MeetingColumn6}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'Investmentmeeting>impressions_evidence_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${Investmentmeeting>impressions_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{Investmentmeeting>impressions_evidence_proof_cmis_id}"/>
+									<!--<Link text="{Investmentmeeting>impressions_evidence_proof_cmis_id}" visible="{= ${Investmentmeeting>meeting_achievements_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6">
+								<form:label>
+									<Label xmlns="sap.m" text="{InvestmentMeetingi18n>MeetingColumn8}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="label6"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'Investmentmeeting>improvements_evidence_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${Investmentmeeting>improvements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{Investmentmeeting>improvements_evidence_proof_cmis_id}"/>
+									<!--<Link xmlns="sap.m" text="{Investmentmeeting>achievements_evidence_proof_cmis_id}" visible="{= ${Investmentmeeting>meeting_achievements_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true" id="link3"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6_copy">
+								<form:label>
+									<Label xmlns="sap.m" text="{ClubBonusMeetingi18n>MeetingColumnother}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="label6_copy"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'Investmentmeeting>other_evidence_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${Investmentmeeting>other_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{Investmentmeeting>other_evidence_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<!--<Button text="{InvestmentMeetingi18n>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress17c"/>-->
+			<Button text="{InvestmentMeetingi18n>Edit}" type="Accept" press="handleEditButton"/>
+			<Button text="{InvestmentMeetingi18n>cancel}" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress117c"
+				iconDensityAware="false" type="Ghost"/>
+			<Button text="{InvestmentMeetingi18n>deletemeeting}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onDeleteRow17c"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

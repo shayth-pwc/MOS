@@ -1,0 +1,161 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.socialevidence52G.controller.CreateSocialEvidence">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n52G>createNewActivityLabel}" type="Standard" verticalScrolling="true">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n52G>activityNameLabel}" labelFor="activity_name" required="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="activity_name" value="{ path : 'socialevidence>activity_name', type : 'sap.ui.model.type.String', constraints : { minLength: 0, maxLength: 999999}}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n52G>ActivityTypeLabel}" labelFor="activity_type"/>
+								</form:label>
+								<form:fields>
+									<Select id="activity_type" forceSelection="false" selectedKey="{socialevidence>activity_type}" change="handleChangeSelect" width="100%" items="{socialevidence>/eventtypesocialresp}">
+										<core:Item text="{socialevidence>title}" enabled="true" key="{socialevidence>id}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52G>ActivityDescriptionLabel}" labelFor="activity_description" required="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea id="activity_description" value="{ path: 'socialevidence>activity_description', type: 'sap.ui.model.odata.type.String' , constraints:{ minLength: 3, maxLength:200 } }" growing="true" rows="4" growingMaxLines="4" width="100%" showExceededText="true" maxLength="200"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52G>strategic_goal}" labelFor="strategic_goal"/>
+								</form:label>
+								<form:fields>
+									<Select modelContextChange="onAddFilter" id="strategic_goal" selectedKey="{socialevidence>strategic_goal}" forceSelection="false" change="handleChangeSelect" width="100%" items="{socialevidence>/ClubStrategyGoals}">
+										<core:Item key="{socialevidence>id}" text="{socialevidence>goal_title}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52G>related_department}" labelFor="related_department"/>
+								</form:label>
+								<form:fields>
+									<Select id="related_department" selectedKey="{socialevidence>related_department}" forceSelection="false" change="handleChangeSelect" width="100%" items="{socialevidence>/CLUB_ORG_STRUC_DEP}">
+										<core:Item key="{socialevidence>id}" text="{socialevidence>club_dept_name}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52G>finance_resource}" labelFor="finance_resource"/>
+								</form:label>
+								<form:fields>
+									<Input id="finance_resource" value="{socialevidence>finance_resource}" type="Number"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n52G>sharinglink}" labelFor="finance_resource" required="true"/>
+								</form:label>
+								<form:fields>
+									<Input xmlns="sap.m" id="proof_link" value="{socialevidence>proof_link}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n52G>attachment}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="reviewuploader" required="true" value="{socialevidence>attachemnt_proof_cmis}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'socialevidence>attachemnt_proof_cmis', formatter: '.urlformatter'}" visible="{= ${socialevidence>attachemnt_proof_cmis} !== '' ? true : false }" target="_blank" href="{socialevidence>attachemnt_proof_cmis}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="false">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n52G>expense_allocation}" labelFor="expense_allocation"/>
+								</form:label>
+								<form:fields>
+									<Input id="expense_allocation" value="{socialevidence>expense_allocation}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52G>human_resources_number}" labelFor="human_resources_number"/>
+								</form:label>
+								<form:fields>
+									<Input id="human_resources_number" value="{socialevidence>human_resources_number}" type="Number"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52G>kpi_id}" labelFor="kpi_id"/>
+								</form:label>
+								<form:fields>
+									<Select modelContextChange="onAddFilter" id="kpi_id" selectedKey="{socialevidence>kpi_id}" forceSelection="false" change="handleChangeSelect" width="100%" items="{socialevidence>/clubstrategykpi}">
+										<core:Item text="{socialevidence>kpi_title}" enabled="true" key="{socialevidence>id}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52G>target_percentage}" labelFor="target_percentage"/>
+								</form:label>
+								<form:fields>
+									<Input id="target_percentage" value="{socialevidence>target_percentage}" type="Number"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52G>target_date}" labelFor="target_date"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="target_date" enabled="{appView>/enabled}" change="handleCreateChange" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy" value="{ path: 'socialevidence>target_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52G>Startdate}" labelFor="start_date_time"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="start_date_time" enabled="{appView>/enabled}" change="handleCreateChange" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy" value="{ path: 'socialevidence>start_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52G>Enddate}" labelFor="end_date_time"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="end_date_time" enabled="{appView>/enabled}" change="handleCreateChange" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy" value="{ path: 'socialevidence>end_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n52G>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onSubmit"/>
+			<Button text="{i18n52G>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onCancel" iconDensityAware="false"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

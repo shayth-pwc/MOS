@@ -1,0 +1,96 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.AchievSPO.controller.AchievSPOReview">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false"
+		title="{i18n>AddAchievementButtomSPO}" type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>KPIName}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{AchievSPO>kpi_title}" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>AlignmentwithGoals}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{AchievSPO>goal_title}" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>ExpectedAchievement}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{AchievSPO>target}" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>attachments}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'AchievSPO>achievement_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${AchievSPO>achievement_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{AchievSPO>achievement_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>ActualAchievement}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{AchievSPO>actual_achievement}" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>ReasonfornotAchievingGoal}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{AchievSPO>reason_not_reaching_goal}" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>ResponsibleTeam}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{AchievSPO>RELATED_KPI_OWNER}" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<!--<Button text="{i18n>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>-->
+			<Button text="{i18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress1"
+				iconDensityAware="false"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

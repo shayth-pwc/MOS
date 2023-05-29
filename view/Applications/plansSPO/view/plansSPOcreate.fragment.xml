@@ -1,0 +1,56 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.plansSPO.controller.plansSPOcreate">
+	<Dialog xmlns="sap.m" showHeader="true" state="None" contentWidth="1000px" contentHeight="800px" title="{i18n>CreateNewBusinessPlan}">
+		<l:VerticalLayout class="sapUiContentPadding" width="100%">
+			<form:SimpleForm xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="activityForm" editable="true" layout="ResponsiveGridLayout" adjustLabelSpan="false" columnsL="2" emptySpanL="5" width="auto" labelSpanM="4" cd:w5g.dt.context="/ClubBasicInfo/UsersAssociationSet" columnsM="2" emptySpanS="5">
+				<form:content>
+					<core:Title/>
+					<Label text="{i18n>ActivityName21}" labelFor="activity_name" required="true"/>
+					<Input change="onInputChange" id="activity_name" value="{ path : 'plansSPO>activity_name'}"/>
+					<Label text="{i18n>ActivityDescription21}" labelFor="activity_description" required="true"/>
+					<!--<Input id="activity_description"/>-->
+					<TextArea id="activity_description" change="onInputChange" value="{ path: 'plansSPO>activity_description'}" growing="true" rows="4" growingMaxLines="4" width="100%" showExceededText="true" maxLength="500"/>
+					<Label text="{i18n>relatedDepartment}" labelFor="related_department" required="true"/>
+					<Select id="related_department" selectedKey="{plansSPO>related_department}" forceSelection="false" change="handleChangeSelect" width="100%" items="{plansSPO>/SportDep}" cd:w5g.dt.context="/SportDep">
+						<core:Item key="{plansSPO>id}" text="{plansSPO>club_dept_name}" cd:w5g.dt.context="/SportDep"/>
+					</Select>
+					<Label text="{i18n>kpiID}" labelFor="kpi_id" required="true"/>
+					<Select id="kpi_id" selectedKey="{plansSPO>kpi_id}" forceSelection="false" change="handleChangeSelect" width="100%" items="{path : 'plansSPO>/SPORT_Dep_KPI', length : '5000'}" cd:w5g.dt.context="/SPORT_Dep_KPI">
+						<core:Item text="{plansSPO>kpi_title}" enabled="true" key="{plansSPO>id}" cd:w5g.dt.context="/SPORT_Dep_KPI"/>
+					</Select>
+					<Label text="{i18n>StrategicGoal}" labelFor="strategic_goal" required="true"/>
+					<Select id="strategic_goal" selectedKey="{plansSPO>strategic_goal}" forceSelection="false" change="handleChangeSelect" width="100%" items="{path : 'plansSPO>/Sport_Goals', length : '5000'}" cd:w5g.dt.context="/Sport_Goals">
+						<core:Item key="{plansSPO>id}" text="{plansSPO>goal_title}" cd:w5g.dt.context="/Sport_Goals"/>
+					</Select>
+					<core:Title/>
+					<Label text="{i18n>FinancialResources}" labelFor="finance_resource"/>
+					<Input id="finance_resource" value="{plansSPO>finance_resource}" type="Number" placeholder="الرجاء إدخال رقم"/>
+					<Label text="{i18n>ExPoints}" labelFor="expense_allocation"/>
+					<Input id="expense_allocation" value="{plansSPO>expense_allocation}"/>
+					<Label text="{i18n>HumanResources}" labelFor="human_resources_number"/>
+					<Input id="human_resources_number" value="{plansSPO>human_resources_number}"/>
+					<Label text="{i18n>EndTarget}" labelFor="target_percentage"/>
+					<Input id="target_percentage" value="{plansSPO>target_percentage}"/>
+					<!--<Input id="target_percentage" value="{plansSPO>target_percentage}" type="Number" placeholder="الرجاء إدخال رقم"/>-->
+					<Label text="{i18n>signedDoc}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+					<unified:FileUploader id="SignedDocUploader" required="true" enabled="{appView>/enabled}" value="{plansSPO>signed_doc_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+					<Link text=" {path: 'plansSPO>signed_doc_cmis_id', formatter: '.urlformatter'}" visible="{= ${plansSPO>signed_doc_cmis_id} !== '' ? true : false }" target="_blank" href="{plansSPO>signed_doc_cmis_id}"/>
+					<Label text="{i18n>AchievedTargetDate}" labelFor="target_date"/>
+					<DateTimePicker id="target_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange" value="{path:'plansSPO>target_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+					<Label text="{i18n>ActivityStart}" labelFor="start_date_time"/>
+					<DateTimePicker id="start_date_time" valueFormat="yyyy-MM-dd-HH-mm-ss" value="{path:'plansSPO>start_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}" displayFormat="short" required="true" change="handleCreateChange"/>
+					<Label text="{i18n>ActivityEnd}" labelFor="end_date_time"/>
+					<!--	<DateTimePicker id="end_date_time" displayFormat="short" valueFormat="yyyy-MM-dd-HH-mm-ss" value="{path:'end_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}" required="true" change="handleCreateChange"/>-->
+					<DateTimePicker id="end_date_time" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange" value="{path:'plansSPO>end_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+				</form:content>
+			</form:SimpleForm>
+		</l:VerticalLayout>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onSubmit"/>
+			<Button text="{i18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,78 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SocialMediaPlan51A.controller.CreateNewSocialMediaPlan">
+	<Dialog xmlns="sap.m" showHeader="true" state="None" contentWidth="1000px" contentHeight="800px" title="{i18n51A>createNewActivityLabel}">
+		<l:VerticalLayout class="sapUiContentPadding" width="100%">
+			<form:SimpleForm editable="true" layout="ResponsiveGridLayout" adjustLabelSpan="false" columnsL="2" emptySpanL="5" width="auto"
+				labelSpanM="4" columnsM="2" emptySpanS="5">
+				<form:content>
+					<core:Title/>
+					<Label text="{i18n51A>activityNameLabel}" labelFor="activity_name" required="true"/>
+					<Input change="onInputChange" id="activity_name" value="{ path : 'socialmediaplan>activity_name'}"/>
+					<Label text="{i18n51A>ActivityTypeLabel}" labelFor="activity_type"/>
+					<Select id="activity_type" forceSelection="true" selectedKey="{socialmediaplan>activity_type}" width="100%"
+						items="{socialmediaplan>/eventtypesocial}">
+						<core:Item text="{socialmediaplan>title}" enabled="true" key="{socialmediaplan>id}"/>
+					</Select>
+					<Label text="{i18n51A>ActivityDescriptionLabel}" labelFor="activity_description" required="true"/>
+					<!--<Input id="activity_description"/>-->
+					<TextArea id="activity_description" change="onInputChange" value="{ path: 'socialmediaplan>activity_description'}" growing="true" rows="4"
+						growingMaxLines="4" width="100%"/>
+					<Label text="{i18n51A>strategic_goal}" labelFor="strategic_goal"/>
+					<Select id="strategic_goal" selectedKey="{socialmediaplan>strategic_goal}" forceSelection="true" width="100%"
+						items="{path : 'socialmediaplan>/ClubStrategyGoals', length : '5000'}">
+						<core:Item key="{socialmediaplan>id}" text="{socialmediaplan>goal_title}"/>
+					</Select>
+					<Label text="{i18n51A>related_department}" labelFor="related_department"/>
+					<Select id="related_department" selectedKey="{socialmediaplan>related_department}" forceSelection="true" width="100%"
+						items="{socialmediaplan>/CLUB_ORG_STRUC_DEP}">
+						<core:Item key="{socialmediaplan>id}" text="{socialmediaplan>club_dept_name}"/>
+					</Select>
+					<core:Title/>
+					<Label text="{i18n51A>finance_resource}" labelFor="finance_resource"/>
+					<Input id="finance_resource" value="{socialmediaplan>finance_resource}" type="Number"/>
+					<Label text="{i18n51A>expense_allocation}" labelFor="expense_allocation"/>
+					<Input id="expense_allocation" value="{socialmediaplan>expense_allocation}"/>
+					<Label text="{i18n51A>human_resources_number}" labelFor="human_resources_number"/>
+					<Input id="human_resources_number" value="{socialmediaplan>human_resources_number}" type="Number"/>
+					<Label text="{i18n51A>kpi_id}" labelFor="kpi_id"/>
+					<Select id="kpi_id" selectedKey="{socialmediaplan>kpi_id}" forceSelection="true" width="100%"
+						items="{path : 'socialmediaplan>/clubstrategykpi', length : '5000'}">
+						<core:Item text="{socialmediaplan>kpi_title}" enabled="true" key="{socialmediaplan>id}"/>
+					</Select>
+					<Label text="{i18n51A>socialmediaplan_Column3}" labelFor="target_Fans"/>
+					<Input id="target_Fans" value="{socialmediaplan>target_fans}"/>
+					<Label text="{i18n51A>target_percentage}" labelFor="target_percentage"/>
+					<Input id="target_percentage" value="{socialmediaplan>target_percentage}" type="Number"/>
+					<Label text="{i18n51A>target_date}" labelFor="target_date"/>
+					<DatePicker id="target_date" valueFormat="dd/MM/yyyy" displayFormat="short" required="true" change="handleCreateChange"
+						value="{path:'socialmediaplan>target_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+					<Label text="{i18n51A>Startdate}" labelFor="start_date_time"/>
+					<DatePicker id="start_date_time" valueFormat="dd/MM/yyyy"
+						value="{path:'socialmediaplan>start_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"
+						displayFormat="short" required="true" change="handleCreateChange"/>
+					<Label text="{i18n51A>Enddate}" labelFor="end_date_time"/>
+					<!--	<DateTimePicker id="end_date_time" displayFormat="short" valueFormat="yyyy-MM-dd-HH-mm-ss" value="{path:'end_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}" required="true" change="handleCreateChange"/>-->
+					<DatePicker id="end_date_time" valueFormat="dd/MM/yyyy" displayFormat="short" required="true" change="handleCreateChange"
+						value="{path:'socialmediaplan>end_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+					<Label text="{i18n51A>attachment}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+					<unified:FileUploader id="reviewuploader" required="true" value="{socialmediaplan>attachemnt_proof_cmis}" buttonOnly="false"
+						icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+					<Link text=" {path: 'socialmediaplan>attachemnt_proof_cmis', formatter: '.urlformatter'}"
+						visible="{= ${socialmediaplan>attachemnt_proof_cmis} !== '' ? true : false }" target="_blank" href="{socialmediaplan>attachemnt_proof_cmis}"/>
+					<Label wrapping="true"/>
+				</form:content>
+			</form:SimpleForm>
+		</l:VerticalLayout>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n51A>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n51A>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

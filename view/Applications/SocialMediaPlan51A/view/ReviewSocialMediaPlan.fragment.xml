@@ -1,0 +1,191 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SocialMediaPlan51A.controller.ReviewSocialMediaPlan">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="true"
+		title="{i18n51A>socialmediaplan_CreateButtonText}" type="Standard" verticalScrolling="true">
+		<content>
+			<Button text="Print" icon="sap-icon://print" press="renderPDF"/>
+			<form:Form width="auto" editable="true" visible="true" id="plans">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>activityNameLabel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{ path : 'socialmediaplan>activity_name', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength:  999999}}"
+										width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>ActivityTypeLabel}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialmediaplan>ACTIVITY_TYPE_NAME}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>ActivityDescriptionLabel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text
+										text="{ path: 'socialmediaplan>activity_description', type: 'sap.ui.model.odata.type.String' , constraints:{ minLength: 3, maxLength:500 } }"
+										width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>strategic_goal}" required="true" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialmediaplan>strategic_goal_title}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>target_percentage}" required="true" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialmediaplan>target_percentage}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>target_percentage}" required="true" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialmediaplan>target_percentage}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>related_department}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialmediaplan>related_department_title}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>finance_resource}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialmediaplan>finance_resource}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>expense_allocation}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialmediaplan>expense_allocation}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>human_resources_number}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialmediaplan>human_resources_number}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>kpi_id}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialmediaplan>kpi_Title}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>KPIFrequencyOfMeasure}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{=${socialmediaplan>kpi_frequency_of_measure} === 'monthly'? ${i18n51A>monthlyDrop} : ${i18n51A>yearlyDrop} }" width="auto"
+										maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>target_date}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{path:'socialmediaplan>target_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"
+										width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>Startdate}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text
+										text="{path:'socialmediaplan>start_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"
+										width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>Enddate}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text
+										text="{path:'socialmediaplan>end_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"
+										width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n51A>attachment}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'socialmediaplan>attachemnt_proof_cmis', formatter: '.urlformatter'}"
+										visible="{= ${socialmediaplan>attachemnt_proof_cmis} !== '' ? true : false }" target="_blank" href="{socialmediaplan>attachemnt_proof_cmis}"/>
+								</form:fields>
+							</form:FormElement>
+													</form:formElements>
+							<form:title/>
+						</form:FormContainer>
+					</form:formContainers>
+					<form:layout>
+						<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+					</form:layout>
+				</form:Form>
+			</content>
+			<beginButton/>
+			<buttons>
+				<!--<Button text="{i18n51A>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>-->
+				<Button text="{i18n51A>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress1"
+					iconDensityAware="false"/>
+			</buttons>
+			<customHeader/>
+			<endButton/>
+			<subHeader/>
+		</Dialog>
+	</core:FragmentDefinition>

@@ -1,0 +1,83 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SocialMediaEffect.controller.AddAccount">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{socialMediai18n>addbusinessplan}" type="Standard"
+		verticalScrolling="true">
+		<content>
+			<layout:Grid xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12"
+				position="Center" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" class="sapUiMediumMarginTop"
+				cd:w5g.dt.context="/HRBUSINESSPLAN">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{socialMediai18n>businessplancolumntitle1}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false"
+								valueStateText="Invalid entry" maxLength="0" value="{SocialMediaEff>social_media_account_name}" id="newsocial_media_account_name"/>
+							<!--<Text text="{socialMediai18n>businessplancolumntitle3}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"-->
+							<!--	visible="true"/>-->
+							<!--<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false"-->
+							<!--	valueStateText="Invalid entry" maxLength="0" value="{SocialMediaEff>social_media_account_entity}" id="newsocial_media_account_entity"/>-->
+							<Text text="{socialMediai18n>respoi18n}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false"
+								valueStateText="Invalid entry" maxLength="0" value="{SocialMediaEff>responsible}"/>
+							<Text text="{socialMediai18n>businessplancolumntitle5}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<unified:FileUploader required="true" value="{SocialMediaEff>account_verficiation_proof_cmis_id}" enabled="{appView>/enabled}"
+								id="newmyFileUploadbusinessplan" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+								change="handleUploadPress"/>
+							<!--<Link text="{SocialMediaEff>account_verficiation_proof_cmis_id}" visible="{= ${SocialMediaEff>account_verficiation_proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>-->
+							<Link text=" {path: 'SocialMediaEff>account_verficiation_proof_cmis_id', formatter: '.urlformatter'}"
+								visible="{= ${SocialMediaEff>account_verficiation_proof_cmis_id} !== '' ? true : false }" target="_blank"
+								href="{SocialMediaEff>account_verficiation_proof_cmis_id}"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{socialMediai18n>businessplancolumntitle2}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<!--<Select enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%" id="newsocial_media_account_type"  >-->
+							<!--                         <items>-->
+							<!--                         <core:Item text="Twitter" enabled="true" key="Twitter"/>-->
+							<!--                                  <core:Item text="Facebook" enabled="true" key="Facebook"/>-->
+							<!--                                                         <core:Item text="TikTok" enabled="true" key="TikTok"/>-->
+							<!--                         </items>-->
+							<!--                     </Select>-->
+							<ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" id="newsocial_media_account_type"
+								selectedKey="{SocialMediaEff>social_media_account_type}"
+								items="{path:'SocialMediaEff>/SocialMedia',filters:[{path:'active',operator:'EQ',value1:'true'}]}">
+								<items>
+									<core:Item text="{SocialMediaEff>value}" enabled="true" key="{SocialMediaEff>id}"/>
+								</items>
+							</ComboBox>
+							<Text text="{socialMediai18n>businessplancolumntitle4}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" id="newsocial_media_account_status"
+								selectedKey="{SocialMediaEff>social_media_account_status}"
+								items="{path:'SocialMediaEff>/accounts',filters:[{path:'active',operator:'EQ',value1:'true'}]}">
+								<items>
+									<core:Item text="{SocialMediaEff>value}" enabled="true" key="{SocialMediaEff>id}"/>
+								</items>
+							</ComboBox>
+							<!--<Text text="{i18n>businessplancolumntitle4}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"-->
+							<!--	visible="true"/>-->
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{socialMediai18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="onpress_Editaccount"/>
+			<Button text="{socialMediai18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

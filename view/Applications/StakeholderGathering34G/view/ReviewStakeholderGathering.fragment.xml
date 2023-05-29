@@ -1,0 +1,168 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderGathering34G.controller.ReviewStakeholderGathering">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n34G>CreateButtonText}"
+		type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form xmlns:core="sap.ui.core" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+				xmlns:semantic="sap.m.semantic" xmlns:smart="sap.ui.comp.smartfield" xmlns="sap.m" xmlns:f="sap.ui.layout.form" class="editableForm"
+				editable="true" id="dialognewEntitySimpleForm" layout="ColumnLayout">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n34G>stakeholdergathering_column1}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'stakeholdergathering>fans_impressions_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${stakeholdergathering>fans_impressions_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{stakeholdergathering>fans_impressions_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n34G>stakeholdergathering_column2}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'stakeholdergathering>staff_impressions_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${stakeholdergathering>staff_impressions_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{stakeholdergathering>staff_impressions_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n34G>stakeholdergathering_column3}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'stakeholdergathering>general_impressions_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${stakeholdergathering>general_impressions_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{stakeholdergathering>general_impressions_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n34G>stakeholdergathering_column4}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'stakeholdergathering>players_impressions_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${stakeholdergathering>players_impressions_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{stakeholdergathering>players_impressions_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n34G>stakeholdergathering_column5}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'stakeholdergathering>coaches_impressions_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${stakeholdergathering>coaches_impressions_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{stakeholdergathering>coaches_impressions_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n34G>stakeholdergathering_column6}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'stakeholdergathering>visitors_impressions_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${stakeholdergathering>visitors_impressions_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{stakeholdergathering>visitors_impressions_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n34G>stakeholdergathering_column7}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'stakeholdergathering>fans_impressions_proof_cmis_id2', formatter: '.urlformatter'}"
+										visible="{= ${stakeholdergathering>fans_impressions_proof_cmis_id2} !== '' ? true : false }" target="_blank"
+										href="{stakeholdergathering>fans_impressions_proof_cmis_id2}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n34G>stakeholdergathering_column8}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'stakeholdergathering>staff_impressions_proof_cmis_id2', formatter: '.urlformatter'}"
+										visible="{= ${stakeholdergathering>staff_impressions_proof_cmis_id2} !== '' ? true : false }" target="_blank"
+										href="{stakeholdergathering>staff_impressions_proof_cmis_id2}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n34G>stakeholdergathering_column9}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'stakeholdergathering>general_impressions_proof_cmis_id2', formatter: '.urlformatter'}"
+										visible="{= ${stakeholdergathering>general_impressions_proof_cmis_id2} !== '' ? true : false }" target="_blank"
+										href="{stakeholdergathering>general_impressions_proof_cmis_id2}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n34G>stakeholdergathering_column10}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'stakeholdergathering>players_impressions_proof_cmis_id2', formatter: '.urlformatter'}"
+										visible="{= ${stakeholdergathering>players_impressions_proof_cmis_id2} !== '' ? true : false }" target="_blank"
+										href="{stakeholdergathering>players_impressions_proof_cmis_id2}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n34G>stakeholdergathering_column11}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'stakeholdergathering>coaches_impressions_proof_cmis_id2', formatter: '.urlformatter'}"
+										visible="{= ${stakeholdergathering>coaches_impressions_proof_cmis_id2} !== '' ? true : false }" target="_blank"
+										href="{stakeholdergathering>coaches_impressions_proof_cmis_id2}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n34G>stakeholdergathering_column12}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'stakeholdergathering>visitors_impressions_proof_cmis_id2', formatter: '.urlformatter'}"
+										visible="{= ${stakeholdergathering>visitors_impressions_proof_cmis_id2} !== '' ? true : false }" target="_blank"
+										href="{stakeholdergathering>visitors_impressions_proof_cmis_id2}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<!--<Button text="{i18n34G>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>-->
+			<Button text="{i18n34G>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress1"
+				iconDensityAware="false"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

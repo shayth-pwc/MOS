@@ -1,0 +1,53 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SocialMediaEffect.controller.addDocument">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{socialMediai18n>addprocedure}" type="Standard"
+		verticalScrolling="true">
+		<content>
+			<layout:Grid xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12"
+				position="Center" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" class="sapUiMediumMarginTop"
+				cd:w5g.dt.context="/HRPROCEDURE">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{socialMediai18n>clubprocedurecolumntitle1}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<Select id="doc_type" selectedKey="{SocialMediaEff>document_type}" forceSelection="true" change="handleChangeSelect" width="100%"
+								items="{SocialMediaEff>/docuType}">
+								<core:Item key="{SocialMediaEff>id}" text="{SocialMediaEff>value}"/>
+							</Select>
+							<Text text="{socialMediai18n>clubprocedurecolumntitle3}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<unified:FileUploader required="true" value="{SocialMediaEff>document_type_cmis_id}" enabled="{appView>/enabled}" id="myFileUploadprocedure"
+								buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+							<!--<Link text="{SocialMediaEff>document_type_cmis_id}" visible="{= ${SocialMediaEff>document_type_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>-->
+							<Link text=" {path: 'SocialMediaEff>document_type_cmis_id', formatter: '.urlformatter'}"
+								visible="{= ${SocialMediaEff>document_type_cmis_id} !== '' ? true : false }" target="_blank" href="{SocialMediaEff>document_type_cmis_id}"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{socialMediai18n>clubprocedurecolumntitle2}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<TextArea enabled="true" visible="true" rows="2" width="100%" required="false" valueStateText="Invalid entry" id="procedure_description"
+								value="{SocialMediaEff>document_description}"/>
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{socialMediai18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="{socialMediai18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

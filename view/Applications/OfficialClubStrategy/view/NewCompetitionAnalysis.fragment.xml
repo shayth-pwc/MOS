@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OfficialClubStrategy.controller.NewCompetitionAnalysis">
+	<Dialog contentHeight="450px" contentWidth="400px" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{OfficialClubStrategyi18n>CompetitionAnalysisTitle}" type="Standard" verticalScrolling="true" class="sapUiResponsiveContentPadding">
+		<content>
+			<!--<Label text="{OfficialClubStrategyi18n>Season}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+			<!--<ComboBox required="true" id="SeasonCombo" value="2022" editable="true" enabled="true" visible="true" width="316px" valueState="None" maxWidth="100%" class="sapUiTinyMargin">-->
+			<!--    <items>-->
+			<!--        <core:Item text="2022" enabled="true" key="2022"/>-->
+			<!--        <core:Item text="2021" enabled="true" key="2021"/>-->
+			<!--        <core:Item text="2020" enabled="true" key="2020"/>-->
+			<!--    </items>-->
+			<!--</ComboBox>-->
+			<Label text="{OfficialClubStrategyi18n>Season}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<DatePicker id="SeasonCombo" enabled="{appView>/enabled}" value="{path:'OfficialClub>season' , type: 'sap.ui.model.odata.type.String'}" displayFormat="yyyy" valueFormat="yyyy" change="handleChange" class="sapUiSmallMarginBottom" width="97%"/>
+			<Label xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" text="{OfficialClubStrategyi18n>promises}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<Input xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" id="CompetitorNameInput_copy" value="{OfficialClub>promises}" type="Text" showValueHelp="false" enabled="{appView>/enabled}" visible="true" width="95%" valueHelpOnly="false" required="true" valueStateText="Invalid entry" maxLength="0" class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>CompetitionCompetitorName}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<Input id="CompetitorNameInput" value="{OfficialClub>competitor_name}" type="Text" showValueHelp="false" enabled="{appView>/enabled}" visible="true" width="95%" valueHelpOnly="false" required="true" valueStateText="Invalid entry" maxLength="0" class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>ReasonCompetitorSelectionInput}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<TextArea id="ReasonCompetitorSelectiontext" value="{OfficialClub>competitor_sel_reason}" rows="2" cols="60" maxLength="0" wrapping="true" enabled="{appView>/enabled}" required="true" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>compCompetitionComparison}:" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" wrapping="true"/>
+			<TextArea id="CompetitionComparisonText" value="{OfficialClub>competitor_comparison}" rows="2" cols="60" maxLength="0" wrapping="true" enabled="{appView>/enabled}" required="true" valueStateText="Invalid entry" visible="true" class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>CompetitionAnalysisUploader}:" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<unified:FileUploader required="true" value="{OfficialClub>competition_cmis_id}" enabled="{appView>/enabled}" id="myFileUploadComp" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+			<!--<Link text="{competition_cmis_id}" visible="{= ${OfficialClub>competition_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>-->
+			<Link text=" {path: 'OfficialClub>competition_cmis_id', formatter: '.urlformatter'}" visible="{= ${OfficialClub>competition_cmis_id} !== '' ? true : false }" target="_blank" href="{OfficialClub>competition_cmis_id}"/>
+			<Label wrapping="true"/>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{OfficialClubStrategyi18n>save}" type="Default" enabled="{appView>/enabled}" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="_onSubmit"/>
+			<Button text="{OfficialClubStrategyi18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

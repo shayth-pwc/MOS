@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.CommercialBusinessPlan.controller.Dialog2b">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{CommercialBusinessPlani18n>addcomercialservice}" type="Standard" contentWidth="500px" contentHeight="240px" verticalScrolling="true">
+		<content>
+			<layout:Grid xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Left" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" cd:w5g.dt.context="CommercialPlan&gt;/COMMERCIALSERVICES">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false" class="sapUiSmallMarginTop">
+						<items>
+							<Label xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="{CommercialBusinessPlani18n>ActivityType}:" width="100%" class="sapUiTinyMarginBottom"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{CommercialPlan>ACTIVITY_TYPE_NAME}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Label xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" class="sapUiTinyMarginBottom" text="{CommercialBusinessPlani18n>ActivityDescription}:" width="100%"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{CommercialPlan>activity_description}" width="100%" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Label xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" class="sapUiTinyMarginBottom" text="{CommercialBusinessPlani18n>ActivityDate}:" width="100%"/>
+							<!--<DatePicker width="100%" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd" id="activity_end_date" value="{activity_end_date}"/>-->
+							<!--<DateTimePicker id="activity_start_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange" value="{path:'activity_start_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>-->
+							<!--<DatePicker id="activity_start_date" change="handleCreateChange" value="{path:'activity_start_date',type:'sap.ui.model.type.DateTime',formatOptions: {style: 'long'}}" placeholder="mm/dd/yyyy" displayFormat="dd/MM/yyy" required="true" enabled="true" visible="true" valueFormat="yyyy-MM-ddTHH:mm:ss"/>-->
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{path:'CommercialPlan>activity_date', type:'sap.ui.model.odata.type.DateTime', formatOptions: { style: 'short', strictParsing: true}, constraints: {displayFormat: 'Date'}}" width="100%" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+
+							<!--	<unified:FileUploader id="myFileUploadstakeholderactivity" uploadUrl="" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete"/>
+							<Link text="{proof_cmis_id}" visible="{= ${proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>
+							<Button text="{CommercialBusinessPlani18n>Upload}" press="handleUploadPress" width="auto"/>-->
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false" class="sapUiSmallMarginTop">
+						<items>
+							<Label xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" class="sapUiTinyMarginBottom" text="{CommercialBusinessPlani18n>ActivityName}:" width="100%"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{CommercialPlan>activity_name}" width="100%" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Label xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" class="sapUiTinyMarginBottom" text="{CommercialBusinessPlani18n>TargetAudience}:" width="100%"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{CommercialPlan>target_audience}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<!--<DatePicker width="100%" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd" id="activity_end_date_copy" value="{activity_end_date}"/>-->
+							<!--<DatePicker id="activity_end_date" change="handleCreateChange" value="{path:'activity_end_date',type:'sap.ui.model.type.DateTime',formatOptions: {style: 'long'}}" placeholder="mm/dd/yyyy" displayFormat="medium" required="true" enabled="true" visible="true" valueFormat="yyyyMMdd"/>-->
+							<!--<DateTimePicker id="activity_end_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange" value="{path:'activity_end_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>-->
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{CommercialBusinessPlani18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

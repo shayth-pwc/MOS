@@ -1,0 +1,43 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" height="100%"
+	controllerName="pwc.portal.eval.ClubEvaluations.controller.App">
+	<tnt:ToolPage id="app" class="sapUiDemoToolPage">
+		<tnt:header>
+			<tnt:ToolHeader>
+				<Button id="sideNavigationToggleButton" icon="sap-icon://home" type="Transparent" press=".onSideNavButtonPress"
+					tooltip="{i18n>collpaseMenuButtonText}" text="{i118n>Home}">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</Button>
+				<ToolbarSpacer/>
+				<Title text="{i18n>appTitle}" level="H2"/>
+				<ToolbarSpacer/>
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation id="SideNavigation" expanded="true" selectedKey="{side>/selectedKey}">
+				<tnt:NavigationList modelContextChange="onCheckEvaluation" items="{ path: '/ModulesList', templateShareable: false }">
+					<tnt:NavigationListItem wrapping="true" text="{path: 'module_name', formatter: '.getBundleText'}" icon="sap-icon://group-2" expanded="true"
+						items="{ path: 'ModulesListAsscSet', templateShareable: false }" key="{module_id}">
+						<tnt:NavigationListItem wrapping="true" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+							icon="sap-icon://group-2" expanded="true" select="action" key="{module_id}{category_id}"
+							action:wiring=" \{ 'select' : \{ 'navigation' :\{ 'routeName':'category' \}, 'param' : ['{category_id}', '{module_id}'] \} \}"
+							hasExpander="true" text="{category_name}"/>
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+				<tnt:fixedItem>
+					<tnt:NavigationList width="auto" expanded="true">
+						<tnt:items>
+							<tnt:NavigationListItem icon="sap-icon://close-command-field" key="collapser" select="onCollapse" text="">
+								<tnt:items/>
+							</tnt:NavigationListItem>
+						</tnt:items>
+					</tnt:NavigationList>
+				</tnt:fixedItem>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<App id="mainContents"/>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>

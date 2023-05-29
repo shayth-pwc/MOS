@@ -1,0 +1,178 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.RecreationalActivitiesStrategy53A.controller.CreateNewCard">
+	<Dialog xmlns="sap.m" showHeader="true" state="None" contentWidth="1000px" contentHeight="800px" title="{i18n52A>createNewActivityLabel}">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>activityNameLabel}" labelFor="activity_name" required="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="activity_name" value="{ path : 'recreationalactivities>activity_name', type : 'sap.ui.model.type.String', constraints : { minLength: 0, maxLength: 999999}}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>ActivityTypeLabel}" labelFor="activity_type"/>
+								</form:label>
+								<form:fields>
+									<Select id="activity_type" forceSelection="false" selectedKey="{recreationalactivities>activity_type}" change="handleChangeSelect" width="100%" items="{recreationalactivities>/eventstype}">
+										<core:Item text="{recreationalactivities>title}" enabled="true" key="{recreationalactivities>id}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>ActivityDescriptionLabel}" labelFor="activity_description" required="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea id="activity_description" value="{ path: 'recreationalactivities>activity_description', type: 'sap.ui.model.odata.type.String'}" growing="true" rows="4" growingMaxLines="4" width="100%" showExceededText="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>strategic_goal}" labelFor="strategic_goal"/>
+								</form:label>
+								<form:fields>
+									<Select id="strategic_goal" selectedKey="{recreationalactivities>strategic_goal}" forceSelection="false" change="handleChangeSelect" width="100%" items="{path : 'recreationalactivities>/ClubStrategyGoals', length : '5000'}">
+										<core:Item key="{recreationalactivities>id}" text="{recreationalactivities>goal_title}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>related_department}" labelFor="related_department"/>
+								</form:label>
+								<form:fields>
+									<Select id="related_department" selectedKey="{recreationalactivities>related_department}" forceSelection="false" change="handleChangeSelect" width="100%" items="{recreationalactivities>/CLUB_ORG_STRUC_DEP}">
+										<core:Item key="{recreationalactivities>id}" text="{recreationalactivities>club_dept_name}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>finance_resource}" labelFor="finance_resource"/>
+								</form:label>
+								<form:fields>
+									<Input id="finance_resource" value="{recreationalactivities>finance_resource}" type="Number"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" visible="true" id="element14">
+							    <form:label>
+							        <Label xmlns="sap.m" text="{i18n53A>human_resources_number}" labelFor="finance_resource" id="label16"/>
+							        
+							    </form:label>
+							    <form:fields>
+							        <Input xmlns="sap.m" id="human_resources_number" value="{recreationalactivities>human_resources_number}" type="Number"/>
+							        
+							    </form:fields>
+							    </form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>expense_allocation}" labelFor="expense_allocation"/>
+								</form:label>
+								<form:fields>
+									<Input id="expense_allocation" value="{recreationalactivities>expense_allocation}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>target_fans}" labelFor="target_fans"/>
+								</form:label>
+								<form:fields>
+									<Input id="target_fans" value="{recreationalactivities>target_fans}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>kpi_id}" labelFor="kpi_id"/>
+								</form:label>
+								<form:fields>
+									<Select id="kpi_id" selectedKey="{recreationalactivities>kpi_id}" forceSelection="false" change="handleChangeSelect" width="100%" items="{path : 'recreationalactivities>/clubstrategykpi', length : '5000'}">
+										<core:Item text="{recreationalactivities>kpi_title}" enabled="true" key="{recreationalactivities>id}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<!--		<form:FormElement visible="true">-->
+							<!--			<form:label>-->
+							<!--<Label text="{i18n53A>KPIFrequencyOfMeasure}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+							<!--			</form:label>-->
+							<!--			<form:fields>-->
+							<!--<Select selectedKey="{recreationalactivities>kpi_frequency_of_measure}" forceSelection="false" id="KPIFrequencyOfMeasureCombo"-->
+							<!--	enabled="{appView>/enabled}" visible="true" width="98%" valueState="None" maxWidth="100%" class="sapUiTinyMargin">-->
+							<!--	<items>-->
+							<!--		<core:Item text="{i18n53A>annuallyDrop}" enabled="true" key="annually"/>-->
+							<!--		<core:Item text="{i18n53A>monthlyDrop}" enabled="true" key="monthly"/>-->
+							<!--		<core:Item text="{i18n53A>QuarterlyDrop}" enabled="true" key="yearly"/>-->
+							<!--	</items>-->
+							<!--</Select>-->
+							<!--			</form:fields>-->
+							<!--		</form:FormElement>-->
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>target_percentage}" labelFor="target_percentage"/>
+								</form:label>
+								<form:fields>
+									<Input id="target_percentage" value="{recreationalactivities>target_percentage}" type="Number"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>target_date}" labelFor="target_date"/>
+								</form:label>
+								<form:fields>
+									<DateTimePicker id="target_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange" value="{path:'recreationalactivities>target_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>Startdate}" labelFor="start_date_time"/>
+								</form:label>
+								<form:fields>
+									<DateTimePicker id="start_date_time" valueFormat="yyyy-MM-dd-HH-mm-ss" liveChange="_validateSaveEnablement" value="{path:'recreationalactivities>start_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}" displayFormat="short" required="true" change="handleCreateChange"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>Enddate}" labelFor="end_date_time"/>
+								</form:label>
+								<form:fields>
+									<DateTimePicker id="end_date_time" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange" liveChange="_validateSaveEnablement" value="{path:'recreationalactivities>end_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n53A>attachment}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="reviewuploader" required="true" value="{recreationalactivities>attachemnt_proof_cmis}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'recreationalactivities>attachemnt_proof_cmis', formatter: '.urlformatter'}" visible="{= ${recreationalactivities>attachemnt_proof_cmis} !== '' ? true : false }" target="_blank" href="{recreationalactivities>attachemnt_proof_cmis}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n53A>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onSubmit"/>
+			<Button text="{i18n53A>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onCancel" iconDensityAware="false"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

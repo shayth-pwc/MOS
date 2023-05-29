@@ -1,0 +1,70 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.PlanCEO.controller.plansCEOcreate">
+	<Dialog xmlns="sap.m" showHeader="true" state="None" contentWidth="1000px" contentHeight="800px" title="{i18n>CreateNewBusinessPlan}">
+		<l:VerticalLayout class="sapUiContentPadding" width="100%">
+			<form:SimpleForm xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="activityForm" editable="true"
+				layout="ResponsiveGridLayout" adjustLabelSpan="false" columnsL="2" emptySpanL="5" width="auto" labelSpanM="4"
+				cd:w5g.dt.context="/ClubBasicInfo/UsersAssociationSet" columnsM="2" emptySpanS="5">
+				<form:content>
+					<core:Title/>
+					<Label text="{i18n>ActivityName21}" labelFor="activity_name" required="true"/>
+					<Input change="onInputChange" id="activity_name" value="{ path : 'plansCEO>activity_name'}"/>
+					<Label text="{i18n>ActivityDescription21}" labelFor="activity_description" required="true"/>
+					<TextArea id="activity_description" change="onInputChange" value="{ path: 'plansCEO>activity_description'}" growing="true" rows="4"
+						growingMaxLines="4" width="100%" showExceededText="true" maxLength="500"/>
+					<Label text="{i18n>RespCeo}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+					<Select selectedKey="{plansCEO>related_department}" id="ceoresp" forceSelection="false" width="100%"
+						items="{plansCEO>/CLUB_ORG_STRUC_EMP_CEOs}">
+						<core:Item text="{plansCEO>emp_name}" enabled="true" key="{plansCEO>Department_id}"/>
+					</Select>
+					<Label text="{i18n>kpiID}" labelFor="kpi_id" required="true"/>
+					<Select id="kpi_id" selectedKey="{plansCEO>kpi_id}" forceSelection="false" change="handleChangeSelect" width="100%"
+						items="{path : 'plansCEO>/CEO_KPI', length : '5000'}" cd:w5g.dt.context="plansCEO&gt;/CEO_KPI">
+						<core:Item text="{plansCEO>kpi_title}" enabled="true" key="{plansCEO>id}" cd:w5g.dt.context="plansCEO&gt;/CEO_KPI"/>
+					</Select>
+					<Label text="{i18n>StrategicGoal}" labelFor="strategic_goal" required="true"/>
+					<Select id="strategic_goal" selectedKey="{plansCEO>strategic_goal}" forceSelection="false" change="handleChangeSelect" width="100%"
+						items="{path : 'plansCEO>/CEO_GOALS', length : '5000'}" cd:w5g.dt.context="plansCEO&gt;/CEO_GOALS">
+						<core:Item key="{plansCEO>id}" text="{plansCEO>goal_title}" cd:w5g.dt.context="plansCEO&gt;/CEO_GOALS"/>
+					</Select>
+					<Label text="{i18n>signedDoc}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+					<unified:FileUploader id="SignedDocUploader" required="true" enabled="{appView>/enabled}" value="{plansCEO>signed_doc_cmis_id}"
+						buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+					<Link text=" {path: 'plansCEO>signed_doc_cmis_id', formatter: '.urlformatter'}"
+						visible="{= ${plansCEO>signed_doc_cmis_id} !== '' ? true : false }" target="_blank" href="{plansCEO>signed_doc_cmis_id}"/>
+					<Label wrapping="true"/>
+					<core:Title/>
+					<Label text="{i18n>Column4}" labelFor="finance_resource"/>
+					<Input id="finance_resource" value="{plansCEO>finance_resource}" type="Number" placeholder="الرجاء إدخال رقم"/>
+					<Label text="{i18n>ExPoints}" labelFor="expense_allocation"/>
+					<Input id="expense_allocation" value="{plansCEO>expense_allocation}"/>
+					<Label text="{i18n>HumanResources}" labelFor="human_resources_number"/>
+					<Input id="human_resources_number" value="{plansCEO>human_resources_number}"/>
+					<Label text="{i18n>EndTarget}" labelFor="target_percentage"/>
+					<Input id="target_percentage" value="{plansCEO>target_percentage}"/>
+					<Label text="{i18n>AchievedTargetDate}" labelFor="target_date"/>
+					<DateTimePicker id="target_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange"
+						value="{path:'plansCEO>target_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+					<Label text="{i18n>ActivityStart}" labelFor="start_date_time"/>
+					<DateTimePicker id="start_date_time" valueFormat="yyyy-MM-dd-HH-mm-ss"
+						value="{path:'plansCEO>start_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"
+						displayFormat="short" required="true" change="handleCreateChange"/>
+					<Label text="{i18n>ActivityEnd}" labelFor="end_date_time"/>
+					<!--	<DateTimePicker id="end_date_time" displayFormat="short" valueFormat="yyyy-MM-dd-HH-mm-ss" value="{path:'end_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}" required="true" change="handleCreateChange"/>-->
+					<DateTimePicker id="end_date_time" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange"
+						value="{path:'plansCEO>end_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+				</form:content>
+			</form:SimpleForm>
+		</l:VerticalLayout>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

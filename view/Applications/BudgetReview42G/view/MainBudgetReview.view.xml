@@ -1,0 +1,128 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.BudgetReview42G.controller.MainBudgetReview">
+	<Page showHeader="true" title="{i18n42G>AppTitle}" showFooter="false" showNavButton="true" navButtonPress="onNavBack">
+		<layout:BlockLayout background="Dashboard" visible="true">
+			<layout:content>
+				<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+					<layout:content>
+						<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>Hints}" titleAlignment="Begin" titleLevel="Auto">
+							<layout:content>
+								<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+									content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'42C'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+									<sap.ui.layout:content>
+										<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+											layout="ResponsiveGridLayout">
+											<sap.ui.layout.form:content>
+												<Text xmlns="sap.m" text="{hints>Description}"/>
+											</sap.ui.layout.form:content>
+										</sap.ui.layout.form:SimpleForm>
+									</sap.ui.layout:content>
+								</sap.ui.layout:VerticalLayout>
+							</layout:content>
+						</layout:BlockLayoutCell>
+					</layout:content>
+				</layout:BlockLayoutRow>
+			</layout:content>
+		</layout:BlockLayout>
+		<layout:BlockLayout id="bl" background="Dashboard" visible="true">
+			<layout:content>
+				<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+					<layout:content>
+						<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin"
+							titleLevel="Auto">
+							<layout:content>
+								<Table width="auto" modelContextChange="onAddFilter" items="{EstimatedBudget>/estimatedbudgetreview}" noDataText="No data" mode="None"
+									showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin"
+									updateFinished="onUpdateFinish" id="tbl">
+									<!--<infoToolbar>-->
+									<!--	<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">-->
+									<!--		<content>-->
+									<!--			<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+									<!--		</content>-->
+									<!--	</Toolbar>-->
+									<!--</infoToolbar>-->
+									<headerToolbar>
+										<OverflowToolbar width="auto" height="auto" design="Solid" visible="true" enabled="true" id="toolbar3">
+											<content>
+												<ToolbarSpacer width=""/>
+												<Button text="{i18n42G>CreateBudgetReview}" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true"
+													iconDensityAware="false" press="_onButtonPress" id="button5"/>
+											</content>
+										</OverflowToolbar>
+									</headerToolbar>
+									<columns>
+										<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+											<header>
+												<Text text="{i18n42G>BudgetReview_Column1}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+													visible="true"/>
+											</header>
+											<footer/>
+										</Column>
+										<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+											<header>
+												<Text text="{i18n42G>BudgetReview_Column2}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+													visible="true"/>
+											</header>
+											<footer/>
+										</Column>
+										<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+											<header>
+												<Text text="{i18n42G>BudgetReview_Column3}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+													visible="true"/>
+											</header>
+											<footer/>
+										</Column>
+										<Column width="5%" halign="Begin" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+											<header>
+												<Text text="" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											</header>
+											<footer/>
+										</Column>
+										<Column width="5%" halign="Begin" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+											<header>
+												<Text text="" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											</header>
+											<footer/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem type="Active" press="_onRowPress">
+											<cells>
+												<Link text=" {path: 'EstimatedBudget>annual_Estimated_Budget_proof_cmis_id', formatter: '.urlformatter'}" wrapping="true"
+													visible="{= ${EstimatedBudget>annual_Estimated_Budget_proof_cmis_id} !== '' ? true : false }" target="_blank"
+													href="{EstimatedBudget>annual_Estimated_Budget_proof_cmis_id}"/>
+												<Link text=" {path: 'EstimatedBudget>signed_and_approved_proof_cmis_id', formatter: '.urlformatter'}" wrapping="true"
+													visible="{= ${EstimatedBudget>signed_and_approved_proof_cmis_id} !== '' ? true : false }" target="_blank"
+													href="{EstimatedBudget>signed_and_approved_proof_cmis_id}"/>
+												<Link text=" {path: 'EstimatedBudget>documented_report_proof_cmis_id', formatter: '.urlformatter'}" wrapping="true"
+													visible="{= ${EstimatedBudget>documented_report_proof_cmis_id} !== '' ? true : false }" target="_blank"
+													href="{EstimatedBudget>documented_report_proof_cmis_id}"/>
+												<Button icon="sap-icon://delete" press="_onDeleteRow" id="button6___table1_0" visible="true"/>
+												<Button icon="sap-icon://edit" press="_onEditRow" id="button7___table1_0" visible="true"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</layout:content>
+						</layout:BlockLayoutCell>
+						<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+					</layout:content>
+				</layout:BlockLayoutRow>
+			</layout:content>
+		</layout:BlockLayout>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+		<content/>
+	</Page>
+</mvc:View>

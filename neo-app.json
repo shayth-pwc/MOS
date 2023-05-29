@@ -1,0 +1,67 @@
+{
+  "welcomeFile": "/index.html",
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/portal/",
+      "target": {
+        "type": "destination",
+        "name": "HANA_DB_DEV"
+      },
+      "description": "Hana DB Development Destination"
+    },
+    {
+      "path": "/DMSservice",
+      "target": {
+        "type": "destination",
+        "name": "documentservice",
+        "entryPath": "/DMSservice"
+      },
+      "description": "CMIS Connection Document Service"
+    },
+    {
+      "path": "/render",
+      "target": {
+        "type": "destination",
+        "name": "PDF_Template"
+      },
+      "description": "pdf_render_oAuth"
+    }
+  ],
+  "sendWelcomeFileRedirect": true
+}

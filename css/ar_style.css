@@ -1,0 +1,10 @@
+/* Enter your custom styles here */
+
+
+
+.sapMPageWithFloatingFooter .sapMPageFloatingFooter {
+    position: fixed !important;
+    float: left !important;
+    margin-right: 13% !important;
+    width: 85.5% !important;
+}

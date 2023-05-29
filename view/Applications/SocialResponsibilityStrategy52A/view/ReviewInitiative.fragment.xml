@@ -1,0 +1,167 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SocialResponsibilityStrategy52A.controller.ReviewInitiative">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n52A>strategiccreate}"
+		type="Standard" verticalScrolling="true">
+		<content>
+			<Button text="Print" icon="sap-icon://print" press="renderPDF" visible="false"/>
+			<form:Form width="auto" editable="true" visible="true" id="plans">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n52A>strategiinittitledialog}" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialresponsibility>initiative_title}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n52A>strategicinitdesc}" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialresponsibility>initiative_description}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52A>strategicinitowner}" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialresponsibility>INITIATIVE_OWNER_NAME}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52A>strategicinitBudgetAmount}" required="true" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{path:'socialresponsibility>initiative_budget_amount'}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="false" id="newelement10">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n52A>location}" required="true" design="Standard" width="auto" textAlign="Begin" textDirection="Inherit"
+										visible="true" id="newlabel10"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{socialresponsibility>initiative_location}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="newtext10"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="newelement9">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n52A>linkofinitiative}" required="true" design="Standard" width="auto" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="newlabel9"/>
+								</form:label>
+								<form:fields>
+									<Link xmlns="sap.m" href="{socialresponsibility>sharing_links}" text="{socialresponsibility>sharing_links}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52A>strategicinitRelatedGoal}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{socialresponsibility>RELATED_GOAL_TITLE}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n52A>strategicinitStartDate}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text
+										text="{ path: 'socialresponsibility>initiative_start_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"
+										width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n52A>strategicinitEndDate}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{ path: 'socialresponsibility>initiative_end_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"
+										width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n52A>strategicinitBudgetType}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{path:'socialresponsibility>initiative_resources_needed'}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="false" id="newelement10_1658150722415">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n52A>strategicinithowtospend}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="newlabel10_1658150722414"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{socialresponsibility>spending_method}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="newtext10_1658150722414"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="false"
+								id="newelement10_1658150722415_copy">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n52A>completionrate}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="newlabel10_1658150722414_copy"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{socialresponsibility>initiative_percent}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="newtext10_1658150722414_copy"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="newelement9_1658150721112">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n52A>fileupload}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true" id="newlabel9_1658150721112"/>
+								</form:label>
+								<form:fields>
+									<Link xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+										text=" {path: 'socialresponsibility>proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${socialresponsibility>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{socialresponsibility>proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<!--<Button text="{i18n52A>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>-->
+			<Button text="{i18n52A>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress1"
+				iconDensityAware="false"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,167 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.GameDayMarketingGuide54A.controller.CreateNewmarketingGuide">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false"
+		title="{i18n54A>createNewActivityLabel}" type="Standard" verticalScrolling="true">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>activityNameLabel}" labelFor="activity_name" required="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="activity_name" value="{ path : 'marketingGuide>activity_name'}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>ActivityTypeLabel}" labelFor="activity_type"/>
+								</form:label>
+								<form:fields>
+									<Select id="activity_type" forceSelection="true" selectedKey="{marketingGuide>activity_type}" change="handleChangeSelect" width="100%"
+										items="{marketingGuide>/eventtypematchday}">
+										<core:Item text="{marketingGuide>title}" enabled="true" key="{marketingGuide>id}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>ActivityDescriptionLabel}" labelFor="activity_description" required="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea id="activity_description" value="{ path: 'marketingGuide>activity_description'}" rows="4" width="100%" showExceededText="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>strategic_goal}" labelFor="strategic_goal"/>
+								</form:label>
+								<form:fields>
+									<Select id="strategic_goal" selectedKey="{marketingGuide>strategic_goal}" forceSelection="true" change="handleChangeSelect" width="100%"
+										items="{path : 'marketingGuide>/ClubStrategyGoals', length : '5000'}">
+										<core:Item key="{marketingGuide>id}" text="{marketingGuide>goal_title}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>related_department}" labelFor="related_department"/>
+								</form:label>
+								<form:fields>
+									<Select id="related_department" selectedKey="{marketingGuide>related_department}" forceSelection="true" change="handleChangeSelect"
+										width="100%" items="{marketingGuide>/CLUB_ORG_STRUC_DEP}">
+										<core:Item key="{marketingGuide>id}" text="{marketingGuide>club_dept_name}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>finance_resource}" labelFor="finance_resource"/>
+								</form:label>
+								<form:fields>
+									<Input id="finance_resource" value="{marketingGuide>finance_resource}" type="Number"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>expense_allocation}" labelFor="expense_allocation"/>
+								</form:label>
+								<form:fields>
+									<Input id="expense_allocation" value="{marketingGuide>expense_allocation}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>human_resources_number}" labelFor="human_resources_number"/>
+								</form:label>
+								<form:fields>
+									<Input id="human_resources_number" value="{marketingGuide>human_resources_number}" type="Number"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>kpi_id}" labelFor="kpi_id"/>
+								</form:label>
+								<form:fields>
+									<Select id="kpi_id" selectedKey="{marketingGuide>kpi_id}" forceSelection="true" change="handleChangeSelect" width="100%"
+										items="{path : 'marketingGuide>/clubstrategykpi', length : '5000'}">
+										<core:Item text="{marketingGuide>kpi_title}" enabled="true" key="{marketingGuide>id}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>target_percentage}" labelFor="target_percentage"/>
+								</form:label>
+								<form:fields>
+									<Input id="target_percentage" value="{marketingGuide>target_percentage}" type="Number"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>target_date}" labelFor="target_date"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="target_date" enabled="{appView>/enabled}" change="handleCreateChange" valueFormat="yyyy-MM-ddTHH:mm:ss"
+										displayFormat="dd/MM/yyy"
+										value="{ path: 'marketingGuide>target_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>Startdate}" labelFor="start_date_time"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="start_date_time" enabled="{appView>/enabled}" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy"
+										value="{ path: 'marketingGuide>start_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>Enddate}" labelFor="end_date_time"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="end_date_time" enabled="{appView>/enabled}" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy"
+										value="{ path: 'marketingGuide>end_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54A>attachment}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="reviewuploader" required="true" value="{marketingGuide>attachemnt_proof_cmis}" buttonOnly="false"
+										icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'marketingGuide>attachemnt_proof_cmis', formatter: '.urlformatter'}"
+										visible="{= ${marketingGuide>attachemnt_proof_cmis} !== '' ? true : false }" target="_blank" href="{marketingGuide>attachemnt_proof_cmis}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n54A>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n54A>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onCancel"
+				iconDensityAware="false"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,186 @@
+<core:FragmentDefinition xmlns:unified="sap.ui.unified" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.MarketingMatchStrategy54G.controller.CreateNewMarketingStrategy">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false"
+		title="{i18n54G>createNewActivityLabel}" type="Standard" verticalScrolling="true">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54G>activityNameLabel}" labelFor="activity_name" required="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="activity_name" value="{ path : 'MarketingMatchStrategy>activity_name'}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54G>ActivityTypeLabel}" labelFor="activity_type"/>
+								</form:label>
+								<form:fields>
+									<Select id="activity_type" forceSelection="false" selectedKey="{MarketingMatchStrategy>activity_type}" width="100%"
+										items="{MarketingMatchStrategy>/eventtypematchday}">
+										<core:Item text="{MarketingMatchStrategy>title}" enabled="true" key="{MarketingMatchStrategy>id}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54G>ActivityDescriptionLabel}" labelFor="activity_description" required="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea id="activity_description" value="{ path: 'MarketingMatchStrategy>activity_description'}" growing="true" rows="4"
+										growingMaxLines="4" width="100%" showExceededText="true" maxLength="500"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54G>strategic_goal}" labelFor="strategic_goal"/>
+								</form:label>
+								<form:fields>
+									<Select modelContextChange="onAddFilter" id="strategic_goal" selectedKey="{MarketingMatchStrategy>strategic_goal}" forceSelection="false"
+										change="handleChangeSelect" width="100%" items="{path : 'MarketingMatchStrategy>/ClubStrategyGoals', length : '5000'}">
+										<core:Item key="{MarketingMatchStrategy>id}" text="{MarketingMatchStrategy>goal_title}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n54G>related_department}" labelFor="related_department"/>
+								</form:label>
+								<form:fields>
+									<Select id="related_department" selectedKey="{MarketingMatchStrategy>related_department}" forceSelection="false" change="handleChangeSelect"
+										width="100%" items="{MarketingMatchStrategy>/CLUB_ORG_STRUC_DEP}">
+										<core:Item key="{MarketingMatchStrategy>id}" text="{MarketingMatchStrategy>club_dept_name}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n54G>finance_resource}" labelFor="finance_resource"/>
+								</form:label>
+								<form:fields>
+									<Input id="finance_resource" value="{MarketingMatchStrategy>finance_resource}" type="Number"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54G>upload}" labelFor="attachemnt_proof_cmis"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" value="{MarketingMatchStrategy>attachemnt_proof_cmis}" enabled="{appView>/enabled}"
+										id="attachemnt_proof_cmis" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'MarketingMatchStrategy>attachemnt_proof_cmis', formatter: '.urlformatter'}"
+										visible="{= ${MarketingMatchStrategy>attachemnt_proof_cmis} !== '' ? true : false }" target="_blank"
+										href="{MarketingMatchStrategy>attachemnt_proof_cmis}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n54G>expense_allocation}" labelFor="expense_allocation"/>
+								</form:label>
+								<form:fields>
+									<Input id="expense_allocation" value="{MarketingMatchStrategy>expense_allocation}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n54G>human_resources_number}" labelFor="human_resources_number"/>
+								</form:label>
+								<form:fields>
+									<Input id="human_resources_number" value="{MarketingMatchStrategy>human_resources_number}" type="Number"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54G>target_fans}" labelFor="target_fans"/>
+								</form:label>
+								<form:fields>
+									<Input id="target_fans" value="{MarketingMatchStrategy>target_fans}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54G>kpi_id}" labelFor="kpi_id"/>
+								</form:label>
+								<form:fields>
+									<Select modelContextChange="onAddFilter" id="kpi_id" selectedKey="{MarketingMatchStrategy>kpi_id}" forceSelection="false"
+										change="handleChangeSelect" width="100%" items="{path : 'MarketingMatchStrategy>/clubstrategykpi', length : '5000'}">
+										<core:Item text="{MarketingMatchStrategy>kpi_title}" enabled="true" key="{MarketingMatchStrategy>id}"/>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54G>target_percentage}" labelFor="target_percentage"/>
+								</form:label>
+								<form:fields>
+									<Input id="target_percentage" value="{MarketingMatchStrategy>target_percentage}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{i18n54G>target_date}" labelFor="target_date"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="target_date" valueFormat="dd/MM/yyyy" displayFormat="short" required="true"
+										value="{path:'MarketingMatchStrategy>target_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54G>Startdate}" labelFor="start_date_time"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="start_date_time" valueFormat="dd/MM/yyyy"
+										value="{path:'MarketingMatchStrategy>start_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}"
+										displayFormat="short" required="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n54G>Enddate}" labelFor="end_date_time"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="end_date_time" valueFormat="dd/MM/yyyy" displayFormat="short" required="true"
+										value="{path:'MarketingMatchStrategy>end_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:unified="sap.ui.unified" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true"
+								id="element15">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n54G>link}" labelFor="end_date_time"/>
+								</form:label>
+								<form:fields>
+									<Input xmlns:unified="sap.ui.unified" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns="sap.m" id="activity_name_copy"
+										value="{ path : 'MarketingMatchStrategy>proof_link'}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n54G>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n54G>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onCancel"
+				iconDensityAware="false"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

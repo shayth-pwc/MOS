@@ -1,0 +1,40 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="pwc.portal.eval.ClubEvaluations.controller.settings.MasterSettings">
+	<Page id="masterSettingsPage" showHeader="false" floatingFooter="true">
+		<landmarkInfo>
+			<PageAccessibleLandmarkInfo rootRole="Region" rootLabel="{i18n>Master_rootLabel}" contentRole="Navigation"
+				contentLabel="{i18n>Master_contentLabel}"/>
+		</landmarkInfo>
+		<!--<List id="masterSettingsList" items="{CatListAsscSet}" mode="SingleSelectMaster" selectionChange=".onMasterPressed">
+			<StandardListItem title="{path: 'Form'}" type="Navigation" selected="{= ${device>/system/phone} ? false : ${side>selected}}" icon="sap-icon://form"/>
+		</List>-->
+		<List id="list" width="auto" class="sapFDynamicPageAlignContent"
+			items="{ path: 'CatListAsscSet', sorter: { path: 'Form', descending: false } }" busyIndicatorDelay="{masterView>/delay}"
+			noDataText="{masterView>/noDataText}" mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growing="true"
+			growingScrollToLoad="true" modelContextChange="onListFilter" selectionChange=".onMasterPressed">
+			<headerToolbar>
+				<OverflowToolbar>
+					<SearchField id="searchField" showRefreshButton="true" tooltip="{i18n>masterSearchTooltip}" search=".onSearch" width="auto">
+						<layoutData>
+							<OverflowToolbarLayoutData minWidth="100%" maxWidth="100%" shrinkable="true" priority="NeverOverflow"/>
+						</layoutData>
+					</SearchField>
+				</OverflowToolbar>
+			</headerToolbar>
+			<items>
+				<StandardListItem title="{path: 'Form'}" selected="{ path: 'FormIndex', formatter: '.formatter.selectedMasterItem' }" icon="sap-icon://form"
+					type="Navigation" highlight="{STATUS}"/>
+			</items>
+		</List>
+		<footer>
+			<Toolbar width="100%" id="toolbar2">
+				<content>
+					<Bar id="bar0">
+						<contentRight>
+							<Button xmlns="sap.m" text="{i18n>Review}" press="onReviewPress" type="Accept"/>
+						</contentRight>
+					</Bar>
+				</content>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

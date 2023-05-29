@@ -1,0 +1,80 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns:layout="sap.ui.layout" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.InvestmentMeeting.controller.Page17c">
+	<Page showHeader="true" title="{InvestmentMeetingi18n>AppTitle}" showFooter="false" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+					 <layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+                        <layout:content>
+                            <layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+                                <layout:content>
+                                    <sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%" content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'17C'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+
+
+                                        <sap.ui.layout:content>
+                                            <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout">
+                                                <sap.ui.layout.form:content>
+                                                    <Text xmlns="sap.m" text="{hints>Description}"/>
+                                                </sap.ui.layout.form:content>
+                                            </sap.ui.layout.form:SimpleForm>
+                                        </sap.ui.layout:content>
+                                    </sap.ui.layout:VerticalLayout>
+                                </layout:content>
+                            </layout:BlockLayoutCell>
+                        </layout:content>
+</layout:BlockLayoutRow>
+					<layout:BlockLayoutRow scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell width="5" title="{InvestmentMeetingi18n>AppTitle}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<VBox class="sapUiSmallMargin">
+										<PlanningCalendar id="PC1" startDate="{path: '/startDate'}" appointmentsVisualization="Filled" appointmentSelect="_onEditRow17c" showRowHeaders="false">
+											<toolbarContent>
+												<Button xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" text="{InvestmentMeetingi18n>addmeeting}" id="button1" type="Accept" icon="sap-icon://add" press="_onButtonPress17c"/>
+												<Select id="userRole" change="handleRoleChange" selectedKey="admin" width="230px" visible="false">
+													<items>
+														<core:Item key="admin" text="{i18n>Admin}"/>
+														<core:Item key="manager" text="{i18n>Manager}"/>
+														<core:Item key="donna" text="{i18n>Donna_Moore}"/>
+													</items>
+												</Select>
+											</toolbarContent>
+											<rows>
+												<PlanningCalendarRow appointments="{path : 'Investmentmeeting>/INVESTMENTMEETINGS', templateShareable: false}">
+													<appointments>
+														<unified:CalendarAppointment startDate="{Investmentmeeting>meeting_start_date}" endDate="{Investmentmeeting>meeting_end_date}" icon="{pic}" title="{Investmentmeeting>meeting_title}"/>
+														<!--<unified:CalendarAppointment
+								startDate="{meeting_date}"
+								endDate="{meeting_date}"
+								icon="{pic}"
+								title="{meeting_title}"
+								text="{info}"
+								type="{type}"
+								tentative="{tentative}">
+						</unified:CalendarAppointment>-->
+													</appointments>
+												</PlanningCalendarRow>
+											</rows>
+										</PlanningCalendar>
+									</VBox>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

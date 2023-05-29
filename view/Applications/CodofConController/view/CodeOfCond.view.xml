@@ -1,0 +1,137 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.CodofConController.controller.CodeOfCond">
+	<Page showHeader="true" title="{i18n>CodeOfCondTitle}" showFooter="true" showNavButton="true" navButtonPress="onNavBack">
+		<!--<content>-->
+		<!--<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true" selectedKey="__filter1">-->
+		<!--    <items>-->
+		<!--        <IconTabFilter iconColor="Neutral" text="{i18n>codeofconductIcontabbar}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">-->
+		<content>
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+										content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'34B'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+												layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+			<layout:BlockLayout id="bl" background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin"
+								titleLevel="Auto">
+								<layout:content>
+									<Table xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" modelContextChange="onAddFilter"
+										items="{ path: 'CodeofCond>/HRCODEOFCONDUCT'}" width="100%" mode="None" showSeparators="All" growing="true" growingThreshold="20"
+										growingScrollToLoad="true" id="table4">
+										<headerToolbar>
+											<OverflowToolbar width="auto" design="Transparent" visible="true" enabled="true" id="toolbar8">
+												<content>
+													<Title text="{i18n>codeofconductpaneltitle}" width="auto" textAlign="Begin" visible="true" wrapping="true" id="title3" level="H3"/>
+													<ToolbarSpacer width="" id="spacer3_1653157407675"/>
+													<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+														id="button0_copy4" activeIcon="sap-icon://add" icon="sap-icon://add" text="{i18n>addcommitment}" type="Accept" press="addCommitment"/>
+												</content>
+											</OverflowToolbar>
+										</headerToolbar>
+										<columns>
+											<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"
+												id="column14_1653157407676">
+												<header>
+													<Text text="{i18n>codeofconductcolumntitle1}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true" id="text23"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="WithoutHeader"
+												mergeDuplicates="false" id="column15_1653157407676">
+												<header>
+													<Text text="{i18n>codeofconductcolumntitle2}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true" id="text24"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"
+												id="column16">
+												<header>
+													<Text text="{i18n>codeofconductcolumntitle3}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true" id="text25_1653157407676"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column id="column14_1652352479162_copy" width="7%">
+												<header>
+													<Text id="text26_1652352479162_copy"/>
+												</header>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem type="Active" id="item4___table4_0">
+												<cells>
+													<Text text="{CodeofCond>COMMITMENT_TYPE_NAME}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true" id="text26___table4_0"/>
+													<!--<TextArea xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" rows="4" value="{commitment_description}" enabled="false" />-->
+													<!--<ExpandableText text="{commitment_description}" overflowMode="{overflowMode}" />-->
+													<Text text="{CodeofCond>commitment_description}" width="auto" maxLines="0" textAlign="Begin" textDirection="Inherit" visible="true"
+														id="text27___table4_0"/>
+													<!--<Text text="{proof_cmis_id}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+													<!--<Link text="{CodeofCond>proof_cmis_id}" visible="{= ${CodeofCond>proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink" id="link4___table4_0"/>-->
+													<!--<Link  text=" {path: CodeofCond>proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${CodeofCond>proof_cmis_id} !== '' ? true : false }" target="_blank"-->
+													<!--			href="{CodeofCond>proof_cmis_id}" />-->
+													<Link text=" {path: 'CodeofCond>proof_cmis_id', formatter: '.urlformatter'}"
+														visible="{= ${CodeofCond>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{CodeofCond>proof_cmis_id}"/>
+													<FlexBox xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+														xmlns="sap.m" width="100%" id="box0_copy4___table4_0">
+														<items>
+															<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="button0_1651121173831_copy4___table4_0" icon="sap-icon://edit" type="Transparent" press="editCommitment"/>
+															<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="button1_copy4___table4_0" icon="sap-icon://delete" type="Reject" press="deleteCommitment"/>
+														</items>
+													</FlexBox>
+													<TextArea xmlns="sap.m" value="Lorem ipsum dolor" rows="4" id="area0_copy___table4_0"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+		<!--        </IconTabFilter>-->
+		<!--    </items>-->
+		<!--    <content/>-->
+		<!--</IconTabBar>-->
+		<!--    </content>-->
+		<!--    <footer>-->
+		<!--        <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">-->
+		<!--            <content>-->
+		<!--                <ToolbarSpacer width=""/>-->
+		<!--                <OverflowToolbarButton text="Action" type="Transparent" icon="sap-icon://action" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>-->
+		<!--            </content>-->
+		<!--        </OverflowToolbar>-->
+		<!--    </footer>-->
+		<!--    <headerContent/>-->
+		<!--    <subHeader/>-->
+		<!--    <customHeader/>-->
+	</Page>
+</mvc:View>

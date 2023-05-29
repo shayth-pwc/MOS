@@ -1,0 +1,67 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.HRBusinessPlan.controller.AddBusinessPlan">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{HRBusinessPlani18n>addbusinessplan}"
+		type="Standard" contentWidth="700px" contentHeight="280px" verticalScrolling="true">
+		<content>
+			<layout:Grid xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12"
+				position="Center" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" class="sapUiMediumMarginTop"
+				cd:w5g.dt.context="/HRBUSINESSPLAN">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{HRBusinessPlani18n>businessplancolumntitle1}" width="100%" maxLines="9" wrapping="true" textAlign="Begin"
+								textDirection="Inherit" visible="true"/>
+							<ComboBox editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%"
+								selectedKey="{HRBusinessPlan>document_type}" placeholder="{HRBusinessPlan>document_type}" id="document_type"
+								items="{path:'HRBusinessPlan>/BizZzdoctypes',filters:[{path:'active',operator:'EQ',value1:'true'}]}" class="sapUiTinyMarginBottom">
+								<items>
+									<core:Item text="{HRBusinessPlan>value}" enabled="true" key="{HRBusinessPlan>id}"/>
+								</items>
+							</ComboBox>
+							<Text text="{HRBusinessPlani18n>businessplancolumntitle3}" width="auto" maxLines="9" wrapping="true" textAlign="Begin"
+								textDirection="Inherit" visible="true"/>
+							<DatePicker enabled="{appView>/enabled}" id="plan_start_date" change="handleCreateChange" width="100%" valueFormat="yyyy-MM-ddTHH:mm:ss"
+								displayFormat="dd/MM/yyy"
+								value="{ path: 'HRBusinessPlan>plan_start_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" required="true"
+								class="sapUiTinyMarginBottom"/>
+							<Text text="{HRBusinessPlani18n>businessplancolumntitle4}" width="auto" maxLines="9" wrapping="true" textAlign="Begin"
+								textDirection="Inherit" visible="true"/>
+							<DatePicker enabled="{appView>/enabled}" id="plan_end_date" change="handleCreateChange" width="100%" valueFormat="yyyy-MM-ddTHH:mm:ss"
+								displayFormat="dd/MM/yyy"
+								value="{ path: 'HRBusinessPlan>plan_end_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" required="true"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{HRBusinessPlani18n>businessplancolumntitle2}" width="100%" maxLines="9" wrapping="true" textAlign="Begin"
+								textDirection="Inherit" visible="true"/>
+							<TextArea enabled="true" visible="true" rows="2" width="100%" required="false" valueStateText="Invalid entry" id="document_description"
+								value="{HRBusinessPlan>document_description}" class="sapUiTinyMarginBottom"/>
+							<Text text="{HRBusinessPlani18n>businessplancolumntitle5}" width="auto" maxLines="9" wrapping="true" textAlign="Begin"
+								textDirection="Inherit" visible="true"/>
+							<unified:FileUploader required="true" value="{HRBusinessPlan>proof_cmis_id}" enabled="{appView>/enabled}" id="myFileUploadbusinessplan"
+								buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+							<!--<Link text="{HRBusinessPlan>proof_cmis_id}" visible="{= ${HRBusinessPlan>proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>-->
+							<Link text=" {path: 'HRBusinessPlan>proof_cmis_id', formatter: '.urlformatter'}"
+								visible="{= ${HRBusinessPlan>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{HRBusinessPlan>proof_cmis_id}"/>
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{HRBusinessPlani18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="{HRBusinessPlani18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

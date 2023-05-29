@@ -1,0 +1,95 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.RecreationalActivitiesGuide.controller.AddActivity">
+	<Dialog contentWidth="700px" contentHeight="440px" horizontalScrolling="true" showHeader="true" state="None" stretch="false"
+		title="{RecreationalActivitiesi18n>events_addclubdecision}" type="Standard" verticalScrolling="true">
+		<content>
+			<layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Center" width="100%" containerQuery="false" hSpacing="2"
+				vSpacing="2" visible="true" class="sapUiMediumMarginTop">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Label class="sapUiSmallMarginTop" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								design="Bold" required="true" text="{RecreationalActivitiesi18n>events_clubdecisionscolumntitle1}" width="100%"/>
+							<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false"
+								valueStateText="Invalid entry" maxLength="0" value="{RecreationalEvents>activity_name}" id="activity_name"/>
+							<Label class="sapUiSmallMarginTop" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								design="Bold" required="true" text="{RecreationalActivitiesi18n>events_clubdecisionscolumntitle2}" width="100%"/>
+							<unified:FileUploader required="true" value="{RecreationalEvents>exploitation_of_space_proof_cmis_id}" enabled="{appView>/enabled}"
+								id="exploitation_of_space_proof_cmis_id" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+								change="handleUploadPress"/>
+							<Link text=" {path: 'RecreationalEvents>exploitation_of_space_proof_cmis_id', formatter: '.urlformatter'}"
+								visible="{= ${RecreationalEvents>exploitation_of_space_proof_cmis_id} !== '' ? true : false }" target="_blank"
+								href="{RecreationalEvents>exploitation_of_space_proof_cmis_id}"/>
+							<Text text="{RecreationalActivitiesi18n>events_clubdecisionscolumntitle6}" width="100%" maxLines="9" wrapping="true" textAlign="Begin"
+								textDirection="Inherit" visible="false"/>
+							<DatePicker enabled="{appView>/enabled}" id="start_date_time" change="handleCreateChange" width="98%" valueFormat="yyyy-MM-ddTHH:mm:ss"
+								displayFormat="dd/MM/yyy"
+								value="{ path: 'RecreationalEvents>start_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"
+								required="true" visible="false"/>
+							<Label class="sapUiSmallMarginTop" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								design="Bold" required="true" text="{RecreationalActivitiesi18n>diversification_proof}" width="100%"/>
+							<unified:FileUploader required="true" value="{RecreationalEvents>diversification_proof}" enabled="{appView>/enabled}"
+								id="diversification_proof" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+							<Link text=" {path: 'RecreationalEvents>diversification_proof', formatter: '.urlformatter'}"
+								visible="{= ${RecreationalEvents>diversification_proof} !== '' ? true : false }" target="_blank"
+								href="{RecreationalEvents>diversification_proof}"/>
+							<Label class="sapUiSmallMarginTop" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								design="Bold" required="true" text="{RecreationalActivitiesi18n>activities_proof}" width="100%"/>
+							<unified:FileUploader required="true" value="{RecreationalEvents>activities_proof}" enabled="{appView>/enabled}" id="activities_proof"
+								buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+							<Link text=" {path: 'RecreationalEvents>activities_proof', formatter: '.urlformatter'}"
+								visible="{= ${RecreationalEvents>activities_proof} !== '' ? true : false }" target="_blank" href="{RecreationalEvents>activities_proof}"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Label class="sapUiSmallMarginTop" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								design="Bold" required="true" text="{RecreationalActivitiesi18n>events_clubdecisionscolumntitle6}" width="100%"/>
+							<DatePicker xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+								id="activity_date" valueFormat="dd/MM/yyyy" displayFormat="short" required="true" change="handleCreateChange"
+								value="{path:'RecreationalEvents>activity_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+							<Label class="sapUiSmallMarginTop" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								design="Bold" required="true" text="{RecreationalActivitiesi18n>events_clubdecisionscolumntitle3}" width="100%"/>
+							<unified:FileUploader required="true" value="{RecreationalEvents>club_brand_proof_cmis_id}" enabled="{appView>/enabled}"
+								id="club_brand_proof_cmis_id" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+								change="handleUploadPress"/>
+							<Link text=" {path: 'RecreationalEvents>club_brand_proof_cmis_id', formatter: '.urlformatter'}"
+								visible="{= ${RecreationalEvents>club_brand_proof_cmis_id} !== '' ? true : false }" target="_blank"
+								href="{RecreationalEvents>club_brand_proof_cmis_id}"/>
+							<Label class="sapUiSmallMarginTop" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								design="Bold" required="true" text="{RecreationalActivitiesi18n>events_clubdecisionscolumntitle4}" width="100%"/>
+							<unified:FileUploader required="true" value="{RecreationalEvents>food_drinks_proof_cmis_id}" enabled="{appView>/enabled}"
+								id="food_drinks_proof_cmis_id" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+								change="handleUploadPress"/>
+							<Link text=" {path: 'RecreationalEvents>food_drinks_proof_cmis_id', formatter: '.urlformatter'}"
+								visible="{= ${RecreationalEvents>food_drinks_proof_cmis_id} !== '' ? true : false }" target="_blank"
+								href="{RecreationalEvents>food_drinks_proof_cmis_id}"/>
+							<Label class="sapUiSmallMarginTop" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								design="Bold" required="true" text="{RecreationalActivitiesi18n>events_clubdecisionscolumntitle5}" width="100%"/>
+							<unified:FileUploader required="true" value="{RecreationalEvents>security_safety_cmis_id}" enabled="{appView>/enabled}"
+								id="security_safety_cmis_id" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+								change="handleUploadPress"/>
+							<Link text=" {path: 'RecreationalEvents>security_safety_cmis_id', formatter: '.urlformatter'}"
+								visible="{= ${RecreationalEvents>security_safety_cmis_id} !== '' ? true : false }" target="_blank"
+								href="{RecreationalEvents>security_safety_cmis_id}"/>
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{RecreationalActivitiesi18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onButtonPress"/>
+			<Button text="{RecreationalActivitiesi18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

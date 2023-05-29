@@ -1,0 +1,246 @@
+<mvc:View controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OrgStructureOverview.controller.OrganizationalStructureEval"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f" xmlns:w="sap.ui.integration.widgets" xmlns:cssgrid="sap.ui.layout.cssgrid"
+	xmlns:cards="sap.f.cards" xmlns:layout="sap.ui.layout" displayBlock="true" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>OrgStructureOverviewappTitle}" class="sapUiNoContentPadding" showNavButton="true" navButtonPress="onNavBack">
+					<layout:BlockLayout background="Dashboard" visible="true">
+						<layout:content>
+							<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+								<layout:content>
+									<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+										<layout:content>
+											<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+												content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'21D'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+												<sap.ui.layout:content>
+													<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+														layout="ResponsiveGridLayout">
+														<sap.ui.layout.form:content>
+															<Text xmlns="sap.m" text="{hints>Description}"/>
+														</sap.ui.layout.form:content>
+													</sap.ui.layout.form:SimpleForm>
+												</sap.ui.layout:content>
+											</sap.ui.layout:VerticalLayout>
+										</layout:content>
+									</layout:BlockLayoutCell>
+								</layout:content>
+							</layout:BlockLayoutRow>
+						</layout:content>
+					</layout:BlockLayout>
+					<layout:BlockLayout id="bl" visible="true" class="sapUiNoContentPadding">
+						<layout:content>
+							<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+								<layout:content>
+									<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin"
+										titleLevel="Auto">
+										<layout:content>
+											<IconTabBar id="idIconTabBarNoIcons" expanded="{device>/isNoPhone}" class="sapUiNoContentPadding">
+												<items>
+													<IconTabFilter text="{i18n>OrganisaztionStructureDiagram}" key="info">
+														<u:FileUploader id="com_cmis_id" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+															change=".onUploadevalorg"/>
+														<FlexBox direction="Column" renderType="Div" class="sapUiSmallMargin">
+															<PDFViewer id="com_cmis_id2" source="{evalorg>com_cmis_id}" title="{i18n>OrganisaztionStructureDiagram}" height="1000px">
+																<layoutData>
+																	<FlexItemData growFactor="1"/>
+																</layoutData>
+															</PDFViewer>
+														</FlexBox>
+													</IconTabFilter>
+													<IconTabFilter text="{i18n>OrganisationInformation}" key="attachments">
+														<f:GridContainer id="Grid">
+															<f:layout>
+																<f:GridContainerSettings rowSize="100px" columnSize="120px" gap="6px"/>
+															</f:layout>
+															<f:layoutXS>
+																<f:GridContainerSettings rowSize="100px" columnSize="85px" gap="6px"/>
+															</f:layoutXS>
+															<!--<w:Card manifest="{manifests>/CEOCard}" class="sapUiLargeMarginBegin ">-->
+															<!--	<w:layoutData>-->
+															<!--		<f:GridContainerItemLayoutData minRows="6" columns="3"/>-->
+															<!--	</w:layoutData>-->
+															<!--</w:Card>-->
+															<Panel id="quickViewCardContainer" width="100%" height="650px">
+																<layoutData>
+																	<f:GridContainerItemLayoutData minRows="5" columns="3"/>
+																</layoutData>
+																<QuickViewCard id="quickViewCard" pages="{ path : 'evalorg>/CLUB_ORG_STRUC_EMP_CEOs'}" navigate=".onNavigate">
+																	<QuickViewPage id="Test" pageId="{pageId}" header="{header}" title="{evalorg>position_name}" titleUrl="{titleUrl}" description="Club Name">
+																		<!--<avatar>-->
+																		<!--	<Avatar src="{icon}" displayShape="{displayShape}"/>-->
+																		<!--</avatar>-->
+																		<QuickViewGroup heading="{i18n>MainInformation}" elements="Test">
+																			<QuickViewGroupElement label="{i18n>Name}" value="{evalorg>emp_name}" url="Test" type="{elementType}" pageLinkId="{pageLinkId}"
+																				emailSubject="{emailSubject}" target="{target}"/>
+																			<QuickViewGroupElement label="{i18n>Email}" value="{evalorg>emp_email}" url="Test" type="{elementType}" pageLinkId="{pageLinkId}"
+																				emailSubject="{emailSubject}" target="{target}"/>
+																			<QuickViewGroupElement label="{i18n>ContactNumber}" value="{evalorg>emp_contactnumber}" url="Test" type="{elementType}"
+																				pageLinkId="{pageLinkId}" emailSubject="{emailSubject}" target="{target}"/>
+																		</QuickViewGroup>
+																		<QuickViewGroup heading="{i18n>RelatedDocuments}" elements="Test">
+																			<QuickViewGroupElement label="لمؤهلات الأكاديمية" value=" {path: 'evalorg>emp_edu_cert_cmis_id', formatter: '.formaturlevalorg'}"
+																				url="{evalorg>emp_edu_cert_cmis_id}" type="link" pageLinkId="{pageLinkId}" emailSubject="{emailSubject}" target="{target}"/>
+																			<QuickViewGroupElement label="لشهادات الاحترافية: " value=" {path: 'evalorg>emp_prof_license_cmis_id', formatter: '.formaturlevalorg'}"
+																				url="{evalorg>emp_prof_license_cmis_id}" type="link" pageLinkId="{pageLinkId}" emailSubject="{emailSubject}" target="{target}"/>
+																			<QuickViewGroupElement label="السيرة الذاتية:" value=" {path: 'evalorg>EMP_CV_CMIS_ID', formatter: '.formaturlevalorg'}"
+																				url="{evalorg>EMP_CV_CMIS_ID}" type="link" pageLinkId="{pageLinkId}" emailSubject="{emailSubject}" target="{target}"/>
+																			<QuickViewGroupElement label="بطاقة الهويّة:" value=" {path: 'evalorg>emp_cmis_id_authcard', formatter: '.formaturlevalorg'}"
+																				url="{evalorg>emp_cmis_id_authcard}" type="link" pageLinkId="{pageLinkId}" emailSubject="{emailSubject}" target="{target}"/>
+																		</QuickViewGroup>
+																	</QuickViewPage>
+																</QuickViewCard>
+															</Panel>
+															<!--<List id="ShortProductList" headerText="Board of Directors" items="{/CLUB_ORG_STRUC_EMP_BoardofDirectors}" class="sapUiLargeMarginBegin">-->
+															<!--	<layoutData>-->
+															<!--		<f:GridContainerItemLayoutData minRows="5" columns="5"/>-->
+															<!--	</layoutData>-->
+															<!--	<items>-->
+															<!--		<StandardListItem title="{emp_name}" 	description="{position_name}"  iconDensityAware="false" iconInset="false" adaptTitleSize="false"/>-->
+															<!--	</items>-->
+															<!--</List>-->
+															<Carousel height="auto" width="100%" pages="{evalorg>/CLUB_ORG_STRUC_EMP_BoardofDirectors}" loop="true" pageIndicatorPlacement="Top">
+																<layoutData>
+																	<f:GridContainerItemLayoutData minRows="5" columns="4"/>
+																</layoutData>
+																<customLayout>
+																	<CarouselLayout visiblePagesCount="{evalorg>/CLUB_ORG_STRUC_EMP_BoardofDirectors}"/>
+																</customLayout>
+																<f:Card>
+																	<f:header>
+																		<cards:Header title="{i18n>BoardOfDirectors}" statusText="{i18n>Position}: {evalorg>position_name}"
+																			subtitle=" {i18n>FullName}: {evalorg>emp_name} " iconDisplayShape="Square"/>
+																	</f:header>
+																	<f:content>
+																		<layout:VerticalLayout width="100%">
+																			<layout:BlockLayout>
+																				<layout:BlockLayoutRow>
+																					<layout:BlockLayoutCell class="sapUiTinyMargin" title="{i18n>MainInformation}" width="1">
+																						<HBox class="sapUiTinyMarginBottom sapUiTinyMargin">
+																							<Label text="{i18n>ContactNumber}:"/>
+																						</HBox>
+																						<HBox class="sapUiSmallMarginBottom sapUiTinyMargin">
+																							<Text text="{evalorg>emp_contactnumber}"/>
+																						</HBox>
+																						<HBox class="sapUiTinyMarginBottom sapUiTinyMargin">
+																							<Label text="{i18n>Email}:"/>
+																						</HBox>
+																						<HBox class="sapUiSmallMarginBottom sapUiTinyMargin">
+																							<Text text="{evalorg>emp_email}"/>
+																						</HBox>
+																						<HBox class="sapUiTinyMarginBottom sapUiTinyMargin">
+																							<Label text="{i18n>Speciality}:"/>
+																						</HBox>
+																						<HBox class="sapUiSmallMarginBottom sapUiTinyMargin">
+																							<Text text="{evalorg>emp_job_title}"/>
+																						</HBox>
+																					</layout:BlockLayoutCell>
+																					<layout:BlockLayoutCell class="sapUiTinyMargin" title="{i18n>RelatedDocuments}" width="1">
+																						<HBox class="sapUiTinyMarginBottom sapUiTinyMargin">
+																							<Label text="لمؤهلات الأكاديمية: "/>
+																						</HBox>
+																						<HBox class="sapUiSmallMarginBottom sapUiTinyMargin">
+																							<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorg>emp_edu_cert_cmis_id', formatter: '.formaturlevalorg'}"
+																								href="{evalorg>emp_edu_cert_cmis_id}" enabled="true"/>
+																						</HBox>
+																						<HBox class="sapUiTinyMarginBottom sapUiTinyMargin">
+																							<Label text="لشهادات الاحترافية: "/>
+																						</HBox>
+																						<HBox class="sapUiSmallMarginBottom sapUiTinyMargin">
+																							<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorg>emp_prof_license_cmis_id', formatter: '.formaturlevalorg'}"
+																								href="{evalorg>emp_prof_license_cmis_id}" enabled="true"/>
+																						</HBox>
+																						<HBox class="sapUiTinyMarginBottom sapUiTinyMargin">
+																							<Label text="السيرة الذاتية:"/>
+																						</HBox>
+																						<HBox class="sapUiSmallMarginBottom sapUiTinyMargin">
+																							<!--<Text text="{Evalcommittee>EMP_CV_CMIS_ID}"/>-->
+																							<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorg>EMP_CV_CMIS_ID', formatter: '.formaturlevalorg'}"
+																								href="{evalorg>EMP_CV_CMIS_ID}" enabled="true"/>
+																						</HBox>
+																						<HBox class="sapUiTinyMarginBottom sapUiTinyMargin">
+																							<Label text="بطاقة الهويّة:"/>
+																						</HBox>
+																						<HBox class="sapUiSmallMarginBottom sapUiTinyMargin">
+																							<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorg>emp_cmis_id_authcard', formatter: '.formaturlevalorg'}"
+																								href="{evalorg>emp_cmis_id_authcard}" enabled="true"/>
+																						</HBox>
+																					</layout:BlockLayoutCell>
+																				</layout:BlockLayoutRow>
+																			</layout:BlockLayout>
+																		</layout:VerticalLayout>
+																	</f:content>
+																</f:Card>
+															</Carousel>
+														</f:GridContainer>
+													</IconTabFilter>
+													<IconTabFilter text="{i18n>Departments}" key="notes">
+														<List mode="SingleSelectMaster" id="Departmentlist"
+															items="{ path : 'evalorg>/CLUB_ORG_STRUC_COM', sorter: { path: 'evalorg>club_com_name', descending: true }, filters : [ { path : 'evalorg>club_com_name', operator : 'NE', value1 : 'مجلس إدارة'} ] }"
+															width="100%" headerText="Header" class="sapUiContentPadding" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true"
+															growingThreshold="20" growingScrollToLoad="true" visible="true" itemPress="onSeePositionevalorg">
+															<infoToolbar/>
+															<headerToolbar>
+																<Toolbar enabled="true" visible="true" width="" design="Solid">
+																	<content>
+																		<SearchField liveChange=".handleSearchdep" placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
+																	</content>
+																</Toolbar>
+															</headerToolbar>
+															<items>
+																<ObjectListItem intro="" title="{evalorg>club_dept_name}" number="{PositionCount}" numberUnit="{i18n>NumberofPositions}" numberState="None"
+																	type="Active" selected="false" showMarkers="false"></ObjectListItem>
+															</items>
+															<dependents>
+																<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.Applications.OrgStructureOverview.view.PositionDialogue" type="XML"/>
+															</dependents>
+														</List>
+													</IconTabFilter>
+													<IconTabFilter text="{i18n>Committees}" key="people">
+														<List mode="SingleSelectMaster" id="CommitteeList"
+															items="{ path : 'evalorg>/CLUB_ORG_STRUC_COM', sorter: { path: 'evalorg>club_com_name', descending: true } }" width="100%"
+															headerText="Header" footerText="" backgroundDesign="Solid" class="sapUiContentPadding" showSeparators="All" growing="true"
+															growingThreshold="20" growingScrollToLoad="true" visible="true" itemPress="onSeeEmployeeevalorg">
+															<infoToolbar/>
+															<headerToolbar>
+																<Toolbar enabled="true" visible="true" width="" design="Solid">
+																	<content>
+																		<SearchField liveChange=".handleSearchcom" placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
+																	</content>
+																</Toolbar>
+															</headerToolbar>
+															<items>
+																<ObjectListItem intro="" title="{evalorg>club_com_name}" number="{evalorg>PositionCount}" numberUnit="{i18n>NumberofPositions}"
+																	numberState="None" type="Active" selected="false" showMarkers="false">
+																	<attributes>
+																		<ObjectAttribute text="" active="false" visible="true"/>
+																	</attributes>
+																</ObjectListItem>
+															</items>
+															<dependents>
+																<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.Applications.OrgStructureOverview.view.CommitteeDialogue" type="XML"/>
+															</dependents>
+														</List>
+													</IconTabFilter>
+												</items>
+											</IconTabBar>
+										</layout:content>
+									</layout:BlockLayoutCell>
+									<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+								</layout:content>
+							</layout:BlockLayoutRow>
+						</layout:content>
+					</layout:BlockLayout>
+					<footer>
+						<OverflowToolbar>
+							<ToolbarSpacer/>
+							<Button text="{i18n>Edit}"/>
+							<Button text="{i18n>Submit}" type="Accept"/>
+							<Button text="{i18n>Exit}" type="Reject"/>
+						</OverflowToolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

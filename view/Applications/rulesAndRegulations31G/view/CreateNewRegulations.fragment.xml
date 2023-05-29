@@ -1,0 +1,86 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.rulesAndRegulations31G.controller.CreateNewRegulations">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n31G>CreateButtonText}" type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n31G>Regulations_Column1}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" id="internal_systems_development_proof_cmis_id" enabled="{appView>/enabled}" value="{regulations>internal_systems_development_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'regulations>internal_systems_development_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${regulations>internal_systems_development_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{regulations>internal_systems_development_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n31G>Regulations_Column2}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="informing_stakeholders_proof_cmis_id" required="true" enabled="{appView>/enabled}" value="{regulations>informing_stakeholders_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'regulations>informing_stakeholders_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${regulations>informing_stakeholders_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{regulations>informing_stakeholders_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n31G>Regulations_Column3}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="non_compliance_review_proof_cmis_id" required="true" enabled="{appView>/enabled}" value="{regulations>non_compliance_review_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'regulations>non_compliance_review_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${regulations>non_compliance_review_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{regulations>non_compliance_review_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n31G>Regulations_Column4}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="internal_audit_proof_cmis_id" required="true" enabled="{appView>/enabled}" value="{regulations>internal_audit_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'regulations>internal_audit_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${regulations>internal_audit_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{regulations>internal_audit_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true"/>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n31G>Regulations_Column5}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="code_of_conduct_proof_cmis_id" required="true" enabled="{appView>/enabled}" value="{regulations>code_of_conduct_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'regulations>code_of_conduct_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${regulations>code_of_conduct_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{regulations>code_of_conduct_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n31G>Regulations_Column6}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="sports_regulations_awareness_proof_cmis_id" required="true" enabled="{appView>/enabled}" value="{regulations>sports_regulations_awareness_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'regulations>sports_regulations_awareness_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${regulations>sports_regulations_awareness_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{regulations>sports_regulations_awareness_proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n31G>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onSubmit"/>
+			<Button text="{i18n31G>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

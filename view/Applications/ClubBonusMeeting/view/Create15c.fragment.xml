@@ -1,0 +1,184 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.ClubBonusMeeting.controller.Create15c">
+	<Dialog id="createdialog" horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false"
+		title="{ClubBonusMeetingi18n>CreateButtonText}" type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form id="activityForm" width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true">
+								<form:label>
+									<Label xmlns="sap.m" text="{ClubBonusMeetingi18n>MeetingColumnid}" design="Standard" width="100%" required="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input xmlns="sap.m" change="onInputChange" liveChange="_validateSaveEnablement" value="{ClubBonusmeeting>meeting_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{ClubBonusMeetingi18n>MeetingColumn1}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input change="onInputChange" liveChange="_validateSaveEnablement" id="meeting_title3" value="{ClubBonusmeeting>meeting_title}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{ClubBonusMeetingi18n>MeetingColumn2}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<DateTimePicker id="meeting_start_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange"
+										value="{path:'ClubBonusmeeting>meeting_start_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="false"
+								id="element9">
+								<form:label>
+									<Label xmlns="sap.m" text="{ClubBonusMeetingi18n>MeetingColumn0}" design="Standard" width="100%" required="true" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="label12"/>
+								</form:label>
+								<form:fields>
+									<DateTimePicker xmlns="sap.m" id="meeting_end_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true"
+										change="handleCreateChange"
+										value="{path:'ClubBonusmeeting>meeting_end_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+									<!--<DateTimePicker id="meeting_end_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange"
+						liveChange="_validateSaveEnablement"
+						value="{path:'ClubBonusmeeting>meeting_end_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{ClubBonusMeetingi18n>MeetingColumn3}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<TextArea id="meeting_description" liveChange="_validateSaveEnablement" change="onInputChange"
+									value="{ path: 'ClubBonusmeeting>meeting_description', type: 'sap.ui.model.odata.type.String' , constraints:{ minLength: 3, maxLength:999 } }"
+									growing="true" rows="4" growingMaxLines="4" width="100%" showExceededText="true" maxLength="999"/>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{ClubBonusMeetingi18n>MeetingColumn7}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="reviewuploader" required="true" enabled="{appView>/enabled}" value="{ClubBonusmeeting>regularity_proof_cmis_id}"
+										buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'ClubBonusmeeting>regularity_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${ClubBonusmeeting>regularity_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{ClubBonusmeeting>regularity_proof_cmis_id}"/>
+									<!--<Link text="{ClubBonusmeeting>regularity_proof_cmis_id}" visible="{= ${ClubBonusmeeting>v} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{ClubBonusMeetingi18n>MeetingColumn4}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="Audituploader" required="true" enabled="{appView>/enabled}"
+										value="{ClubBonusmeeting>achievements_evidence_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true"
+										sameFilenameAllowed="true" change="handleUploadPress1"/>
+									<Link text=" {path: 'ClubBonusmeeting>achievements_evidence_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${ClubBonusmeeting>achievements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{ClubBonusmeeting>achievements_evidence_proof_cmis_id}"/>
+									<!--<Link text="{ClubBonusmeeting>achievements_evidence_proof_cmis_id}" visible="{= ${ClubBonusmeeting>achievements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true"></form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{ClubBonusMeetingi18n>MeetingColumn5}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="Conductuploader" required="true" enabled="{appView>/enabled}"
+										value="{ClubBonusmeeting>quarterly_review_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true"
+										sameFilenameAllowed="true" change="handleUploadPress2"/>
+									<Link text=" {path: 'ClubBonusmeeting>quarterly_review_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${ClubBonusmeeting>quarterly_review_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{ClubBonusmeeting>quarterly_review_proof_cmis_id}"/>
+									<!--<Link text="{ClubBonusmeeting>quarterly_review_proof_cmis_id}" visible="{= ${ClubBonusmeeting>quarterly_review_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{ClubBonusMeetingi18n>MeetingColumn6}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="Awarnesuploader" required="true" enabled="{appView>/enabled}"
+										value="{ClubBonusmeeting>impressions_evidence_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true"
+										sameFilenameAllowed="true" change="handleUploadPress3"/>
+									<Link text=" {path: 'ClubBonusmeeting>impressions_evidence_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${ClubBonusmeeting>impressions_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{ClubBonusmeeting>impressions_evidence_proof_cmis_id}"/>
+									<!--<Link text="{ClubBonusmeeting>impressions_evidence_proof_cmis_id}" visible="{= ${ClubBonusmeeting>impressions_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true"
+								id="element8">
+								<form:label>
+									<Label xmlns="sap.m" text="{ClubBonusMeetingi18n>MeetingColumn8}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="label11"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader xmlns:unified="sap.ui.unified" id="Awarnesuploader_copy" required="true" enabled="{appView>/enabled}"
+										value="{ClubBonusmeeting>improvements_evidence_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true"
+										sameFilenameAllowed="true" change="handleUploadPress4"/>
+									<Link text=" {path: 'ClubBonusmeeting>improvements_evidence_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${ClubBonusmeeting>improvements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{ClubBonusmeeting>improvements_evidence_proof_cmis_id}"/>
+									<!--<Link xmlns="sap.m" text="{ClubBonusmeeting>improvements_evidence_proof_cmis_id}" visible="{= ${ClubBonusmeeting>improvements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true" id="link4"/>-->
+									<Label xmlns="sap.m" wrapping="true" id="label12_1655198584363"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true">
+								<form:label>
+									<Label xmlns="sap.m" text="{ClubBonusMeetingi18n>MeetingColumnother}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader xmlns:unified="sap.ui.unified" id="other_evidence_proof_cmis_id" required="true" enabled="{appView>/enabled}"
+										value="{ClubBonusmeeting>other_evidence_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true"
+										sameFilenameAllowed="true" change="handleUploadPress5"/>
+									<Link text=" {path: 'ClubBonusmeeting>other_evidence_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${ClubBonusmeeting>other_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{ClubBonusmeeting>other_evidence_proof_cmis_id}"/>
+																			<Label xmlns="sap.m" wrapping="true" />
+
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{ClubBonusMeetingi18n>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onSubmit15c"/>
+			<Button text="{ClubBonusMeetingi18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onCancel15c"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

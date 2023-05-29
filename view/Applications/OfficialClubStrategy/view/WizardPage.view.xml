@@ -1,0 +1,624 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OfficialClubStrategy.controller.WizardPage">
+	<Page showHeader="true" title="{OfficialClubStrategyi18n>appTitle}" showFooter="false" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<layout:BlockLayout id="bl" background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+										content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'11A'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+												layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin"
+								titleLevel="Auto">
+								<layout:content>
+									<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true">
+										<items>
+											<!--============================================================-->
+											<!--Stategy Goal1-->
+											<IconTabFilter xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+												text="{OfficialClubStrategyi18n>ClubInformation}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true"
+												visible="true" iconDensityAware="false" id="filter5">
+												<content>
+													<layout:Grid xmlns:form="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+														xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Left"
+														width="100%" containerQuery="false" hSpacing="1" vSpacing="1" visible="true" id="grid1_copy2_panel0_copy3_0_copy">
+														<layout:content>
+															<form:Form xmlns:form="sap.ui.layout.form" width="100%" editable="true" visible="true" id="form2_panel0_copy3_0_copy">
+																<form:title/>
+																<form:formContainers>
+																	<form:FormContainer visible="true" id="container2_panel0_copy3_0_copy">
+																		<form:formElements>
+																			<form:FormElement visible="true" id="element2_panel0_copy3_0_copy">
+																				<!--<Button xmlns="sap.m" text="Edit" id="button11" type="Accept" press="editclubinfo"/>-->
+																				<form:label>
+																					<Label text="{OfficialClubStrategyi18n>ClubVision}" design="Standard" width="100%" required="false" textAlign="Begin"
+																						textDirection="Inherit" visible="true" id="label4_panel0_copy3_0_copy"/>
+																				</form:label>
+																				<form:fields>
+																					<Text text="{OfficialClub>club_vision}" width="auto" maxLines="5" textAlign="Begin" textDirection="Inherit" visible="true" id="textvision"/>
+																				</form:fields>
+																			</form:FormElement>
+																		</form:formElements>
+																		<form:title/>
+																	</form:FormContainer>
+																</form:formContainers>
+																<form:layout>
+																	<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"
+																		id="layout2_panel0_copy3_0_copy"/>
+																</form:layout>
+															</form:Form>
+															<form:Form xmlns:form="sap.ui.layout.form" width="100%" editable="true" visible="true" id="form3_panel0_copy3_0_copy">
+																<form:title/>
+																<form:formContainers>
+																	<form:FormContainer visible="true" id="container3_panel0_copy3_0_copy">
+																		<form:formElements>
+																			<form:FormElement visible="true" id="element3_panel0_copy3_0_copy">
+																				<form:label>
+																					<Label text="{OfficialClubStrategyi18n>ClubMessage}" design="Standard" width="100%" required="false" textAlign="Begin"
+																						textDirection="Inherit" visible="true" id="label5_panel0_copy3_0_copy"/>
+																				</form:label>
+																				<form:fields>
+																					<Text text="{OfficialClub>club_mission}" width="auto" maxLines="5" textAlign="Begin" textDirection="Inherit" visible="true" id="textmessage"/>
+																				</form:fields>
+																			</form:FormElement>
+																		</form:formElements>
+																		<form:title/>
+																	</form:FormContainer>
+																</form:formContainers>
+																<form:layout>
+																	<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"
+																		id="layout3_panel0_copy3_0_copy"/>
+																</form:layout>
+															</form:Form>
+														</layout:content>
+													</layout:Grid>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter text="{OfficialClubStrategyi18n>StrategicG}" count="" design="Vertical" showAll="false" textDirection="Inherit"
+												enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<Table xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+														modelContextChange="onAddFilter" items="{ path: 'OfficialClub>/ClubStrategyGoals'}" width="100%"
+														noDataText="{OfficialClubStrategyi18n>nodata}" mode="None" showSeparators="All" growing="true" growingThreshold="20"
+														growingScrollToLoad="true" id="table5">
+														<infoToolbar>
+															<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true" id="toolbar11">
+																<content>
+																	<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label3"/>
+																</content>
+															</Toolbar>
+														</infoToolbar>
+														<headerToolbar>
+															<OverflowToolbar width="auto" height="auto" design="Solid" visible="true" enabled="true" id="toolbar12">
+																<content>
+																	<ToolbarSpacer width="" id="spacer7"/>
+																	<Button text="{OfficialClubStrategyi18n>creategoal}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true"
+																		visible="true" iconDensityAware="false" press="_onaddstrgoal" id="button15"/>
+																</content>
+															</OverflowToolbar>
+														</headerToolbar>
+														<columns>
+															<Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false" id="column36">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>GoalName}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true" id="text60"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column37">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>GoalDescription}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true" id="text61"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column38">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>GoalStartDate}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true" id="text62"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column39">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>GoalEndDate}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true" id="text63"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column40">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>GoalType}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true" id="text64"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="10%" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column42">
+																<footer/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem press="onViewGoalRow" type="Active" id="item5___table5_0_copy2_table5_0">
+																<cells>
+																	<Text text="{OfficialClub>goal_title}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+																		id="text67___table5_0_copy2_table5_0"/>
+																	<Text text="{OfficialClub>goal_description}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true" id="text68___table5_0_copy2_table5_0"/>
+																	<Text text="{path:'OfficialClub>start_date_time',type:'sap.ui.model.type.Date',formatOptions: { pattern: 'dd/MM/yyyy' }}" width="auto"
+																		maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text69___table5_0_copy2_table5_0"/>
+																	<Text text="{path:'OfficialClub>end_date_time',type:'sap.ui.model.type.Date',formatOptions: { pattern: 'dd/MM/yyyy' }}" width="auto"
+																		maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text70___table5_0_copy2_table5_0"/>
+																	<Text text="{path:'OfficialClub>goal_type', formatter:'.formatter.GoalText'}" width="auto" maxLines="9" wrapping="true" textAlign="Begin"
+																		textDirection="Inherit" visible="true" id="text71___table5_0_copy2_table5_0"/>
+																	<FlexBox xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+																		xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+																		xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%" id="box0_copy12_table5_0">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button0_1651121173831_copy12_table5_0" icon="sap-icon://edit" type="Transparent" press="onEditGoalRow"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button1_copy12_table5_0" icon="sap-icon://delete" type="Reject" press="onRemoveRow"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</content>
+											</IconTabFilter>
+											<!--============================================================-->
+											<!--Strategic Initiatives-->
+											<IconTabFilter text="{OfficialClubStrategyi18n>strategicinit}" count="" design="Vertical" showAll="false" textDirection="Inherit"
+												enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<Table modelContextChange="onAddFilter" items="{OfficialClub>/clubstrategyinitiatives}" inset="false" width="auto"
+														noDataText="{OfficialClubStrategyi18n>nodata}" mode="None" showSeparators="All" growing="true" growingThreshold="20"
+														growingScrollToLoad="true">
+														<infoToolbar>
+															<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+																<content>
+																	<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</content>
+															</Toolbar>
+														</infoToolbar>
+														<headerToolbar>
+															<OverflowToolbar width="auto" height="auto" design="Solid" visible="true" enabled="true">
+																<content>
+																	<ToolbarSpacer width=""/>
+																	<Button text="{OfficialClubStrategyi18n>strategiccreate}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true"
+																		visible="true" iconDensityAware="false" press="addstrategicinit"/>
+																</content>
+															</OverflowToolbar>
+														</headerToolbar>
+														<columns>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>strategicinittitle}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+																		textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>strategicinitdesc}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+																		textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>strategicinitowner}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+																		textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>strategicinitStartDate}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+																		textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>strategicinitEndDate}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+																		textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<footer/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem press="_onRowInitiativePress" type="Active">
+																<cells>
+																	<ObjectIdentifier title="{OfficialClub>initiative_title}" text="{OfficialClub>RELATED_GOAL_TITLE}" titleActive="false" visible="true"/>
+																	<Text text="{OfficialClub>initiative_description}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																	<Text text="{OfficialClub>INITIATIVE_OWNER_NAME}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																	<Text text="{ path: 'OfficialClub>initiative_start_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"
+																		width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<Text text="{ path: 'OfficialClub>initiative_end_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"
+																		width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<FlexBox xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+																		xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+																		xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%" id="box0_copy7">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button0_1651121173831_copy7" icon="sap-icon://edit" type="Transparent" press="onEditInitiativeRow"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button1_copy7" icon="sap-icon://delete" type="Reject" press="onRemoveRow"/>
+																			<!--<Button text="" icon="sap-icon://print" press="renderPDF"/>-->
+																		</items>
+																	</FlexBox>
+																	<!--<Text text="{=${kpi_type}=== 'Departmental'? ${OfficialClubStrategyi18n>Departmental} : ${OfficialClubStrategyi18n>Strategic} }" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</content>
+											</IconTabFilter>
+											<!--============================================================-->
+											<!--Strategic KPIs-->
+											<IconTabFilter text="{OfficialClubStrategyi18n>strategickpi}" count="" design="Vertical" showAll="false" textDirection="Inherit"
+												enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<Table modelContextChange="onAddFilter" items="{OfficialClub>/clubstrategykpi}" sticky="ColumnHeaders" inset="false" width="auto"
+														noDataText="{OfficialClubStrategyi18n>nodata}" mode="None" showSeparators="All" growing="true" growingThreshold="20"
+														growingScrollToLoad="true">
+														<infoToolbar>
+															<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+																<content>
+																	<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</content>
+															</Toolbar>
+														</infoToolbar>
+														<headerToolbar>
+															<OverflowToolbar width="auto" height="auto" design="Solid" visible="true" enabled="true">
+																<content>
+																	<ToolbarSpacer width=""/>
+																	<Button text="{OfficialClubStrategyi18n>createkpi}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true"
+																		visible="true" iconDensityAware="false" press="addstrategickpi"/>
+																</content>
+															</OverflowToolbar>
+														</headerToolbar>
+														<columns>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>kpititle}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>KPIDescription}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>KPIMethodOfMeasure}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+																		textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>KPIRangeOfValues}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>KPIType}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="10%" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<footer/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem press="_onRowKPIPress" type="Active">
+																<cells>
+																	<ObjectIdentifier title="{OfficialClub>kpi_title}" text="{OfficialClub>RELATED_INITIATIVE_TITLE}" titleActive="false" visible="true"/>
+																	<Text text="{OfficialClub>kpi_description}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																	<Text text="{OfficialClub>kpi_method_of_measure}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																	<Text text="{OfficialClub>kpi_frequency_of_measure}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																	<Text
+																		text="{=${OfficialClub>kpi_type} === 'Departmental'? ${OfficialClubStrategyi18n>DepartmentalKPI} : ${OfficialClubStrategyi18n>StrategicKPI} }"
+																		width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<FlexBox xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+																		xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+																		xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%" id="box0_copy8">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button0_1651121173831_copy8" icon="sap-icon://edit" type="Transparent" press="onEditKPIRow"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button1_copy8" icon="sap-icon://delete" type="Reject" press="onRemoveRow"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</content>
+											</IconTabFilter>
+											<!--============================================================-->
+											<!--Competition Analysis-->
+											<IconTabFilter text="{OfficialClubStrategyi18n>competana}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true"
+												visible="true" iconDensityAware="false">
+												<content>
+													<Table modelContextChange="onAddFilter" width="auto" inset="false" sticky="ColumnHeaders" items="{OfficialClub>/clubstrategycomp}"
+														noDataText="{OfficialClubStrategyi18n>nodata}" mode="None" showSeparators="All" growing="true" growingThreshold="20"
+														growingScrollToLoad="true">
+														<infoToolbar>
+															<Toolbar width="100%" height="auto" design="Solid" visible="false" enabled="true">
+																<content/>
+															</Toolbar>
+														</infoToolbar>
+														<headerToolbar>
+															<OverflowToolbar width="auto" height="auto" design="Solid" visible="true" enabled="true">
+																<content>
+																	<ToolbarSpacer width=""/>
+																	<Button text="{OfficialClubStrategyi18n>CompetitionAnalysisTitle}" id="addCompButton" type="Accept" icon="sap-icon://add" iconFirst="true"
+																		width="auto" enabled="true" visible="true" iconDensityAware="false" press="addcompetana"/>
+																</content>
+															</OverflowToolbar>
+														</headerToolbar>
+														<columns>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>Season}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+																width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false"
+																id="column25">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>promises}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true" id="text41"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>CompetitionCompetitorName}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+																		textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>ReasonCompetitorSelectionInput}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+																		textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>compCompetitionComparison}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+																		textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>CompetitionAnalysisUploader}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+																		textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="10%" hAlign="Begin" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<footer/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem press="_onRowCompetitionPress" type="Active">
+																<cells>
+																	<Text text="{OfficialClub>season}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+																		text="{OfficialClub>promises}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+																		id="text42"/>
+																	<Text text="{OfficialClub>competitor_name}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																	<Text text="{OfficialClub>competitor_sel_reason}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																	<Text text="{OfficialClub>competitor_comparison}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																	<Link text=" {path: 'OfficialClub>competition_cmis_id', formatter: '.urlformatter'}"
+																		visible="{= ${OfficialClub>competition_cmis_id} !== '' ? true : false }" target="_blank" href="{OfficialClub>competition_cmis_id}"/>
+																	<FlexBox xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+																		xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+																		xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%" id="box0_copy9">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button0_1651121173831_copy9" icon="sap-icon://edit" type="Transparent" press="onEditCompRow"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button1_copy9" icon="sap-icon://delete" type="Reject" press="onRemoveRow"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</content>
+											</IconTabFilter>
+											<!--============================================================-->
+											<!--SWOT Analysis-->
+											<IconTabFilter text="{OfficialClubStrategyi18n>swotana}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true"
+												visible="true" iconDensityAware="false">
+												<content>
+													<Table modelContextChange="onAddFilter" items="{OfficialClub>/clubstrategyswot}" sticky="ColumnHeaders" inset="false" width="auto"
+														noDataText="{OfficialClubStrategyi18n>nodata}" mode="None" showSeparators="All" growing="false" growingThreshold="1"
+														growingScrollToLoad="false">
+														<infoToolbar>
+															<Toolbar width="100%" height="auto" design="Solid" visible="false" enabled="true">
+																<content/>
+															</Toolbar>
+														</infoToolbar>
+														<headerToolbar>
+															<OverflowToolbar width="auto" height="auto" design="Solid" visible="true" enabled="true">
+																<content>
+																	<ToolbarSpacer width=""/>
+																	<Button text="{OfficialClubStrategyi18n>createswot}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true"
+																		visible="true" iconDensityAware="false" press="addswotana"/>
+																</content>
+															</OverflowToolbar>
+														</headerToolbar>
+														<columns>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>swotseason}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+																width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false"
+																id="column26">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>promises}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>Strength}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>weakness}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>oppo}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{OfficialClubStrategyi18n>swotattachment}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																		visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="10%" hAlign="Begin" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<footer/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem press="_onRowSwotPress" type="Active">
+																<cells>
+																	<Text text="{OfficialClub>season}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+																		text="{OfficialClub>promises}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<Text text="{OfficialClub>strength}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<Text text="{OfficialClub>weakness}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<Text text="{OfficialClub>opportunity}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<!--<Link text="{OfficialClub>swot_cmis_id}" wrapping="true" visible="{= ${OfficialClub>swot_cmis_id} !== '' ? true : false }" target="_blank"-->
+																	<!--	press="openlink"/>-->
+																	<Link text=" {path: 'OfficialClub>swot_cmis_id', formatter: '.urlformatter'}"
+																		visible="{= ${OfficialClub>swot_cmis_id} !== '' ? true : false }" target="_blank" href="{OfficialClub>swot_cmis_id}"/>
+																	<FlexBox xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+																		xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+																		xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%" id="box0_copy10">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button0_1651121173831_copy10" icon="sap-icon://edit" type="Transparent" press="onEditSwotRow"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button1_copy10" icon="sap-icon://delete" type="Reject" press="onRemoveRow"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+												xmlns="sap.m" text="{OfficialClubStrategyi18n>boardconfirm}" count="" design="Vertical" showAll="false" textDirection="Inherit"
+												enabled="true" visible="true" iconDensityAware="false" id="filter5_1675251607222">
+												<content>
+													<MessageStrip class="sapUiTinyMarginBottom" text="{OfficialClubStrategyi18n>uploadmessage}" type="Information" showIcon="true"/>
+													<layout:HorizontalLayout xmlns:unified="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+														xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" id="layout2_copy">
+														<layout:content>
+															<unified:FileUploader xmlns:unified="sap.ui.unified" required="true" value="{OfficialClub>board_proof_cmis}" enabled="{appView>/enabled}"
+																id="Excelupload" buttonOnly="true" icon="sap-icon://upload" iconOnly="false" class="sapUiTinyMarginBegin sapUiMediumMarginEnd"
+																sameFilenameAllowed="true" change="handleUploadPress2" buttonText="{OfficialClubStrategyi18n>Salaryuploadname}" style="Emphasized"/>
+															<Link class="sapUiTinyMarginTop" id="Exceluploadlink" text=" {path: 'OfficialClub>board_proof_cmis', formatter: '.urlformatter'}"
+																visible="{= ${OfficialClub>board_proof_cmis} !== '' ? true : false }" target="_blank" href="{OfficialClub>board_proof_cmis}"/>
+														</layout:content>
+													</layout:HorizontalLayout>
+													<PDFViewer id="Exceluploadlink2" source="{OfficialClub>board_proof_cmis}" height="1000px">
+														<layoutData>
+															<FlexItemData growFactor="1"/>
+														</layoutData>
+													</PDFViewer>
+												</content>
+											</IconTabFilter>
+										</items>
+										<content/>
+									</IconTabBar>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+		<footer>
+			<!--<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">-->
+			<!--	<content>-->
+			<!--		<ToolbarSpacer width=""/>-->
+			<!--		<Button text="{OfficialClubStrategyi18n>save}" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>-->
+			<!--		<Button text="{OfficialClubStrategyi18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>-->
+			<!--	</content>-->
+			<!--</OverflowToolbar>-->
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

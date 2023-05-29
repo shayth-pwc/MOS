@@ -1,0 +1,2476 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "pwc.portal.eval.ClubEvaluations",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"F.xsodata": {
+				"uri": "/portal/portal/portal_prof/ExpenseManual/ExpenseManual.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ExpenseManual.xsodata/metadata.xml"
+				}
+			},
+			"stakeholderfeedback.xsodata": {
+				"uri": "/portal/portal/portal_prof/StakeholderFeedback/stakeholderfeedback.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/stakeholderfeedback.xsodata/metadata.xml"
+				}
+			},
+			"RegulationsGuide.xsodata": {
+				"uri": "/portal/portal/portal_prof/QuarterlyRegulationsGuide/RegulationsGuide.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/RegulationsGuide.xsodata/metadata.xml"
+				}
+			},
+			"socialmediaplan.xsodata": {
+				"uri": "/portal/portal/portal_prof/SocialMediaPlan/socialmediaplan.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/socialmediaplan.xsodata/metadata.xml"
+				}
+			},
+			"EvaluationCore.xsodata": {
+				"uri": "/portal/portal/portal_eval/EvaluationCore/EvaluationCore.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"service.xsodata": {
+				"uri": "/portal/portal/portal_prof/OrganizationStructure/service.xsodata/",
+				"type": "OData"
+			},
+			"User.xsodata": {
+				"uri": "/portal/portal/portal_prof/User/User.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ExpenseManual.xsodata": {
+				"uri": "/portal/portal/portal_prof/ExpenseManual/ExpenseManual.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ExpenseManual.xsodata/metadata.xml"
+				}
+			},
+			"clubstrategy.xsodata": {
+				"uri": "/portal/portal/portal_prof/ClubStrategy/clubstrategy.xsodata/",
+				"type": "OData"
+			},
+			"hintstipsservice.xsodata": {
+				"uri": "/portal/portal/portal_conf/Hints_Tips_Helps/hintstipsservice.xsodata/",
+				"type": "OData"
+			},
+			"SocialMediaEff.xsodata": {
+				"uri": "/portal/portal/portal_prof/5_1C/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"achievementCEO.xsodata": {
+				"uri": "/portal/portal/portal_prof/AchievementsCEO/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"RecreationalGuides.xsodata": {
+				"uri": "/portal/portal/portal_prof/5_3C/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"marketingmatchstrategy.xsodata": {
+				"uri": "/portal/portal/portal_prof/MarketingMatchStrategy/marketingmatchstrategy.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/marketingmatchstrategy.xsodata/metadata.xml"
+				}
+			},
+			"screen57c.xsodata": {
+				"uri": "/portal/portal/portal_prof/5_7c/services.xsodata",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"ProcedureGuides.xsodata": {
+				"uri": "/portal/portal/portal_prof/5_5C/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"screen31B.xsodata": {
+				"uri": "/portal/portal/portal_prof/ClubPolicies_Proceds/service.xsodata/",
+				"type": "OData"
+			},
+			"achievementdep.xsodata": {
+				"uri": "/portal/portal/portal_prof/AchievementsDEP/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"service44c.xsodata": {
+				"uri": "/portal/portal/portal_prof/4_4C/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"ClubHR_Proc.xsodata": {
+				"uri": "/portal/portal/portal_prof/ClubHR/ClubHR.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ClubHR.xsodata/metadata.xml"
+				}
+			},
+			"ClubHR_Dec.xsodata": {
+				"uri": "/portal/portal/portal_prof/ClubHR/ClubHR.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ClubHR.xsodata/metadata.xml"
+				}
+			},
+			"achievementSPO.xsodata": {
+				"uri": "/portal/portal/portal_prof/AchievementsSPO/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"screen24c.xsodata": {
+				"uri": "/portal/portal/portal_prof/2_4C/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"socialresponsibility.xsodata": {
+				"uri": "/portal/portal/portal_prof/SocialResponsibilityStrategy/socialresponsibilitystrategy.xsodata",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/socialresponsibilitystrategy.xsodata/metadata.xml"
+				}
+			},
+			"ClubHR_Com.xsodata": {
+				"uri": "/portal/portal/portal_prof/ClubHR/ClubHR.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ClubHR.xsodata/metadata.xml"
+				}
+			},
+			"plansCore.xsodata": {
+				"uri": "/portal/portal/portal_prof/PlansCORE/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"plansSports.xsodata": {
+				"uri": "/portal/portal/portal_prof/PlansSPO/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"service21b.xsodata": {
+				"uri": "/portal/portal/portal_prof/2_1B/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"recreationalactivities.xsodata": {
+				"uri": "/portal/portal/portal_prof/ReacreationalActivities/recreationalactivities.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/recreationalactivities.xsodata/metadata.xml"
+				}
+			},
+			"portal_eval": {
+				"uri": "/portal/portal/portal_prof/1_2C/service.xsodata/",
+				"type": "OData"
+			},
+			"RecreationAlactivitiesStrategy": {
+				"uri": "/portal/portal/portal_prof/ReacreationalActivities/recreationalactivities.xsodata/",
+				"type": "OData"
+			},
+			"OrganizationStructureOverview.xsodata": {
+				"uri": "/portal/portal/portal_prof/OrganizationStructure/service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"AnnualReports.xsodata": {
+				"uri": "/portal/portal/portal_prof/AnnualReport/service.xsodata/",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"screen55a.xsodata": {
+				"uri": "/portal/portal/portal_prof/5_5a/services.xsodata",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/service.xsodata/metadata.xml"
+				}
+			},
+			"plansCEO": {
+				"uri": "/portal/portal/portal_prof/PlansCEO/service.xsodata/",
+				"type": "OData"
+			},
+			"EvalCommitttees.xsodata": {
+				"uri": "/portal/portal/portal_prof/OrganizationStructure/service.xsodata/",
+				"type": "OData"
+			},
+			"commercialplan.xsodata": {
+				"uri": "/portal/portal/portal_prof/1_2A/service.xsodata/",
+				"type": "OData"
+			},
+			"EstimatedBudget.xsodata": {
+				"uri": "/portal/portal/portal_prof/EstimatedBudget/EstimatedBudget.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/EstimatedBudget.xsodata/metadata.xml"
+				}
+			},
+			"ClubFinancial.xsodata": {
+				"uri": "/portal/portal/portal_prof/ClubFinancial/ClubFinancial.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ClubFinancial.xsodata/metadata.xml"
+				}
+			},
+			"AccountingProgram.xsodata": {
+				"uri": "/portal/portal/portal_prof/AccountingProgram/AccountingProgram.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/AccountingProgram.xsodata/metadata.xml"
+				}
+			},
+			"quaterlykpiboard.xsodata": {
+				"uri": "/portal/portal/portal_prof/QuarterlyKpiBoard/quaterlykpiboard.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/quaterlykpiboard.xsodata/metadata.xml"
+				}
+			},
+			"boardcharter.xsodata": {
+				"uri": "/portal/portal/portal_prof/1_1B/service.xsodata/",
+				"type": "OData"
+			},
+			"ClubBonusCommittee.xsodata": {
+				"uri": "/portal/portal/portal_prof/1_2B/service.xsodata/",
+				"type": "OData"
+			},
+			"ReportingStrategy.xsodata": {
+				"uri": "/portal/portal/portal_prof/1_1G/service.xsodata/",
+				"type": "OData"
+			},
+			"ClubBonusMeeting.xsodata": {
+				"uri": "/portal/portal/portal_prof/1_567G/service.xsodata/",
+				"type": "OData"
+			},
+			"InvestmentMeeting.xsodata": {
+				"uri": "/portal/portal/portal_prof/1_567G/service.xsodata/",
+				"type": "OData"
+			},
+			"ExecutiveMeeting.xsodata": {
+				"uri": "/portal/portal/portal_prof/1_567G/service.xsodata/",
+				"type": "OData"
+			},
+			"StakeholderMapping.xsodata": {
+				"uri": "/portal/portal/portal_prof/ClubGovernance/ClubGovernance.xsodata/",
+				"type": "OData"
+			},
+			"StakeholderActivities.xsodata": {
+				"uri": "/portal/portal/portal_prof/ClubGovernance/ClubGovernance.xsodata/",
+				"type": "OData"
+			},
+			"HRBusinessPlan.xsodata": {
+				"uri": "/portal/portal/portal_prof/ClubHR/ClubHR.xsodata/",
+				"type": "OData"
+			},
+			"PowerScales.xsodata": {
+				"uri": "/portal/portal/portal_prof/RacyMatrix/service.xsodata/",
+				"type": "OData"
+			},
+			"TestData": {
+				"uri": "localService/Cards.json",
+				"type": "JSON"
+			},
+			"HRBusinessPlanImp.xsodata": {
+				"uri": "/portal/portal/portal_prof/3_2G/service.xsodata/",
+				"type": "OData"
+			},
+			"DecisionStudy.xsodata": {
+				"uri": "/portal/portal/portal_prof/3_3G/service.xsodata/",
+				"type": "OData"
+			},
+			"MatchdayPolicy.xsodata": {
+				"uri": "/portal/portal/portal_prof/ClubMarketing/ClubMarketing.xsodata/",
+				"type": "OData"
+			},
+			"WebsiteQuality.xsodata": {
+				"uri": "/portal/portal/portal_prof/ClubMarketing/ClubMarketing.xsodata/",
+				"type": "OData"
+			},
+			"paymentcollection.xsodata": {
+				"uri": "/portal/portal/portal_prof/paymentcollection/paymentcollection.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/paymentcollection.xsodata/metadata.xml"
+				}
+			},
+			"financialstatement.xsodata": {
+				"uri": "/portal/portal/portal_prof/financialstatement/financialstatement.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/financialstatement.xsodata/metadata.xml"
+				}
+			},
+			"commercial_rev.xsodata": {
+				"uri": "/portal/portal/portal_prof/COMMERCIAL_REVENUES/Service.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "pwc.portal.eval.ClubEvaluations.view.App",
+			"type": "XML",
+			"id": "app",
+			"async": true
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": false
+		},
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.tnt": {},
+				"sap.ui.layout": {},
+				"sap.uxap": {}
+			}
+		},
+		"models": {
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "EvaluationCore.xsodata"
+			},
+			"socialMediai18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.SocialMediaEffect.i18n.i18n"
+				}
+			},
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.i18n.i18n"
+				}
+			},
+			"socialresponsibility": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "socialresponsibility.xsodata",
+				"preload": false
+			},
+			"socialmediaplan": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "socialmediaplan.xsodata",
+				"preload": false
+			},
+			"i18n41B": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.ExpensePolicyManual41B.i18n.i18n"
+				}
+			},
+			"i18n42B": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.BankPolicy42B.i18n.i18n"
+				}
+			},
+			"i18n31G": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.rulesAndRegulations31G.i18n.i18n"
+				}
+			},
+			"i18n34G": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderGathering34G.i18n.i18n"
+				}
+			},
+			"i18n42G": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.BudgetReview42G.i18n.i18n"
+				}
+			},
+			"i18n43G": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.AccountingPrograms43G.i18n.i18n"
+				}
+			},
+			"i18n13G": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.PerformanceIndicatores13G.i18n.i18n"
+				}
+			},
+			"i18n51A": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.SocialMediaPlan51A.i18n.i18n"
+				}
+			},
+			"i18n52A": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.SocialResponsibilityStrategy52A.i18n.i18n"
+				}
+			},
+			"i18n53A": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.RecreationalActivitiesStrategy53A.i18n.i18n"
+				}
+			},
+			"i18n41G": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.financialstatement41G.i18n.i18n"
+				}
+			},
+			"i18n45G": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.CommercialRevenues.i18n.i18n"
+				}
+			},
+			"i18n46G": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.paymentcollection.i18n.i18n"
+				}
+			},
+			"i18n54A": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.GameDayMarketingGuide54A.i18n.i18n"
+				}
+			},
+			"i18n52G": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.socialevidence52G.i18n.i18n"
+				}
+			},
+			"i18n54G": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.MarketingMatchStrategy54G.i18n.i18n"
+				}
+			},
+			"RecreationalEvents": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "RecreationalGuides.xsodata",
+				"preload": false
+			},
+			"ProcedureGuides": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ProcedureGuides.xsodata",
+				"preload": false
+			},
+			"MarketingMatchStrategy": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "marketingmatchstrategy.xsodata",
+				"preload": false
+			},
+			"evalorgstruct": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "None",
+					"useBatch": false
+				},
+				"dataSource": "service.xsodata",
+				"preload": false
+			},
+			"SocialMediaEff": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "SocialMediaEff.xsodata",
+				"preload": false
+			},
+			"OfficialClubStrategyi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.OfficialClubStrategy.i18n.i18n"
+				}
+			},
+			"CommercialBusinessPlani18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.CommercialBusinessPlan.i18n.i18n"
+				}
+			},
+			"BoardCharteri18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.BoardCharter.i18n.i18n"
+				}
+			},
+			"ClubBonusCommitteei18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.ClubBonusCommittee.i18n.i18n"
+				}
+			},
+			"ReportingStrategyi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.ReportingStrategy.i18n.i18n"
+				}
+			},
+			"ClubBonusMeetingi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.ClubBonusMeeting.i18n.i18n"
+				}
+			},
+			"ExecutiveMeetingi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.ExecutiveMeeting.i18n.i18n"
+				}
+			},
+			"InvestmentMeetingi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.InvestmentMeeting.i18n.i18n"
+				}
+			},
+			"StakeholderMappingi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderMapping.i18n.i18n"
+				}
+			},
+			"StakeholderActivitiesi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderActivities.i18n.i18n"
+				}
+			},
+			"HRBusinessPlani18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.HRBusinessPlan.i18n.i18n"
+				}
+			},
+			"PowerScalesi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.PowerScales.i18n.i18n"
+				}
+			},
+			"HRBuisnessPlanImpi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.HRBusinessPlanImp.i18n.i18n"
+				}
+			},
+			"DecisionStudyi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.DecisionStudy.i18n.i18n"
+				}
+			},
+			"MatchdayPolicyi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.MatchdayPolicy.i18n.i18n"
+				}
+			},
+			"WebsiteQualityi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.WebsiteQuality.i18n.i18n"
+				}
+			},
+			"standardProcedure": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "screen31B.xsodata",
+				"preload": false
+			},
+			"payment": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "service44c.xsodata",
+				"preload": false
+			},
+			"RecreationalActivitiesi18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "pwc.portal.eval.ClubEvaluations.view.Applications.RecreationalActivitiesGuide.i18n.i18n"
+				}
+			},
+			"CodeofCond": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ClubHR_Com.xsodata",
+				"preload": false
+			},
+			"PolicyStudec": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ClubHR_Dec.xsodata",
+				"preload": false
+			},
+			"mediaEvid": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "screen57c.xsodata",
+				"preload": true
+			},
+			"standardPolicies": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "screen31B.xsodata",
+				"preload": false
+			},
+			"Positons": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "PositionsTest"
+			},
+			"User": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "None",
+					"useBatch": false
+				},
+				"dataSource": "User.xsodata",
+				"preload": false
+			},
+			"pmuFacilities": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "service21b.xsodata",
+				"preload": false
+			},
+			"complianceProc": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "screen24c.xsodata",
+				"preload": false
+			},
+			"OfficialClub": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "clubstrategy.xsodata",
+				"preload": false
+			},
+			"hints": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "hintstipsservice.xsodata",
+				"preload": false
+			},
+			"RegBoardMeeting": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "portal_eval",
+				"preload": false
+			},
+			"recreationalactivities": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "RecreationAlactivitiesStrategy",
+				"preload": false
+			},
+			"evalorg": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "OrganizationStructureOverview.xsodata",
+				"preload": false
+			},
+			"Annualreport": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "AnnualReports.xsodata",
+				"preload": false
+			},
+			"plansCEO": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "None",
+					"useBatch": false
+				},
+				"dataSource": "plansCEO"
+			},
+			"plansSPO": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "plansSports.xsodata",
+				"preload": false
+			},
+			"achievCEO": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "achievementCEO.xsodata",
+				"preload": false
+			},
+			"AchievSPO": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "achievementSPO.xsodata",
+				"preload": false
+			},
+			"AchievDep": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "achievementdep.xsodata",
+				"preload": false
+			},
+			"plansCORE": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "plansCore.xsodata",
+				"preload": false
+			},
+			"Evalcommittee": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "EvalCommitttees.xsodata",
+				"preload": false
+			},
+			"CommercialPlan": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "commercialplan.xsodata",
+				"preload": false
+			},
+			"regulations": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "RegulationsGuide.xsodata",
+				"preload": false
+			},
+			"stakeholdergathering": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "stakeholderfeedback.xsodata",
+				"preload": false
+			},
+			"ExpenseManual": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "ExpenseManual.xsodata",
+				"preload": false
+			},
+			"EstimatedBudget": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "EstimatedBudget.xsodata",
+				"preload": false
+			},
+			"ClubFinancial": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ClubFinancial.xsodata",
+				"preload": false
+			},
+			"accountingsystem": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "AccountingProgram.xsodata",
+				"preload": false
+			},
+			"performanceindicator": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "quaterlykpiboard.xsodata",
+				"preload": false
+			},
+			"BoardCharter": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "boardcharter.xsodata",
+				"preload": false
+			},
+			"ClubBonusCommittee": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ClubBonusCommittee.xsodata",
+				"preload": false
+			},
+			"ReportingStrategy": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ReportingStrategy.xsodata",
+				"preload": false
+			},
+			"ClubBonusmeeting": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ClubBonusMeeting.xsodata",
+				"preload": false
+			},
+			"Investmentmeeting": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "InvestmentMeeting.xsodata",
+				"preload": false
+			},
+			"Executivemeeting": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ExecutiveMeeting.xsodata",
+				"preload": false
+			},
+			"StakeholderMapping": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "StakeholderMapping.xsodata",
+				"preload": false
+			},
+			"StakeholderActivities": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "StakeholderActivities.xsodata",
+				"preload": false
+			},
+			"HRBusinessPlan": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "HRBusinessPlan.xsodata",
+				"preload": false
+			},
+			"mediaPlan": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "screen55a.xsodata",
+				"preload": true
+			},
+			"RacyMatrix": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "PowerScales.xsodata",
+				"preload": false
+			},
+			"side": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "view/Applications/PowerScales/model/sideContent.json"
+			},
+			"alerts": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "view/Applications/PowerScales/model/alerts.json"
+			},
+			"customer": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "view/Applications/PowerScales/model/customers.json"
+			},
+			"JsonModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "TestData",
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+				}
+			},
+			"socialevidence": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "marketingmatchstrategy.xsodata",
+				"preload": false
+			},
+			"HRBusinessPlanImp": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "HRBusinessPlanImp.xsodata",
+				"preload": false
+			},
+			"DecisionStudy": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "DecisionStudy.xsodata",
+				"preload": false
+			},
+			"marketingGuide": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "marketingmatchstrategy.xsodata",
+				"preload": false
+			},
+			"MatchdayPolicy": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "MatchdayPolicy.xsodata",
+				"preload": false
+			},
+			"WebsiteQuality": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "WebsiteQuality.xsodata",
+				"preload": false
+			},
+			"paymentcollection": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "paymentcollection.xsodata",
+				"preload": false
+			},
+			"financialstatement": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "financialstatement.xsodata",
+				"preload": false
+			},
+			"CommercialRevenues": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "commercial_rev.xsodata",
+				"preload": false
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"controlId": "mainContents",
+				"viewType": "XML",
+				"controlAggregation": "pages",
+				"viewPath": "pwc.portal.eval.ClubEvaluations.view",
+				"bypassed": {
+					"target": "notFound"
+				},
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "home",
+					"target": "home"
+				},
+				{
+					"pattern": "noEvaluation",
+					"name": "noEvaluation",
+					"target": "noEvaluation"
+				},
+				{
+					"pattern": "Review",
+					"name": "Review",
+					"target": "Review"
+				},
+				{
+					"pattern": "category",
+					"name": "masterSettings",
+					"target": [
+						"detailSettings",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}",
+					"name": "Category",
+					"target": [
+						"detailSettings",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/OrgStructure",
+					"name": "OrgStructure",
+					"target": [
+						"OrgStructure",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/CEOAchievements",
+					"name": "CEOAchievements",
+					"target": [
+						"CEOAchievements",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/screen51c",
+					"name": "screen51c",
+					"target": [
+						"screen51c",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/screen35B",
+					"name": "screen35B",
+					"target": [
+						"screen35B",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/screen34B",
+					"name": "screen34B",
+					"target": [
+						"screen34B",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/screen55c",
+					"name": "screen55c",
+					"target": [
+						"screen55c",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/DEPAchievements",
+					"name": "DEPAchievements",
+					"target": [
+						"DEPAchievements",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/screen44c",
+					"name": "screen44c",
+					"target": [
+						"screen44c",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/screen24c",
+					"name": "screen24c",
+					"target": [
+						"screen24c",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/screen32B",
+					"name": "screen32B",
+					"target": [
+						"screen32B",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/screen31B",
+					"name": "screen31B",
+					"target": [
+						"screen31B",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/SPOAchievements",
+					"name": "SPOAchievements",
+					"target": [
+						"SPOAchievements",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/plansSPO",
+					"name": "plansSPO",
+					"target": [
+						"plansSPO",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/screen21b",
+					"name": "screen21b",
+					"target": [
+						"screen21b",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/screen53c",
+					"name": "screen53c",
+					"target": [
+						"screen53c",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/OfficialClubStrategy",
+					"name": "OfficialClubStrategy",
+					"target": [
+						"OfficialClubStrategy",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/BoardMeetings",
+					"name": "BoardMeetings",
+					"target": [
+						"BoardMeetings",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/screen55a",
+					"name": "screen55a",
+					"target": [
+						"screen55a",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/plansCore",
+					"name": "plansCore",
+					"target": [
+						"plansCore",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/RecreationAlactivitiesStrategy",
+					"name": "RecreationAlactivitiesStrategy",
+					"target": [
+						"RecreationAlactivitiesStrategy",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/المدير التنفيذي",
+					"name": "المدير التنفيذي",
+					"target": [
+						"المدير التنفيذي",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مدير المركز الاعلامي",
+					"name": "مدير المركز الاعلامي",
+					"target": [
+						"مدير المركز الاعلامي",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/السكرتير التنفيذي",
+					"name": "السكرتير التنفيذي",
+					"target": [
+						"السكرتير التنفيذي",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/المدير التنفيذي لكرة القدم",
+					"name": "المدير التنفيذي لكرة القدم",
+					"target": [
+						"المدير التنفيذي لكرة القدم",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مدير الألعاب المختلفة",
+					"name": "مدير الألعاب المختلفة",
+					"target": [
+						"مدير الألعاب المختلفة",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مدير الاحتراف",
+					"name": "مدير الاحتراف",
+					"target": [
+						"مدير الاحتراف",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مهندس الصيانة",
+					"name": "مهندس الصيانة",
+					"target": [
+						"مهندس الصيانة",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مسؤول الامتثال والمخاطر",
+					"name": "مسؤول الامتثال والمخاطر",
+					"target": [
+						"مسؤول الامتثال والمخاطر",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/المراجع الداخلي",
+					"name": "المراجع الداخلي",
+					"target": [
+						"المراجع الداخلي",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مدير الموارد البشرية",
+					"name": "مدير الموارد البشرية",
+					"target": [
+						"مدير الموارد البشرية",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مدير القانونية",
+					"name": "مدير القانونية",
+					"target": [
+						"مدير القانونية",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/الفريق المالي",
+					"name": "الفريق المالي",
+					"target": [
+						"الفريق المالي",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مدير الاستثمار",
+					"name": "مدير الاستثمار",
+					"target": [
+						"مدير الاستثمار",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مسؤول المسؤولية الإجتماعية",
+					"name": "مسؤول المسؤولية الإجتماعية",
+					"target": [
+						"مسؤول المسؤولية الإجتماعية",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مدير العلاقات العامة",
+					"name": "مدير العلاقات العامة",
+					"target": [
+						"مدير العلاقات العامة",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مدير التسويق",
+					"name": "مدير التسويق",
+					"target": [
+						"مدير التسويق",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مسؤول حسابات التواصل",
+					"name": "مسؤول حسابات التواصل",
+					"target": [
+						"مسؤول حسابات التواصل",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مسؤول الأمن",
+					"name": "مسؤول الأمن",
+					"target": [
+						"مسؤول الأمن",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/الهيكل التنظيمي",
+					"name": "الهيكل التنظيمي",
+					"target": [
+						"الهيكل التنظيمي",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مسؤول الفعاليات",
+					"name": "مسؤول الفعاليات",
+					"target": [
+						"مسؤول الفعاليات",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/PlansCEO",
+					"name": "PlansCEO",
+					"target": [
+						"PlansCEO",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}",
+					"name": "notFound",
+					"target": [
+						"notFound",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/لجنة المكافآت",
+					"name": "لجنة المكافآت",
+					"target": [
+						"لجنة المكافآت",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/مجلس الإدارة",
+					"name": "مجلس الإدارة",
+					"target": [
+						"مجلس الإدارة",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/اللجنة التنفيذية",
+					"name": "اللجنة التنفيذية",
+					"target": [
+						"اللجنة التنفيذية",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/لجنة الاستثمار",
+					"name": "لجنة الاستثمار",
+					"target": [
+						"لجنة الاستثمار",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/CommercialBusinessPlan",
+					"name": "CommercialBusinessPlan",
+					"target": [
+						"CommercialBusinessPlan",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/RulesAndRegulations",
+					"name": "RulesAndRegulations",
+					"target": [
+						"RulesAndRegulations",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/stakeholdergathering",
+					"name": "stakeholdergathering",
+					"target": [
+						"stakeholdergathering",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/expensepolicymanual",
+					"name": "expensepolicymanual",
+					"target": [
+						"expensepolicymanual",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/budgetreview",
+					"name": "budgetreview",
+					"target": [
+						"budgetreview",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/bankpolicy",
+					"name": "bankpolicy",
+					"target": [
+						"bankpolicy",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/accountingprogram",
+					"name": "accountingprogram",
+					"target": [
+						"accountingprogram",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/performanceindincator",
+					"name": "performanceindincator",
+					"target": [
+						"performanceindincator",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/AnnualReport",
+					"name": "AnnualReport",
+					"target": [
+						"AnnualReport",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/BoardCharter",
+					"name": "BoardCharter",
+					"target": [
+						"BoardCharter",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/ClubBonusCommittee",
+					"name": "ClubBonusCommittee",
+					"target": [
+						"ClubBonusCommittee",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/ReportingStrategy",
+					"name": "ReportingStrategy",
+					"target": [
+						"ReportingStrategy",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/ClubBonusMeeting",
+					"name": "ClubBonusMeeting",
+					"target": [
+						"ClubBonusMeeting",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/InvestmentMeeting",
+					"name": "InvestmentMeeting",
+					"target": [
+						"InvestmentMeeting",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/ExecutiveMeeting",
+					"name": "ExecutiveMeeting",
+					"target": [
+						"ExecutiveMeeting",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/StakeholderMapping",
+					"name": "StakeholderMapping",
+					"target": [
+						"StakeholderMapping",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/socialmediaplan",
+					"name": "socialmediaplan",
+					"target": [
+						"socialmediaplan",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/marketingguide",
+					"name": "marketingguide",
+					"target": [
+						"marketingguide",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/StakeholderActivities",
+					"name": "StakeholderActivities",
+					"target": [
+						"StakeholderActivities",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/HRBusinessPlan",
+					"name": "HRBusinessPlan",
+					"target": [
+						"HRBusinessPlan",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/PowerScales",
+					"name": "PowerScales",
+					"target": [
+						"PowerScales",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/screen57c",
+					"name": "screen57c",
+					"target": [
+						"screen57c",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/HRBusinessPlanImp",
+					"name": "HRBusinessPlanImp",
+					"target": [
+						"HRBusinessPlanImp",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/socialevidence",
+					"name": "socialevidence",
+					"target": [
+						"socialevidence",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/marketingmatchstrategy",
+					"name": "marketingmatchstrategy",
+					"target": [
+						"marketingmatchstrategy",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/DecisionStudy",
+					"name": "DecisionStudy",
+					"target": [
+						"DecisionStudy",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/MatchdayPolicy",
+					"name": "MatchdayPolicy",
+					"target": [
+						"MatchdayPolicy",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/socialresponsibility",
+					"name": "socialresponsibility",
+					"target": [
+						"socialresponsibility",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/WebsiteQuality",
+					"name": "WebsiteQuality",
+					"target": [
+						"WebsiteQuality",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/financialstatement",
+					"name": "financialstatement",
+					"target": [
+						"financialstatement",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/paymentcollection",
+					"name": "paymentcollection",
+					"target": [
+						"paymentcollection",
+						"masterSettings"
+					]
+				},
+				{
+					"pattern": "category/{MODULE_ID}/{CATEGORY_ID}/{form_id}/commercialrevenues",
+					"name": "commercialrevenues",
+					"target": [
+						"commercialrevenues",
+						"masterSettings"
+					]
+				}
+			],
+			"targets": {
+				"notFound": {
+					"viewId": "notFound",
+					"viewName": "NotFound",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"home": {
+					"viewId": "home",
+					"viewName": "Home"
+				},
+				"Review": {
+					"viewId": "Review",
+					"viewName": "Review"
+				},
+				"appSettings": {
+					"viewId": "appSettings",
+					"viewName": "settings.AppSettings"
+				},
+				"masterSettings": {
+					"viewId": "masterSettings",
+					"viewName": "settings.MasterSettings",
+					"controlId": "appSettings",
+					"controlAggregation": "masterPages",
+					"parent": "appSettings"
+				},
+				"detailSettings": {
+					"viewId": "detailSettings",
+					"viewName": "Home",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"OrgStructure": {
+					"viewId": "OrgStructure",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"screen55c": {
+					"viewId": "screen55c",
+					"viewName": "Applications.marketing.view.Marketing",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"OfficialClubStrategy": {
+					"viewId": "OfficialClubStrategy",
+					"viewName": "Applications.OfficialClubStrategy.view.WizardPage",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"screen51c": {
+					"viewId": "screen51c",
+					"viewName": "Applications.SocialMediaEffect.view.SocialMediaEffect",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"screen57c": {
+					"viewId": "screen57c",
+					"viewName": "Applications.MediaEvid57c.view.Page57c",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"marketingmatchstrategy": {
+					"viewId": "marketingmatchstrategy",
+					"viewName": "Applications.MarketingMatchStrategy54G.view.MainMarketingMatchStrategy",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"socialmediaplan": {
+					"viewId": "socialmediaplan",
+					"viewName": "Applications.SocialMediaPlan51A.view.MainSocialMediaPlan",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"socialevidence": {
+					"viewId": "socialevidence",
+					"viewName": "Applications.socialevidence52G.view.MainSocialEvidence",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"marketingguide": {
+					"viewId": "marketingguide",
+					"viewName": "Applications.GameDayMarketingGuide54A.view.MainmarketingGuide",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"BoardMeetings": {
+					"viewId": "BoardMeetings",
+					"viewName": "Applications.BoardMeetings.view.Page12c",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"socialresponsibility": {
+					"viewId": "socialresponsibility",
+					"viewName": "Applications.SocialResponsibilityStrategy52A.view.MainSocialResponisbility",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"screen44c": {
+					"viewId": "screen44c",
+					"viewName": "Applications.44c.view.Page44c",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"screen32B": {
+					"viewId": "screen32B",
+					"viewName": "Applications.stdProcController.view.stdProcedure",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"plansCore": {
+					"viewId": "plansCore",
+					"viewName": "Applications.PlanCORE.view.plansCOREpage",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"screen53c": {
+					"viewId": "screen53c",
+					"viewName": "Applications.RecreationalActivitiesGuide.view.events",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"CEOAchievements": {
+					"viewId": "CEOAchievements",
+					"viewName": "Applications.achievceo.view.AchievCEOPage",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"screen31B": {
+					"viewId": "screen31B",
+					"viewName": "Applications.stdPolController.view.stdPolicies",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"screen34B": {
+					"viewId": "screen34B",
+					"viewName": "Applications.CodofConController.view.CodeOfCond",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"screen35B": {
+					"viewId": "screen35B",
+					"viewName": "Applications.PolStudController.view.StudDec",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"screen24c": {
+					"viewId": "screen24c",
+					"viewName": "Applications.Compliance24c.view.Page24c",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"screen55a": {
+					"viewId": "screen55a",
+					"viewName": "Applications.MediaPlan55a.view.Page55a",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"DEPAchievements": {
+					"viewId": "DEPAchievements",
+					"viewName": "Applications.AchievDEP.view.AchievDEPPage",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"SPOAchievements": {
+					"viewId": "SPOAchievements",
+					"viewName": "Applications.AchievSPO.view.AchievSPOPage",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"plansSPO": {
+					"viewId": "plansSPO",
+					"viewName": "Applications.plansSPO.view.plansSPOpage",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"screen21b": {
+					"viewId": "screen21b",
+					"viewName": "Applications.SafetyFacility21b.view.Page21b",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"RecreationAlactivitiesStrategy": {
+					"viewId": "RecreationAlactivitiesStrategy",
+					"viewName": "Applications.RecreationalActivitiesStrategy53A.view.MainRecreationalActivities",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"المدير التنفيذي": {
+					"viewId": "OrgStructure1",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"السكرتير التنفيذي": {
+					"viewId": "OrgStructure2",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"المدير التنفيذي لكرة القدم": {
+					"viewId": "OrgStructure3",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مدير الألعاب المختلفة": {
+					"viewId": "OrgStructure4",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مدير الاحتراف": {
+					"viewId": "OrgStructure5",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مهندس الصيانة": {
+					"viewId": "OrgStructure6",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مسؤول الامتثال والمخاطر": {
+					"viewId": "OrgStructure7",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"المراجع الداخلي": {
+					"viewId": "OrgStructure8",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مدير الموارد البشرية": {
+					"viewId": "OrgStructure9",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مدير القانونية": {
+					"viewId": "OrgStructure10",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"الفريق المالي": {
+					"viewId": "OrgStructure11",
+					"viewName": "Applications.OrgStructure.view.FinanceDisplay",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مدير الاستثمار": {
+					"viewId": "OrgStructure12",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مسؤول المسؤولية الإجتماعية": {
+					"viewId": "OrgStructure13",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مدير العلاقات العامة": {
+					"viewId": "OrgStructure14",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مدير التسويق": {
+					"viewId": "OrgStructure15",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مسؤول حسابات التواصل": {
+					"viewId": "OrgStructure16",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مسؤول الأمن": {
+					"viewId": "OrgStructure17",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مسؤول الفعاليات": {
+					"viewId": "OrgStructure18",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"الهيكل التنظيمي": {
+					"viewId": "OrgStructure19",
+					"viewName": "Applications.OrgStructureOverview.view.OrganizationalStructureEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مدير المركز الاعلامي": {
+					"viewId": "OrgStructure50",
+					"viewName": "Applications.OrgStructure.view.CeoEval",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"PlansCEO": {
+					"viewId": "PlansCEO",
+					"viewName": "Applications.PlanCEO.view.plansCEOpage",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"لجنة المكافآت": {
+					"viewId": "OrgStructure20",
+					"viewName": "Applications.OrgStructCommittees.view.CommitteesList",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"مجلس الإدارة": {
+					"viewId": "OrgStructure21",
+					"viewName": "Applications.OrgStructCommittees.view.BoardofDirectorscommittee",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"اللجنة التنفيذية": {
+					"viewId": "OrgStructure22",
+					"viewName": "Applications.OrgStructCommittees.view.CommitteesList",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"لجنة الاستثمار": {
+					"viewId": "OrgStructure23",
+					"viewName": "Applications.OrgStructCommittees.view.CommitteesList",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"CommercialBusinessPlan": {
+					"viewId": "CommercialBusinessPlan",
+					"viewName": "Applications.CommercialBusinessPlan.view.Page1",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"RulesAndRegulations": {
+					"viewId": "RulesAndRegulations",
+					"viewName": "Applications.rulesAndRegulations31G.view.MainRegulations",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"stakeholdergathering": {
+					"viewId": "stakeholdergathering",
+					"viewName": "Applications.StakeholderGathering34G.view.MainStakeholderGathering",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"expensepolicymanual": {
+					"viewId": "expensepolicymanual",
+					"viewName": "Applications.ExpensePolicyManual41B.view.MainExpensePolicy",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"budgetreview": {
+					"viewId": "budgetreview",
+					"viewName": "Applications.BudgetReview42G.view.MainBudgetReview",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"bankpolicy": {
+					"viewId": "bankpolicy",
+					"viewName": "Applications.BankPolicy42B.view.MainBankPolicy",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"accountingprogram": {
+					"viewId": "accountingprogram",
+					"viewName": "Applications.AccountingPrograms43G.view.MainAccountingProgram",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"performanceindincator": {
+					"viewId": "performanceindincator",
+					"viewName": "Applications.PerformanceIndicatores13G.view.MainPerformanceIndicator",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"AnnualReport": {
+					"viewId": "AnnualReport",
+					"viewName": "Applications.AnnualReport.view.AnnualReport",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"BoardCharter": {
+					"viewId": "BoardCharter",
+					"viewName": "Applications.BoardCharter.view.Page1",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"ClubBonusCommittee": {
+					"viewId": "ClubBonusCommittee",
+					"viewName": "Applications.ClubBonusCommittee.view.Page1",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"ReportingStrategy": {
+					"viewId": "ReportingStrategy",
+					"viewName": "Applications.ReportingStrategy.view.Page1",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"ClubBonusMeeting": {
+					"viewId": "ClubBonusMeeting",
+					"viewName": "Applications.ClubBonusMeeting.view.Page15c",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"InvestmentMeeting": {
+					"viewId": "InvestmentMeeting",
+					"viewName": "Applications.InvestmentMeeting.view.Page17c",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"ExecutiveMeeting": {
+					"viewId": "ExecutiveMeeting",
+					"viewName": "Applications.ExecutiveMeeting.view.Page16c",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"StakeholderMapping": {
+					"viewId": "StakeholderMapping",
+					"viewName": "Applications.StakeholderMapping.view.Worklist",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"StakeholderActivities": {
+					"viewId": "StakeholderActivities",
+					"viewName": "Applications.StakeholderActivities.view.Worklist",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"HRBusinessPlan": {
+					"viewId": "HRBusinessPlan",
+					"viewName": "Applications.HRBusinessPlan.view.HumanResources",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"PowerScales": {
+					"viewId": "PowerScales",
+					"viewName": "Applications.PowerScales.view.Main",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"HRBusinessPlanImp": {
+					"viewId": "HRBusinessPlanImp",
+					"viewName": "Applications.HRBusinessPlanImp.view.HumanResources",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"DecisionStudy": {
+					"viewId": "DecisionStudy",
+					"viewName": "Applications.DecisionStudy.view.HumanResources",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"MatchdayPolicy": {
+					"viewId": "MatchdayPolicy",
+					"viewName": "Applications.MatchdayPolicy.view.Marketing",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"WebsiteQuality": {
+					"viewId": "WebsiteQuality",
+					"viewName": "Applications.WebsiteQuality.view.Marketing",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"paymentcollection": {
+					"viewId": "paymentcollection",
+					"viewName": "Applications.paymentcollection.view.paymentcollection",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"financialstatement": {
+					"viewId": "financialstatement",
+					"viewName": "Applications.financialstatement41G.view.MainFinancialStatement",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"commercialrevenues": {
+					"viewId": "commercialrevenues",
+					"viewName": "Applications.CommercialRevenues.view.CommercialRevenues",
+					"controlId": "appSettings",
+					"controlAggregation": "detailPages",
+					"parent": "appSettings"
+				},
+				"noEvaluation": {
+					"viewType": "XML",
+					"viewName": "noEvaluation",
+					"viewLevel": 1
+				}
+			}
+		},
+		"resources": {
+			"css": [],
+			"js": [
+				{
+					"uri": "/service/jsPDF-master/dist/jspdf.umd.min.js"
+				},
+				{
+					"uri": "/service/jsPDF-master/src/libs/html2canvas.min.js"
+				}
+			]
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

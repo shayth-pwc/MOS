@@ -1,0 +1,81 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.MatchdayPolicy.controller.AddMatchdayPolicy">
+    <Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{MatchdayPolicyi18n>AddAttachment}" type="Standard" verticalScrolling="true">
+        <content>
+            <form:Form width="100%" editable="true" visible="true">
+                <form:title/>
+                <form:formContainers>
+                    <form:FormContainer xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" visible="true" cd:w5g.dt.context="MatchdayPolicy&gt;/MATCHPOLICIES">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{MatchdayPolicyi18n>Documenttype}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    	<ComboBox editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%" selectedKey="{MatchdayPolicy>document_type}" placeholder="{MatchdayPolicy>document_type}" id="document_type" items="{path:'MatchdayPolicy>/MATCHDAYTYPE',filters:[{path:'active',operator:'EQ',value1:'true'}]}">    
+								<items>
+                                        	<core:Item text="{MatchdayPolicy>value}" enabled="true" key="{MatchdayPolicy>id}"/>
+
+                                            <!--<core:Item text="Traffic Regulation" enabled="true" key="Traffic Regulation"/>
+                                            <core:Item text="Emergency Cases" enabled="true" key="Emergency Cases"/>
+                                            <core:Item text="Collaboration with Relevant Authorities" enabled="true" key="Collaboration with Relevant Authorities"/>
+                                            <core:Item text="Stadium Entrances &amp; Exits" enabled="true" key="Stadium Entrances &amp; Exits"/>
+                                            <core:Item text="Guides Availability" enabled="true" key="Guides Availability"/>
+                                            <core:Item text="Directional Boards" enabled="true" key="Directional Boards"/>-->
+                                        </items>
+                                    </ComboBox>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{MatchdayPolicyi18n>DocumentDescription}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <TextArea rows="2" cols="20" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true" value="{MatchdayPolicy>document_description}" placeholder="{MatchdayPolicy>document_description}" id="document_description"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{MatchdayPolicyi18n>StartDate}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="false"/>
+                                </form:label>
+                                <form:fields>
+                                	<DatePicker enabled="{appView>/enabled}" id="match_date" change="handleCreateChange" width="98%" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy" value="{ path: 'MatchdayPolicy>match_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" required="true" visible="false"/>
+                                </form:fields>
+                            </form:FormElement>
+                           <!-- <form:FormElement label="{MatchdayPolicyi18n>FileAttachment}" id="element2">
+                            </form:FormElement>-->
+                             <form:FormElement visible="true">
+                             	
+                             	
+                             	
+                             	
+                                
+
+                                        <Label text="{MatchdayPolicyi18n>FileAttachment}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+
+                                		<unified:FileUploader required="true" value="{MatchdayPolicy>proof_cmis_id}" enabled="{appView>/enabled}" id="myFileUploadmatchdaypolicy" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+							<!--<Link text="{MatchdayPolicy>proof_cmis_id}" visible="{= ${MatchdayPolicy>proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>-->
+                                	<Link text=" {path: 'MatchdayPolicy>proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${MatchdayPolicy>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{MatchdayPolicy>proof_cmis_id}"/>
+
+                                	
+               
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+            
+        </content>
+        <beginButton/>
+        <buttons>
+            <Button text="{MatchdayPolicyi18n>OK}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+            <Button text="{MatchdayPolicyi18n>Cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

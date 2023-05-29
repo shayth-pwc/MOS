@@ -1,0 +1,78 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.BoardCharter.controller.AddPolicy">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{BoardCharteri18n>addpolicy}" type="Standard"
+		verticalScrolling="true">
+		<content>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title/>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{BoardCharteri18n>policyname}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0" id="policy_name" value="{BoardCharter>policy_name}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{BoardCharteri18n>policydesc}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0" id="policy_description" value="{BoardCharter>policy_description}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{BoardCharteri18n>policystartdate}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<DatePicker enabled="{appView>/enabled}" id="start_date_time" change="handleCreateChange" width="98%" valueFormat="yyyy-MM-ddTHH:mm:ss"
+										displayFormat="dd/MM/yyy"
+										value="{ path: 'BoardCharter>start_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" required="true"/>
+								</form:fields>
+							</form:FormElement>
+							<!--                     <form:FormElement visible="true">-->
+							<!--                         <form:label>-->
+							<!--                             <Label text="{BoardCharteri18n>policyenddate}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+							<!--                         </form:label>-->
+							<!--                         <form:fields>-->
+							<!--<DatePicker enabled="{appView>/enabled}" id="end_date_time" change="handleCreateChange" width="98%" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy" value="{ path: 'BoardCharter>end_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" required="true"/>-->
+							<!--                         </form:fields>-->
+							<!--                     </form:FormElement>-->
+							<form:FormElement visible="true">
+								<Label text="{BoardCharteri18n>fileattachment}:" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								<unified:FileUploader id="uploadcharterpolicy" required="true" enabled="{appView>/enabled}" value="{BoardCharter>proof_cmis_id}"
+									buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+								<!--<Link text="{BoardCharter>proof_cmis_id}" visible="{= ${BoardCharter>proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink" wrapping="true"/>-->
+								<Link text=" {path: 'BoardCharter>proof_cmis_id', formatter: '.urlformatter'}"
+									visible="{= ${BoardCharter>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{BoardCharter>proof_cmis_id}"/>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{BoardCharteri18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="{BoardCharteri18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

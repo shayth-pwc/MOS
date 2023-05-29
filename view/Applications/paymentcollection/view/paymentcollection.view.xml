@@ -1,0 +1,237 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.paymentcollection.controller.paymentcollection" displayBlock="true">
+	<Page id="page" title="{i18n46G>paymentcollection_title}" navButtonPress="onNavBack" showNavButton="true">
+		<content>
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+										content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'46C'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+												layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+			<layout:BlockLayout id="bl" background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="5" title="{i18n46G>paymentcollection_title}"
+								titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<Table items="{path:'paymentcollection>/paymentcollection', sorter:{path:'COMMERCIAL_REVENUE_TITLE',group:true}}"
+										updateFinished="onUpdateFinish" mode="Delete" delete="onDelete_paymentcollection" id="CommercialRevenueTable" growingScrollToLoad="true"
+										sticky="ColumnHeaders" alternateRowColors="true">
+										<headerToolbar>
+											<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+												<content>
+													<!--<DateRangeSelection id="DRS3" width="50%" showCurrentDateButton="true" showFooter="true" change="handleChange"/>-->
+													<!--<ToolbarSpacer width=""/>-->
+													<OverflowToolbarButton text="Add" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true"
+														iconDensityAware="false" press="onAddPress_paymentcollection"/>
+													<OverflowToolbarButton text="Print" type="Accept" icon="sap-icon://print" iconFirst="true" width="auto" enabled="true" visible="true"
+														iconDensityAware="false" press="onDataExportPDF"/>
+													<Label text="{i18n45G>UploadTitle}:" wrapping="true"/>
+													<unified:FileUploader required="true" id="bankuploader" buttonOnly="true" icon="sap-icon://upload" iconOnly="true"
+														sameFilenameAllowed="true" change="handleUploadPress"/>
+													<Link id="link" text=" {path: 'paymentcollection>valid_proof_cmis_id', formatter: '.urlformatter'}"
+														visible="{= ${paymentcollection>valid_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{paymentcollection>valid_proof_cmis_id}"/>
+													<Label wrapping="true"/>
+												</content>
+											</OverflowToolbar>
+										</headerToolbar>
+										<items>
+											<ColumnListItem type="Detail" detailPress="onViewPress_paymentcollection" press="onViewPress_paymentcollection">
+												<cells>
+													<Text id="tbl_paymentcollection_commercial_revenue_type" text="{paymentcollection>commercial_revenues_type_name}"/>
+													<Text id="tbl_paymentcollection_month_1_owed" text="{paymentcollection>month_1_total_owed}"/>
+													<Text text="{paymentcollection>month_1_total_received}"/>
+													<Text id="tbl_paymentcollection_month_2_owed" text="{paymentcollection>month_2_total_owed}"/>
+													<Text text="{paymentcollection>month_2_total_received}"/>
+													<Text id="tbl_paymentcollection_month_3_owed" text="{paymentcollection>month_3_total_owed}"/>
+													<Text text="{paymentcollection>month_3_total_received}"/>
+													<Text id="tbl_paymentcollection_month_total_owed" text="{paymentcollection>total_amount_owed}"/>
+													<Text text="{paymentcollection>total_amount_received}"/>
+													<Text xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+														id="tbl_paymentcollection_month_1_revenue_copy2" text="{paymentcollection>month_1_revenue}"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+										<columns>
+											<Column width="auto">
+												<header><Label text="{i18n46G>commercial_revenue_type}" wrapping="true"/></header>
+											</Column>
+											<Column width="auto">
+												<header><Label id="month1Lab" text="{i18n46G>Month1_outstanding}" wrapping="true"/></header>
+											</Column>
+											<Column width="auto">
+												<header><Label text="{i18n46G>Month1_received}" wrapping="true"/></header>
+											</Column>
+											<Column width="auto" id="column8">
+												<header>
+													<Label id="month2Lab" text="{i18n46G>Month2_Outstanding}" wrapping="true"/>
+												</header>
+											</Column>
+											<Column width="auto" id="column9">
+												<header>
+													<Label text="{i18n46G>Month2_received}" wrapping="true"/>
+												</header>
+											</Column>
+											<Column width="auto" id="column10">
+												<header>
+													<Label id="month3Lab" text="{i18n46G>Month3_Outstanding}" wrapping="true"/>
+												</header>
+											</Column>
+											<Column width="auto" id="column11">
+												<header>
+													<Label text="{i18n46G>Month3_received}" wrapping="true"/>
+												</header>
+											</Column>
+											<Column width="auto">
+												<header>
+													<Label text="{i18n46G>Total_Outstanding}" wrapping="true"/>
+												</header>
+											</Column>
+											<Column width="auto">
+												<header>
+													<Label text="{i18n46G>Total_Received}" wrapping="true"/>
+												</header>
+											</Column>
+										</columns>
+										<dependents>
+											<Dialog id="_paymentcollection_DetailsDialog" contentWidth="1000px" contentHeight="800px" showHeader="true">
+												<beginButton>
+													<Button text="{i18n46G>Edit}" type="Accept" press="onEditPress_paymentcollection"/>
+												</beginButton>
+												<endButton>
+													<Button text="{i18n46G>Close}" press="handleDialogCancelButton" type="Reject"/>
+												</endButton>
+												<layout:VerticalLayout class="sapUiContentPadding" width="100%">
+													<form:SimpleForm editable="true" layout="ResponsiveGridLayout" singleContainerFullSize="true">
+														<Label text="{i18n46G>commercial_revenue_type}" labelFor="display_paymentcollection_commercial_revenue_type"/>
+														<Text id="display_paymentcollection_commercial_revenue_type" text="{paymentcollection>COMMERCIAL_REVENUE_TITLE}"/>
+														<Label text="{i18n46G>month_revenue_type_name}" labelFor="paymentcollection_revenue_type_name" required="true"/>
+														<Text id="display_paymentcollection_commercial_revenue_type_name" text="{paymentcollection>commercial_revenues_type_name}"/>
+														<Label id="month1rev" text="{i18n46G>Month1_outstanding}" labelFor="display_paymentcollection_month_1_owed"/>
+														<Text id="display_paymentcollection_month_1_owed" text="{paymentcollection>month_1_total_owed}"/>
+														<Label text="{i18n46G>Month1_received}" labelFor="display_paymentcollection_month_1_received"/>
+														<Text id="display_paymentcollection_month_1_received" text="{paymentcollection>month_1_total_received}"/>
+														<Label text="{i18n46G>proof_1cmis_id}" wrapping="true"/>
+														<Link text=" {path: 'paymentcollection>received_1_cmis_id', formatter: '.urlformatter'}" target="_blank"
+															href="{paymentcollection>received_1_cmis_id}"/>
+														<Label wrapping="true"/>
+														<Label id="month2rev" text="{i18n46G>Month2_Outstanding}" labelFor="display_paymentcollection_month_2_owed"/>
+														<Text id="display_paymentcollection_month_2_owed" text="{paymentcollection>month_2_total_received}"/>
+														<Label text="{i18n46G>Month2_received}" labelFor="display_paymentcollection_month_2_received"/>
+														<Text id="display_paymentcollection_month_2_received" text="{paymentcollection>month_1_total_received}"/>
+														<Label text="{i18n46G>proof_1cmis_id}" wrapping="true"/>
+														<Link text=" {path: 'paymentcollection>received_2_cmis_id', formatter: '.urlformatter'}" target="_blank"
+															href="{paymentcollection>received_2_cmis_id}"/>
+														<Label wrapping="true"/>
+														<Label id="month3rev" text="{i18n46G>Month3_Outstanding}" labelFor="display_paymentcollection_month_3_owed"/>
+														<Text id="display_paymentcollection_month_3_owed" text="{paymentcollection>month_3_total_received}"/>
+														<Label text="{i18n46G>Month3_received}" labelFor="display_paymentcollection_month_3_received"/>
+														<Text id="display_paymentcollection_month_3_received" text="{paymentcollection>month_3_total_received}"/>
+														<Label text="{i18n46G>proof_1cmis_id}" wrapping="true"/>
+														<Link text=" {path: 'paymentcollection>received_3_cmis_id', formatter: '.urlformatter'}" target="_blank"
+															href="{paymentcollection>received_3_cmis_id}"/>
+														<Label wrapping="true"/>
+														<Label text="{i18n46G>Total_Outstanding}" labelFor="display_paymentcollection_total_monthly_owed"/>
+														<Text id="display_paymentcollection_total_monthly_owed" text="{paymentcollection>total_amount_owed}"/>
+														<Label text="{i18n46G>total_monthly_received}" labelFor="display_paymentcollection_total_monthly_received"/>
+														<Text id="display_paymentcollection_total_monthly_received" text="{paymentcollection>total_amount_received}"/>
+														<Label text="{i18n46G>proof_cmis_id}" wrapping="true"/>
+														<Link text=" {path: 'paymentcollection>proof_cmis_id', formatter: '.urlformatter'}" target="_blank" href="{paymentcollection>proof_cmis_id}"/>
+														<Label wrapping="true"/>
+													</form:SimpleForm>
+												</layout:VerticalLayout><content/></Dialog>
+											<Dialog xmlns="sap.m" id="_paymentcollection_FormDialog" contentWidth="1000px" contentHeight="800px" showHeader="true">
+												<beginButton>
+													<Button text="{i18n46G>Save}" type="Accept" press="handleDialogSaveButton"/>
+												</beginButton>
+												<endButton>
+													<Button text="{i18n46G>Cancel}" press="handleDialogCancelButton" type="Reject"/>
+												</endButton>
+												<layout:VerticalLayout class="sapUiContentPadding" width="100%">
+													<form:SimpleForm id="paymentcollectionForm" editable="true" layout="ResponsiveGridLayout" adjustLabelSpan="false" columnsL="2"
+														emptySpanL="5" width="auto" labelSpanM="4" columnsM="2" emptySpanS="5">
+														<form:content>
+															<Label text="{i18n46G>commercial_revenue_type}" labelFor="paymentcollection_commercial_revenue_type" required="true"/>
+															<Select id="form_paymentcollection_commercial_revenue_type" selectedKey="{paymentcollection>contractual_revenues_type}"
+																forceSelection="false" change="handleChangeSelect" width="100%"
+																items="{path:'paymentcollection>/commercial_revenues_types',filters:[{path:'isCommercial',operator:'EQ',value1:'0'}]}">
+																<core:Item key="{paymentcollection>id}" text="{paymentcollection>value}"/>
+															</Select>
+															<Label text="{i18n46G>month_revenue_type_name}" labelFor="paymentcollection_revenue_type_name" required="true"/>
+															<Input id="form_paymentcollection_revenue_type_name" value="{paymentcollection>commercial_revenues_type_name}"/>
+															<Label id="month1" text="{i18n46G>Month1_outstanding}" labelFor="display_paymentcollection_month_1_owed"/>
+															<Input id="form_paymentcollection_month_1_owed" value="{paymentcollection>month_1_total_owed}" type="Number"/>
+															<Label text="{i18n46G>Month1_received}" labelFor="display_paymentcollection_month_1_received"/>
+															<Input id="form_paymentcollection_month_1_received" value="{paymentcollection>month_1_total_received}" type="Number"/>
+															<Label text="{i18n46G>proof_1cmis_id}" wrapping="true"/>
+															<unified:FileUploader required="true" buttonOnly="true" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+																change="handleContractUploadPress"/>
+															<Link text=" {path: 'paymentcollection>received_1_cmis_id', formatter: '.urlformatter'}" target="_blank"
+																href="{paymentcollection>received_1_cmis_id}"/>
+															<Label wrapping="true"/>
+															<Label id="month2" text="{i18n46G>Month2_Outstanding}" labelFor="display_paymentcollection_month_2_owed"/>
+															<Input id="form_paymentcollection_month_2_owed" value="{paymentcollection>month_2_total_owed}" type="Number"/>
+															<Label text="{i18n46G>Month2_received}" labelFor="display_paymentcollection_month_2_received"/>
+															<Input id="form_paymentcollection_month_2_received" value="{paymentcollection>month_2_total_received}" type="Number"/>
+															<Label text="{i18n46G>proof_1cmis_id}" wrapping="true"/>
+															<unified:FileUploader required="true" buttonOnly="true" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+																change="handleContractUploadPress"/>
+															<Link text=" {path: 'paymentcollection>received_2_cmis_id', formatter: '.urlformatter'}" target="_blank"
+																href="{paymentcollection>received_2_cmis_id}"/>
+															<Label wrapping="true"/>
+															<Label id="month3" text="{i18n46G>Month3_Outstanding}" labelFor="display_paymentcollection_month_3_owed"/>
+															<Input id="form_paymentcollection_month_3_owed" value="{paymentcollection>month_3_total_owed}" type="Number"/>
+															<Label text="{i18n46G>Month3_received}" labelFor="display_paymentcollection_month_3_received"/>
+															<Input id="form_paymentcollection_month_3_received" value="{paymentcollection>month_3_total_received}" type="Number"/>
+															<Label text="{i18n46G>proof_1cmis_id}" wrapping="true"/>
+															<unified:FileUploader required="true" buttonOnly="true" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+																change="handleContractUploadPress"/>
+															<Link text=" {path: 'paymentcollection>received_3_cmis_id', formatter: '.urlformatter'}" target="_blank"
+																href="{paymentcollection>received_3_cmis_id}"/>
+															<Label wrapping="true"/>
+															<Label text="{i18n46G>proof_cmis_id}" wrapping="true"/>
+															<unified:FileUploader required="true" buttonOnly="true" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+																change="handleContractUploadPress"/>
+															<Link text=" {path: 'paymentcollection>proof_cmis_id', formatter: '.urlformatter'}" target="_blank" href="{paymentcollection>proof_cmis_id}"/>
+															<Label wrapping="true"/>
+															<!--	<Label text="{i18n46G>total_monthly_owed}" labelFor="display_paymentcollection_total_monthly_owed"/>-->
+															<!--	<Input id="form_paymentcollection_total_monthly_owed" value="{paymentcollection>total_amount_owed}"/>-->
+															<!--	<Label text="{i18n46G>total_monthly_received}" labelFor="display_paymentcollection_total_monthly_received"/>-->
+															<!--	<Input id="form_paymentcollection_total_monthly_received" value="{paymentcollection>total_amount_received}"/>-->
+															<!--		<Label text="{i18n46G>total_monthly_revenue}" labelFor="paymentcollection_total_monthly_revenue" required="true"/>-->
+															<!--		<Input id="form_paymentcollection_total_monthly_revenue" value="{paymentcollection>total_monthly_revenue}"/>-->
+														</form:content>
+													</form:SimpleForm>
+												</layout:VerticalLayout>
+											</Dialog>
+										</dependents>
+									</Table>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+	</Page>
+</mvc:View>

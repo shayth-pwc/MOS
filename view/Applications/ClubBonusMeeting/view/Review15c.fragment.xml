@@ -1,0 +1,134 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.ClubBonusMeeting.controller.Review15c">
+    <Dialog id="detailsPopover" horizontalScrolling="false" showHeader="true" state="None" stretch="false" title="{ClubBonusMeetingi18n>viewButtonText}" type="Standard" contentWidth="800px" contentHeight="600px" verticalScrolling="false">
+        <content>
+            <form:Form width="auto" editable="true" visible="true">
+                <form:formContainers>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6_1662021991344">
+                                <form:label>
+                                    <Label xmlns="sap.m" text="{ClubBonusMeetingi18n>MeetingColumnid}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label6_1662021991343"/>
+                                    
+                                </form:label>
+                                <form:fields>
+                                    <Text xmlns="sap.m" text="{path: 'ClubBonusmeeting>meeting_id'}" wrapping="true" id="text3_1662021991343"/>
+                                    
+                                </form:fields>
+                                </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ClubBonusMeetingi18n>MeetingColumn1}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+									<Text text="{path: 'ClubBonusmeeting>meeting_title'}" wrapping="true"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ClubBonusMeetingi18n>MeetingColumn2}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+									<Text text="{path: 'ClubBonusmeeting>meeting_start_date', formatter: '.myFormatterDate'}" wrapping="true"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="false" id="element6_1655202407621">
+                                <form:label>
+                                    <Label xmlns="sap.m" text="{ClubBonusMeetingi18n>MeetingColumn0}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label6_1655202407620"/>
+                                    
+                                </form:label>
+                                <form:fields>
+                                    <Text xmlns="sap.m" text="{path: 'ClubBonusmeeting>meeting_end_date', formatter: '.myFormatterDate'}" wrapping="true" id="text3"/>
+                                    
+                                </form:fields>
+                                </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ClubBonusMeetingi18n>MeetingColumn3}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+									<Text text="{ClubBonusmeeting>meeting_description}" wrapping="true"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6_1657692569328">
+                                <form:label>
+                                    <Label xmlns="sap.m" text="{ClubBonusMeetingi18n>MeetingColumn7}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label6_1657692569328"/>
+                                    
+                                </form:label>
+                                <form:fields>
+                                    <Link text=" {path: 'ClubBonusmeeting>regularity_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${ClubBonusmeeting>regularity_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{ClubBonusmeeting>regularity_proof_cmis_id}"/>
+                                </form:fields>
+                                </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ClubBonusMeetingi18n>MeetingColumn4}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+									  <Link text=" {path: 'ClubBonusmeeting>achievements_evidence_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${ClubBonusmeeting>achievements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{ClubBonusmeeting>achievements_evidence_proof_cmis_id}"/>
+									<!--<Link text="{ClubBonusmeeting>achievements_evidence_proof_cmis_id}" visible="{= ${ClubBonusmeeting>meeting_effectiveness_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ClubBonusMeetingi18n>MeetingColumn5}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                	<Link text=" {path: 'ClubBonusmeeting>quarterly_review_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${ClubBonusmeeting>quarterly_review_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{ClubBonusmeeting>quarterly_review_proof_cmis_id}"/>
+									<!--<Link text="{ClubBonusmeeting>quarterly_review_proof_cmis_id}" visible="{= ${ClubBonusmeeting>meeting_improvements_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ClubBonusMeetingi18n>MeetingColumn6}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                	<Link text=" {path: 'ClubBonusmeeting>impressions_evidence_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${ClubBonusmeeting>impressions_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{ClubBonusmeeting>impressions_evidence_proof_cmis_id}"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6">
+                                <form:label>
+                                    <Label xmlns="sap.m" text="{ClubBonusMeetingi18n>MeetingColumn8}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label6"/>
+                                    
+                                </form:label>
+                                <form:fields>
+                                	<Link text=" {path: 'ClubBonusmeeting>improvements_evidence_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${ClubBonusmeeting>improvements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{ClubBonusmeeting>improvements_evidence_proof_cmis_id}"/>
+
+                                </form:fields>
+                                </form:FormElement>
+                            <form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6_copy">
+                                <form:label>
+                                    <Label xmlns="sap.m" text="{ClubBonusMeetingi18n>MeetingColumnother}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label6_copy"/>
+                                    
+                                </form:label>
+                                <form:fields>
+                                    <Link text="{path: 'ClubBonusmeeting>other_evidence_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${ClubBonusmeeting>improvements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{ClubBonusmeeting>other_evidence_proof_cmis_id}" id="link5"/>
+                                    
+                                </form:fields>
+                                </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </content>
+        <beginButton/>
+        <buttons>
+            <!--<Button text="{ClubBonusMeetingi18n>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress15c"/>-->
+            			<Button text="{ClubBonusMeetingi18n>Edit}" type="Accept" press="handleEditButton"/>
+
+            <Button text="{ClubBonusMeetingi18n>cancel}" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress115c" iconDensityAware="false" type="Ghost"/>
+            <Button text="{ClubBonusMeetingi18n>deletemeeting}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onDeleteRow15c"/>
+
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

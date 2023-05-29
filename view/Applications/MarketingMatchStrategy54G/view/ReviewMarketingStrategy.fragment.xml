@@ -1,0 +1,123 @@
+<core:FragmentDefinition xmlns:unified="sap.ui.unified" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.MarketingMatchStrategy54G.controller.ReviewMarketingStrategy">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false"
+		title="{i18n54G>createNewActivityLabel}" type="Standard" verticalScrolling="true">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label design="Bold" text="{i18n54G>activityNameLabel}" labelFor="activity_name" required="true"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{ path : 'MarketingMatchStrategy>activity_name'}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label design="Bold" text="{i18n54G>ActivityDescriptionLabel}" labelFor="activity_description" required="true"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns:unified="sap.ui.unified" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+										text="{ path : 'MarketingMatchStrategy>activity_description'}" id="text5"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label design="Bold" text="{i18n54G>strategic_goal}" labelFor="strategic_goal"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{ path : 'MarketingMatchStrategy>strategic_goal_title'}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label design="Bold" text="{i18n54G>upload}" labelFor="attachemnt_proof_cmis"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'MarketingMatchStrategy>attachemnt_proof_cmis', formatter: '.urlformatter'}"
+										visible="{= ${MarketingMatchStrategy>attachemnt_proof_cmis} !== '' ? true : false }" target="_blank"
+										href="{MarketingMatchStrategy>attachemnt_proof_cmis}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label design="Bold" text="{i18n54G>target_fans}" labelFor="target_fans"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns:unified="sap.ui.unified" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+										text="{MarketingMatchStrategy>target_fans}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label design="Bold" text="{i18n54G>kpi_id}" labelFor="kpi_id"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{ path : 'MarketingMatchStrategy>kpi_Title'}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label design="Bold" text="{i18n54G>target_percentage}" labelFor="target_percentage"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns:unified="sap.ui.unified" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+										text="{MarketingMatchStrategy>target_percentage}" id="reviewtarget_percentage"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label design="Bold" text="{i18n54G>Startdate}" labelFor="start_date_time"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m"
+										text="{path:'MarketingMatchStrategy>start_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}"
+										width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label design="Bold" text="{i18n54G>Enddate}" labelFor="end_date_time"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m"
+										text="{path:'MarketingMatchStrategy>end_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}" width="auto"
+										maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:unified="sap.ui.unified" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true"
+								id="reviewelement15">
+								<form:label>
+									<Label design="Bold" xmlns="sap.m" text="{i18n54G>link}" labelFor="end_date_time"/>
+								</form:label>
+								<form:fields>
+									<Link text="{MarketingMatchStrategy>proof_link}" target="_blank" textDirection="Inherit" href="{MarketingMatchStrategy>proof_link}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n54G>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel2"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

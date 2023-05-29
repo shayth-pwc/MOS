@@ -1,0 +1,122 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.Compliance24c.controller.Create24c">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n>AddnewprocedureButton}"
+		type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>FacilityName}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input change="onInputChange" liveChange="_validateSaveEnablement" id="facility_name"
+										value="{ path : 'complianceProc>facility_name', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength: 999999}}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>SystemReports}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="system_reports_cmis_id" required="true" enabled="{appView>/enabled}"
+										value="{complianceProc>system_reports_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+										change="handleUploadPress"/>
+									<!--<Link text="{complianceProc>system_reports_cmis_id}" visible="{= ${complianceProc>system_reports_cmis_id} !== '' ? true : false }"-->
+									<!--	target="_blank" press="Openlink" wrapping="true"/>-->
+									<Link text=" {path: 'complianceProc>system_reports_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${complianceProc>system_reports_cmis_id} !== '' ? true : false }" target="_blank" href="{complianceProc>system_reports_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>FacilityCompliance}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="facility_compl_cmis_id" required="true" enabled="{appView>/enabled}"
+										value="{complianceProc>facility_compl_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+										change="handleUploadPress"/>
+									<!--<Link text="{complianceProc>facility_compl_cmis_id}" visible="{= ${complianceProc>facility_compl_cmis_id} !== '' ? true : false }"-->
+									<!--	target="_blank" press="Openlink" wrapping="true"/>-->
+									<Link text=" {path: 'complianceProc>facility_compl_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${complianceProc>facility_compl_cmis_id} !== '' ? true : false }" target="_blank" href="{complianceProc>facility_compl_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true"></form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>MaintenanceSchedule}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="facility_maint_cmis_id" required="true" enabled="{appView>/enabled}"
+										value="{complianceProc>facility_maint_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+										change="handleUploadPress"/>
+									<!--<Link text="{complianceProc>facility_maint_cmis_id}" visible="{= ${complianceProc>facility_maint_cmis_id} !== '' ? true : false }"-->
+									<!--	target="_blank" press="Openlink" wrapping="true"/>-->
+									<Link text=" {path: 'complianceProc>facility_maint_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${complianceProc>facility_maint_cmis_id} !== '' ? true : false }" target="_blank" href="{complianceProc>facility_maint_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>SafetyGathering}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="safety_gathering_cmis_id" required="true" enabled="{appView>/enabled}"
+										value="{complianceProc>safety_gathering_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+										change="handleUploadPress"/>
+									<!--<Link text="{complianceProc>safety_gathering_cmis_id}" visible="{= ${complianceProc>safety_gathering_cmis_id} !== '' ? true : false }"-->
+									<!--	target="_blank" press="Openlink" wrapping="true"/>-->
+									<Link text=" {path: 'complianceProc>safety_gathering_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${complianceProc>safety_gathering_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{complianceProc>safety_gathering_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>Contracts}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="contracts_cmis_id" required="true" enabled="{appView>/enabled}" value="{complianceProc>contracts_cmis_id}"
+										buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<!--<Link text="{complianceProc>contracts_cmis_id}" visible="{= ${complianceProc>contracts_cmis_id} !== '' ? true : false }" target="_blank"-->
+									<!--	press="Openlink" wrapping="true"/>-->
+									<Link text=" {path: 'complianceProc>contracts_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${complianceProc>contracts_cmis_id} !== '' ? true : false }" target="_blank" href="{complianceProc>contracts_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

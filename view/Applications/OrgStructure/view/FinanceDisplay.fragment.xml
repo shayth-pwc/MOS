@@ -1,0 +1,167 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.f" xmlns:cards="sap.f.cards" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:table="sap.ui.table" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OrgStructure.controller.CeoEval" displayBlock="true">
+	<Page id="page2">
+		<content>
+			<Carousel height="auto" pages="{ path: 'evalorgstruct>/CLUB_ORG_STRUC_financedept' }">
+				<customLayout>
+					<CarouselLayout visiblePagesCount=" path:{ 'evalorgstruct>/CLUB_ORG_STRUC_financedept'}"/>
+				</customLayout>
+				<f:Card>
+					<f:header>
+						<cards:Header title="{i18n>FullName}: {evalorgstruct>emp_name}" subtitle="{i18n>Position}: {evalorgstruct>position_name}" iconDisplayShape="Square"/>
+					</f:header>
+					<f:content>
+						<l:VerticalLayout class="sapUiContentPadding" width="100%">
+							<l:BlockLayout>
+								<l:BlockLayoutRow>
+									<l:BlockLayoutCell title="{i18n>MainInformation}" width="1">
+										<HBox class="sapUiTinyMarginBottom">
+											<Label text="{i18n>ContactNumber}:"/>
+										</HBox>
+										<HBox class="sapUiSmallMarginBottom">
+											<Text text="{evalorgstruct>emp_contactnumber}"/>
+										</HBox>
+										<HBox class="sapUiTinyMarginBottom">
+											<Label text="{i18n>Email}:"/>
+										</HBox>
+										<HBox class="sapUiSmallMarginBottom">
+											<Text text="{evalorgstruct>emp_email}"/>
+										</HBox>
+										<HBox class="sapUiTinyMarginBottom">
+											<Label text="{i18n>Speciality}:"/>
+										</HBox>
+										<HBox class="sapUiSmallMarginBottom">
+											<Text text="{evalorgstruct>emp_job_title}"/>
+										</HBox>
+									</l:BlockLayoutCell>
+									<l:BlockLayoutCell title="{i18n>RelatedDocuments}" width="1">
+										<HBox class="sapUiTinyMarginBottom">
+											<Label text="لمؤهلات الأكاديمية: "/>
+										</HBox>
+										<HBox class="sapUiSmallMarginBottom">
+											<ObjectAttribute press="handleLinkObjectAttributePressevalorgstruct" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_edu_cert_cmis_id', formatter: '.formaturlcomlist'}" active="true"/>
+										</HBox>
+										<HBox class="sapUiTinyMarginBottom">
+											<Label text="لشهادات الاحترافية: "/>
+										</HBox>
+										<HBox class="sapUiSmallMarginBottom">
+											<ObjectAttribute press="handleLinkObjectAttributePressevalorgstruct" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_prof_license_cmis_id', formatter: '.formaturlcomlist'}" active="true"/>
+										</HBox>
+										<HBox class="sapUiTinyMarginBottom">
+											<Label text="السيرة الذاتية:"/>
+										</HBox>
+										<HBox class="sapUiSmallMarginBottom">
+											<!--<Text text="{evalorgstruct>EMP_CV_CMIS_ID}"/>-->
+											<ObjectAttribute press="handleLinkObjectAttributePressevalorgstruct" textDirection="Inherit" text=" {path: 'evalorgstruct>EMP_CV_CMIS_ID', formatter: '.formaturlcomlist'}" active="true"/>
+										</HBox>
+										<HBox class="sapUiTinyMarginBottom">
+											<Label text="بطاقة الهويّة:"/>
+										</HBox>
+										<HBox class="sapUiSmallMarginBottom">
+											<ObjectAttribute press="handleLinkObjectAttributePressevalorgstruct" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_cmis_id_authcard', formatter: '.formaturlcomlist'}" active="true"/>
+										</HBox>
+									</l:BlockLayoutCell>
+									<l:BlockLayoutCell title="{i18n>PositionInfo}" width="1">
+										<HBox class="sapUiTinyMarginBottom">
+											<Label text="{i18n>PositionResponsibility}:"/>
+										</HBox>
+										<HBox class="sapUiSmallMarginBottom">
+											<Text text="{evalorgstruct>position_description}"/>
+										</HBox>
+										<HBox class="sapUiTinyMarginBottom">
+											<Label text="{i18n>PositionRequirments}:"/>
+										</HBox>
+										<HBox class="sapUiSmallMarginBottom">
+											<Text text="{evalorgstruct>position_requirements}"/>
+										</HBox>
+										<HBox class="sapUiTinyMarginBottom">
+											<Label text="{i18n>PositionRequiredSkills}:"/>
+										</HBox>
+										<HBox class="sapUiSmallMarginBottom">
+											<Text text="{evalorgstruct>POSITION_REQUIREDSKILLS}"/>
+										</HBox>
+									</l:BlockLayoutCell>
+								</l:BlockLayoutRow>
+								<l:BlockLayoutRow>
+									<l:BlockLayoutCell title="{i18n>EmployeeQualifications}">
+										<Table width="auto" noDataText="No data" mode="None" items="{evalorgstruct>EmployeequalAssociation}" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin">
+											<infoToolbar>
+												<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+													<content>
+														<Label text="{i18n>Label}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													</content>
+												</Toolbar>
+											</infoToolbar>
+											<headerToolbar>
+												<OverflowToolbar width="auto" height="auto" design="Transparent" visible="false" enabled="true">
+													<content>
+														<Title text="{i18n>Items}" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="true"/>
+														<ToolbarSpacer width=""/>
+														<OverflowToolbarButton text="{i18n>Sort}" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+														<OverflowToolbarButton text="{i18n>Filter}" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+														<OverflowToolbarButton text="{i18n>Group}" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+														<OverflowToolbarButton text="{i18n>Settings}" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+													</content>
+												</OverflowToolbar>
+											</headerToolbar>
+											<columns>
+												<Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+													<header>
+														<Text text="{i18n>Qualification/Institute}" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													</header>
+													<footer/>
+												</Column>
+												<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+													<header>
+														<Text text="{i18n>YearAwarded}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													</header>
+													<footer/>
+												</Column>
+												<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+													<header>
+														<Text text="{i18n>Country}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													</header>
+													<footer/>
+												</Column>
+												<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+													<header>
+														<Text text="{i18n>Grade}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													</header>
+													<footer/>
+												</Column>
+												<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+													<header>
+														<Text text="{i18n>%ofMarks}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													</header>
+													<footer/>
+												</Column>
+												<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+													<header>
+														<Text text="{i18n>UploadQual}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													</header>
+													<footer/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem type="Active">
+													<cells>
+														<ObjectIdentifier title="{evalorgstruct>qualification}" text="@{institution}" titleActive="false" visible="true"/>
+														<Text text="{evalorgstruct>year_awarded}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+														<Text text="{evalorgstruct>country}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+														<Text text="{evalorgstruct>grade}" width="auto" maxLines="9" wrapping="true" textAlign="Center" textDirection="Inherit" visible="true"/>
+														<Text text="{evalorgstruct>mark}%" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+														<ObjectAttribute text=" {path: 'evalorgstruct>EMP_QUAL_CMIS_ID', formatter: '.formaturlevalorg'}" active="true" press="handleLinkObjectAttributePressevalorgstruct"/>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</l:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+								</l:BlockLayoutRow>
+							</l:BlockLayout>
+						</l:VerticalLayout>
+					</f:content>
+				</f:Card>
+			</Carousel>
+		</content>
+	</Page>
+</core:FragmentDefinition>

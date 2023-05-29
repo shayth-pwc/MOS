@@ -1,0 +1,139 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.AnnualReport.controller.AnnualReport" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns:f="sap.f" xmlns:cards="sap.f.cards" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:forms="sap.ui.layout.form"
+	xmlns:u="sap.ui.unified" xmlns:table="sap.ui.table">
+	<App id="app">
+		<Page id="page" title="{i18n>Annualreport}" showNavButton="true" navButtonPress="onNavBack">
+			<content>
+				<l:VerticalLayout id="containerLayout" width="100%">
+					<l:BlockLayout id="BlockLayout" background="Dashboard">
+						<l:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+							<l:content>
+								<l:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+									<l:content>
+										<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+											content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'14C'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+											<sap.ui.layout:content>
+												<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+													layout="ResponsiveGridLayout">
+													<sap.ui.layout.form:content>
+														<Text xmlns="sap.m" text="{hints>Description}"/>
+													</sap.ui.layout.form:content>
+												</sap.ui.layout.form:SimpleForm>
+											</sap.ui.layout:content>
+										</sap.ui.layout:VerticalLayout>
+									</l:content>
+								</l:BlockLayoutCell>
+							</l:content>
+						</l:BlockLayoutRow>
+						<l:BlockLayoutRow accentCells="Accent1" scrollable="true">
+							<l:BlockLayoutCell width="150" title="{i18n>AnnualReportDetails}">
+								<Table id="idProductsTable4" inset="false">
+									<columns>
+										<Column width="10em">
+											<Text text="كلمة مجلس الإدارة "/>
+										</Column>
+										<Column width="10em">
+											<Text text="تاريخ النادي ونشأته"/>
+										</Column>
+										<Column width="10em">
+											<Text text="مجلس إدارة النادي"/>
+										</Column>
+										<Column width="10em">
+											<Text text="التحديات"/>
+										</Column>
+										<Column width="10em">
+											<Text text="الإدارات الاساسيّة"/>
+										</Column>
+										<Column width="10em">
+											<Text text="اللجان التنظيمية والتنفيذية"/>
+										</Column>
+										<Column width="10em">
+											<Text text="تحقيق مؤشرات الأداء"/>
+										</Column>
+										<Column width="10em">
+											<Text text="النشاط الرياضي"/>
+										</Column>
+										<Column width="10em">
+											<Text text="أكاديمية النادي"/>
+										</Column>
+										<Column width="10em">
+											<Text text="الأنشطة التسويقية"/>
+										</Column>
+										<Column width="10em">
+											<Text text="المسؤولية الاجتماعية"/>
+										</Column>
+										<Column width="10em">
+											<Text text="الأهداف المستقبلية"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem type="Active" vAlign="Middle">
+											<cells>
+												<ObjectStatus text="{path: 'Annualreport>Annual_report_director_group_word', formatter: '.myFormatterdata'}"
+													state="{= ${Annualreport>Annual_report_director_group_word} === '1' ? 'Success' : 'Error'}"/>
+												<ObjectStatus text="{path: 'Annualreport>Annual_report_history_and_origins', formatter: '.myFormatterdata'}"
+													state="{= ${Annualreport>Annual_report_history_and_origins} === '1' ? 'Success' : 'Error'}"/>
+												<ObjectStatus text="{path: 'Annualreport>Annual_report_board_of_director', formatter: '.myFormatterdata'}"
+													state="{= ${Annualreport>Annual_report_board_of_director} === '1' ? 'Success' : 'Error'}"/>
+												<ObjectStatus text="{path: 'Annualreport>Annual_report_challenges', formatter: '.myFormatterdata'}"
+													state="{= ${Annualreport>Annual_report_challenges} === '1' ? 'Success' : 'Error'}"/>
+												<ObjectStatus text="{path: 'Annualreport>Annual_report_main_departments', formatter: '.myFormatterdata'}"
+													state="{= ${Annualreport>Annual_report_main_departments} === '1' ? 'Success' : 'Error'}"/>
+												<ObjectStatus text="{path: 'Annualreport>Annual_report_organizing_and_executive_committees', formatter: '.myFormatterdata'}"
+													state="{= ${Annualreport>Annual_report_organizing_and_executive_committees} === '1' ? 'Success' : 'Error'}"/>
+												<ObjectStatus text="{path: 'Annualreport>Annual_report_achieving_performance_indicator', formatter: '.myFormatterdata'}"
+													state="{= ${Annualreport>Annual_report_achieving_performance_indicator} === '1' ? 'Success' : 'Error'}"/>
+												<ObjectStatus text="{path: 'Annualreport>Annual_report_sport_activities', formatter: '.myFormatterdata'}"
+													state="{= ${Annualreport>Annual_report_sport_activities} === '1' ? 'Success' : 'Error'}"/>
+												<ObjectStatus text="{path: 'Annualreport>Annual_report_club_academy', formatter: '.myFormatterdata'}"
+													state="{= ${Annualreport>Annual_report_club_academy} === '1' ? 'Success' : 'Error'}"/>
+												<ObjectStatus text="{path: 'Annualreport>Annual_report_marketing_activities', formatter: '.myFormatterdata'}"
+													state="{= ${Annualreport>Annual_report_marketing_activities} === '1' ? 'Success' : 'Error'}"/>
+												<ObjectStatus text="{path: 'Annualreport>Annual_report_social_responsibility', formatter: '.myFormatterdata'}"
+													state="{= ${Annualreport>Annual_report_social_responsibility} === '1' ? 'Success' : 'Error'}"/>
+												<ObjectStatus text="{path: 'Annualreport>Annual_report_future_goals', formatter: '.myFormatterdata'}"
+													state="{= ${Annualreport>Annual_report_future_goals} === '1' ? 'Success' : 'Error'}"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+									<dependents>
+										<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.Applications.AnnualReport.view.Checkboxdialogue" type="XML"/>
+									</dependents>
+								</Table>
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+						<l:BlockLayoutRow>
+							<!--<l:BlockLayoutCell width="2" title="{i18n>AnnualReportCriteria}">-->
+							<!--	<forms:SimpleForm xmlns:sap.ui.core="sap.ui.core" editable="false" layout="ResponsiveGridLayout">-->
+							<!--		<forms:content>-->
+							<!--			<Label text="{i18n>AnnualReportSteps}"/>-->
+							<!--			<Text class="sapUiTinyMarginBottom sapUiTinyMarginTop"-->
+							<!--				text="يرجى التأكد من تحميل التقرير بتنسيق PDF. سيظهر مربع اختيار حيث يمكنك تأكيد وجود الأقسام المختلفة في التقرير"-->
+							<!--				overflowMode="{overflowMode}"/>-->
+							<!--		</forms:content>-->
+							<!--	</forms:SimpleForm>-->
+							<!--</l:BlockLayoutCell>-->
+							<l:BlockLayoutCell width="6" title="{i18n>Report}">
+								<Label text="{i18n>AnnualReportSteps}"/>
+								<Text class="sapUiTinyMarginBottom sapUiTinyMarginTop"
+									text="يرجى التأكد من تحميل التقرير بتنسيق PDF. سيظهر مربع اختيار حيث يمكنك تأكيد وجود الأقسام المختلفة في التقرير"
+									overflowMode="{overflowMode}"/>
+								<u:FileUploader fileType="pdf" placeholder="تحميل التقرير بصيغة PDF" id="ANNUAL_REPORT_CMIS_ID" buttonOnly="false" icon="sap-icon://upload"
+									iconOnly="true" sameFilenameAllowed="true" change=".onUpload"/>
+								<FlexBox direction="Column" renderType="Div" class="sapUiSmallMargin">
+									<PDFViewer source="{Annualreport>ANNUAL_REPORT_CMIS_ID}" height="1000px">
+										<layoutData>
+											<FlexItemData growFactor="1"/>
+										</layoutData>
+									</PDFViewer>
+								</FlexBox>
+							</l:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</l:VerticalLayout>
+			</content>
+		</Page>
+	</App>
+</core:FragmentDefinition>

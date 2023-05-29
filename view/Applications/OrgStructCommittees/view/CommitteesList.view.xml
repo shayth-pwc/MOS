@@ -1,0 +1,28 @@
+<mvc:View controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OrgStructCommittees.controller.CommitteesList"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+					<Page id="page">
+						<customHeader>
+							<Bar >
+								<!--<contentRight>-->
+								<!--	<Button id="SwitchExcec" text="{i18n>SwitchtoExcecCommittee}" icon ="sap-icon://edit" press="handleComExecswitch"/>-->
+								<!--	<Button id="SwitchInv" text="{i18n>SwitchtoInvestmentCommittee}" icon ="sap-icon://edit" press="handleComInvswitch"/>-->
+								<!--	<Button id="SwitchRen" text="{i18n>SwitchtoRenumerationCommittee}" icon ="sap-icon://edit" press="handleComRenswitch"/>-->
+								<!--	<Button id="SwitchBoard" text="{i18n>SwitchtoBoardofDirectors}" icon ="sap-icon://edit" press="handleComBoardswitch"/>-->
+								<!--</contentRight>-->
+							</Bar>
+						</customHeader>
+						<footer>
+							<OverflowToolbar>
+								<ToolbarSpacer/>
+								<Button text="{i18n>Submit}" type="Accept"/>
+								<Button text="{i18n>Exit}" type="Reject"/>
+							</OverflowToolbar>
+						</footer>
+					</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

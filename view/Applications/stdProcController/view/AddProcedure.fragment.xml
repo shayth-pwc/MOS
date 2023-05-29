@@ -1,0 +1,67 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.stdProcController.controller.AddProcedure">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{i18n>addprocedure}" type="Standard"
+		verticalScrolling="true">
+		<content>
+			<layout:Grid xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12"
+				position="Center" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" class="sapUiMediumMarginTop"
+				cd:w5g.dt.context="/HRprocedure">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<!--<Text text="{i18n>procedurename}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+							<!--<Input xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"-->
+							<!--	xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" value="{standardProcedure>procedure_name}"-->
+							<!--	id="procedure_name"/>-->
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{i18n>procedurename}" width="100%"
+								maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text3"/>
+							<Input id="procedure_name" required="true" textFormatMode="Value" enabled="{appView>/enabled}" showSuggestion="true" showValueHelp="true"
+								valueHelpRequest=".onValueHelpRequest" suggestionItems="{standardProcedure>/ProcedureNames}"
+								selectedKey="{standardProcedure>procedure_name}">
+								<suggestionItems>
+									<core:Item text="{standardProcedure>value}" key="{standardProcedure>value}"/>
+								</suggestionItems>
+							</Input>
+							<Label text="{i18n>startdate}"/>
+							<DatePicker required="true" fieldGroupIds="inputs" placeholder="dd/MMM/yy" dateValue="{standardProcedure>start_date_time1}" width="100%"
+								value="" change="handleCreateChange" id="start_date_time1"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{i18n>proceduredesc}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<!--<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" id="review_description" value="{review_description}"/>-->
+							<TextArea enabled="true" visible="true" rows="2" width="100%" required="false" valueStateText="Invalid entry" id="procedure_description"
+								value="{standardProcedure>procedure_description}"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{i18n>clubprocedurecolumntitle3}"
+								width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text4"/>
+							<unified:FileUploader xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+								xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:unified="sap.ui.unified" required="true"
+								value="{standardProcedure>proof_cmis_id1}" enabled="{appView>/enabled}" id="myFileUploadprocedure" buttonOnly="false"
+								icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+							<Link xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{standardProcedure>proof_cmis_id1}"
+								visible="{= ${standardProcedure>proof_cmis_id1} !== '' ? true : false }" target="_blank" press="openlink" id="link1"/>
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="{i18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,52 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.DecisionStudy.controller.CopyOfAddDecision">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{DecisionStudyi18n>addclubdecision}" type="Standard" verticalScrolling="true" contentWidth="800px" contentHeight="300px">
+		<content>
+			<layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Center" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" class="sapUiMediumMarginTop">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+						<items>
+							<Text class="sapUiTinyMarginBottom" text="{DecisionStudyi18n>clubdecisionscolumntitle1}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{DecisionStudy>decision_name}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Text xmlns="sap.m" class="sapUiTinyMarginBottom" text="{DecisionStudyi18n>clubdecisionscolumntitle2}" visible="true"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{DecisionStudy>decision_description}" visible="true"/>
+							<!--<Input xmlns="sap.m" value="{decision_description}" id="decision_description"/>-->
+								
+								
+							<!--<unified:FileUploader id="myresult" uploadUrl="" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete"/>
+							<Link text="{proof_cmis_id3}" visible="{= ${proof_cmis_id3} !== '' ? true : false }" target="_blank" press="openlink3"/>
+							<Button text="{DecisionStudyi18n>clubdecisionsbutton}" press="handleUploadPress3" width="auto"/>-->
+								<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{DecisionStudyi18n>clubdecisionscolumntitle6}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="{= ${DecisionStudy>proof_cmis_id3} !== '' ? true : false }" id="notneededlabel"/>
+							<!--<Link class="sapUiTinyMarginBottom" text="{DecisionStudy>proof_cmis_id3}" visible="{= ${DecisionStudy>proof_cmis_id3} !== '' ? true : false }" target="_blank" press="openlink3"/>-->
+							<Link text=" {path: 'DecisionStudy>proof_cmis_id3', formatter: '.urlformatter'}" visible="{= ${DecisionStudy>proof_cmis_id3} !== '' ? true : false }" target="_blank" href="{DecisionStudy>proof_cmis_id3}"/>
+							
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+						<items>
+							<Text class="sapUiTinyMarginBottom" text="{DecisionStudyi18n>clubdecisionscolumntitle3}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="false"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{DecisionStudy>DECISION_TYPE_NAME}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="false" id="typedecision"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{DecisionStudyi18n>clubdecisionscolumntitle4}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<!--<Link class="sapUiTinyMarginBottom" text="{DecisionStudy>proof_cmis_id1}" visible="{= ${DecisionStudy>proof_cmis_id1} !== '' ? true : false }" target="_blank" press="openlink1"/>-->
+						<Link text=" {path: 'DecisionStudy>proof_cmis_id1', formatter: '.urlformatter'}" visible="{= ${DecisionStudy>proof_cmis_id1} !== '' ? true : false }" target="_blank" href="{DecisionStudy>proof_cmis_id1}"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{DecisionStudyi18n>clubdecisionscolumntitle5}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<!--<Link class="sapUiTinyMarginBottom" text="{DecisionStudy>proof_cmis_id2}" visible="{= ${DecisionStudy>proof_cmis_id2} !== '' ? true : false }" target="_blank" press="openlink2"/>-->
+								<Link text=" {path: 'DecisionStudy>proof_cmis_id2', formatter: '.urlformatter'}" visible="{= ${DecisionStudy>proof_cmis_id2} !== '' ? true : false }" target="_blank" href="{DecisionStudy>proof_cmis_id2}"/>
+							
+							
+							
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{DecisionStudyi18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

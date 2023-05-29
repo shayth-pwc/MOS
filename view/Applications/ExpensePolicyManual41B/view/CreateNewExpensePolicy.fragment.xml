@@ -1,0 +1,138 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.ExpensePolicyManual41B.controller.CreateNewExpensePolicy">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n41B>CreateButtonText}"
+		type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n41B>PaymentTypesLabel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Select id="PaymentTypeCombo" forceSelection="false" items="{ExpenseManual>/expensetype}" selectedKey="{ExpenseManual>expense_type}"
+										visible="true" width="auto" valueState="None" maxWidth="100%">
+										<items>
+											<core:Item text="{ExpenseManual>expense_type}" enabled="true" key="{ExpenseManual>id}"/>
+										</items>
+									</Select>
+									<!--<Input id="productInput" type="Text" value="{expense_type}"  showValueHelp="true" valueHelpOnly="true"-->
+									<!--	valueHelpRequest=".onValueHelpRequest" class="sapUiSmallMarginBottom" width="auto"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n41B>AmountToBePaidApproverLabel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="DeterminerCombo" valueHelpOnly="true" required="true" textFormatMode="Value" enabled="{appView>/enabled}" showSuggestion="true"
+										showValueHelp="true" valueHelpRequest=".onValueHelpRequest" suggestionItems="{ExpenseManual>/CLUB_ORG_STRUC_EMP}"
+										selectedKey="{ExpenseManual>determiner_name}">
+										<suggestionItems>
+											<core:Item text="{ExpenseManual>emp_name}" key="{ExpenseManual>id}"/>
+										</suggestionItems>
+									</Input>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n41B>DipsenseOfPaymentsApproverLabel}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="SignerCombo" required="true" valueHelpOnly="true" placeholder="{i18n>FirstSignerDescription}" textFormatMode="Value"
+										enabled="{appView>/enabled}" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest"
+										suggestionItems="{ExpenseManual>/CLUB_ORG_STRUC_EMP}" change="onFirstSignerChange" selectedKey="{ExpenseManual>signer_name}">
+										<suggestionItems>
+											<core:Item text="{ExpenseManual>emp_name}" key="{ExpenseManual>id}"/>
+										</suggestionItems>
+									</Input>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n41B>SecondDipsenseOfPaymentsApproverLabel}" design="Standard" width="100%" required="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="SecondSignerCombo" required="true" placeholder="{i18n>SecondSignerDescription}" textFormatMode="Value"
+										enabled="{appView>/enabled}" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequestSecondSigner"
+										change="onSecondSignerChange" valueHelpOnly="true" suggestionItems="{ExpenseManual>/CLUB_ORG_STRUC_EMP}"
+										selectedKey="{ExpenseManual>second_signer}">
+										<suggestionItems>
+											<core:Item text="{ExpenseManual>emp_name}" key="{ExpenseManual>id}"/>
+										</suggestionItems>
+									</Input>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n41B>PaymentExecutionAppoverLabel}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="ExecuterCombo" valueHelpOnly="true" required="true" textFormatMode="Value" enabled="{appView>/enabled}" showSuggestion="true"
+										showValueHelp="true" valueHelpRequest=".onValueHelpRequest" suggestionItems="{ExpenseManual>/CLUB_ORG_STRUC_EMP}"
+										selectedKey="{ExpenseManual>executer_name}">
+										<suggestionItems>
+											<core:Item text="{ExpenseManual>emp_name}" key="{ExpenseManual>id}"/>
+										</suggestionItems>
+									</Input>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n41B>ExpensePolicy}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input change="onInputChange" liveChange="_validateSaveEnablement" id="facility_name"
+										value="{ path : 'ExpenseManual>expense_policy', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength: 999999}}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true"></form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n41B>AttachmentLabel}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="expense_cmis_id" required="true" enabled="{appView>/enabled}" value="{ExpenseManual>expense_cmis_id}"
+										buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<!--<Link text="{path:'ExpenseManual>expense_cmis_id', formatter: '.urlformatter'}"-->
+									<!--	visible="{= ${ExpenseManual>expense_cmis_id} !== '' ? true : false }" target="_blank" press="openlink" wrapping="true"/>-->
+									<Link text=" {path: 'ExpenseManual>expense_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${ExpenseManual>expense_cmis_id} !== '' ? true : false }" target="_blank" href="{ExpenseManual>expense_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n41B>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n41B>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,8 @@
+/* Enter your custom styles here */
+
+thead .sapMTableTH {
+	background: #1ba94d !important;	
+}
+tr  .sapMListTbl .sapMGHLI.sapMLIB:not(.sapMLIBActive):not(.sapMLIBSelected):not(:hover), .sapMListTbl .sapMGHLI.sapMLIB.sapMLIBTypeInactive{
+	background: #1ba94d !important;
+}

@@ -1,0 +1,87 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.DecisionStudy.controller.AddDecision">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{DecisionStudyi18n>addclubdecision}"
+		type="Standard" verticalScrolling="true" contentWidth="800px" contentHeight="300px">
+		<content>
+			<layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Center" width="100%" containerQuery="false" hSpacing="2"
+				vSpacing="2" visible="true" class="sapUiMediumMarginTop">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{DecisionStudyi18n>clubdecisionscolumntitle1}" width="100%" maxLines="9" wrapping="true" textAlign="Begin"
+								textDirection="Inherit" visible="true"/>
+							<ComboBox xmlns="sap.m" id="decision_name" selectedKey="{DecisionStudy>decision_name}" placeholder="{DecisionStudy>decision_name}"
+								items="{path : 'PolicyStudec>/HRDECISIONS', length : '5000'}" width="100%">
+								<items>
+									<core:Item text="{PolicyStudec>decision_name}" enabled="true" key="{PolicyStudec>decision_name}"/>
+								</items>
+							</ComboBox>
+							<!--<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" value="{DecisionStudy>decision_name}" id="decision_name"/>-->
+							<Text xmlns="sap.m" text="{DecisionStudyi18n>clubdecisionscolumntitle2}" id="text9" visible="true"/>
+							<!--<Input xmlns="sap.m" value="{decision_description}" id="decision_description"/>-->
+							<TextArea enabled="true" visible="true" rows="2" width="100%" required="false" valueStateText="Invalid entry" id="decision_description"
+								value="{DecisionStudy>decision_description}"/>
+							<!--<unified:FileUploader id="myresult" uploadUrl="" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete"/>
+							<Link text="{proof_cmis_id3}" visible="{= ${proof_cmis_id3} !== '' ? true : false }" target="_blank" press="openlink3"/>
+							<Button text="{DecisionStudyi18n>clubdecisionsbutton}" press="handleUploadPress3" width="auto"/>-->
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+								text="{DecisionStudyi18n>clubdecisionscolumntitle6}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true" id="feasibilitylabel"/>
+							<unified:FileUploader required="true" value="{DecisionStudy>proof_cmis_id3}" enabled="{appView>/enabled}" id="myresult" buttonOnly="false"
+								icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress3"/>
+							<!--<Link text="{DecisionStudy>proof_cmis_id3}" visible="{= ${DecisionStudy>proof_cmis_id3} !== '' ? true : false }" target="_blank" press="openlink3"/>-->
+							<Link text=" {path: 'DecisionStudy>proof_cmis_id3', formatter: '.urlformatter'}"
+								visible="{= ${DecisionStudy>proof_cmis_id3} !== '' ? true : false }" target="_blank" href="{DecisionStudy>proof_cmis_id3}"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{DecisionStudyi18n>clubdecisionscolumntitle3}" width="100%" maxLines="9" wrapping="true" textAlign="Begin"
+								textDirection="Inherit" visible="false"/>
+							<ComboBox xmlns="sap.m" id="decision_risk_type" selectedKey="{DecisionStudy>decision_risk_type}"
+								placeholder="{DecisionStudy>decision_risk_type}"
+								items="{path:'DecisionStudy>/Decisions',filters:[{path:'active',operator:'EQ',value1:'true'}]}" width="100%" change="onSelectDecisionType"
+								visible="false">
+								<items>
+									<core:Item text="{DecisionStudy>value}" enabled="true" key="{DecisionStudy>id}"/>
+									<!--<core:Item xmlns:core="sap.ui.core" key="item-1-key" text="Item 1 Text" id="item0"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="item-2-key" text="Item 2 Text" id="item1"/>-->
+								</items>
+							</ComboBox>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+								text="{DecisionStudyi18n>clubdecisionscolumntitle4}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true" id="text8"/>
+							<unified:FileUploader required="true" value="{DecisionStudy>proof_cmis_id1}" enabled="{appView>/enabled}" id="myriskstudy"
+								buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress1"/>
+							<!--<Link text="{DecisionStudy>proof_cmis_id1}" visible="{= ${DecisionStudy>proof_cmis_id1} !== '' ? true : false }" target="_blank" press="openlink1"/>-->
+							<Link text=" {path: 'DecisionStudy>proof_cmis_id1', formatter: '.urlformatter'}"
+								visible="{= ${DecisionStudy>proof_cmis_id1} !== '' ? true : false }" target="_blank" href="{DecisionStudy>proof_cmis_id1}"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+								text="{DecisionStudyi18n>clubdecisionscolumntitle5}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<unified:FileUploader required="true" value="{DecisionStudy>proof_cmis_id2}" enabled="{appView>/enabled}" id="myresponse" buttonOnly="false"
+								icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress2"/>
+							<!--<Link text="{DecisionStudy>proof_cmis_id2}" visible="{= ${DecisionStudy>proof_cmis_id2} !== '' ? true : false }" target="_blank" press="openlink2"/>-->
+							<Link text=" {path: 'DecisionStudy>proof_cmis_id2', formatter: '.urlformatter'}"
+								visible="{= ${DecisionStudy>proof_cmis_id2} !== '' ? true : false }" target="_blank" href="{DecisionStudy>proof_cmis_id2}"/>
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{DecisionStudyi18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="{DecisionStudyi18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

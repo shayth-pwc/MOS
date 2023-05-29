@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Dialog id="CheckBox" horizontalScrolling="true" showHeader="true" state="None" stretch="true" title="{i18n>AnnualReportCheckBox}"
+		type="Standard" verticalScrolling="true">
+		<content>
+			<l:BlockLayout id="BlockLayout2" background="Dashboard">
+				<l:BlockLayoutRow accentCells="Accent1" visible="true" class="sapUiNoContentPadding">
+					<l:BlockLayoutCell width="3">
+						<VBox>
+							<CheckBox text="كلمة مجلس الإدارة " selected="false" wrapping="true" valueState="Information" id="Annual_report_director_group_word"/>
+							<CheckBox text="تاريخ النادي ونشأته" selected="false" wrapping="true" valueState="Information" id="Annual_report_history_and_origins"/> 
+							<CheckBox text="مجلس إدارة النادي" selected="false" wrapping="true" valueState="Information" id="Annual_report_board_of_director"/>
+							<CheckBox text="التحديات" selected="false" wrapping="true" valueState="Information" id="Annual_report_challenges"/>
+							<CheckBox text="الإدارات الاساسيّة" selected="false" wrapping="true" valueState="Information" id="Annual_report_main_departments"/>
+							<CheckBox text="اللجان التنظيمية والتنفيذية" selected="false" wrapping="true" valueState="Information" id="Annual_report_organizing_and_executive_committees"/>
+						</VBox>
+					</l:BlockLayoutCell>
+					<l:BlockLayoutCell width="3">
+						<VBox>
+							<CheckBox text="تحقيق مؤشرات الأداء" selected="false" wrapping="true" valueState="Information" id="Annual_report_achieving_performance_indicator"/> 
+							<CheckBox text="النشاط الرياضي" selected="false" wrapping="true" valueState="Information" id="Annual_report_sport_activities"/>
+							<CheckBox text="أكاديمية النادي" selected="false" wrapping="true" valueState="Information" id="Annual_report_club_academy"/>
+							<CheckBox text="الأنشطة التسويقية" selected="false" wrapping="true" valueState="Information" id="Annual_report_marketing_activities"/>
+							<CheckBox text="المسؤولية الاجتماعية" selected="false" wrapping="true" valueState="Information" id="Annual_report_social_responsibility"/>
+							<CheckBox text="الأهداف المستقبلية" selected="false" wrapping="true" valueState="Information" id="Annual_report_future_goals"/>
+						</VBox>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+			</l:BlockLayout>
+		</content>
+		<beginButton>
+			<Button text="{i18n>Save}" press="onSubmit" type="Accept"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>Exit}" press="onexit" type="Reject"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

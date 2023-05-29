@@ -1,0 +1,140 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns:layout="sap.ui.layout"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderActivities.controller.Worklist">
+	<App>
+		<pages>
+			<Page showHeader="true" title="{StakeholderActivitiesi18n>worklistViewTitle}" showFooter="false" showNavButton="true"
+				navButtonPress="onNavBack">
+				<content>
+					<layout:BlockLayout background="Dashboard" visible="true">
+						<layout:content>
+							<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+								<layout:content>
+									<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+										<layout:content>
+											<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+												content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'32A'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+												<sap.ui.layout:content>
+													<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+														layout="ResponsiveGridLayout">
+														<sap.ui.layout.form:content>
+															<Text xmlns="sap.m" text="{hints>Description}"/>
+														</sap.ui.layout.form:content>
+													</sap.ui.layout.form:SimpleForm>
+												</sap.ui.layout:content>
+											</sap.ui.layout:VerticalLayout>
+										</layout:content>
+									</layout:BlockLayoutCell>
+								</layout:content>
+							</layout:BlockLayoutRow>
+							<layout:BlockLayoutRow scrollable="false">
+								<layout:content>
+									<layout:BlockLayoutCell width="5" title="{StakeholderActivitiesi18n>worklistTableTitleCount}" titleAlignment="Begin" titleLevel="Auto">
+										<layout:content>
+											<Table id="table" modelContextChange="onAddFilter" width="auto"
+												items="{ path: 'StakeholderActivities>/ACTIVITIES', sorter: { path: 'activity_name', descending: false } }"
+												noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+												updateFinished=".onUpdateFinished">
+												<items>
+													<ColumnListItem type="Active" id="item1" press="viewrow">
+														<cells>
+															<Text xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+																xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{StakeholderActivities>STAKEHOLDER_NAME}"
+																id="text6_copy"/>
+															<Text xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+																xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{StakeholderActivities>activity_name}"
+																id="text4_copy"/>
+															<Text text="{StakeholderActivities>activity_description}" id="text5"/>
+															<Text text="{StakeholderActivities>communication_type}" id="text6"/><Text xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+																xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m"
+																text="{StakeholderActivities>frequency_of_communication}" id="text6_copy4"/>
+															<Text xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+																xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{StakeholderActivities>future_developments}"
+																id="text6_copy3"/>
+															<FlexBox xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%"
+																id="box0_copy">
+																<items>
+																	<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																		id="button0_1651121173831_copy" icon="sap-icon://edit" type="Transparent" press="editactivity"/>
+																	<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																		id="button1_copy" icon="sap-icon://delete" type="Reject" press="deleteactivity"/>
+																</items>
+															</FlexBox>
+														</cells>
+													</ColumnListItem>
+												</items>
+												<columns>
+													<Column id="column0">
+														<header>
+															<Label text="{StakeholderActivitiesi18n>tableStakeholdername}" id="label0"/>
+														</header>
+													</Column>
+													<Column id="column1">
+														<header>
+															<Label text="{StakeholderActivitiesi18n>tablenameActivityname}" id="label1"/>
+														</header>
+													</Column>
+													<Column id="column2">
+														<header>
+															<Label text="{StakeholderActivitiesi18n>tablenameActivitydescription}" id="label2"/>
+														</header>
+													</Column>
+													<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+														xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="column0_copy">
+														<header>
+															<Label text="{StakeholderActivitiesi18n>tablenameCommunicationMethod}" id="label0_copy"/>
+														</header>
+													</Column>
+													<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+														xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="column0_copy3">
+														<header>
+															<Label text="{StakeholderActivitiesi18n>tablenameCommunicationFrequency}" id="label0_copy3"/>
+														</header>
+													</Column>
+													<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+														xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="column0_copy2">
+														<header>
+															<Label text="{StakeholderActivitiesi18n>tablenameFutureDevelopments}" id="label0_copy2"/>
+														</header>
+													</Column>
+													<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+														xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="column0_copy4" width="10%">
+														<header>
+															<Label id="label0_copy4"/>
+														</header>
+													</Column>
+												</columns>
+												<headerToolbar>
+													<OverflowToolbar xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+														xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="100%" id="toolbar1">
+														<content>
+															<ToolbarSpacer id="spacer1"/>
+															<Button xmlns="sap.m" text="{StakeholderActivitiesi18n>add_activity}" id="button0_copy" icon="sap-icon://add" press="addnewactivity"
+																type="Accept"/>
+														</content>
+													</OverflowToolbar>
+												</headerToolbar>
+											</Table>
+										</layout:content>
+									</layout:BlockLayoutCell>
+									<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+								</layout:content>
+							</layout:BlockLayoutRow>
+						</layout:content>
+					</layout:BlockLayout>
+				</content>
+				<footer>
+					<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+						<content>
+							<ToolbarSpacer width=""/>
+							<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+							<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+						</content>
+					</OverflowToolbar>
+				</footer>
+				<headerContent/>
+				<subHeader/>
+				<customHeader/>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

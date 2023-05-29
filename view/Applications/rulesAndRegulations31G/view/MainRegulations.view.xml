@@ -1,0 +1,135 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.rulesAndRegulations31G.controller.MainRegulations">
+	<Page showHeader="true" title="{i18n31G>AppTitle}" showFooter="false" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+				 <layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+                        <layout:content>
+                            <layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+                                <layout:content>
+                                    <sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%" content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'31C'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+
+
+                                        <sap.ui.layout:content>
+                                            <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout">
+                                                <sap.ui.layout.form:content>
+                                                    <Text xmlns="sap.m" text="{hints>Description}"/>
+                                                </sap.ui.layout.form:content>
+                                            </sap.ui.layout.form:SimpleForm>
+                                        </sap.ui.layout:content>
+                                    </sap.ui.layout:VerticalLayout>
+                                </layout:content>
+                            </layout:BlockLayoutCell>
+                        </layout:content>
+</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+			<layout:BlockLayout id="bl" background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<Table modelContextChange="onAddFilter" width="auto" items="{regulations>/quarterlyregulationsguide}" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin">
+										<infoToolbar>
+											<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+												<content>
+													<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</content>
+											</Toolbar>
+										</infoToolbar>
+										<headerToolbar>
+											<OverflowToolbar width="auto" height="auto" design="Solid" visible="true" enabled="true">
+												<content>
+													<ToolbarSpacer width=""/>
+													<Button xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{i18n31G>CreateButtonText}" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress" id="button6"/>
+												</content>
+											</OverflowToolbar>
+										</headerToolbar>
+										<columns>
+											<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{i18n31G>Regulations_Column1}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{i18n31G>Regulations_Column2}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{i18n31G>Regulations_Column3}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{i18n31G>Regulations_Column4}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{i18n31G>Regulations_Column5}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{i18n31G>Regulations_Column6}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="5%" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="5%" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem type="Active" press="_onRowPress">
+												<cells>
+													<Link text=" {path: 'regulations>internal_systems_development_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${regulations>internal_systems_development_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{regulations>internal_systems_development_proof_cmis_id}"/>
+													<Link text=" {path: 'regulations>informing_stakeholders_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${regulations>informing_stakeholders_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{regulations>informing_stakeholders_proof_cmis_id}"/>
+													<Link text=" {path: 'regulations>non_compliance_review_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${regulations>non_compliance_review_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{regulations>non_compliance_review_proof_cmis_id}"/>
+													<Link text=" {path: 'regulations>internal_audit_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${regulations>internal_audit_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{regulations>internal_audit_proof_cmis_id}"/>
+													<Link text=" {path: 'regulations>code_of_conduct_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${regulations>code_of_conduct_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{regulations>code_of_conduct_proof_cmis_id}"/>
+													<Link text=" {path: 'regulations>sports_regulations_awareness_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${regulations>sports_regulations_awareness_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{regulations>sports_regulations_awareness_proof_cmis_id}"/>
+													<Button text="" type="Default" icon="sap-icon://delete" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onDeleteRow"/>
+													<Button text="" type="Default" icon="sap-icon://edit" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onEditRow"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

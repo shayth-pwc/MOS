@@ -1,0 +1,123 @@
+{
+	"Modules": [{
+			"Key": "1",
+			"Text": "Strategy and Leadership"
+		}, {
+			"Key": "2",
+			"Text": "Management and Operation"
+		}, {
+			"Key": "3",
+			"Text": "Compliance, control and oversight"
+		}, {
+			"Key": "4",
+			"Text": "Financial Management"
+		}, {
+			"Key": "5",
+			"Text": "Marketing activities and events"
+		}
+
+	],
+	"Categories": [{
+			"Key": "1",
+			"Text": "Planning Details (Plan)"
+		}, {
+			"Key": "2",
+			"Text": "Procedure Details"
+		}, {
+			"Key": "3",
+			"Text": "Implementation Evidence (Proof of Commitment Details)"
+		}, {
+			"Key": "4",
+			"Text": "People Responsible"
+		}
+
+	],
+	"Official": [{
+		"Key": "1",
+		"Text": "commercial"
+	}, {
+		"Key": "2",
+		"Text": "international"
+	}, {
+		"Key": "3",
+		"Text": "other sports"
+	}, {
+		"Key": "4",
+		"Text": "participation"
+	}, {
+		"Key": "5",
+		"Text": "competition"
+	}],
+	"Informingimp": [{
+		"Key": "1",
+		"Text": "Strategic"
+	}, {
+		"Key": "2",
+		"Text": "Commercial"
+	}, {
+		"Key": "3",
+		"Text": "International"
+	}],
+	"Hrdep": [{
+		"Key": "1",
+		"Text": "Cv collection"
+	}, {
+		"Key": "2",
+		"Text": "interview"
+	}, {
+		"Key": "3",
+		"Text": "contract offering"
+	}, {
+		"Key": "4",
+		"Text": "Club introduction"
+	}, {
+		"Key": "5",
+		"Text": "culture"
+	}, {
+		"Key": "6",
+		"Text": "history"
+	}, {
+		"Key": "7",
+		"Text": "everyday tasks"
+	}, {
+		"Key": "8",
+		"Text": "improvement plans"
+	}, {
+		"Key": "9",
+		"Text": "work environment improvement"
+	}, {
+		"Key": "10",
+		"Text": "mental health "
+	}, {
+		"Key": "11",
+		"Text": "employee bonding"
+	}, {
+		"Key": "12",
+		"Text": "hr communication"
+	}, {
+		"Key": "13",
+		"Text": "employee training"
+	}, {
+		"Key": "14",
+		"Text": "on-the-job training"
+	}],
+	"Bonus": [{
+		"Key": "1",
+		"Text": "Player Motivation"
+	}, {
+		"Key": "2",
+		"Text": "Board Player Clarity"
+	}],
+	"KPI": [{
+		"Key": "1",
+		"Text": "Sports"
+	}, {
+		"Key": "2",
+		"Text": "Financial"
+	}, {
+		"Key": "3",
+		"Text": "Management"
+	}],
+	"EditMood":false,
+	"DisplayMood":true
+}

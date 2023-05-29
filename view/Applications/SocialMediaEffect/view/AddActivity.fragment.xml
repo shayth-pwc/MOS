@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SocialMediaEffect.controller.AddActivity">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{socialMediai18n>addclubdecision}" type="Standard" verticalScrolling="true">
+		<content>
+			<layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Center" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" class="sapUiMediumMarginTop">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+						<items>
+							<Label xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" text="{socialMediai18n>clubdecisionscolumntitle1}" width="100%"/>
+							<Input xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" value="{SocialMediaEff>activity_name}" id="platform_copy"/>
+							<Label xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" text="{socialMediai18n>activitytype}" width="100%"/>
+							<ComboBox xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" width="100%" selectedKey="{SocialMediaEff>activity_type}">
+							    <items>
+							        <core:Item xmlns:core="sap.ui.core" key="تجاري" text="تجاري" id="item0"/>
+							        <core:Item xmlns:core="sap.ui.core" key="غير تجاري" text="غير تجاري"/>
+							        </items>
+							    
+							</ComboBox>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" text="{socialMediai18n>proof_description}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<TextArea xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" value="{SocialMediaEff>proof_description}" rows="4" id="proof_description" width="100%"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" text="{socialMediai18n>publishingtime}" id="text9_copy"/>
+							<DatePicker enabled="{appView>/enabled}" id="publishing_date_time" change="handleCreateChange" width="98%" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy" value="{ path: 'SocialMediaEff>publishing_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" required="true"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+						<items>
+							<Text text="{socialMediai18n>platform}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Input xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" value="{SocialMediaEff>platform}" id="platform"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" text="{socialMediai18n>fileupload}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text8"/>
+							<unified:FileUploader required="true" value="{SocialMediaEff>proof_proof_cmis}" enabled="{appView>/enabled}" id="proof_proof_cmis" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+								<Link text=" {path: 'SocialMediaEff>proof_proof_cmis', formatter: '.urlformatter'}" visible="{= ${SocialMediaEff>proof_proof_cmis} !== '' ? true : false }" target="_blank" href="{SocialMediaEff>proof_proof_cmis}"/>
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{socialMediai18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+			<Button text="{socialMediai18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

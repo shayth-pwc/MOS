@@ -1,0 +1,168 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns:layout="sap.ui.layout"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.PowerScales.controller.Main">
+	<App id="app">
+		<pages>
+			<Page xmlns="sap.m" showHeader="true" title="{PowerScalesi18n>appTitle}" showFooter="false" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<layout:BlockLayout background="Dashboard" visible="true">
+						<layout:content>
+							<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+								<layout:content>
+									<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+										<layout:content>
+											<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+												content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'33B'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+												<sap.ui.layout:content>
+													<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+														layout="ResponsiveGridLayout">
+														<sap.ui.layout.form:content>
+															<Text xmlns="sap.m" text="{hints>Description}"/>
+														</sap.ui.layout.form:content>
+													</sap.ui.layout.form:SimpleForm>
+												</sap.ui.layout:content>
+											</sap.ui.layout:VerticalLayout>
+										</layout:content>
+									</layout:BlockLayoutCell>
+								</layout:content>
+							</layout:BlockLayoutRow>
+							<layout:BlockLayoutRow scrollable="false">
+								<layout:content>
+									<layout:BlockLayoutCell class="sapUiNoContentPadding" width="5" titleAlignment="Begin" titleLevel="Auto">
+										<layout:content>
+											<layout:HorizontalLayout xmlns:unified="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+												xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" id="layout2">
+												<layout:content>
+													<Label text="{PowerScalesi18n>upload}:" class="sapUiSmallMarginEnd"/>
+													<Link class="sapUiTinyMarginTop" id="orgupload" text=" {path: 'RacyMatrix>com_cmis_id', formatter: '.urlformatter'}" target="_blank"
+														href="{RacyMatrix>com_cmis_id}"/>
+												</layout:content>
+											</layout:HorizontalLayout>
+											<Table modelContextChange="onAddFilter" id="racymatrixTable" growing="true" growingThreshold="10" paste="onPaste"
+												items="{RacyMatrix>/RacyMatrix}" width="100%">
+												<headerToolbar>
+													<OverflowToolbar>
+														<!--<Title text="{PowerScalesi18n>racymatrix}" level="H2"/>-->
+														<ToolbarSpacer/>
+														<Button id="AddracymatrixButton" text="{PowerScalesi18n>AddRoW}" icon="sap-icon://add" type="Accept" press="onAddRowRacyMatrix"
+															visible="true"/>
+														<Button text="{PowerScalesi18n>save}" type="Emphasized" iconFirst="true" width="auto" enabled="true" iconDensityAware="false"
+															press="OnSavePress" visible="false"/>
+														<Button text="{PowerScalesi18n>edit}" type="Accept" iconFirst="true" width="auto" enabled="true" iconDensityAware="false"
+															press="OnEditPress" visible="false"/>
+														<Button text="{PowerScalesi18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" iconDensityAware="false"
+															press="OnCancelPress" visible="false"/>
+													</OverflowToolbar>
+												</headerToolbar>
+												<columns>
+													<Column demandPopin="true" hAlign="Begin">
+														<Text text="{PowerScalesi18n>procedure}"/>
+													</Column>
+													<!--<Column demandPopin="true" hAlign="Begin">-->
+													<!--	<Text text="{PowerScalesi18n>department}"/>-->
+													<!--</Column>-->
+													<Column demandPopin="true" hAlign="Begin">
+														<Text text="{PowerScalesi18n>responsibleprson}"/>
+													</Column>
+													<Column demandPopin="true" hAlign="Begin">
+														<Text text="{PowerScalesi18n>accountableperson}"/>
+													</Column>
+													<Column demandPopin="true" hAlign="Begin">
+														<Text text="{PowerScalesi18n>consultedperson}"/>
+													</Column>
+													<Column demandPopin="true" hAlign="Begin">
+														<Text text="{PowerScalesi18n>informedperson}"/>
+													</Column>
+													<!--<Column demandPopin="true" hAlign="Begin">-->
+													<!--	<Text text="{PowerScalesi18n>startdate}"/>-->
+													<!--</Column>-->
+													<!--<Column demandPopin="true" hAlign="Begin">-->
+													<!--	<Text text="{PowerScalesi18n>enddate}"/>-->
+													<!--</Column>-->
+													<Column width="5%" hAlign="Begin">
+														<Text text=""/>
+													</Column>
+												</columns>
+												<items>
+													<ColumnListItem vAlign="Middle">
+														<cells>
+															<Text text="{RacyMatrix>procedure_name}"/>
+															<!--<Text text="{RacyMatrix>department}"/>-->
+															<Text text="{RacyMatrix>responsible_person}"/>
+															<Text text="{RacyMatrix>accountable_person}"/>
+															<Text text="{RacyMatrix>consulted_person}"/>
+															<Text text="{RacyMatrix>informed_person}"/>
+															<!--<Text text="{RacyMatrix>start_date_time}"/>-->
+															<!--<Text text="{RacyMatrix>end_date_time}"/>-->
+															<Text text=""/>
+															<!--<Button icon="sap-icon://delete" type="Reject" press="onDeletePress" visible="{JsonModel>/EditMood}"/>-->
+														</cells>
+													</ColumnListItem>
+												</items>
+											</Table>
+											<core:InvisibleText xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:unified="sap.ui.unified" xmlns:layout="sap.ui.layout"
+												xmlns:core="sap.ui.core" text="InvisibleText" id="text15"/>
+											<Toolbar xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+												width="100%" id="toolbar3_copy" design="Transparent" style="Clear">
+												<content>
+													<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified"
+														xmlns:layout="sap.ui.layout" id="spacer2_copy"/>
+												</content>
+											</Toolbar>
+											<Toolbar width="100%" id="toolbar3" design="Transparent">
+												<content>
+													<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified"
+														xmlns:layout="sap.ui.layout" id="spacer2"/>
+													<Button iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="OnSavePress" icon="sap-icon://save"
+														text="{PowerScalesi18n>save}" type="Emphasized"/>
+													<Button text="{PowerScalesi18n>edit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+														press="OnEditPress" icon="sap-icon://edit"/>
+													<Button text="{PowerScalesi18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+														press="OnCancelPress"/>
+												</content>
+											</Toolbar>
+										</layout:content>
+									</layout:BlockLayoutCell>
+									<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+								</layout:content>
+							</layout:BlockLayoutRow>
+							<!--<layout:BlockLayoutRow scrollable="false">
+							<layout:content>
+								<layout:BlockLayoutCell width="2" titleAlignment="Begin" titleLevel="Auto">
+									<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+										<content>
+											<ToolbarSpacer width=""/>
+											<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+												press="OnSavePress"/>
+											<Button text="Edit" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="OnEditPress"/>
+										</content>
+									</OverflowToolbar>
+								</layout:BlockLayoutCell>
+							</layout:content>
+						</layout:BlockLayoutRow>-->
+						</layout:content>
+					</layout:BlockLayout>
+					<OverflowToolbar width="100%" height="46px" enabled="true" visible="true">
+						<content>
+							<ToolbarSpacer width=""/>
+						</content>
+					</OverflowToolbar>
+				</content>
+				<!--
+			
+			<footer>
+				<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true">
+					<content>
+						<ToolbarSpacer width=""/>
+						<Button text="{PowerScalesi18n>save}" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="OnSavePress"/>
+						<Button text="{PowerScalesi18n>edit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="OnEditPress"/>
+						<Button text="{PowerScalesi18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="OnCancelPress"/>
+					</content>
+				</OverflowToolbar>
+			</footer>-->
+				<headerContent/>
+				<subHeader/>
+				<customHeader/>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,136 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderActivities.controller.Worklist"><IconTabBar id="bar0">
+		<items>
+			<IconTabFilter text="{StakeholderActivitiesi18n>icontabbartitle1}" id="filter1">
+				<content>
+					<Table modelContextChange="onAddFilter" id="table" width="auto" items="{ path: '/STAKEHOLDERS', sorter: { path: 'stakeholder_name', descending: false } }" noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true" updateFinished=".onUpdateFinished">
+						<headerToolbar>
+							<OverflowToolbar>
+								<Title id="tableHeader" text="{worklistView>/worklistTableTitle}" level="H3"/>
+								<ToolbarSpacer/>
+								<Button xmlns="sap.m" id="button0" activeIcon="sap-icon://add" icon="sap-icon://add" press="addStakeholder" text="{StakeholderActivitiesi18n>add_stakeholder}" type="Accept"/>
+								<content/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="unitNumberColumn_copy">
+								<header>
+									<Text xmlns="sap.m" text="{StakeholderActivitiesi18n>tableStakeholdertype}" id="unitNumberColumnTitle_copy"/>
+								</header>
+							</Column>
+							<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="unitNumberColumn_copy1">
+								<header>
+									<Text xmlns="sap.m" text="{StakeholderActivitiesi18n>tableStakeholdername}" id="unitNumberColumnTitle"/>
+								</header>
+							</Column>
+							<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="unitNumberColumn_copy3">
+								<header>
+									<Text xmlns="sap.m" text="{StakeholderActivitiesi18n>tableImpactLevel}" id="unitNumberColumnTitle_copy3"/>
+								</header>
+							</Column>
+							<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="unitNumberColumn_copy4">
+								<header>
+									<Text xmlns="sap.m" text="{StakeholderActivitiesi18n>tableImpactDescription}" id="unitNumberColumnTitle_copy4"/>
+								</header>
+							</Column>
+							<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="unitNumberColumn_copy5" width="7%"/>
+						</columns>
+						<items>
+							<ColumnListItem type="Navigation" press=".onPress">
+								<cells>
+									<Text text="{STAKEHOLDER_TYPE_NAME}"/>
+									<Text xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="{stakeholder_name}" cd:w5g.dt.context="/STAKEHOLDERS"/>
+									<Text text="{level_of_impact}"/>
+									<Text text="{impact_description}"/>
+									<FlexBox width="100%" id="box0">
+										<items>
+											<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_1651121173831" icon="sap-icon://edit" type="Transparent" press="editstakeholder"/>
+											<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button1" icon="sap-icon://delete" type="Reject" press="deletestakeholder"/>
+										</items>
+									</FlexBox>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</IconTabFilter>
+			<IconTabSeparator id="separator0" icon="sap-icon://feeder-arrow"/>
+			
+			
+			<!--second icon tab filter-->
+			
+			
+			<IconTabFilter xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" text="{StakeholderActivitiesi18n>icontabbartitle2}" id="filter1_copy2">
+				<content>
+					<Table modelContextChange="onAddFilter" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" noDataText="{i18n>nodata}" id="table0" items="{ path: '/ACTIVITIES', sorter: { path: 'activity_name', descending: false } }">
+						<items>
+							<ColumnListItem type="Active" id="item1" press="editactivity">
+								<cells>
+									<Text xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{STAKEHOLDER_NAME}" id="text6_copy"/>
+									<Text xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{activity_name}" id="text4_copy"/>
+									<Text text="{activity_description}" id="text5"/>
+									<Text text="{communication_type}" id="text6"/><Text xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{frequency_of_communication}" id="text6_copy4"/>
+								    <Text xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{future_developments}" id="text6_copy3"/>
+									<FlexBox xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%" id="box0_copy">
+									    <items>
+									        <Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_1651121173831_copy" icon="sap-icon://edit" type="Transparent" press="editactivity"/>
+									        <Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button1_copy" icon="sap-icon://delete" type="Reject" press="deleteactivity"/>
+									        </items>
+									    
+									</FlexBox></cells>
+							</ColumnListItem>
+						</items>
+						<columns>
+							<Column id="column0">
+								<header>
+									<Label text="{StakeholderActivitiesi18n>tableStakeholdername}" id="label0"/>
+								</header>
+							</Column>
+							<Column id="column1">
+								<header>
+									<Label text="{StakeholderActivitiesi18n>tablenameActivityname}" id="label1"/>
+								</header>
+							</Column>
+							<Column id="column2">
+								<header>
+									<Label text="{StakeholderActivitiesi18n>tablenameActivitydescription}" id="label2"/>
+								</header>
+							</Column>
+							<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="column0_copy">
+								<header>
+									<Label text="{StakeholderActivitiesi18n>tablenameCommunicationMethod}" id="label0_copy"/>
+								</header>
+							</Column>
+							<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="column0_copy3">
+								<header>
+									<Label text="{StakeholderActivitiesi18n>tablenameCommunicationFrequency}" id="label0_copy3"/>
+								</header>
+							</Column>
+							<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="column0_copy2">
+								<header>
+									<Label text="{StakeholderActivitiesi18n>tablenameFutureDevelopments}" id="label0_copy2"/>
+								</header>
+							</Column>
+							<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="column0_copy4" width="7%">
+							    <header>
+							        <Label id="label0_copy4"/>
+							        
+							    </header>
+							    
+							</Column>
+						</columns>
+					<headerToolbar>
+					    <OverflowToolbar xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="100%" id="toolbar1">
+					        <content>
+					            <Title xmlns="sap.m" text=" {StakeholderActivitiesi18n>listofactivities}" id="title1"/>
+					            <ToolbarSpacer id="spacer1"/>
+					            <Button xmlns="sap.m" text="{StakeholderActivitiesi18n>add_activity}" id="button0_copy" icon="sap-icon://add" press="addnewactivity" type="Accept"/>
+					            </content>
+					        
+					    </OverflowToolbar>
+					</headerToolbar>
+					</Table>
+				</content>
+			</IconTabFilter>
+		</items>
+	</IconTabBar>
+</mvc:View>

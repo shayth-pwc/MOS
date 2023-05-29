@@ -1,0 +1,67 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.stdPolController.controller.AddPolicy">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{i18n>addpolicy}" type="Standard"
+		verticalScrolling="true">
+		<content>
+			<layout:Grid xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12"
+				position="Center" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" class="sapUiMediumMarginTop"
+				cd:w5g.dt.context="/HRPOLICY">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<!--<Text text="{i18n>policyname}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+							<!--<Input xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" value="{standardPolicies>policy_name}" id="policy_name"/>-->
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{i18n>policyname}" width="100%" maxLines="9"
+								wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text3"/>
+							<Input id="policy_name" required="true" textFormatMode="Value" enabled="{appView>/enabled}" showSuggestion="true"
+								showValueHelp="true" valueHelpRequest=".onValueHelpRequest" suggestionItems="{standardPolicies>/PolicyNames}"
+								selectedKey="{standardPolicies>policy_name}">
+								<suggestionItems>
+									<core:Item text="{standardPolicies>value}" key="{standardPolicies>value}"/>
+								</suggestionItems>
+							</Input>
+							<Label text="{i18n>startdate}"/>
+							<DatePicker required="true" fieldGroupIds="inputs" placeholder="dd/MMM/yy" dateValue="{standardPolicies>start_date_time}" width="100%"
+								value="" change="handleCreateChange" id="start_date_time"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{i18n>policydes}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<!--<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" id="review_description" value="{review_description}"/>-->
+							<TextArea enabled="true" visible="true" rows="2" width="100%" required="false" valueStateText="Invalid entry" id="policy_description"
+								value="{standardPolicies>policy_description}"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+								xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{i18n>clubpolicycolumntitle3}" width="auto"
+								maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text4"/>
+							<unified:FileUploader xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+								xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:unified="sap.ui.unified" required="true"
+								value="{standardPolicies>proof_cmis_id}" enabled="{appView>/enabled}" id="myFileUploadpolicy" buttonOnly="false" icon="sap-icon://upload"
+								iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+							<!--<Link xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"-->
+							<!--	xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{standardPolicies>proof_cmis_id}"-->
+							<!--	visible="{= ${standardPolicies>proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink" id="link1"/>-->
+													             <Link text=" {path: 'standardPolicies>proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${standardPolicies>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{standardPolicies>proof_cmis_id}"/>
+
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="{i18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,66 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.BoardCharter.controller.EditProcedure">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{BoardCharteri18n>editprocedure}" type="Standard" verticalScrolling="true">
+		<content>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title/>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{BoardCharteri18n>procedurename}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{BoardCharter>procedure_name}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{BoardCharteri18n>proceduredesc}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{BoardCharter>procedure_description}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true">
+								<form:label>
+									<Label xmlns="sap.m" text="{BoardCharteri18n>procedurestartdate}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<!--<DatePicker xmlns="sap.m" enabled="{appView>/enabled}" id="start_date_time1" change="handleCreateChange" width="98%" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy" value="{ path: 'BoardCharter>start_date_time1', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" required="true"/>-->
+									<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{path:'BoardCharter>start_date_time1', type:'sap.ui.model.odata.type.DateTime', formatOptions: { style: 'short', strictParsing: true}, constraints: {displayFormat: 'Date'}}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<!--<form:FormElement visible="true">-->
+							<!--	<form:label>-->
+							<!--		<Label text="{BoardCharteri18n>procedureenddate}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+							<!--	</form:label>-->
+							<!--	<form:fields>-->
+							<!--		<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{path:'BoardCharter>end_date_time1', type:'sap.ui.model.odata.type.DateTime', formatOptions: { style: 'short', strictParsing: true}, constraints: {displayFormat: 'Date'}}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+									<!--<DatePicker enabled="{appView>/enabled}" id="end_date_time1" change="handleCreateChange" width="98%" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy" value="{ path: 'BoardCharter>end_date_time1', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" required="true"/>-->
+							<!--	</form:fields>-->
+							<!--</form:FormElement>-->
+							<form:FormElement visible="true">
+								<Label text="{BoardCharteri18n>fileattachment}:" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								<!--<Link text="{BoardCharter>proof_cmis_id1}" visible="{= ${BoardCharter>proof_cmis_id1} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Link  text=" {path: 'BoardCharter>proof_cmis_id1', formatter: '.urlformatter'}" visible="{= ${BoardCharter>proof_cmis_id1} !== '' ? true : false }" target="_blank"
+																	href="{BoardCharter>proof_cmis_id1}" />
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{BoardCharteri18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

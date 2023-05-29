@@ -1,0 +1,148 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.PerformanceIndicatores13G.controller.MainPerformanceIndicator">
+	<Page showHeader="true" title="{i18n13G>AppTitle}" showFooter="false" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+										content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'13C'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+												layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+			<layout:BlockLayout class="sapUiNoContentPadding" id="bl" background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin"
+								titleLevel="Auto">
+								<layout:content>
+									<Table modelContextChange="onAddFilter" items="{performanceindicator>/clubstrategykpi}" sticky="ColumnHeaders" width="auto"
+										noDataText="{i18n13G>nodata}" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true"
+										class="sapUiResponsiveMargin">
+										<infoToolbar>
+											<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+												<content>
+													<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</content>
+											</Toolbar>
+										</infoToolbar>
+										<headerToolbar>
+											<OverflowToolbar width="auto" height="auto" design="Solid" visible="true" enabled="true">
+												<content>
+													<ToolbarSpacer width=""/>
+													<Button xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{i18n13G>createkpi}"
+														type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+														class="sapUiTinyMargin" press="_onButtonPress" id="button7"/>
+												</content>
+											</OverflowToolbar>
+										</headerToolbar>
+										<columns>
+											<Column width="auto" halign="Begin" vAlign="Top" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{i18n13G>strategickpi}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" halign="Begin" vAlign="Top" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{i18n13G>KPIRelationToStrategicGoal}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" halign="Begin" vAlign="Top" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{i18n>KPITarget}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" halign="Begin" vAlign="Top" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{i18n>KPIActualAchievment}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" halign="Begin" vAlign="Top" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{i18n13G>KPIOwner}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="5%" halign="Begin" vAlign="Top" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="5%" halign="Begin" vAlign="Top" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="5%" halign="Begin" vAlign="Top" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem press="_onRowPress" type="Active">
+												<cells>
+													<Text text="{performanceindicator>kpi_title}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true"/>
+													<Text text="{performanceindicator>related_strategic_goal}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+														textDirection="Inherit" visible="true"/>
+													<Text text="{performanceindicator>target}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true"/>
+													<Text text="{performanceindicator>Actual_Achievement}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true"/>
+													<Text text="{performanceindicator>RELATED_KPI_OWNER}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true"/>
+													<!--<Text text="{=${kpi_type} === 'Departmental'? ${i18n13G>DepartmentalKPI} : ${i18n13G>StrategicKPI} }" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+													<Button icon="sap-icon://delete" press="_onDeleteRow"/>
+													<Button icon="sap-icon://edit" press="_onEditRow"/>
+													<Button text="" icon="sap-icon://print" press="renderPDF"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

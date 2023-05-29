@@ -1,0 +1,131 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.MatchdayPolicy.controller.Marketing">
+	<Page showHeader="true" title="{MatchdayPolicyi18n>ClubMatchdayPolicies}" showFooter="true" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<!--<Button text="Edit" type="Accept" icon="sap-icon://edit" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" class="sapUiSmallMarginBegin" press="editwebsiteinfo"/>-->
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+										content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'51B'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+												layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+					<layout:BlockLayoutRow scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="5" title="" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<Title text="{MatchdayPolicyi18n>ClubMatchdayPolicies}" titleStyle="H4" width="auto" textAlign="Begin" visible="true" wrapping="true"/>
+									<Table xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" modelContextChange="onAddFilter" width="100%"
+										noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true"
+										cd:w5g.dt.context="MatchdayPolicy&gt;/MATCHPOLICIES" items="{ path: 'MatchdayPolicy>/MATCHPOLICIES'}">
+										<infoToolbar>
+											<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+												<content>
+													<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</content>
+											</Toolbar>
+										</infoToolbar>
+										<headerToolbar>
+											<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+												<content>
+													<ToolbarSpacer width=""/>
+													<Button text="{MatchdayPolicyi18n>AddMatchdayPolicybutton}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true"
+														visible="true" iconDensityAware="false" press="addmatchdaypolicy"/>
+												</content>
+											</OverflowToolbar>
+										</headerToolbar>
+										<columns>
+											<Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{MatchdayPolicyi18n>Documenttype}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{MatchdayPolicyi18n>DocumentDescription}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+												xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="auto" vAlign="Top" minScreenWidth="Tablet"
+												demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column7_1653556613359" visible="false">
+												<header>
+													<Text text="{MatchdayPolicyi18n>StartDate}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true" id="text11_1653556613359"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+												<header>
+													<Text text="{MatchdayPolicyi18n>FileAttachment}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+														visible="true"/>
+												</header>
+												<footer/>
+											</Column>
+											<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+												xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="10%" vAlign="Top" minScreenWidth="Tablet"
+												demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column7_1652872378296">
+												<header>
+													<Text width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text11_1652872378295"/>
+												</header>
+												<footer/>
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem type="Active" press="press1">
+												<cells>
+													<Text text="{MatchdayPolicy>DOCUMENT_TYPE_NAME}" width="auto" maxLines="9" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m"
+														text="{MatchdayPolicy>document_description}" width="auto" maxLines="9" textAlign="Begin" textDirection="Inherit" visible="true" id="text14"/>
+													<!--<Link text="{match_date}" visible="{= ${proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink" textDirection="Inherit"/>-->
+													<Text
+														text="{path:'MatchdayPolicy>match_date', type:'sap.ui.model.odata.type.DateTime', formatOptions: { style: 'short', strictParsing: true}, constraints: {displayFormat: 'Date'}}"
+														width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="false"/>
+													<Link text=" {path: 'MatchdayPolicy>proof_cmis_id', formatter: '.urlformatter'}"
+														visible="{= ${MatchdayPolicy>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{MatchdayPolicy>proof_cmis_id}"/>
+													<!--<Link xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{MatchdayPolicy>proof_cmis_id}" visible="{= ${proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink" textDirection="Inherit" id="link3"/>-->
+													<!--<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m" text="{proof_cmis_id}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text15"/>-->
+													<FlexBox xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+														xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+														xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%" id="box0_copy4">
+														<items>
+															<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="button0_1651121173831_copy4" icon="sap-icon://edit" type="Transparent" press="editmatchdaypolicy"/>
+															<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="button1_copy4" icon="sap-icon://delete" type="Reject" press="deletematchdaypolicy"/>
+														</items>
+													</FlexBox>
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

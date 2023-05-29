@@ -1,0 +1,165 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+	controllerName="pwc.portal.eval.PerformanceIndicatores13G.controller.CreateNewPerformanceIndicator" xmlns:unified="sap.ui.unified"
+	xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n>createkpi}"
+		type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="98%" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>KPIType}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Select forceSelection="false" id="KPITypeCombo" width="98%" selectedKey="{performanceindicator>kpi_type}" visible="true"
+										class="sapUiTinyMargin">
+										<items>
+											<core:Item text="{i18n>DepartmentalKPI}" enabled="true" key="Departmental"/>
+											<core:Item text="{i18n>StrategicKPI}" enabled="true" key="Strategic"/>
+											<core:Item text="{i18n>financialtype}" enabled="true" key="Financial" />
+											<core:Item text="{i18n>sportstype}" enabled="true" key="Sports"/>
+
+										</items>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>kpititle}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="KPITitleInput" type="Text" value="{performanceindicator>kpi_title}" showValueHelp="false" visible="true" width="98%"
+										valueHelpOnly="false" required="true" valueStateText="{i18n>ValueStateText}" maxLength="0" class="sapUiTinyMargin"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>KPIDescription}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea id="KPIDescriptionInput" value="{performanceindicator>kpi_description}" rows="2" cols="40" maxLength="0" wrapping="None"
+										required="true" valueStateText="{i18n>ValueStateText}" visible="true" class="sapUiTinyMargin" width="98%"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>KPIMethodOfMeasure}" design="Standard" width="98%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="MethodOfMeasureInput" value="{performanceindicator>kpi_method_of_measure}" width="98%" type="Text" showValueHelp="false"
+										visible="true" valueHelpOnly="false" required="true" valueStateText="{i18n>ValueStateText}" maxLength="0" class="sapUiTinyMargin"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>KPIRelatedInitiative}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Select  forceSelection="false" id="relatedinitiativeCombo"
+										items="{performanceindicator>/clubstrategyinitiatives}" width="98%" selectedKey="{performanceindicator>related_initiative}" visible="true"
+										class="sapUiTinyMargin">
+										<items>
+											<core:Item text="{performanceindicator>initiative_title}" enabled="true" key="{performanceindicator>id}"/>
+										</items>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>KPIFrequencyOfMeasure}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Select forceSelection="false" id="KPIFrequencyOfMeasureCombo" width="98%" selectedKey="{performanceindicator>kpi_frequency_of_measure}"
+										visible="true" class="sapUiTinyMargin">
+										<items>
+											<core:Item text="{OfficialClubStrategyi18n>annuallyDrop}" enabled="true" key="{OfficialClubStrategyi18n>annuallyDrop}"/>
+											<core:Item text="{OfficialClubStrategyi18n>quarterlydrop}" enabled="true" key="{OfficialClubStrategyi18n>quarterlydrop}"/>
+											<core:Item text="{OfficialClubStrategyi18n>monthlyDrop}" enabled="true" key="{OfficialClubStrategyi18n>monthlyDrop}"/>
+											<core:Item text="{OfficialClubStrategyi18n>dailyDrop}" enabled="true" key="{OfficialClubStrategyi18n>dailyDrop}"/>
+										</items>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>KPIOwner}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Select forceSelection="false" items="{performanceindicator>/CLUB_ORG_STRUC_EMP}" id="KPIOwnerCombo" width="98%"
+										selectedKey="{performanceindicator>kpi_owner}" visible="true" class="sapUiTinyMargin">
+										<items>
+											<core:Item text="{performanceindicator>emp_name}" enabled="true" key="{performanceindicator>id}"/>
+										</items>
+									</Select>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>KPITarget}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="KPITargetInput" type="Text" value="{performanceindicator>target}" showValueHelp="false" enabled="{appView>/enabled}"
+										visible="true" width="98%" valueHelpOnly="false" required="true" valueStateText="{i18n>ValueStateText}" maxLength="0"
+										class="sapUiTinyMargin"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>KPIActualAchievment}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="KPIActualAchievmentInput" type="Text" value="{performanceindicator>Actual_Achievement}" showValueHelp="false"
+										enabled="{appView>/enabled}" visible="true" width="98%" valueHelpOnly="false" required="true" valueStateText="{i18n>ValueStateText}"
+										maxLength="0" class="sapUiTinyMargin"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>KPIRelationToStrategicGoal}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="RelationToStrategicGoalInput" type="Text" value="{performanceindicator>related_strategic_goal}" showValueHelp="false"
+										enabled="{appView>/enabled}" visible="true" width="98%" valueHelpOnly="false" required="true" valueStateText="{i18n>ValueStateText}"
+										maxLength="0" class="sapUiTinyMargin"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>upload}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" value="{performanceindicator>proof_cmis_id_kpi}" enabled="{appView>/enabled}" id="myFileUploadkpi"
+										buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<!--<Link text="{HRBusinessPlan>proof_cmis_id}" visible="{= ${HRBusinessPlan>proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>-->
+									<Link text=" {path: 'performanceindicator>proof_cmis_id_kpi', formatter: '.urlformatter'}"
+										visible="{= ${performanceindicator>proof_cmis_id_kpi} !== '' ? true : false }" target="_blank"
+										href="{performanceindicator>proof_cmis_id_kpi}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="3" labelSpanL="5" columnsM="2" labelSpanM="4" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>submit}" type="Default" iconFirst="true" enabled="true" visible="true" iconDensityAware="false" press="_onSubmit"/>
+			<Button text="{i18n>cancel}" type="Default" iconFirst="true" enabled="true" visible="true" iconDensityAware="false" press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,17 @@
+<mvc:View
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderMapping.controller.NotFound"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<MessagePage
+		title="{StakeholderMappingi18n>notFoundTitle}"
+		text="{StakeholderMappingi18n>notFoundText}"
+		icon="sap-icon://document"
+		id="page"
+		description="">
+		<customDescription>
+			<Link id="link" text="{StakeholderMappingi18n>backToWorklist}" press=".onLinkPressed"/>
+		</customDescription>
+	</MessagePage>
+
+</mvc:View>

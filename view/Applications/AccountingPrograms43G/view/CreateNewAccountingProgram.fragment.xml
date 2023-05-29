@@ -1,0 +1,157 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.AccountingPrograms43G.controller.CreateNewAccountingProgram">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false"
+		title="{i18n43G>createNewAccSystemLabel}" type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title/>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n43G>SystemNameLabel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" required="true" id="AcccSystemNameInput" value="{accountingsystem>system_name}" showValueHelp="false"
+										enabled="{appView>/enabled}" visible="true" width="auto" valueHelpOnly="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n43G>SystemContractLabel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" enabled="{appView>/enabled}" value="{accountingsystem>sys_contract_cmis_id}" id="myFileUploadContract"
+										buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'accountingsystem>sys_contract_cmis_id', formatter: '.urlformatter'}" wrapping="true"
+										visible="{= ${accountingsystem>sys_contract_cmis_id} !== '' ? true : false }" target="_blank" href="{accountingsystem>sys_contract_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n43G>SystemGeneratedFinancialBudgetLabel}" design="Standard" width="100%" required="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" enabled="{appView>/enabled}" value="{accountingsystem>last_quarter_trial_balance_cmis_id}"
+										id="myFileUploadQuarter" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'accountingsystem>last_quarter_trial_balance_cmis_id', formatter: '.urlformatter'}" wrapping="true"
+										visible="{= ${accountingsystem>last_quarter_trial_balance_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{accountingsystem>last_quarter_trial_balance_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n43G>LastYearLabel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" enabled="{appView>/enabled}" value="{accountingsystem>last_yearly_trial_balance_cmis_id}"
+										id="myFileUploadYear" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'accountingsystem>last_yearly_trial_balance_cmis_id', formatter: '.urlformatter'}" wrapping="true"
+										visible="{= ${accountingsystem>last_yearly_trial_balance_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{accountingsystem>last_yearly_trial_balance_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n43G>SystemGeneratedLabel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" enabled="{appView>/enabled}" value="{accountingsystem>financial_statement_cmis_id}"
+										id="myFileUploadBudgetStatement" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+										change="handleUploadPress"/>
+									<Link text=" {path: 'accountingsystem>financial_statement_cmis_id', formatter: '.urlformatter'}" wrapping="true"
+										visible="{= ${accountingsystem>financial_statement_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{accountingsystem>financial_statement_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n43G>Statementoffinancialposition}" design="Standard" width="100%" required="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" enabled="{appView>/enabled}" value="{accountingsystem>Statementoffinancialposition}"
+										id="Statementoffinancialposition" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+										change="handleUploadPress"/>
+									<Link text=" {path: 'accountingsystem>Statementoffinancialposition', formatter: '.urlformatter'}" wrapping="true"
+										visible="{= ${accountingsystem>Statementoffinancialposition} !== '' ? true : false }" target="_blank"
+										href="{accountingsystem>Statementoffinancialposition}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n43G>StatementofCashFlows}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" enabled="{appView>/enabled}" value="{accountingsystem>StatementofCashFlows}" id="StatementofCashFlows"
+										buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'accountingsystem>StatementofCashFlows', formatter: '.urlformatter'}" wrapping="true"
+										visible="{= ${accountingsystem>StatementofCashFlows} !== '' ? true : false }" target="_blank" href="{accountingsystem>StatementofCashFlows}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n43G>newlabel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" enabled="{appView>/enabled}" value="{accountingsystem>budget_statement_cmis_id}"
+										id="myFileUploadEmployees" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'accountingsystem>budget_statement_cmis_id', formatter: '.urlformatter'}" wrapping="true"
+										visible="{= ${accountingsystem>budget_statement_cmis_id} !== '' ? true : false }" target="_blank" href="{vbudget_statement_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n43G>AttachFinancialStatementGeneratedEmployees}" design="Standard" width="100%" required="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" id="employeeUpload" width="auto" enabled="{appView>/enabled}"
+										value="{accountingsystem>list_of_employees_cmis_id}" fieldGroupIds="uploader" buttonOnly="false" icon="sap-icon://upload" iconOnly="true"
+										sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'accountingsystem>list_of_employees_cmis_id', formatter: '.urlformatter'}" wrapping="true"
+										visible="{= ${accountingsystem>list_of_employees_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{accountingsystem>list_of_employees_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n43G>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n43G>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

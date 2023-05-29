@@ -1,0 +1,50 @@
+<mvc:View xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:tnt="sap.tnt" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	controllerName="pwc.portal.eval.ClubEvaluations.controller.Home">
+	<Page id="page" showHeader="false">
+		<landmarkInfo>
+			<PageAccessibleLandmarkInfo rootRole="Region" rootLabel="" contentRole="Main" contentLabel="{i18n>Home_contentLabel}"/>
+		</landmarkInfo>
+		<l:BlockLayout id="BlockLayout" background="Dashboard">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell class="sapUiNoContentPadding">
+					<l:content>
+						<sap.ui.layout.form:Form xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" id="form0">
+							<sap.ui.layout.form:formContainers>
+								<sap.ui.layout.form:FormContainer id="eval_header"></sap.ui.layout.form:FormContainer>
+							</sap.ui.layout.form:formContainers>
+							<sap.ui.layout.form:layout>
+								<sap.ui.layout.form:ResponsiveGridLayout id="layout2"/>
+							</sap.ui.layout.form:layout>
+						</sap.ui.layout.form:Form>
+					</l:content>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell class="sapUiNoContentPadding">
+					<Image src="/images/homeImage.jpg" width="100%" height="100%"/>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeB">
+					<l:VerticalLayout>
+						<core:Icon src="sap-icon://manager-insight" size="2.5rem" color="Default"/>
+						<Title text="{i18n>prevEval}" level="H3" titleStyle="H2" class="sapUiTinyMarginTopBottom"/>
+						<Text text="{i18n>prevEvalContent}" class="sapUiTinyMarginBottom"/>
+						<Link text="{i18n>accessLink}" tooltip="{i18n>accessSocialLink}"/>
+						<Link text="{i18n>learnLink}" tooltip="{i18n>learnSocialMediaTooltip}"/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell backgroundColorSet="ColorSet11" backgroundColorShade="ShadeD">
+					<l:VerticalLayout>
+						<core:Icon src="sap-icon://learning-assistant" size="2.5rem" color="Default"/>
+						<Title text="{i18n>evalGuide}" level="H3" titleStyle="H2" class="sapUiTinyMarginTopBottom"/>
+						<Text text="{i18n>evalGuideContent}" class="sapUiTinyMarginBottom"/>
+						<Link text="{i18n>accessLink}" tooltip="{i18n>accessSocialLink}"/>
+						<Link text="{i18n>learnLink}" tooltip="{i18n>learnSocialMediaTooltip}"/>
+					</l:VerticalLayout>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+		<content/>
+	</Page>
+</mvc:View>

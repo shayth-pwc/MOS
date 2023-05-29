@@ -1,0 +1,66 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SocialResponsibilityStrategy52A.controller.CreateNewCard">
+	<Dialog xmlns="sap.m" showHeader="true" state="None" contentWidth="1000px" contentHeight="800px" title="{i18n52A>createNewActivityLabel}">
+		<l:VerticalLayout class="sapUiContentPadding" width="100%">
+			<form:SimpleForm id="activityForm" editable="true" layout="ResponsiveGridLayout" adjustLabelSpan="false" columnsL="2" emptySpanL="5"
+				width="auto" labelSpanM="4" columnsM="2" emptySpanS="5">
+				<form:content>
+					<core:Title/>
+					<Label text="{i18n52A>initiative_title}" labelFor="activity_name" required="true"/>
+					<Input change="onInputChange" liveChange="_validateSaveEnablement" id="initiative_title" value="{socialresponsibility>initiative_title}"/>
+					<Label text="{i18n52A>initiative_type}" labelFor="activity_type"/>
+					<ComboBox xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+						selectedKey="{socialresponsibility>initiative_type}">
+						<items>
+							<core:Item xmlns:core="sap.ui.core" key="نشاط" text="نشاط" id="firstitem"/>
+							<core:Item xmlns:core="sap.ui.core" key="برنامج" text="برنامج" id="item2"/>
+						</items>
+					</ComboBox>
+					<Label text="{i18n52A>initiative_goals}" labelFor="activity_description" required="true"/>
+					<TextArea id="activity_description" liveChange="_validateSaveEnablement" change="onInputChange"
+						value="{socialresponsibility>initiative_goals}" growing="true" rows="4" growingMaxLines="4" width="100%" showExceededText="true"/>
+					<Label text="{i18n52A>initiative_location}" labelFor="strategic_goal"/>
+					<Input xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+						change="onInputChange" liveChange="_validateSaveEnablement" id="initiative_title_copy" value="{socialresponsibility>initiative_location}"/>
+					<Label text="{i18n52A>related_department}" labelFor="related_department"/>
+					<core:Title/>
+					<Label text="{i18n52A>estimated_cost}" labelFor="finance_resource"/>
+					<Label text="{i18n52A>completion_percentage}" labelFor="expense_allocation"/>
+					<Input id="completion_percentage" value="{socialresponsibility>completion_percentage}"/>
+					<Label text="{i18n52A>estimated_cost}" labelFor="human_resources_number"/>
+					<Input xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+						id="estimated_cost" value="{socialresponsibility>estimated_cost}"/>
+					<Label text="{i18n52A>benefited_parties}" labelFor="target_percentage"/>
+					<TextArea xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+						id="benefited_parties" liveChange="_validateSaveEnablement" change="onInputChange" value="{socialresponsibility>benefited_parties}"
+						growing="true" rows="4" growingMaxLines="4" width="100%" showExceededText="true"/>
+					<!--	<DateTimePicker id="end_date_time" displayFormat="short" valueFormat="yyyy-MM-dd-HH-mm-ss" value="{path:'end_date_time', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}" required="true" change="handleCreateChange"/>-->
+					<Label xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+						text="{i18n52A>sharing_links}" width="100%" id="label10"/>
+					<Input xmlns="sap.m" value="{socialresponsibility>sharing_links}" id="input0"/>
+					<Label xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+						text="{i18n52A>attachment}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"
+						id="label11"/>
+					<unified:FileUploader xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+						xmlns:unified="sap.ui.unified" id="reviewuploader" required="true" value="{socialresponsibility>proof_cmis_id}" buttonOnly="false"
+						icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+					<Link xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
+						text=" {path: 'socialresponsibility>proof_cmis_id', formatter: '.urlformatter'}"
+						visible="{= ${socialresponsibility>proof_cmis_id} !== '' ? true : false }" target="_blank"
+						href="{socialresponsibility>proof_cmis_id}" id="link1"/>
+				</form:content>
+			</form:SimpleForm>
+		</l:VerticalLayout>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n52A>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n52A>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

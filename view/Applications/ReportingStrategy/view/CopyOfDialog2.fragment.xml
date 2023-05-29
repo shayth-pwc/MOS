@@ -1,0 +1,50 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.ReportingStrategy.controller.CopyOfDialog2">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{ReportingStrategyi18n>Adddocument}" type="Standard" verticalScrolling="true">
+		<content>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title/>
+				<form:formContainers>
+					<form:FormContainer xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" visible="true" cd:w5g.dt.context="ReportingStrategy&gt;/REPORTING2">
+						<form:formElements>
+							<form:FormElement visible="true">
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{ReportingStrategyi18n>Documentname}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{ReportingStrategy>DOCUMENT_TYPE_NAME}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{ReportingStrategyi18n>documentdescription}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{ReportingStrategy>document_description2}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<Label text="{ReportingStrategyi18n>FileAttachment}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								<!--<Link text="{ReportingStrategy>proof_cmis_id2}" visible="{= ${ReportingStrategy>proof_cmis_id2} !== '' ? true : false }" target="_blank" press="openlink" wrapping="true"/>-->
+									<Link  text=" {path: 'ReportingStrategy>proof_cmis_id2', formatter: '.urlformatter'}" visible="{= ${ReportingStrategy>proof_cmis_id2} !== '' ? true : false }" target="_blank"
+																	href="{ReportingStrategy>proof_cmis_id2}" />
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{ReportingStrategyi18n>Ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

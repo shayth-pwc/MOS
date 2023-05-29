@@ -1,0 +1,76 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OfficialClubStrategy.controller.ReviewCompetitionAnalysis">
+	<Dialog contentHeight="450px" contentWidth="400px" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{OfficialClubStrategyi18n>CompetitionAnalysisTitle}" type="Standard" verticalScrolling="true" class="sapUiResponsiveContentPadding">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{OfficialClubStrategyi18n>Season}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{OfficialClub>season}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element5">
+							    <form:label>
+							        <Label xmlns="sap.m" text="{OfficialClubStrategyi18n>promises}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="label5"/>
+							        
+							    </form:label>
+							    <form:fields>
+							        <Text xmlns="sap.m" text="{OfficialClub>promises}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text4"/>
+							        
+							    </form:fields>
+							    </form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{OfficialClubStrategyi18n>CompetitionCompetitorName}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{OfficialClub>competitor_name}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{OfficialClubStrategyi18n>ReasonCompetitorSelectionInput}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{OfficialClub>competitor_sel_reason}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{OfficialClubStrategyi18n>compCompetitionComparison}" design="Bold" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" wrapping="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{OfficialClub>competitor_comparison}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{OfficialClubStrategyi18n>CompetitionAnalysisUploader}" design="Bold" width="100%" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text="{path: 'OfficialClub>competition_cmis_id', formatter: '.urlformatter'}" target="_blank" href="{path: 'OfficialClub>competition_cmis_id', formatter: '.urlformatter'}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<!--<Button text="{OfficialClubStrategyi18n>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>-->
+			<Button text="{OfficialClubStrategyi18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress1" iconDensityAware="false"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

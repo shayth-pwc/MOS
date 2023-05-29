@@ -1,0 +1,138 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.PerformanceIndicatores13G.controller.ReviewPerformanceIndicator"
+	xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n13G>createkpi}"
+		type="Standard" verticalScrolling="true">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n13G>KPIType}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{=${performanceindicator>kpi_type} === 'Departmental'? ${i18n13G>DepartmentalKPI} : ${i18n13G>StrategicKPI} }" width="auto"
+										maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n13G>kpititle}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{performanceindicator>kpi_title}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n13G>KPIDescription}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{performanceindicator>kpi_description}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n13G>KPIMethodOfMeasure}" design="Standard" width="98%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{performanceindicator>kpi_method_of_measure}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n13G>KPIRelatedInitiative}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{performanceindicator>RELATED_INITIATIVE_TITLE}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n13G>KPIFrequencyOfMeasure}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{performanceindicator>kpi_frequency_of_measure}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n13G>KPIOwner}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{performanceindicator>RELATED_KPI_OWNER}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n13G>KPIActualTarget}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{performanceindicator>Actual_Achievement}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n13G>KPITarget}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{performanceindicator>target}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n13G>KPIRelationToStrategicGoal}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{performanceindicator>related_strategic_goal}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n13G>upload}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text=" {path: 'performanceindicator>proof_cmis_id_kpi', formatter: '.urlformatter'}"
+										visible="{= ${performanceindicator>proof_cmis_id_kpi} !== '' ? true : false }" target="_blank"
+										href="{performanceindicator>proof_cmis_id_kpi}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<!--<Button text="{i18n13G>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"-->
+			<!--	press="_onButtonPress"/>-->
+			<Button text="{i18n13G>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

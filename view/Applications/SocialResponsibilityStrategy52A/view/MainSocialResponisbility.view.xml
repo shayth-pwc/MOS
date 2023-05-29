@@ -1,0 +1,294 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SocialResponsibilityStrategy52A.controller.MainSocialResponisbility">
+	<Page showHeader="true" title="{i18n52A>appTitle}" showFooter="false" showNavButton="true" navButtonPress="onNavBack">
+		<layout:BlockLayout background="Dashboard" visible="true">
+			<layout:content>
+				<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+					<layout:content>
+						<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+							<layout:content>
+								<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+									content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'52A'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+									<sap.ui.layout:content>
+										<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+											layout="ResponsiveGridLayout">
+											<sap.ui.layout.form:content>
+												<Text xmlns="sap.m" text="{hints>Description}"/>
+											</sap.ui.layout.form:content>
+										</sap.ui.layout.form:SimpleForm>
+									</sap.ui.layout:content>
+								</sap.ui.layout:VerticalLayout>
+							</layout:content>
+						</layout:BlockLayoutCell>
+					</layout:content>
+				</layout:BlockLayoutRow>
+			</layout:content>
+		</layout:BlockLayout>
+		<layout:BlockLayout id="bl" background="Dashboard" visible="true">
+			<layout:content>
+				<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+					<layout:content>
+						<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin"
+							titleLevel="Auto">
+							<layout:content>
+								<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true"
+									selectedKey="Ok">
+									<items>
+										<IconTabSeparator icon="sap-icon://initiative" iconDensityAware="true"/>
+										<IconTabFilter text="{i18n52A>quarterplan}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true"
+											iconDensityAware="false">
+											<content>
+												<Table modelContextChange="onAddFilter" items="{socialresponsibility>/QuarterlyPlan}" width="auto" mode="None" showSeparators="All"
+													growing="true" growingThreshold="20" growingScrollToLoad="true">
+													<infoToolbar>
+														<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+															<content>
+																<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</content>
+														</Toolbar>
+													</infoToolbar>
+													<headerToolbar>
+														<OverflowToolbar width="auto" height="auto" design="Solid" visible="true" enabled="true">
+															<content>
+																<ToolbarSpacer width=""/>
+																<Button text="{i18n52A>strategiccreate}" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true"
+																	iconDensityAware="false" class="sapUiTinyMargin" press="_onCreateNewInitiativePress"/>
+															</content>
+														</OverflowToolbar>
+													</headerToolbar>
+													<columns>
+														<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="{i18n52A>strategicinittitle}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="{i18n52A>strategicinitdesc}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="{i18n52A>linkofinitiative}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="{i18n52A>strategicinitStartDate}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																	visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="{i18n52A>strategicinitEndDate}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																	visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="5%" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="5%" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+													</columns>
+													<items>
+														<ColumnListItem press="_onRowInitiativePress" type="Active">
+															<cells>
+																<ObjectIdentifier title="{socialresponsibility>initiative_title}" text="{socialresponsibility>RELATED_GOAL_TITLE}" titleActive="false"
+																	visible="true"/>
+																<Text text="{socialresponsibility>initiative_description}" width="auto" maxLines="0" wrapping="true" textAlign="Begin"
+																	textDirection="Inherit" visible="true"/>
+																<Text text="{socialresponsibility>sharing_links}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"/>
+																<Text
+																	text="{ path: 'socialresponsibility>initiative_start_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"
+																	width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																<Text text="{ path: 'socialresponsibility>initiative_end_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"
+																	width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																<!--<Text text="{=${kpi_type}=== 'Departmental'? ${i18n52A>Departmental} : ${i18n52A>Strategic} }" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+																<Button icon="sap-icon://delete" press="_onDeleteRow"/>
+																<Button icon="sap-icon://edit" press="_onEditInitiavieRow"/>
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+											</content>
+										</IconTabFilter>
+										<IconTabSeparator icon="sap-icon://process"/>
+										<IconTabSeparator icon="sap-icon://it-system" iconDensityAware="true"/>
+										<IconTabFilter iconColor="Neutral" text="{i18n52A>MarketingTitle}" count="" design="Vertical" showAll="false" textDirection="Inherit"
+											enabled="true" visible="true" iconDensityAware="false">
+											<content>
+												<Table modelContextChange="onAddFilter" width="auto" items="{socialresponsibility>/socialresponsibilitystrategy}" mode="None"
+													showSeparators="All" growing="false" growingThreshold="2" growingScrollToLoad="true" class="sapUiResponsiveMargin">
+													<!--<infoToolbar>-->
+													<!--	<Toolbar width="100%" height="auto" design="Solid" visible="false" enabled="true">-->
+													<!--	</Toolbar>-->
+													<!--</infoToolbar>-->
+													<headerToolbar>
+														<OverflowToolbar width="auto" height="auto" design="Solid" visible="true" enabled="true">
+															<content>
+																<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" width="" id="spacer2"/>
+																<Button text="{i18n52A>createNewSocialResponsibilityLabel}" type="Default" icon="sap-icon://add" iconFirst="true" width="auto"
+																	enabled="true" visible="true" iconDensityAware="false" press="_onCreateNewResponsibilityPress"/>
+															</content>
+														</OverflowToolbar>
+													</headerToolbar>
+													<columns>
+														<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="{i18n52A>twitterLinkLabel}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="{i18n52A>socialresponsibilitylabel}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																	visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="5%" halign="Begin" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="5%" halign="Begin" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+													</columns>
+													<items>
+														<ColumnListItem press="_onRowResponsibilityPress" type="Active">
+															<cells>
+																<Link text=" {path: 'socialresponsibility>twitterlink_publishing_advertising', formatter: '.urlformatter'}"
+																	visible="{= ${socialresponsibility>twitterlink_publishing_advertising} !== '' ? true : false }" target="_blank"
+																	href="{socialresponsibility>twitterlink_publishing_advertising}"/>
+																<Link text=" {path: 'socialresponsibility>socialresponsibilityprize_proof_cmis_id', formatter: '.urlformatter'}"
+																	visible="{= ${socialresponsibility>socialresponsibilityprize_proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{socialresponsibility>socialresponsibilityprize_proof_cmis_id}"/>
+																<Button icon="sap-icon://delete" press="_onDeleteRow"/>
+																<Button icon="sap-icon://edit" press="_onEditResponsibilityRow"/>
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+											</content>
+										</IconTabFilter>
+										<IconTabSeparator icon="sap-icon://process"/>
+										<IconTabSeparator icon="sap-icon://it-system" iconDensityAware="true"/>
+										<IconTabFilter iconColor="Neutral" text="{i18n52A>SocialResponsibilityTitle}" count="" design="Vertical" showAll="false"
+											textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+											<content>
+												<Table modelContextChange="onAddFilter" width="auto" items="{path:'socialresponsibility>/ClubActivityCards52A'}" mode="None"
+													showSeparators="All" growing="false" growingThreshold="2" growingScrollToLoad="true" class="sapUiResponsiveMargin">
+													<!--<infoToolbar>-->
+													<!--	<Toolbar width="100%" height="auto" design="Solid" visible="false" enabled="true">-->
+													<!--	</Toolbar>-->
+													<!--</infoToolbar>-->
+													<headerToolbar>
+														<OverflowToolbar width="auto" height="auto" design="Solid" visible="true" enabled="true">
+															<content>
+																<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" width="" id="spacer3"/>
+																<Button text="{i18n52A>createNewActivityLabel}" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true"
+																	visible="true" iconDensityAware="false" press="_onCreateNewCardPress"/>
+															</content>
+														</OverflowToolbar>
+													</headerToolbar>
+													<columns>
+														<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="{i18n52A>initiative_title}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="{i18n52A>initiative_type}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" width="auto" halign="Begin"
+															vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column16">
+															<header>
+																<Text text="{i18n52A>initiative_location}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																	visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="{i18n52A>estimated_cost}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+														<Column width="8%" halign="Begin" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+															<header>
+																<Text text="" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+															</header>
+															<footer/>
+														</Column>
+													</columns>
+													<items>
+														<ColumnListItem press="_onRowCardPress" type="Active">
+															<cells>
+																<Text text="{socialresponsibility>initiative_title}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																	visible="true"/>
+																<Text text="{socialresponsibility>initiative_type}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																	visible="true"/>
+																<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m"
+																	text="{socialresponsibility>initiative_location}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																	visible="true"/>
+																<Text text="{socialresponsibility>estimated_cost}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																	visible="true"/>
+																<FlexBox width="100%" id="box0">
+																	<items>
+																		<Button xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" icon="sap-icon://edit"
+																			press="_onEditCardRow" id="button12" type="Transparent"/>
+																		<Button xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" icon="sap-icon://delete"
+																			press="_onDeleteRow" id="button11" type="Reject"/>
+																	</items>
+																</FlexBox>
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+											</content>
+										</IconTabFilter>
+									</items>
+									<content/>
+								</IconTabBar>
+							</layout:content>
+						</layout:BlockLayoutCell>
+						<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+					</layout:content>
+				</layout:BlockLayoutRow>
+			</layout:content>
+		</layout:BlockLayout>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

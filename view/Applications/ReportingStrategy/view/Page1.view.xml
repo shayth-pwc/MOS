@@ -1,0 +1,226 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.ReportingStrategy.controller.Page1">
+    <Page showHeader="true" title="{ReportingStrategyi18n>appTitle}" showFooter="true" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <layout:BlockLayout background="Dashboard" visible="true">
+                <layout:content>
+                    <layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+                        <layout:content>
+                            <layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+                                <layout:content>
+                                    <sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%" content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'11C'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+
+
+                                        <sap.ui.layout:content>
+                                            <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout">
+                                                <sap.ui.layout.form:content>
+                                                    <Text xmlns="sap.m" text="{hints>Description}"/>
+                                                </sap.ui.layout.form:content>
+                                            </sap.ui.layout.form:SimpleForm>
+                                        </sap.ui.layout:content>
+                                    </sap.ui.layout:VerticalLayout>
+                                </layout:content>
+                            </layout:BlockLayoutCell>
+                        </layout:content>
+</layout:BlockLayoutRow>
+                    <layout:BlockLayoutRow scrollable="false">
+                        <layout:content>
+                            <layout:BlockLayoutCell class="sapUiNoContentPadding" width="4" titleAlignment="Begin" titleLevel="Auto">
+                                <layout:content>
+                                    <IconTabBar id="bar0">
+                                        <items>
+                                            <IconTabFilter text="{ReportingStrategyi18n>section1title}" id="filter0">
+                                                <content>
+                                                    <Table xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" modelContextChange="onAddFilter" items="{ path: 'ReportingStrategy>/REPORTING1'}" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin" cd:w5g.dt.context="/REPORTING1" id="table0">
+                                                        <infoToolbar>
+                                                            <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true" id="toolbar1">
+                                                                <content>
+                                                                    <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label0"/>
+                                                                    
+                                                                </content>
+                                                                
+                                                            </Toolbar>
+                                                            
+                                                        </infoToolbar>
+                                                        <headerToolbar>
+                                                            <OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true" id="toolbar2">
+                                                                <content>
+                                                                    <ToolbarSpacer width="" id="spacer0"/>
+                                                                    <Button text="{ReportingStrategyi18n>Adddocument}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="addDocument1" id="button0"/>
+                                                                    </content>
+                                                                
+                                                            </OverflowToolbar>
+                                                            
+                                                        </headerToolbar>
+                                                        <columns>
+                                                            <Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false" id="column0">
+                                                                <header>
+                                                                    <Text text="{ReportingStrategyi18n>Documentname}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text5"/>
+                                                                    
+                                                                </header>
+                                                                <footer/>
+                                                                </Column>
+                                                            <Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column1">
+                                                                <header>
+                                                                    <Text text="{ReportingStrategyi18n>documentdescription}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text6"/>
+                                                                    
+                                                                </header>
+                                                                <footer/>
+                                                                </Column>
+                                                            <Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column2">
+                                                                <header>
+                                                                    <Text text="{ReportingStrategyi18n>FileAttachment}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text7"/>
+                                                                    
+                                                                </header>
+                                                                <footer/>
+                                                                </Column>
+                                                            <Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="10%" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column6">
+                                                                <header>
+                                                                    <Text width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text18"/>
+                                                                    
+                                                                </header>
+                                                                <footer/>
+                                                                </Column>
+                                                            </columns>
+                                                        <items>
+                                                            <ColumnListItem type="Active" id="item4___table0_0">
+                                                                <cells>
+                                                                    <ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true" id="identifier4___table0_0"/>
+                                                                    <Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text12___table0_0"/>
+                                                                    <ObjectNumber number="150.00" unit="USD" emphasized="true" state="None" id="link1___table0_0"/>
+                                                                    </cells>
+                                                                
+                                                            </ColumnListItem>
+                                                            <ColumnListItem type="Active">
+                                                                <cells>
+                                                                    <ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+                                                                    <Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                                    <ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+                                                                    </cells>
+                                                                
+                                                            </ColumnListItem>
+                                                            <ColumnListItem type="Active" press="Press1">
+                                                                <cells>
+                                                                    <ObjectIdentifier text="{ReportingStrategy>DOCUMENT_TYPE_NAME}" titleActive="false" visible="true"/>
+                                                                    <Text text="{ReportingStrategy>document_description1}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                                    <!--<Link text="{ReportingStrategy>proof_cmis_id}" visible="{= ${ReportingStrategy>proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink" textDirection="Inherit"/>-->
+                                                                    	<Link text=" {path: 'ReportingStrategy>proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${ReportingStrategy>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{ReportingStrategy>proof_cmis_id}"/>
+                                                                    <!--<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{proof_cmis_id}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text21"/>-->
+                                                                    <FlexBox xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%" id="box0_copy5___table5_0">
+                                                                        <items>
+                                                                            <Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_1651121173831_copy5___table5_0" icon="sap-icon://edit" type="Transparent" press="editDocument1"/>
+                                                                            <Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button1_copy5___table5_0" icon="sap-icon://delete" type="Reject" press="onRemoveRow"/>
+                                                                            </items>
+                                                                        
+                                                                    </FlexBox>
+                                                                    </cells>
+                                                                
+                                                            </ColumnListItem>
+                                                            </items>
+                                                        </Table>
+                                                </content>
+                                            </IconTabFilter>
+                                            <IconTabFilter text="{ReportingStrategyi18n>section2title}" id="filter1">
+                                                <content>
+                                                    <Table xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" modelContextChange="onAddFilter" items="{ path: 'ReportingStrategy>/REPORTING2'}" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin" cd:w5g.dt.context="/REPORTING2" id="table2">
+                                                        <infoToolbar>
+                                                            <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true" id="toolbar5">
+                                                                <content>
+                                                                    <Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label2"/>
+                                                                    
+                                                                </content>
+                                                                
+                                                            </Toolbar>
+                                                            
+                                                        </infoToolbar>
+                                                        <headerToolbar>
+                                                            <OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true" id="toolbar6">
+                                                                <content>
+                                                                    <ToolbarSpacer width="" id="spacer2"/>
+                                                                    <Button text="{ReportingStrategyi18n>Adddocument}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="addDocument2" id="button2"/>
+                                                                    </content>
+                                                                
+                                                            </OverflowToolbar>
+                                                            
+                                                        </headerToolbar>
+                                                        <columns>
+                                                            <Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false" id="column6_1657629575370">
+                                                                <header>
+                                                                    <Text text="{ReportingStrategyi18n>Documentname}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text18_1657629575370"/>
+                                                                    
+                                                                </header>
+                                                                <footer/>
+                                                                </Column>
+                                                            <Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column7">
+                                                                <header>
+                                                                    <Text text="{ReportingStrategyi18n>documentdescription}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text19"/>
+                                                                    
+                                                                </header>
+                                                                <footer/>
+                                                                </Column>
+                                                            <Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column8">
+                                                                <header>
+                                                                    <Text text="{ReportingStrategyi18n>FileAttachment}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text20"/>
+                                                                    
+                                                                </header>
+                                                                <footer/>
+                                                                </Column>
+                                                            <Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="10%" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="fsfds">
+                                                                <header>
+                                                                    <Text width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="fbfd"/>
+                                                                    
+                                                                </header>
+                                                                <footer/>
+                                                                </Column>
+                                                            </columns>
+                                                        <items>
+                                                            <ColumnListItem type="Active" id="item11___table2_0">
+                                                                <cells>
+                                                                    <ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true" id="identifier8___table2_0"/>
+                                                                    <Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text25___table2_0"/>
+                                                                    <ObjectNumber number="150.00" unit="USD" emphasized="true" state="None" id="link2___table2_0"/>
+                                                                    </cells>
+                                                                
+                                                            </ColumnListItem>
+                                                            <ColumnListItem type="Active">
+                                                                <cells>
+                                                                    <ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+                                                                    <Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                                    <ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+                                                                    </cells>
+                                                                
+                                                            </ColumnListItem>
+                                                            <ColumnListItem type="Active" press="Press2">
+                                                                <cells>
+                                                                    <ObjectIdentifier text="{ReportingStrategy>DOCUMENT_TYPE_NAME}" titleActive="false" visible="true"/>
+                                                                    <Text text="{ReportingStrategy>document_description2}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                                                    <Link text=" {path: 'ReportingStrategy>proof_cmis_id2', formatter: '.urlformatter'}" visible="{= ${ReportingStrategy>proof_cmis_id2} !== '' ? true : false }" target="_blank" href="{ReportingStrategy>proof_cmis_id2}"/>
+                                                                    <!--<Link text="{ReportingStrategy>proof_cmis_id2}" visible="{= ${ReportingStrategy>proof_cmis_id2} !== '' ? true : false }" target="_blank" press="openlink" textDirection="Inherit"/>-->
+                                                                    <!--<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{proof_cmis_id2}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text22"/>-->
+                                                                    <FlexBox xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%" id="box0_copy5___table5_0_copy2">
+                                                                        <items>
+                                                                            <Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_1651121173831_copy5___table5_0_copy2" icon="sap-icon://edit" type="Transparent" press="editDocument2"/>
+                                                                            <Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button1_copy5___table5_0_copy2" icon="sap-icon://delete" type="Reject" press="onRemoveRow"/>
+                                                                            </items>
+                                                                        
+                                                                    </FlexBox>
+                                                                    </cells>
+                                                                
+                                                            </ColumnListItem>
+                                                            </items>
+                                                        </Table>
+                                                </content>
+                                            </IconTabFilter></items>
+                                    </IconTabBar>
+                                </layout:content>
+                            </layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+                        </layout:content>
+                    </layout:BlockLayoutRow>
+                </layout:content>
+            </layout:BlockLayout>
+        </content>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

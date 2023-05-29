@@ -1,0 +1,55 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"  xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.RecreationalActivitiesGuide.controller.addAttendance">
+    <Dialog id="AddAttendance" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{i18n>events_AddExperience}" type="Standard" verticalScrolling="true">
+     	<content>
+			<layout:Grid xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12"
+				position="Center" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" class="sapUiMediumMarginTop"
+				cd:w5g.dt.context="/HRBUSINESSPLAN">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{i18n>Agegrp}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<!--<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false"-->
+							<!--	valueStateText="Invalid entry" maxLength="0" value="{RecreationalEvents>age_groups}" id="age_groups"/>-->
+								<ComboBox editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%" selectedKey="{RecreationalEvents>age_groups}"
+								placeholder="{RecreationalEvents>age_groups}" id="age_groups" >
+								<items>
+                                        	<!--<core:Item text="{ProcedureGuides>value}" enabled="true" key="{ProcedureGuides>id}"/>-->
+
+                                            <core:Item text="18-25" enabled="true" key="1"/>
+                                            <core:Item text="26-39" enabled="true" key="2"/>
+                                            <core:Item text="40-59" enabled="true" key="3"/>
+                                            <core:Item text="60 and above" enabled="true" key="4"/>
+                                        </items>
+                                    </ComboBox>
+							<Text text="{i18n>MaleAttendance}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false"
+								valueStateText="Invalid entry" maxLength="0" value="{RecreationalEvents>male_attendance}" id="male_attendance"/>
+							<Text text="{i18n>FemaleAttendance}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false"
+								valueStateText="Invalid entry" maxLength="0" value="{RecreationalEvents>female_attendance}" id="female_attendance"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+        <beginButton/>
+        <buttons>
+            <Button text="{i18n>OK}" press="onSave" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+            <Button text="{i18n>Cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onClose"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

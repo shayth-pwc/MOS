@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OfficialClubStrategy.controller.NewStrategicGoal">
+
+
+<Dialog contentHeight="450px" contentWidth="400px" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{OfficialClubStrategyi18n>creategoal}" type="Standard" verticalScrolling="true" class="sapUiResponsiveContentPadding">
+		<content>
+			<Label text="{OfficialClubStrategyi18n>GoalName}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<Input enabled="{appView>/enabled}" id="GoalNameInput" type="Text" showValueHelp="false" value="{OfficialClub>goal_title}" visible="true" valueHelpOnly="false" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" maxLength="0" class="sapUiTinyMargin" fieldWidth="" width="95%"/>
+			<Label text="{OfficialClubStrategyi18n>GoalDescription}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<TextArea enabled="{appView>/enabled}" id="GoalDescriptionText" rows="2" value="{OfficialClub>goal_description}" cols="50" maxLength="0" wrapping="None" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" visible="true" class="sapUiTinyMargin" width="95%"/>
+			<Label text="{OfficialClubStrategyi18n>GoalStartDate}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<DatePicker enabled="{appView>/enabled}" id="GoalStartDatePicker" change="handleCreateChange" width="98%" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy" value="{ path: 'OfficialClub>start_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" required="true"/>
+			<Label text="{OfficialClubStrategyi18n>GoalEndDate}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<DatePicker enabled="{appView>/enabled}" id="GoalEndDatePicker" change="handleCreateChange" width="98%" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy" value="{ path: 'OfficialClub>end_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" required="true"/>
+			<Label text="{OfficialClubStrategyi18n>GoalType}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<Select id="GoalType" forceSelection="false" enabled="{appView>/enabled}" change="onSelectGoalType" selectedKey="{OfficialClub>goal_type}">
+				<core:Item key="0" text="{OfficialClubStrategyi18n>DepartmentTypeKey}"/>
+				<core:Item key="1" text="{OfficialClubStrategyi18n>GoalTypeKey}"/>
+				<core:Item key="2" text="{OfficialClubStrategyi18n>EmployeeTypeKey}"/>
+			</Select>
+			<Label id="EmpDepLabel" text="" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<!--<Select  id="EmpDepSelect" enabled="{appView>/enabled}"  selectedKey="{goal_type_id}"  >-->
+			<!--	<core:Item key="" text=""/>-->
+			<!--</Select>-->
+			<Input id="EmpDepSelect" required="true" textFormatMode="Value" enabled="{appView>/enabled}" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest" selectedKey="{OfficialClub>goal_type_id}">
+				<suggestionItems>
+					<core:Item text=""/>
+				</suggestionItems>
+			</Input>
+				<Label text="{OfficialClubStrategyi18n>goalupload}:" design="Standard" width="100%"  textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<unified:FileUploader required="true" value="{OfficialClub>proof_cmis_id}" enabled="{appView>/enabled}" id="myFileUploadgoal" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+			
+													<Link  text=" {path: 'OfficialClub>proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${OfficialClub>proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{OfficialClub>proof_cmis_id}" />
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button id="SubmitButton" enabled="{appView>/enabled}" text="{OfficialClubStrategyi18n>save}" type="Default" iconFirst="true" width="auto" visible="true" iconDensityAware="false" press="_onSubmit"/>
+			<Button text="{OfficialClubStrategyi18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

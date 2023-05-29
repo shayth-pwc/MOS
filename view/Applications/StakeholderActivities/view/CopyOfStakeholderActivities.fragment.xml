@@ -1,0 +1,70 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderActivities.controller.CopyOfStakeholderActivities">
+	<Dialog contentWidth="700px" contentHeight="480px" horizontalScrolling="true" showHeader="true" state="None" stretch="false"
+		title="{StakeholderActivitiesi18n>objectViewTitle}" type="Standard" verticalScrolling="true">
+		<content>
+			<layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Left" width="100%" containerQuery="false" hSpacing="2" vSpacing="2"
+				visible="true">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false" class="sapUiSmallMarginTop">
+						<items>
+							<Label text="{StakeholderActivitiesi18n>tableStakeholdername}" width="100%" design="Bold"/>
+							<Text  class="sapUiTinyMarginTop sapUiTinyMarginBottom"  xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+								xmlns:unified="sap.ui.unified" xmlns="sap.m" text="{StakeholderActivities>STAKEHOLDER_NAME}" width="100%" maxLines="9" wrapping="true"
+								textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Label text="{StakeholderActivitiesi18n>tablenameActivitydescription}" width="100%" design="Bold"/>
+							<Text  class="sapUiTinyMarginTop sapUiTinyMarginBottom"  xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+								xmlns:unified="sap.ui.unified" xmlns="sap.m" text="{StakeholderActivities>activity_description}" width="100%" maxLines="3" wrapping="true"
+								textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Label text="{StakeholderActivitiesi18n>tablenameCommunicationFrequency}" width="100%" design="Bold"/>
+							<Text  class="sapUiTinyMarginTop sapUiTinyMarginBottom"  text="{StakeholderActivities>frequency_of_communication}" width="auto" maxLines="9"
+								wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Label text="{StakeholderActivitiesi18n>tablenameStartDate}" width="100%" design="Bold"/>
+							<Text  class="sapUiTinyMarginTop sapUiTinyMarginBottom"  xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+								text="{path:'StakeholderActivities>activity_start_date', type:'sap.ui.model.odata.type.DateTime', formatOptions: { style: 'short', strictParsing: true}, constraints: {displayFormat: 'Date'}}"
+								width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Label text="{StakeholderActivitiesi18n>FileAttachment}" width="100%" design="Bold"/>
+							<Link text=" {path: 'StakeholderActivities>proof_cmis_id', formatter: '.urlformatter'}"
+								visible="{= ${StakeholderActivities>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{StakeholderActivities>proof_cmis_id}"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" alignItems="Stretch" direction="Column" fitContainer="false"
+						width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false" class="sapUiSmallMarginTop">
+						<items>
+							<Label text="{StakeholderActivitiesi18n>tablenameActivityname}" width="100%" design="Bold"/>
+							<Text  class="sapUiTinyMarginTop sapUiTinyMarginBottom"  xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+								xmlns:unified="sap.ui.unified" xmlns="sap.m" text="{StakeholderActivities>activity_name}" width="100%" maxLines="3" wrapping="true"
+								textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Label text="{StakeholderActivitiesi18n>tablenameCommunicationMethod}" width="100%" design="Bold"/>
+							<Text  class="sapUiTinyMarginTop sapUiTinyMarginBottom"  xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+								xmlns:unified="sap.ui.unified" xmlns="sap.m" text="{StakeholderActivities>communication_type}" width="auto" maxLines="9" wrapping="true"
+								textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Label text="{StakeholderActivitiesi18n>tablenameFutureDevelopments}" width="100%" design="Bold"/>
+							<Text  class="sapUiTinyMarginTop sapUiTinyMarginBottom"  xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+								xmlns:unified="sap.ui.unified" xmlns="sap.m" text="{StakeholderActivities>future_developments}" width="auto" maxLines="9" wrapping="true"
+								textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Label text="{StakeholderActivitiesi18n>tablenameEndDate}" width="100%" design="Bold"/>
+							<Text  class="sapUiTinyMarginTop sapUiTinyMarginBottom"  xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+								text="{path:'StakeholderActivities>activity_end_date', type:'sap.ui.model.odata.type.DateTime', formatOptions: { style: 'short', strictParsing: true}, constraints: {displayFormat: 'Date'}}"
+								width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Label text="{StakeholderActivitiesi18n>stakeholder_identification}" width="100%" design="Bold"/>
+							<Text  class="sapUiTinyMarginTop sapUiTinyMarginBottom"  xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+								xmlns:unified="sap.ui.unified" xmlns="sap.m" text="{StakeholderActivities>stakeholder_identification}" width="100%"/>
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{StakeholderActivitiesi18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,90 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic"
+	controllerName="com.pwc.mec.MarketingEventsCards.controller.Worklist">
+	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false">
+		<semantic:titleHeading>
+			<Title text="{StakeholderMappingi18n>worklistTitle}" level="H2"/>
+		</semantic:titleHeading>
+		<semantic:content>
+			<l:VerticalLayout id="containerLayout" width="100%">
+				<l:BlockLayout background="Dashboard">
+					<l:BlockLayoutRow>
+						<l:BlockLayoutCell title="{StakeholderMappingi18n>Hints}" width="2"
+							content="{path:'Help>/TIPS_HINTS_HELP',filters:[{path:'app_area',operator:'EQ',value1:'Card Events'}]}">
+							<l:content>
+								<Text text="{Help>description}"/>
+							</l:content>
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+					<l:BlockLayoutRow visible="true">
+						<l:BlockLayoutCell title="{StakeholderMappingi18n>MarketingActivities}" width="2">
+							<l:content>
+								<Table modelContextChange="onAddFilter" id="table" width="auto" items="{ path: '/STAKEHOLDERS', sorter: { path: 'stakeholder_name', descending: false } }"
+									noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+									updateFinished=".onUpdateFinished">
+									<headerToolbar>
+										<OverflowToolbar>
+											<Title id="tableHeader" text="{worklistView>/worklistTableTitle}" level="H3"/>
+											<ToolbarSpacer/>
+											<Button xmlns="sap.m" id="button0" activeIcon="sap-icon://add" icon="sap-icon://add" press="addStakeholder" text="{StakeholderMappingi18n>add_stakeholder}"
+												type="Accept"/>
+											<content/>
+										</OverflowToolbar>
+									</headerToolbar>
+									<columns>
+										<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+											id="unitNumberColumn_copy">
+											<header>
+												<Text xmlns="sap.m" text="{StakeholderMappingi18n>tableStakeholdertype}" id="unitNumberColumnTitle_copy"/>
+											</header>
+										</Column>
+										<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+											id="unitNumberColumn_copy1">
+											<header>
+												<Text xmlns="sap.m" text="{StakeholderMappingi18n>tableStakeholdername}" id="unitNumberColumnTitle"/>
+											</header>
+										</Column>
+										<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+											id="unitNumberColumn_copy3">
+											<header>
+												<Text xmlns="sap.m" text="{StakeholderMappingi18n>tableImpactLevel}" id="unitNumberColumnTitle_copy3"/>
+											</header>
+										</Column>
+										<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+											id="unitNumberColumn_copy4">
+											<header>
+												<Text xmlns="sap.m" text="{StakeholderMappingi18n>tableImpactDescription}" id="unitNumberColumnTitle_copy4"/>
+											</header>
+										</Column>
+										<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+											id="unitNumberColumn_copy5" width="7%"/>
+									</columns>
+									<items>
+										<ColumnListItem type="Navigation" press=".onPress">
+											<cells>
+												<Text text="{STAKEHOLDER_TYPE_NAME}"/>
+												<Text xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="{stakeholder_name}"
+													cd:w5g.dt.context="/STAKEHOLDERS"/>
+												<Text text="{level_of_impact}"/>
+												<Text text="{impact_description}"/>
+												<FlexBox width="100%" id="box0">
+													<items>
+														<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+															id="button0_1651121173831" icon="sap-icon://edit" type="Transparent" press="editstakeholder"/>
+														<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button1"
+															icon="sap-icon://delete" type="Reject" press="deletestakeholder"/>
+													</items>
+												</FlexBox>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</l:content>
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+				</l:BlockLayout>
+				<l:content/>
+			</l:VerticalLayout>
+		</semantic:content>
+		<semantic:sendEmailAction/>
+	</semantic:SemanticPage>
+</mvc:View>

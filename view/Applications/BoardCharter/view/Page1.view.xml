@@ -1,0 +1,394 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.BoardCharter.controller.Page1">
+	<Page showHeader="true" title="{BoardCharteri18n>appTitle}" showFooter="true" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%" content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'11B'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+					<layout:BlockLayoutRow scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="4" title="" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true" selectedKey="__filter0">
+										<items>
+											<IconTabFilter iconColor="Neutral" text="{BoardCharteri18n>icontabtitle1}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<Panel xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0" class="sapUiTinyMarginBottom" backgroundDesign="Solid">
+														<headerToolbar>
+															<Toolbar id="toolbar4">
+																<Title text="{BoardCharteri18n>policies}" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="true"/>
+																<ToolbarSpacer width=""/>
+																<Button text="{BoardCharteri18n>addpolicy}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="addPolicy"/>
+															</Toolbar>
+														</headerToolbar>
+														<content>
+															<Table xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" modelContextChange="onAddFilter" items="{ path: 'BoardCharter>/BOARDCHARTERPOLICY', sorter: { path: 'policy_name', descending: false } }" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" cd:w5g.dt.context="/BOARDCHARTERPOLICY" id="table3">
+																<infoToolbar/>
+																<headerToolbar/>
+																<columns>
+																	<Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false" id="column16_1656942116333">
+																		<header>
+																			<Text text="{BoardCharteri18n>policyname}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text40_1656942116331"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column17_1656942116333">
+																		<header>
+																			<Text text="{BoardCharteri18n>policydesc}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text41"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column18">
+																		<header>
+																			<Text text="{BoardCharteri18n>policystartdate}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text42_1656942116333"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<!--<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column19">-->
+																	<!--	<header>-->
+																	<!--		<Text text="{BoardCharteri18n>policyenddate}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text43_1656942116334"/>-->
+																	<!--	</header>-->
+																	<!--	<footer/>-->
+																	<!--</Column>-->
+																	<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column20">
+																		<header>
+																			<Text text="{BoardCharteri18n>fileattachment}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text44"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="10%" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column16_1656581117073_copy">
+																		<header>
+																			<Text width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text39_1656581117072_copy"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																</columns>
+																<items>
+																	<ColumnListItem type="Active" id="item11___table3_0">
+																		<cells>
+																			<ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true" />
+																			<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text49___table3_0"/>
+																			<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None" id="text50___table3_0"/>
+																			<layout:HorizontalLayout xmlns:layout="sap.ui.layout" id="text51___table3_0">
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																			<layout:HorizontalLayout xmlns:layout="sap.ui.layout" id="link2___table3_0">
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																		</cells>
+																	</ColumnListItem>
+																	<ColumnListItem type="Active">
+																		<cells>
+																			<ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+																			<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+																			<layout:HorizontalLayout xmlns:layout="sap.ui.layout">
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																			<layout:HorizontalLayout xmlns:layout="sap.ui.layout">
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																		</cells>
+																	</ColumnListItem>
+																	<ColumnListItem type="Active" press="onPress1">
+																		<cells>
+																			<ObjectIdentifier text="{BoardCharter>policy_name}" titleActive="false" visible="true"/>
+																			<Text text="{BoardCharter>policy_description}" width="auto" maxLines="5" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			<!--<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{start_date_time}" width="auto" maxLines="9"
+																		wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text36"/>-->
+																			<!--<Text text="{path:'BoardCharter>start_date_time', type:'sap.ui.model.odata.type.DateTime', formatOptions: { style: 'short', strictParsing: true}, constraints: {displayFormat: 'Date'}}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+																			<!--<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{end_date_time}" width="auto" maxLines="9"
+																		wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text38"/>-->
+																			<Text text="{path:'BoardCharter>start_date_time',type:'sap.ui.model.type.Date',formatOptions: { pattern: 'dd/MM/yyyy' }}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text69___table5_0"/>
+																			<!--<Text text="{path:'BoardCharter>end_date_time',type:'sap.ui.model.type.Date',formatOptions: { pattern: 'dd/MM/yyyy' }}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="yh"/>-->
+																			<!--<Link xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{BoardCharter>proof_cmis_id}"-->
+																			<!--	visible="{= ${BoardCharter>proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" textDirection="Inherit"/>-->
+																				<Link text=" {path: 'BoardCharter>proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${BoardCharter>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{BoardCharter>proof_cmis_id}"/>	
+																			<FlexBox xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%" id="box0_copy6">
+																				<items>
+																					<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_1651121173831_copy6" icon="sap-icon://edit" type="Transparent" press="editPolicy"/>
+																					<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button1_copy6" icon="sap-icon://delete" type="Reject" press="deleteRow"/>
+																				</items>
+																			</FlexBox>
+																		</cells>
+																	</ColumnListItem>
+																</items>
+															</Table>
+														</content>
+													</Panel>
+													<Panel xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0_copy" backgroundDesign="Solid">
+														<headerToolbar>
+															<Toolbar id="toolbar4_copy">
+																<Title text="{BoardCharteri18n>procedures}" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="true"/>
+																<ToolbarSpacer width=""/>
+																<Button text="{BoardCharteri18n>addprocedure}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="AddProcedure"/>
+															</Toolbar>
+														</headerToolbar>
+														<content>
+															<Table xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" modelContextChange="onAddFilter" items="{ path: 'BoardCharter>/BOARDCHARTERPROCEDURES', sorter: { path: 'procedure_name', descending: false } }" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" cd:w5g.dt.context="/BOARDCHARTERPROCEDURES" id="table4">
+																<infoToolbar/>
+																<headerToolbar/>
+																<columns>
+																	<Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false" id="column21">
+																		<header>
+																			<Text text="{BoardCharteri18n>procedurename}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text60"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column22">
+																		<header>
+																			<Text text="{BoardCharteri18n>proceduredesc}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text61"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column23">
+																		<header>
+																			<Text text="{BoardCharteri18n>procedurestartdate}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text62"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<!--<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column24">-->
+																	<!--	<header>-->
+																	<!--		<Text text="{BoardCharteri18n>procedureenddate}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text63"/>-->
+																	<!--	</header>-->
+																	<!--	<footer/>-->
+																	<!--</Column>-->
+																	<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column25">
+																		<header>
+																			<Text text="{BoardCharteri18n>fileattachment}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text64"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="10%" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column17_copy">
+																		<header>
+																			<Text width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text40_1656581123219_copy"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																</columns>
+																<items>
+																	<ColumnListItem type="Active" id="item16___table4_0">
+																		<cells>
+																			<ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true" />
+																			<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text69___table4_0"/>
+																			<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None" id="text70___table4_0"/>
+																			<layout:HorizontalLayout xmlns:layout="sap.ui.layout" id="text71___table4_0">
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																			<layout:HorizontalLayout xmlns:layout="sap.ui.layout" id="link4___table4_0">
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																		</cells>
+																	</ColumnListItem>
+																	<ColumnListItem type="Active">
+																		<cells>
+																			<ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+																			<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+																			<layout:HorizontalLayout xmlns:layout="sap.ui.layout">
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																			<layout:HorizontalLayout xmlns:layout="sap.ui.layout">
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																		</cells>
+																	</ColumnListItem>
+																	<ColumnListItem type="Active" press="onPress2">
+																		<cells>
+																			<ObjectIdentifier text="{BoardCharter>procedure_name}" titleActive="false" visible="true"/>
+																			<Text text="{BoardCharter>procedure_description}" width="auto" maxLines="5" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			<!--	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+																		xmlns="sap.m" text="{start_date_time}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+																		id="text38_1654002333324"/>-->
+																			<!--<Text text="{path:'BoardCharter>start_date_time1', type:'sap.ui.model.odata.type.DateTime', formatOptions: { style: 'short', strictParsing: true}, constraints: {displayFormat: 'Date'}}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+																			<!--<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+																		xmlns="sap.m" text="{end_date_time}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+																		id="text37_1654002331732"/>-->
+																			<Text text="{path:'BoardCharter>start_date_time1',type:'sap.ui.model.type.Date',formatOptions: { pattern: 'dd/MM/yyyy' }}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="zz"/>
+																			<!--<Text text="{path:'BoardCharter>end_date_time1',type:'sap.ui.model.type.Date',formatOptions: { pattern: 'dd/MM/yyyy' }}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="zzi"/>-->
+																			<!--<Text text="{path:'BoardCharter>end_date_time1', type:'sap.ui.model.odata.type.DateTime', formatOptions: { style: 'short', strictParsing: true}, constraints: {displayFormat: 'Date'}}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+																			<!--<Link xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{BoardCharter>proof_cmis_id1}"-->
+																			<!--	visible="{= ${BoardCharter>proof_cmis_id1} !== '' ? true : false }" target="_blank" press="Openlink" textDirection="Inherit"/>-->
+																				<Link text=" {path: 'BoardCharter>proof_cmis_id1', formatter: '.urlformatter'}" visible="{= ${BoardCharter>proof_cmis_id1} !== '' ? true : false }" target="_blank" href="{BoardCharter>proof_cmis_id1}"/>	
+																			<FlexBox xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%" id="box0_copy8">
+																				<items>
+																					<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_1651121173831_copy8" icon="sap-icon://edit" type="Transparent" press="editProcedure"/>
+																					<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button1_copy8" icon="sap-icon://delete" type="Reject" press="deleteRow"/>
+																				</items>
+																			</FlexBox>
+																		</cells>
+																	</ColumnListItem>
+																</items>
+															</Table>
+														</content>
+													</Panel>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter iconColor="Neutral" text="{BoardCharteri18n>icontabtitle2}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<Panel xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0_1657000313266" backgroundDesign="Solid">
+														<headerToolbar>
+															<Toolbar id="toolbar2_1657000313266">
+																<Title text="{BoardCharteri18n>fileattachment}"/>
+															</Toolbar>
+														</headerToolbar>
+														<content>
+															<HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false" id="hbox1">
+																<items>
+																	<Text text="{BoardCharteri18n>conflict}:" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiSmallMarginTop sapUiMediumMarginEnd" id="text22"/>
+																	<unified:FileUploader placeholder="تحميل التقرير بصيغة PDF" class="sapUiTinyMarginTop" id="conflictupload" buttonOnly="true" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+																	<!--<unified:FileUploader required="true" value="{BoardCharter>proof_cmis_id}" class="sapUiTinyMarginTop" enabled="{appView>/enabled}" id="conflictupload" buttonOnly="true" icon="sap-icon://upload" iconOnly="false" sameFilenameAllowed="true" change="handleUploadPress" buttonText="{CommercialBusinessPlani18n>UploadNewReport}" style="Emphasized"/>-->
+																	<!--<Link text=" {path: 'BoardCharter>proof_cmis_id', formatter: '.formaturllist'}" class="sapUiSmallMarginBegin sapUiSmallMarginTop" textAlign="Begin" width="auto" target="_blank" wrapping="true" enabled="true" visible="true" emphasized="false" subtle="false" press="Openlink" id="conflictattach"/>-->
+																	<!--<ObjectAttribute id="conflictattach" text=" {path: 'BoardCharter>proof_cmis_id', formatter: '.formaturllist'}" active="true"-->
+																	<!--	class="sapUiSmallMarginBegin sapUiSmallMarginTop" press="Openlink"/>-->
+																		<Link id="conflictattach" class="sapUiSmallMarginBegin sapUiSmallMarginTop" text=" {path: 'BoardCharter>proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${BoardCharter>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{BoardCharter>proof_cmis_id}"/>	
+																</items>
+																<layoutData/>
+															</HBox>
+														</content>
+													</Panel>
+													<Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0_1657000271153" backgroundDesign="Solid">
+														<headerToolbar>
+															<Toolbar id="toolbar2">
+																<Title xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{BoardCharteri18n>documentlist}" width="auto" textAlign="Begin" visible="true" wrapping="true" id="title2" titleStyle="H4"/>
+																<ToolbarSpacer width=""/>
+																<Button text="{BoardCharteri18n>adddocument}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="addCharterData"/>
+															</Toolbar>
+														</headerToolbar>
+														<content>
+															<Table xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" modelContextChange="onAddFilter" items="{ path: 'BoardCharter>/BOARDCHARTERDATA', sorter: { path: 'document_name', descending: false } }" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" id="table5" backgroundDesign="Solid">
+																<infoToolbar/>
+																<headerToolbar/>
+																<columns>
+																	<Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false" id="column6">
+																		<header>
+																			<Text text="{BoardCharteri18n>documentname}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text28_1657000295667"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column7">
+																		<header>
+																			<Text text="{BoardCharteri18n>Priority}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text29"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column8">
+																		<header>
+																			<Text text="{BoardCharteri18n>risklevel}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text30"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column9">
+																		<header>
+																			<Text text="{BoardCharteri18n>migrationmethod}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text31"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column10">
+																		<header>
+																			<Text text="{BoardCharteri18n>storagemethod}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text32"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column11">
+																		<header>
+																			<Text text="{BoardCharteri18n>fileattachment}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text33"/>
+																		</header>
+																		<footer/>
+																	</Column>
+																	<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" width="10%" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column16">
+																		<footer/>
+																	</Column>
+																</columns>
+																<items>
+																	<ColumnListItem type="Active" id="item9_table5_0">
+																		<cells>
+																			<ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true" />
+																			<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text38_table5_0"/>
+																			<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None" id="text40_copy_table5_0"/>
+																			<layout:HorizontalLayout id="text42_copy_table5_0">
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																			<layout:HorizontalLayout id="text43_copy_table5_0">
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																			<layout:HorizontalLayout id="link3___table3_0_copy3_table3_1654675383676_copy_0_copy_table3_1654675383676_copy2_0_copy_table5_0">
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																		</cells>
+																	</ColumnListItem>
+																	<ColumnListItem type="Active">
+																		<cells>
+																			<ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+																			<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+																			<layout:HorizontalLayout>
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																			<layout:HorizontalLayout>
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																			<layout:HorizontalLayout>
+																				<layout:content/>
+																			</layout:HorizontalLayout>
+																		</cells>
+																	</ColumnListItem>
+																	<ColumnListItem type="Active" press="onPress3">
+																		<cells>
+																			<ObjectIdentifier text="{BoardCharter>document_name}" titleActive="false" visible="true"/>
+																			<Text text="{BoardCharter>priority}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{BoardCharter>risk_level}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text40_copy"/>
+																			<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{BoardCharter>migration_method}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text42_copy"/>
+																			<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{BoardCharter>storage_method}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text43_copy"/>
+																			<!--<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{BoardCharter>proof_cmis_id}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text41_copy"/>-->
+																			<!--<Link xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{BoardCharter>proof_cmis_id}"-->
+																			<!--	visible="{= ${BoardCharter>proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" textDirection="Inherit"-->
+																			<!--	id="link3___table3_0_copy3_table3_1654675383676_copy_0_copy_table3_1654675383676_copy2_0_copy"/>-->
+																				<Link text=" {path: 'BoardCharter>proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${BoardCharter>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{BoardCharter>proof_cmis_id}"/>	
+																			<FlexBox xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%" id="box0_copy4">
+																				<items>
+																					<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_1651121173831_copy4" icon="sap-icon://edit" type="Transparent" press="editCharterData"/>
+																					<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button1_copy4" icon="sap-icon://delete" type="Reject" press="deleteRow"/>
+																				</items>
+																			</FlexBox>
+																		</cells>
+																	</ColumnListItem>
+																</items>
+															</Table>
+														</content>
+													</Panel>
+												</content>
+											</IconTabFilter>
+										</items>
+										<content>
+											<Text text="Tab Bar Content goes here ..." width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</content>
+									</IconTabBar>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

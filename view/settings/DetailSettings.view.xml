@@ -1,0 +1,47 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" controllerName="pwc.portal.eval.ClubEvaluations.controller.settings.MasterSettings" height="100%">
+	<Page title="Yearly Evaluation for AlHilal Club" id="fragpage" showHeader="false" showFooter="true" showNavButton="false" floatingFooter="true">
+		<content>
+			<layout:BlockLayout id="bl" background="Default" visible="true" class="sapUiNoContentPadding">
+				<layout:content>
+					<layout:BlockLayoutRow id="blrow" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content/>
+							</layout:BlockLayoutCell>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell2" width="2" title="" titleAlignment="End" titleLevel="Auto">
+								<layout:content>
+									<List id="_IDEGen_list0" headerText="Evaluation Criteria" footerText="" backgroundDesign="Solid" growingThreshold="20" visible="true" keyboardMode="Edit">
+										<infoToolbar>
+											<Toolbar id="_IDEGen_toolbar0" width="50%" height="auto" design="Auto" visible="false" enabled="true">
+												<content>
+													<Label id="_IDEGen_label0" text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+												</content>
+											</Toolbar>
+										</infoToolbar>
+										<headerToolbar/>
+										<items>
+											<StandardListItem title="Score 7" description="Lorem Ipsum is simply dummy text of the printing" infoState="Error" type="Active" selected="false" visible="true"/>
+											<StandardListItem title="Score 6" description="Criteria Content" infoState="Success" type="Active" selected="true" visible="true"/>
+											<StandardListItem title="Score 5" description="Criteria Content" infoState="Success" type="Active" selected="false" visible="true"/>
+											<StandardListItem title="Score 4" description="Criteria Content" infoState="Success" type="Active" selected="false" visible="true"/>
+											<StandardListItem title="Score 3" description="Criteria Content" infoState="Success" type="Active" selected="false" visible="true"/>
+											<StandardListItem title="Score 2" description="Criteria Content" infoState="Success" type="Active" selected="false" visible="true"/>
+											<StandardListItem title="Score 1" description="Criteria Content" infoState="Success" type="Active" selected="false" visible="true"/>
+										</items>
+									</List>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+	<footer>
+	    <Toolbar width="100%" id="toolbar1">
+	        <content>
+	            <Button xmlns="sap.m" text="{i18n>Review}" id="button0"/>
+	        </content>
+	    </Toolbar>
+	</footer>
+	</Page>
+</mvc:View>

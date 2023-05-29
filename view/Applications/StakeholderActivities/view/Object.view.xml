@@ -1,0 +1,84 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderActivities.controller.Object"><semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false" busy="{objectView>/busy}" busyIndicatorDelay="{objectView>/delay}">
+		<semantic:titleHeading>
+			<Title text=" {StakeholderActivitiesi18n>objectviewBigTitle} {stakeholder_name}" level="H2"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<ObjectNumber xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" number="{id}" id="object" cd:w5g.dt.context="/STAKEHOLDERS" visible="false"/>
+		</semantic:headerContent>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+		</semantic:sendEmailAction>
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press=".onShareInJamPress"/>
+		</semantic:shareInJamAction>
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id="shareTile" title="{objectView>/saveAsTileTitle}"/>
+		</semantic:saveAsTileAction>
+		<semantic:content>
+			<Table modelContextChange="onAddFilter" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" items="{ACTIVITIESASSOC}" id="table2" noDataText="{i18n>nodata}" cd:w5g.dt.context="/STAKEHOLDERS/ACTIVITIESASSOC">
+				<items>
+					<ColumnListItem type="Active" cd:w5g.dt.context="/STAKEHOLDERS/ACTIVITIESASSOC" press="editactivity">
+						<cells>
+							<Text text="{activity_name}" cd:w5g.dt.context="/STAKEHOLDERS/ACTIVITIESASSOC"/>
+							<Text text="{activity_description}"/>
+							<Text text="{communication_type}"/>
+							
+							<Text text="{future_developments}"/>
+							<Text text="{frequency_of_communication}"/></cells>
+							<FlexBox xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" width="100%">
+							    <items>
+							        <Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" icon="sap-icon://edit" type="Transparent" press="editactivity"/>
+							        <Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" icon="sap-icon://delete" type="Reject" press="deleteactivity"/>
+							        </items>
+							    
+							</FlexBox>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column id="column0">
+						<header>
+							<Label text="{StakeholderActivitiesi18n>tablenameActivityname}" id="label0"/>
+						</header>
+					</Column>
+					<Column id="column1">
+						<header>
+							<Label text="{StakeholderActivitiesi18n>tablenameActivitydescription}" id="label1"/>
+						</header>
+					</Column>
+					<Column id="column2">
+						<header>
+							<Label text="{StakeholderActivitiesi18n>tablenameCommunicationMethod}" id="label2"/>
+						</header>
+					</Column>
+					<Column id="column4">
+						<header>
+							<Label text="{StakeholderActivitiesi18n>tablenameFutureDevelopments}"/>
+						</header>
+					</Column>
+					<Column id="column5">
+						<header>
+							<Label text="{StakeholderActivitiesi18n>tablenameCommunicationFrequency}"/>
+						</header>
+					</Column>
+					<Column id="column2_copy" width="7%">
+					    
+					</Column>
+					
+					
+					
+				</columns>
+			<headerToolbar>
+			    <OverflowToolbar width="100%" id="toolbar1">
+			        <content>
+			            <Title xmlns="sap.m" text=" {StakeholderActivitiesi18n>objectViewTitle2} {stakeholder_name}" id="title1"/>
+			            <ToolbarSpacer id="spacer1"/>
+			            <Button xmlns="sap.m" text="{StakeholderActivitiesi18n>add_activity}" id="button0" icon="sap-icon://add-activity" press="addnewactivity" type="Accept"/>
+			        </content>
+			    </OverflowToolbar>
+			</headerToolbar>
+			</Table>
+			
+			
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>

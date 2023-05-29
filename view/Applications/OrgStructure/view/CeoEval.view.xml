@@ -1,0 +1,26 @@
+<mvc:View controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OrgStructure.controller.CeoEval" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page">
+					<customHeader>
+						<Bar >
+							<contentRight>
+								<Button id="edit" visible="false" text="{i18n>Edit}" icon ="sap-icon://edit" press="handleEditPressevalorg"/>
+								<Button id="save" text="{i18n>Save}"  icon ="sap-icon://save" type="Emphasized" visible="false" press="handleSavePressevalorg"/>
+								<Button id="cancel" text="{i18n>Cancel}" icon ="sap-icon://cancel" visible="false" press="handleCancelPressevalorg"/>
+							</contentRight>
+						</Bar>
+					</customHeader>
+							<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+			
+			</OverflowToolbar>
+		</footer>
+				</Page>
+				
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

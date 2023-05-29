@@ -1,0 +1,84 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderMapping.controller.Object">
+    <Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{StakeholderMappingi18n>objectViewTitle}" type="Standard" verticalScrolling="true">
+        <content>
+            <layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Left" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true">
+                <layout:content>
+                    <VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false" class="sapUiSmallMarginTop">
+                        <items>
+                            <Text text="{StakeholderMappingi18n>tableStakeholdername}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text9"/>
+                           <ComboBox  modelContextChange="onAddFilter" items="{/STAKEHOLDERS}" editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%" selectedKey="{stakeholder_id}">
+                                <items>
+                                	<core:Item text="{stakeholder_name}" enabled="true" key="{id}"/>
+                                    </items>
+                                
+                            </ComboBox>
+                            <Text text="{StakeholderMappingi18n>tablenameActivitydescription}" width="100%" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text7"/>
+                            <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" value="{activity_description}" id="activity_description"/>
+                              
+                            
+                            <Text text="{StakeholderMappingi18n>tablenameCommunicationFrequency}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                            <ComboBox editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%" id="frequency_of_communication" selectedKey="{frequency_of_communication}">
+                                <items>
+                                    <core:Item text="{StakeholderMappingi18n>Annually}" enabled="true" key="{StakeholderMappingi18n>Annually}"/>
+                                    <core:Item text="{StakeholderMappingi18n>Quarterly}" enabled="true" key="{StakeholderMappingi18n>Quarterly}"/>
+                                    <core:Item text="{StakeholderMappingi18n>Monthly}" enabled="true" key="{StakeholderMappingi18n>Monthly}"/>
+                                    <core:Item text="{StakeholderMappingi18n>Weekly}" enabled="true" key="{StakeholderMappingi18n>Weekly}"/>
+                                    <core:Item text="{StakeholderMappingi18n>Daily}" enabled="true" key="{StakeholderMappingi18n>Daily}"/>
+                                </items>
+                            </ComboBox>
+                            <Text text="{StakeholderMappingi18n>tablenameStartDate}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                            <!--<DatePicker width="100%" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd" id="activity_end_date" value="{activity_end_date}"/>-->
+                            <!--<DateTimePicker id="activity_start_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange" value="{path:'activity_start_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>-->
+							<!--<DatePicker id="activity_start_date" change="handleCreateChange" value="{path:'activity_start_date',type:'sap.ui.model.type.DateTime',formatOptions: {style: 'long'}}" placeholder="mm/dd/yyyy" displayFormat="dd/MM/yyy" required="true" enabled="true" visible="true" valueFormat="yyyy-MM-ddTHH:mm:ss"/>-->
+				  <DatePicker enabled="{appView>/enabled}" id="activity_start_date" change="handleCreateChange" width="98%" valueFormat="yyyy-MM-ddTHH:mm:ss"
+				displayFormat="dd/MM/yyy" value="{ path: 'activity_start_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"
+				required="true"/>
+				 
+				 <Text text="{StakeholderMappingi18n>FileAttachment}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							
+						<!--	<unified:FileUploader id="myFileUploadstakeholderactivity" uploadUrl="" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete"/>
+							<Link text="{proof_cmis_id}" visible="{= ${proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>
+							<Button text="{StakeholderMappingi18n>Upload}" press="handleUploadPress" width="auto"/>-->
+							
+							
+							<unified:FileUploader required="true" value="{proof_cmis_id}" enabled="{appView>/enabled}" id="myFileUploadstakeholderactivity" buttonOnly="false"
+								icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+							<Link text="{proof_cmis_id}" visible="{= ${proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>
+                            
+								
+                        </items>
+                        <layoutData/>
+                    </VBox>
+                    <VBox xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false" class="sapUiSmallMarginTop" id="vbox2">
+                        <items>
+                        	<Text text="{StakeholderMappingi18n>tablenameActivityname}" width="100%" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                            <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" value="{activity_name}" id="activity_name"/>
+                            
+                            <Text text="{StakeholderMappingi18n>tablenameCommunicationMethod}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                            <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" value="{communication_type}" id="communication_type"/>
+                            <Text text="{StakeholderMappingi18n>tablenameFutureDevelopments}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text8"/>
+                            <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" id="future_developments" value="{future_developments}"/>
+                            
+                            <Text text="{StakeholderMappingi18n>tablenameEndDate}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text10"/>
+                            <!--<DatePicker width="100%" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd" id="activity_end_date_copy" value="{activity_end_date}"/>-->
+                          <DatePicker enabled="{appView>/enabled}" id="activity_end_date" change="handleCreateChange" width="98%" valueFormat="yyyy-MM-ddTHH:mm:ss"
+				displayFormat="dd/MM/yyy" value="{ path: 'activity_end_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"
+				required="true"/>
+                            <!--<DatePicker id="activity_end_date" change="handleCreateChange" value="{path:'activity_end_date',type:'sap.ui.model.type.DateTime',formatOptions: {style: 'long'}}" placeholder="mm/dd/yyyy" displayFormat="medium" required="true" enabled="true" visible="true" valueFormat="yyyyMMdd"/>-->
+                            <!--<DateTimePicker id="activity_end_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange" value="{path:'activity_end_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>-->
+                            </items>
+                        <layoutData/>
+                        </VBox>
+                </layout:content>
+            </layout:Grid>
+        </content>
+        <beginButton/>
+        <buttons>
+            <Button text="{StakeholderMappingi18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+            <Button text="{StakeholderMappingi18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

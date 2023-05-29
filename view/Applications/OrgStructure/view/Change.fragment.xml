@@ -1,0 +1,127 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OrgStructure.controller.CeoEval" xmlns:u="sap.ui.unified">
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="FormChange480_12120" editable="true">
+			<f:title>
+				<core:Title text="{i18n>Information} {evalorgstruct>position_name} "/>
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+					emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false"/>
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer title="{i18n>ContactInfo}">
+					<f:formElements>
+						<f:FormElement label="{i18n>Name}" required="true">
+							<f:fields>
+								<Input required="true" value="{evalorgstruct>emp_name}" id="emp_name"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="{i18n>Email}">
+							<f:fields>
+								<Input value="{evalorgstruct>emp_email}" type="Email" id="emp_email" change="validateevalorg"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="{i18n>Tel}">
+							<f:fields>
+								<Input value="{evalorgstruct>emp_contactnumber}" id="emp_contactnumber" type="Number" change="validatenumberevalorg"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="{i18n>BirthDate}">
+							<f:fields>
+								<Text text="{path: 'evalorgstruct>EMP_BIRTHDATE', formatter: '.myFormatterDateevalorg'}"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+				<f:FormContainer title="{i18n>PositionInfo}">
+					<f:formElements>
+						<f:FormElement label="{i18n>PositionResponsibility}">
+							<f:fields>
+								<Text text="{evalorgstruct>position_description}"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+					<f:formElements>
+						<f:FormElement label="{i18n>PositionRequirments}">
+							<f:fields>
+								<Text text="{evalorgstruct>position_requirements}"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+					<f:formElements>
+						<f:FormElement label="{i18n>PositionRequiredSkills}">
+							<f:fields>
+								<Text text="{evalorgstruct>POSITION_REQUIREDSKILLS}"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+					<f:formElements>
+						<f:FormElement label="{i18n>AreofSpeciality}">
+							<f:fields>
+								<Text text="{evalorgstruct>AreofSpeciality}"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<f:Form id="FormChange480_12120-2" editable="true">
+			<f:title>
+				<core:Title text="{i18n>Attachments}"/>
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+					emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false"/>
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer title="{i18n>Documents}">
+					<f:formElements>
+						<f:FormElement label="السيرة الذاتية">
+							<f:fields>
+								<u:FileUploader id="EMP_CV_CMIS_ID" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+									change=".onUploadevalorg"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="الشهادات الاحترافية">
+							<f:fields>
+								<u:FileUploader id="emp_prof_license_cmis_id" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+									change=".onUploadevalorg"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="عقد العمل">
+							<f:fields>
+								<u:FileUploader id="emp_contract_cmis_id" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+									change=".onUploadevalorg"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="التأمينات الاجتماعية">
+							<f:fields>
+								<u:FileUploader id="emp_social_insurance_cmis_id" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+									change=".onUploadevalorg"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="بطاقة الهويّة">
+							<f:fields>
+								<u:FileUploader id="emp_cmis_id_authcard" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+									change=".onUploadevalorg"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="{i18n>InvestmentLicense}" visible="{= ${evalorgstruct>position_name} === 'مدير الاستثمار' ? true : false}">
+							<f:fields>
+								<u:FileUploader id="emp_invest_license_cmis_id" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+									visible="{= ${evalorgstruct>position_name} === 'مدير الاستثمار' ? true : false}" change=".onUploadevalorg"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="{i18n>Graphicdesign}" visible="{= ${evalorgstruct>position_name} === 'مسؤول حسابات التواصل' ? true : false}">
+							<f:fields>
+								<u:FileUploader id="emp_graphic_design_ws_cmis_id" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+									visible="{= ${evalorgstruct>position_name} === 'مسؤول حسابات التواصل' ? true : false}" change=".onUploadevalorg"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+</core:FragmentDefinition>

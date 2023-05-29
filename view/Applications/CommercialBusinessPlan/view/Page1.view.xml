@@ -1,0 +1,404 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.CommercialBusinessPlan.controller.Page1">
+	<Page showHeader="true" title="{CommercialBusinessPlani18n>appTitle}" showFooter="true" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+										content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'12A'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+												layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+			<layout:BlockLayout id="bl" background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin"
+								titleLevel="Auto">
+								<layout:content>
+									<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true">
+										<items>
+											<IconTabFilter id="icontabbar1" iconColor="Neutral" text="{CommercialBusinessPlani18n>icontabbar1}" count="" design="Vertical"
+												showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<layout:BlockLayout background="Dashboard" visible="true">
+														<layout:content>
+															<layout:BlockLayoutRow scrollable="false">
+																<layout:content>
+																	<layout:BlockLayoutCell width="1" title="" titleAlignment="Begin" titleLevel="Auto">
+																		<layout:content>
+																			<OverflowToolbar width="auto" height="auto" visible="true" enabled="true" design="Transparent" style="Clear">
+																				<content>
+																					<ToolbarSpacer width=""/>
+																					<Button iconFirst="false" width="auto" enabled="true" visible="true" iconDensityAware="false" press="editCommercial" icon="sap-icon://edit"
+																						type="Accept"/>
+																				</content>
+																			</OverflowToolbar>
+																			<HBox class="sapUiTinyMarginBottom">
+																				<Label text="{CommercialBusinessPlani18n>DescriptionofCurrentSituation}:"/>
+																			</HBox>
+																			<HBox class="sapUiSmallMarginBottom">
+																				<Text id="commercialsit" text="{CommercialPlan>current_situation}"/>
+																			</HBox>
+																			<HBox class="sapUiTinyMarginBottom">
+																				<Label text="{CommercialBusinessPlani18n>DistinguishingFeaturesandDesirability}:"/>
+																			</HBox>
+																			<HBox class="sapUiSmallMarginBottom">
+																				<Text id="commercialdisting" text="{CommercialPlan>distinguishing_features}"/>
+																			</HBox>
+																		</layout:content>
+																	</layout:BlockLayoutCell>
+																</layout:content>
+															</layout:BlockLayoutRow>
+															<layout:BlockLayoutRow scrollable="false">
+																<layout:content>
+																	<layout:BlockLayoutCell width="2" title="{CommercialBusinessPlani18n>FiveYear}" titleAlignment="Begin" titleLevel="H4">
+																		<layout:content>
+																			<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+																				visible="true" displayInline="false">
+																				<items>
+																					<!--															<Link text="{proof_cmis_id1}" visible="{= ${proof_cmis_id1} !== '' ? true : false }" target="_blank" press="openlink1"/>
+-->
+																					<!--<Link text="{proof_cmis_id1}" textAlign="Begin" width="auto" target="_blank" wrapping="true" enabled="true" visible="true" emphasized="false" subtle="false" class="sapUiMediumMarginBottom" press="openlink1" id="link1"/>-->
+																					<HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+																						visible="true" displayInline="false">
+																						<items>
+																							<unified:FileUploader required="true" value="{CommercialPlan>proof_cmis_id1}" enabled="{appView>/enabled}" id="Fiveyearupload"
+																								buttonOnly="true" icon="sap-icon://upload" iconOnly="false" class="sapUiTinyMarginBegin sapUiMediumMarginEnd" sameFilenameAllowed="true"
+																								change="handleUploadPress1" buttonText="{CommercialBusinessPlani18n>UploadNewReport}" style="Emphasized"/>
+																							<!--<Button id="openfiveyear" text=" {path: 'CommercialPlan>proof_cmis_id1', formatter: '.urlformatter'}" type="Default" icon="sap-icon://image-viewer" iconFirst="true" width="auto"-->
+																							<!--	enabled="true" visible="true" iconDensityAware="false" press="openlink1"/>-->
+																							<Link class="sapUiTinyMarginTop" id="openfiveyear" text=" {path: 'CommercialPlan>proof_cmis_id1', formatter: '.urlformatter'}"
+																								visible="{= ${CommercialPlan>proof_cmis_id1} !== '' ? true : false }" target="_blank" href="{CommercialPlan>proof_cmis_id1}"/>
+																						</items>
+																						<layoutData/>
+																					</HBox>
+																				</items>
+																				<layoutData/>
+																			</VBox>
+																		</layout:content>
+																	</layout:BlockLayoutCell>
+																	<layout:BlockLayoutCell width="2" title="{CommercialBusinessPlani18n>InvestmentComp}" titleAlignment="Begin" titleLevel="Auto">
+																		<layout:content>
+																			<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+																				visible="true" displayInline="false">
+																				<items>
+																					<!--<Link text="{CommercialPlan>proof_cmis_id2}" textAlign="Begin" width="auto" target="_blank" wrapping="true" enabled="true" visible="true" emphasized="false" subtle="false" class="sapUiMediumMarginBottom" press="openlink2" id="link2"/>-->
+																					<HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+																						visible="true" displayInline="false">
+																						<items>
+																							<unified:FileUploader required="true" value="{CommercialPlan>proof_cmis_id2}" enabled="{appView>/enabled}" id="Investmentcompupload"
+																								buttonOnly="true" icon="sap-icon://upload" iconOnly="false" sameFilenameAllowed="true" change="handleUploadPress2"
+																								class="sapUiMediumMarginEnd" buttonText="{CommercialBusinessPlani18n>UploadNewReport}" style="Emphasized"/>
+																							<!--<Button id="investopenlink" text="{CommercialPlan>proof_cmis_id2}" type="Default" icon="sap-icon://image-viewer" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="openlink1"/>-->
+																							<!--<Button text="Upload New Report" type="Default" icon="sap-icon://upload" iconFirst="true" width="100%" enabled="true" visible="true"
+																		iconDensityAware="false"/>-->
+																							<Link class="sapUiTinyMarginTop" id="investopenlink" text=" {path: 'CommercialPlan>proof_cmis_id2', formatter: '.urlformatter'}"
+																								visible="{= ${CommercialPlan>proof_cmis_id2} !== '' ? true : false }" target="_blank" href="{CommercialPlan>proof_cmis_id2}"/>
+																						</items>
+																						<layoutData/>
+																					</HBox>
+																				</items>
+																				<layoutData/>
+																			</VBox>
+																		</layout:content>
+																	</layout:BlockLayoutCell>
+																</layout:content>
+															</layout:BlockLayoutRow>
+														</layout:content>
+													</layout:BlockLayout>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter iconColor="Neutral" text="{CommercialBusinessPlani18n>icontabbar2}" count="" design="Vertical" showAll="false"
+												textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<Table xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic" xmlns="sap.m"
+														xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" modelContextChange="onAddFilter"
+														items="{ path: 'CommercialPlan>/COMMERCIALSERVICES', sorter: { path: 'CommercialPlan&gt;activity_type', descending: false } }"
+														id="table_copy" width="auto" noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true"
+														growingScrollToLoad="true" updateFinished=".onUpdateFinished" cd:w5g.dt.context="/COMMERCIALSERVICES">
+														<headerToolbar>
+															<OverflowToolbar id="toolbar4">
+																<!--<Title id="tableHeader" text="{worklistView>/worklistTableTitle}" level="H3"/>-->
+																<ToolbarSpacer/>
+																<Button xmlns="sap.m" id="button0_copy" activeIcon="sap-icon://add" icon="sap-icon://add"
+																	text="{CommercialBusinessPlani18n>addcomercialservice}" type="Accept" press="addServices"/>
+																<content/>
+															</OverflowToolbar>
+														</headerToolbar>
+														<columns>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy2">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>ActivityType}" id="unitNumberColumnTitle_copy2"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy6">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>ActivityName}" id="unitNumberColumnTitle_copy5"/>
+																</header>
+															</Column>
+															<Column xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified" xmlns:l="sap.ui.layout"
+																xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+																xmlns="sap.m" id="unitNumberColumn_copy15">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>ActivityDescription}" id="unitNumberColumnTitle_copy12"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy7">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>ActivityDate}" id="unitNumberColumnTitle_copy6"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy8">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>TargetAudience}" id="unitNumberColumnTitle_copy7"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy9" width="10%"/>
+														</columns>
+														<items>
+															<ColumnListItem type="Active" press="onPress2" id="item1_table_copy_0" cd:w5g.dt.context="CommercialPlan&gt;/COMMERCIALSERVICES">
+																<cells>
+																	<Text text="{CommercialPlan>ACTIVITY_TYPE_NAME}" id="text8_table_copy_0" cd:w5g.dt.context="CommercialPlan&gt;/COMMERCIALSERVICES"/>
+																	<Text xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="{CommercialPlan>activity_name}"
+																		cd:w5g.dt.context="CommercialPlan&gt;/COMMERCIALSERVICES" id="text9_table_copy_0"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified"
+																		xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic" xmlns="sap.m"
+																		xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="{CommercialPlan>activity_description}"
+																		cd:w5g.dt.context="CommercialPlan&gt;/COMMERCIALSERVICES" id="text9_table_copy_0_copy"/>
+																	<!--<Text text="{activity_date}" id="text10_table_copy_0"/>-->
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+																		text="{path:'CommercialPlan>activity_date', type:'sap.ui.model.odata.type.DateTime', formatOptions: { style: 'short', strictParsing: true}, constraints: {displayFormat: 'Date'}}"
+																		width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text21"/>
+																	<Text text="{CommercialPlan>target_audience}" id="text11_table_copy_0"/>
+																	<FlexBox width="100%" id="box0_copy_table_copy_0">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button0_1651121173831_copy_table_copy_0" icon="sap-icon://edit" type="Transparent" press="editServices"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button1_copy_table_copy_0" icon="sap-icon://delete" type="Reject" press="deleteentry"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter iconColor="Neutral" text="{CommercialBusinessPlani18n>icontabbar3}" count="" design="Vertical" showAll="false"
+												textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<Table xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic" xmlns="sap.m"
+														xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" modelContextChange="onAddFilter" id="table" width="auto"
+														items="{ path: 'CommercialPlan>/COMMERCIALGOALS', sorter: { path: 'goal_type', descending: false } }"
+														noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+														updateFinished=".onUpdateFinished" cd:w5g.dt.context="CommercialPlan&gt;/COMMERCIALGOALS">
+														<headerToolbar>
+															<OverflowToolbar id="toolbar3">
+																<!--<Title id="tableHeader" text="{worklistView>/worklistTableTitle}" level="H3"/>-->
+																<ToolbarSpacer/>
+																<Button xmlns="sap.m" id="button0" activeIcon="sap-icon://add" icon="sap-icon://add" text="{CommercialBusinessPlani18n>addcomercialgoal}"
+																	type="Accept" press="addGoals"/>
+																<content/>
+															</OverflowToolbar>
+														</headerToolbar>
+														<columns>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>GoalType}" id="unitNumberColumnTitle_copy"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy1">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>GoalName}" id="unitNumberColumnTitle"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy3">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>GoalDescription}" id="unitNumberColumnTitle_copy3"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy4">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>RelatedGoal}" id="unitNumberColumnTitle_copy4"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy5" width="10%"/>
+														</columns>
+														<items>
+															<ColumnListItem type="Active" press="rowpress3" id="item0_table_0">
+																<cells>
+																	<Text text="{CommercialPlan>GOAL_TYPE_NAME}" id="text4_table_0"/>
+																	<Text xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="{CommercialPlan>goal_name}"
+																		cd:w5g.dt.context="CommercialPlan&gt;/COMMERCIALGOALS" id="text5_table_0"/>
+																	<Text text="{CommercialPlan>goal_description}" id="text6_table_0"/>
+																	<Text text="{CommercialPlan>GOALTITLE_NAME}" id="text7_table_0"/>
+																	<FlexBox width="100%" id="box0_table_0">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button0_1651121173831_table_0" icon="sap-icon://edit" type="Transparent" press="editGoals"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button1_table_0" icon="sap-icon://delete" type="Reject" press="deleteentry"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter iconColor="Neutral" text="{CommercialBusinessPlani18n>icontabbar4}" count="" design="Vertical" showAll="false"
+												textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<Table xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic" xmlns="sap.m"
+														xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" modelContextChange="onAddFilter" id="table_copy2" width="auto"
+														items="{ path: 'CommercialPlan>/COMMERCIALRISKS', sorter: { path: 'risk_name', descending: false } }"
+														noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+														updateFinished=".onUpdateFinished" cd:w5g.dt.context="CommercialPlan&gt;/COMMERCIALRISKS">
+														<headerToolbar>
+															<OverflowToolbar id="toolbar5">
+																<!--<Title id="tableHeader" text="{worklistView>/worklistTableTitle}" level="H3"/>-->
+																<ToolbarSpacer/>
+																<Button xmlns="sap.m" id="button0_copy2" activeIcon="sap-icon://add" icon="sap-icon://add" press="addRisks"
+																	text="{CommercialBusinessPlani18n>addcomercialrisk}" type="Accept"/>
+																<content/>
+															</OverflowToolbar>
+														</headerToolbar>
+														<columns>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy10">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>CommercialRiskName}" id="unitNumberColumnTitle_copy8"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy11">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>RiskProbability}" id="unitNumberColumnTitle_copy9"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy12">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>RiskImpact}" id="unitNumberColumnTitle_copy10"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy13">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>RiskTreatmentType}" id="unitNumberColumnTitle_copy11"/>
+																</header>
+															</Column>
+															<Column xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified" xmlns:l="sap.ui.layout"
+																xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+																xmlns="sap.m" id="unitNumberColumn_copy16">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>RiskOwner}" id="unitNumberColumnTitle_copy13"/>
+																</header>
+															</Column>
+															<Column xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified" xmlns:l="sap.ui.layout"
+																xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+																xmlns="sap.m" id="unitNumberColumn_copy17">
+																<header>
+																	<Text xmlns="sap.m" text="{CommercialBusinessPlani18n>RiskOwnerCommunicationMethod}" id="unitNumberColumnTitle_copy14"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																id="unitNumberColumn_copy14" width="10%"/>
+														</columns>
+														<items>
+															<ColumnListItem type="Active" press="onpress4" id="item2_table_copy2_0">
+																<cells>
+																	<Text text="{CommercialPlan>risk_name}" id="text12_table_copy2_0"/>
+																	<Text xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="{CommercialPlan>risk_probability}"
+																		cd:w5g.dt.context="CommercialPlan&gt;/COMMERCIALRISKS" id="text13_table_copy2_0"/>
+																	<Text text="{CommercialPlan>risk_impact}" id="text14_table_copy2_0"/>
+																	<Text text="{CommercialPlan>treatment_type}" id="text15_table_copy2_0"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified"
+																		xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic" xmlns="sap.m" text="{CommercialPlan>RISK_OWNER_NAME}"
+																		id="text15_table_copy2_0_copy"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified"
+																		xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic" xmlns="sap.m"
+																		text="{CommercialPlan>risk_communication_method}" id="text15_table_copy2_0_copy2"/>
+																	<FlexBox width="100%" id="box0_copy2_table_copy2_0">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button0_1651121173831_copy2_table_copy2_0" icon="sap-icon://edit" type="Transparent" press="editRisks"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button1_copy2_table_copy2_0" icon="sap-icon://delete" type="Reject" press="deleteentry"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+												xmlns="sap.m" text="{OfficialClubStrategyi18n>boardconfirm}" count="" design="Vertical" showAll="false" textDirection="Inherit"
+												enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<MessageStrip class="sapUiTinyMarginBottom" text="{OfficialClubStrategyi18n>uploadmessage}" type="Information" showIcon="true"></MessageStrip>
+													<layout:HorizontalLayout xmlns:unified="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+														xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:layout="sap.ui.layout">
+														<layout:content>
+															<unified:FileUploader xmlns:unified="sap.ui.unified" required="true" value="{CommercialPlan>board_proof_cmis}" enabled="{appView>/enabled}"
+																id="Exceluploadcommercial" buttonOnly="true" icon="sap-icon://upload" iconOnly="false" class="sapUiTinyMarginBegin sapUiMediumMarginEnd"
+																sameFilenameAllowed="true" change="handleUploadPressCOMMERCIAL" buttonText="{i18n>Salaryuploadname}" style="Emphasized"/>
+															<Link class="sapUiTinyMarginTop" id="Exceluploadlinkcommercial"
+																text=" {path: 'CommercialPlan>board_proof_cmis', formatter: '.urlformatter'}"
+																visible="{= ${CommercialPlan>board_proof_cmis} !== '' ? true : false }" target="_blank" href="{CommercialPlan>board_proof_cmis}"/>
+														</layout:content>
+													</layout:HorizontalLayout>
+													<PDFViewer id="Exceluploadlink2commercial" source="{CommercialPlan>board_proof_cmis}" height="1000px">
+														<layoutData>
+															<FlexItemData growFactor="1"/>
+														</layoutData>
+													</PDFViewer>
+												</content>
+											</IconTabFilter>
+										</items>
+										<content>
+											<Text text="Tab Bar Content goes here ..." width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+												visible="true"/>
+										</content>
+									</IconTabBar>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

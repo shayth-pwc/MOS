@@ -1,0 +1,340 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SocialMediaEffect.controller.SocialMediaEffect">
+	<Page showHeader="true" title="{i18n>appTitle}" showFooter="true" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+										content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'51C'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+												layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+			<layout:BlockLayout id="bl1" background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin"
+								titleLevel="Auto">
+								<layout:content>
+									<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true">
+										<items>
+											<IconTabFilter iconColor="Neutral" text="{socialMediai18n>businessplanpaneltitle}" count="" design="Vertical" showAll="false"
+												textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<Table modelContextChange="onAddFilter" items="{ path: 'SocialMediaEff>/SMACC'}" noDataText="{i18n>nodata}" id="table3">
+														<headerToolbar>
+															<OverflowToolbar width="100%" id="toolbar7">
+																<content>
+																	<Title id="tableHeader" text="{socialMediai18n>businessplanpaneltitle}" level="H3"/>
+																	<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																		id="spacer3"/>
+																	<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																		id="button0_copy" activeIcon="sap-icon://add" icon="sap-icon://add" press="addnewbusinessplan" text="{socialMediai18n>addbusinessplan}"
+																		type="Accept"/>
+																</content>
+															</OverflowToolbar>
+														</headerToolbar>
+														<items>
+															<ColumnListItem type="Active" id="item3">
+																<cells>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+																		xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="{SocialMediaEff>social_media_account_name}" width="auto"
+																		wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="DOCUMENT_TYPE_NAME_copy" cd:w5g.dt.context="/HRBUSINESSPLAN"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{SocialMediaEff>ACCOUNT_TYPE}" width="auto"
+																		textAlign="Begin" textDirection="Inherit" visible="true" wrapping="true" id="text20"/>
+																	<!--<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{SocialMediaEff>social_media_account_entity}" width="auto" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text21"/>-->
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{SocialMediaEff>ACCOUNT_STATUS}" width="auto"
+																		wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text22"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{SocialMediaEff>responsible}" width="auto"
+																		wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text3223"/>
+																	<Link text=" {path: 'SocialMediaEff>account_verficiation_proof_cmis_id', formatter: '.urlformatter'}"
+																		visible="{= ${SocialMediaEff>account_verficiation_proof_cmis_id} !== '' ? true : false }" target="_blank"
+																		href="{SocialMediaEff>account_verficiation_proof_cmis_id}"/>
+																	<FlexBox xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+																		xmlns="sap.m" width="100%" id="box0_copy3">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button0_1651121173831_copy3" icon="sap-icon://edit" type="Transparent" press="editbusinessplan" textDirection="Inherit"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				id="button1_copy3" icon="sap-icon://delete" type="Reject" press="deletebusinessplan" textDirection="Inherit"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+														<columns>
+															<Column id="column13">
+																<header>
+																	<Label text="{socialMediai18n>businessplancolumntitle1}" id="label0"/>
+																</header>
+															</Column>
+															<Column id="column14_1654674082112">
+																<header>
+																	<Label text="{socialMediai18n>businessplancolumntitle2}" id="label1"/>
+																</header>
+															</Column>
+															<!--<Column id="column15">-->
+															<!--	<header>-->
+															<!--		<Label text="{socialMediai18n>businessplancolumntitle3}" id="label2"/>-->
+															<!--	</header>-->
+															<!--</Column>-->
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" id="column15_copy2">
+																<header>
+																	<Label text="{socialMediai18n>businessplancolumntitle4}" id="label2_copy2"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" id="responsible_id">
+																<header>
+																	<Label text="{socialMediai18n>respoi18n}" id="responsible123"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" id="column15_copy3">
+																<header>
+																	<Label text="{socialMediai18n>businessplancolumntitle5}" id="label2_copy3"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" id="column15_copy5" width="10%">
+																<header>
+																	<Label id="label2_copy5"/>
+																</header>
+															</Column>
+														</columns>
+														<swipeContent>
+															<OverflowToolbar xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" width="100%" id="toolbar7_copy">
+																<content>
+																	<Title id="tableHeader_copy" text="{socialMediai18n>businessplanpaneltitle}" level="H3"/>
+																	<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																		id="spacer3_copy"/>
+																	<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																		id="button0_copy2" activeIcon="sap-icon://add" icon="sap-icon://add" press="addnewbusinessplan" text="{socialMediai18n>addbusinessplan}"
+																		type="Accept"/>
+																</content>
+															</OverflowToolbar>
+														</swipeContent>
+													</Table>
+												</content>
+												<!--</Panel>
+                        </content>-->
+											</IconTabFilter>
+											<IconTabFilter iconColor="Neutral" text="{socialMediai18n>clubdecisionspaneltitle}" count="" design="Vertical" showAll="false"
+												textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<Table xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" modelContextChange="onAddFilter"
+														items="{ path: 'SocialMediaEff>/SMACT', sorter: { path: 'creation_date_time', descending: true } }" noDataText="{i18n>nodata}"
+														id="table3_1654675383676">
+														<headerToolbar>
+															<OverflowToolbar width="100%" id="toolbar5">
+																<content>
+																	<Title xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{socialMediai18n>clubdecisionspaneltitle}" width="auto"
+																		textAlign="Begin" visible="true" wrapping="true" id="title3_copy2" level="H3"/>
+																	<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																		id="spacer4_1654675383673"/>
+																	<Button xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic"
+																		xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_copy3" activeIcon="sap-icon://add" icon="sap-icon://add"
+																		press="addnewactivity" text="{socialMediai18n>addactivity}" type="Accept"/>
+																	<!--<Button xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_copy7" activeIcon="sap-icon://add" icon="sap-icon://add" text="{i18n>addclubdecision}" type="Accept" press="AddActivity"/>-->
+																</content>
+															</OverflowToolbar>
+														</headerToolbar>
+														<items>
+															<ColumnListItem type="Active" id="item3___table3_0">
+																<cells>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+																		xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="{SocialMediaEff>activity_name}" width="auto" maxLines="9"
+																		wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" cd:w5g.dt.context="/HRBUSINESSPLAN" id="text14___table3_0"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{SocialMediaEff>activity_type}" width="auto" maxLines="0"
+																		textAlign="Begin" textDirection="Inherit" visible="true" id="text15___table3_0"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{SocialMediaEff>proof_description}" width="auto"
+																		maxLines="0" textAlign="Begin" textDirection="Inherit" visible="true" id="text15___t3_0_copy2"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{SocialMediaEff>platform}" width="auto" maxLines="0"
+																		textAlign="Begin" textDirection="Inherit" visible="true" id="t15___table3_0"/>
+																	<Text
+																		text="{path: 'SocialMediaEff>publishing_date_time', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium', strictParsing: true , UTC: false}}"/>
+																	<Link xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+																		text=" {path: 'SocialMediaEff>proof_proof_cmis', formatter: '.urlformatter'}"
+																		visible="{= ${SocialMediaEff>proof_proof_cmis} !== '' ? true : false }" target="_blank" href="{SocialMediaEff>proof_proof_cmis}" id="link2"/>
+																	<FlexBox width="100%" id="box0">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" id="button0_copy4"
+																				press="EditSocialMediaPlan" type="Transparent" icon="sap-icon://edit"/>
+																			<Button xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic"
+																				xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button1_copy5" icon="sap-icon://delete" type="Reject" press="deletebusinessplan"
+																				textDirection="Inherit"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+														<columns>
+															<Column id="column12">
+																<header>
+																	<Label text="{socialMediai18n>clubdecisionscolumntitle1}" id="label4_1654675383674"/>
+																</header>
+															</Column>
+															<Column id="column13_1654675383675">
+																<header>
+																	<Label text="{socialMediai18n>activitytype}" id="label5"/>
+																</header>
+															</Column>
+															<Column id="column14">
+																<header>
+																	<Label text="{socialMediai18n>proof_description}" id="label6"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" id="column14_copy2">
+																<header>
+																	<Label text="{socialMediai18n>platform}" id="label6_copy2"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" id="column14_copy3">
+																<header>
+																	<Label text="{socialMediai18n>publishingtime}" id="label6_copy3"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" id="column14_copy4">
+																<header>
+																	<Label text="{socialMediai18n>fileupload}" id="label6_copy4"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" width="10%" id="column15_1654675383676">
+																<header>
+																	<Label id="label7"/>
+																</header>
+															</Column>
+														</columns>
+														<swipeContent>
+															<OverflowToolbar xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" width="100%" id="toolbar6">
+																<content>
+																	<Title text="{socialMediai18n>businessplanpaneltitle}" level="H3" id="title3"/>
+																	<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																		id="spacer5"/>
+																	<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																		activeIcon="sap-icon://add" icon="sap-icon://add" press="addnewbusinessplan" text="{socialMediai18n>addbusinessplan}" type="Accept"
+																		id="button11"/>
+																</content>
+															</OverflowToolbar>
+														</swipeContent>
+													</Table>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter iconColor="Neutral" text="{socialMediai18n>clubprocedureIcontabbar}" count="" design="Vertical" showAll="false"
+												textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<Table xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" modelContextChange="onAddFilter"
+														items="{ path: 'SocialMediaEff>/SMDOC'}" noDataText="{i18n>nodata}" id="table3_1654675383676_copy2">
+														<headerToolbar>
+															<OverflowToolbar width="100%" id="toolbar5_copy2">
+																<content>
+																	<Title xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{socialMediai18n>clubproceduretitle}" width="auto"
+																		textAlign="Begin" visible="true" wrapping="true" level="H3" id="title2"/>
+																	<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																		id="spacer4_1654675383673_copy2"/>
+																	<Button xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+																		xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_copy9" activeIcon="sap-icon://add"
+																		icon="sap-icon://add" text="{socialMediai18n>addprocedure}" type="Accept" press="addDocument"/>
+																</content>
+															</OverflowToolbar>
+														</headerToolbar>
+														<items>
+															<ColumnListItem type="Active" id="item3___table3_0_copy_table3_1654675383676_copy_0_copy_table3_1654675383676_copy2_0">
+																<cells>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+																		xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="{SocialMediaEff>DOCUTYPE}" width="auto" maxLines="9"
+																		wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" cd:w5g.dt.context="/HRBUSINESSPLAN"
+																		id="text14___table3_0_copy_table3_1654675383676_copy_0_copy_table3_1654675383676_copy2_0"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{SocialMediaEff>document_description}" width="auto"
+																		maxLines="0" textAlign="Begin" textDirection="Inherit" visible="true"
+																		id="text15___table3_0_copy_table3_1654675383676_copy_0_copy_table3_1654675383676_copy2_0"/>
+																	<Link text=" {path: 'SocialMediaEff>document_type_cmis_id', formatter: '.urlformatter'}"
+																		visible="{= ${SocialMediaEff>document_type_cmis_id} !== '' ? true : false }" target="_blank" href="{SocialMediaEff>document_type_cmis_id}"/>
+																	<FlexBox xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+																		xmlns="sap.m" width="100%" id="box3___table3_0_copy_table3_1654675383676_copy_0_copy_table3_1654675383676_copy2_0">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				icon="sap-icon://edit" type="Transparent" press="editprocedure" textDirection="Inherit"
+																				id="button9___table3_0_copy_table3_1654675383676_copy_0_copy_table3_1654675383676_copy2_0"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																				icon="sap-icon://delete" type="Reject" press="deleteprocedure" textDirection="Inherit"
+																				id="button10___table3_0_copy_table3_1654675383676_copy_0_copy_table3_1654675383676_copy2_0"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+														<columns>
+															<Column id="column12_copy2">
+																<header>
+																	<Label text="{socialMediai18n>clubprocedurecolumntitle1}" id="label4_1654675383674_copy2"/>
+																</header>
+															</Column>
+															<Column id="column13_1654675383675_copy2">
+																<header>
+																	<Label text="{socialMediai18n>clubprocedurecolumntitle2}" id="label5_copy2"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" id="column14_copy8">
+																<header>
+																	<Label text="{socialMediai18n>clubprocedurecolumntitle3}" id="label6_copy8"/>
+																</header>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" width="7%" id="column15_1654675383676_copy2">
+																<header>
+																	<Label id="label7_copy2"/>
+																</header>
+															</Column>
+														</columns>
+														<swipeContent>
+															<OverflowToolbar xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" width="100%" id="toolbar6_copy2">
+																<content>
+																	<Title text="{socialMediai18n>businessplanpaneltitle}" level="H3" id="title3_copy6"/>
+																	<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																		id="spacer5_copy2"/>
+																	<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																		activeIcon="sap-icon://add" icon="sap-icon://add" press="addnewbusinessplan" text="{socialMediai18n>addbusinessplan}" type="Accept"
+																		id="button11_copy2"/>
+																</content>
+															</OverflowToolbar>
+														</swipeContent>
+													</Table>
+												</content>
+											</IconTabFilter>
+										</items>
+										<content/>
+									</IconTabBar>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria2" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+		<!--    <footer>-->
+		<!--        <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">-->
+		<!--            <content>-->
+		<!--                <ToolbarSpacer width=""/>-->
+		<!--                <OverflowToolbarButton text="Action" type="Transparent" icon="sap-icon://action" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>-->
+		<!--            </content>-->
+		<!--        </OverflowToolbar>-->
+		<!--    </footer>-->
+		<!--    <headerContent/>-->
+		<!--    <subHeader/>-->
+		<!--    <customHeader/>-->
+	</Page>
+</mvc:View>

@@ -1,0 +1,307 @@
+{
+    "resources": [
+        {
+            "name": "view/Applications/OrgStructCommittees/view/CommitteesList.view.xml"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/i18n/i18n_ar.properties",
+            "raw": "i18n/i18n.properties",
+            "locale": "_ar"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/i18n_ar.properties",
+            "raw": "i18n/i18n.properties",
+            "locale": "_ar"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/controller/Dialog1.js"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "view/Applications/RecreationalActivitiesStrategy53A/controller/utilities.js"
+        },
+        {
+            "name": "view/Applications/RecreationalActivitiesStrategy53A/controller/ReviewNewCard.js"
+        },
+        {
+            "name": "view/Applications/RecreationalActivitiesStrategy53A/controller/MainRecreationalActivities.controller.js"
+        },
+        {
+            "name": "view/Applications/RecreationalActivitiesStrategy53A/controller/CreateNewCard.js"
+        },
+        {
+            "name": "view/Applications/PlanCEO/controller/utilities.js"
+        },
+        {
+            "name": "view/Applications/PlanCEO/controller/plansCEOreview.js"
+        },
+        {
+            "name": "view/Applications/PlanCEO/controller/plansCEOpage.controller.js"
+        },
+        {
+            "name": "view/Applications/PlanCEO/controller/plansCEOcreate.js"
+        },
+        {
+            "name": "view/Applications/OrgStructureOverview/controller/OrganizationalStructureEval.controller.js"
+        },
+        {
+            "name": "view/Applications/OrgStructure/controller/CeoEval.controller.js"
+        },
+        {
+            "name": "view/Applications/OrgStructCommittees/controller/CommitteesList.controller.js"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/model/models.js"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/model/formatter.js"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/model/errorHandling.js"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/controller/WizardPage.controller.js"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/controller/SwotAnalysis.js"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/controller/NewStrategicGoal.js"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/controller/NewKpi.js"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/controller/NewInitiative.js"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/controller/NewCompetitionAnalysis.js"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/model/models.js"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/model/errorHandling.js"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/controller/utilities.js"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/controller/Page1.controller.js"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/controller/Dialog4.js"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/controller/Dialog3.js"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/controller/Dialog2.js"
+        },
+        {
+            "name": "model/positions.json"
+        },
+        {
+            "name": "view/Applications/BoardMeetings/controller/utilities.js"
+        },
+        {
+            "name": "view/Applications/BoardMeetings/controller/Review12c.js"
+        },
+        {
+            "name": "view/Applications/BoardMeetings/controller/Page12c.controller.js"
+        },
+        {
+            "name": "view/Applications/BoardMeetings/controller/Create12c.js"
+        },
+        {
+            "name": "controller/settings/MasterSettings.controller.js"
+        },
+        {
+            "name": "service/RepoService.js"
+        },
+        {
+            "name": "service/HTTPService.js"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "controller/Review.controller.js"
+        },
+        {
+            "name": "controller/NotFound.controller.js"
+        },
+        {
+            "name": "controller/Home.controller.js"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "serviceBinding.js"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "manifest-bundle.zip"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "../../../../sap-ui-version.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "view/Applications/RecreationalActivitiesStrategy53A/view/ValueHelpDialog.fragment.xml"
+        },
+        {
+            "name": "view/Applications/RecreationalActivitiesStrategy53A/view/ReviewNewCard.fragment.xml"
+        },
+        {
+            "name": "view/Applications/RecreationalActivitiesStrategy53A/view/MainRecreationalActivities.view.xml"
+        },
+        {
+            "name": "view/Applications/RecreationalActivitiesStrategy53A/view/CreateNewCard.fragment.xml"
+        },
+        {
+            "name": "view/Applications/PlanCEO/view/plansCEOreview.fragment.xml"
+        },
+        {
+            "name": "view/Applications/PlanCEO/view/plansCEOpage.view.xml"
+        },
+        {
+            "name": "view/Applications/PlanCEO/view/plansCEOcreate.fragment.xml"
+        },
+        {
+            "name": "view/Applications/OrgStructureOverview/view/PositionDialogue.fragment.xml"
+        },
+        {
+            "name": "view/Applications/OrgStructureOverview/view/OrganizationalStructureEval.view.xml"
+        },
+        {
+            "name": "view/Applications/OrgStructureOverview/view/CommitteeDialogue.fragment.xml"
+        },
+        {
+            "name": "view/Applications/OrgStructure/view/FinanceDisplay.fragment.xml"
+        },
+        {
+            "name": "view/Applications/OrgStructure/view/Display.fragment.xml"
+        },
+        {
+            "name": "view/Applications/OrgStructure/view/Change.fragment.xml"
+        },
+        {
+            "name": "view/Applications/OrgStructure/view/CeoEval.view.xml"
+        },
+        {
+            "name": "view/Applications/OrgStructCommittees/view/renumerationcommittee.fragment.xml"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/i18n/i18n_en.properties",
+            "raw": "i18n/i18n.properties",
+            "locale": "_en"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/view/WizardPage.view.xml"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/view/SwotAnalysis.fragment.xml"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/view/NewStrategicGoal.fragment.xml"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/view/NewKpi.fragment.xml"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/view/NewInitiative.fragment.xml"
+        },
+        {
+            "name": "view/Applications/OfficialClubStrategy/view/NewCompetitionAnalysis.fragment.xml"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/view/Page1.view.xml"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/view/Dialog4.fragment.xml"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/view/Dialog3.fragment.xml"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/view/Dialog2.fragment.xml"
+        },
+        {
+            "name": "view/Applications/CommercialBusinessPlan/view/Dialog1.fragment.xml"
+        },
+        {
+            "name": "view/Applications/BoardMeetings/view/Review12c.fragment.xml"
+        },
+        {
+            "name": "view/Applications/BoardMeetings/view/Page12c.view.xml"
+        },
+        {
+            "name": "view/Applications/BoardMeetings/view/Create12c.fragment.xml"
+        },
+        {
+            "name": "view/settings/MasterSettings.view.xml"
+        },
+        {
+            "name": "view/settings/DetailSettings.view.xml"
+        },
+        {
+            "name": "view/settings/AppSettings.view.xml"
+        },
+        {
+            "name": "view/Review.view.xml"
+        },
+        {
+            "name": "view/NotFound.view.xml"
+        },
+        {
+            "name": "view/Home.view.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "images/homeImage.jpg"
+        },
+        {
+            "name": "css/en_style.css"
+        },
+        {
+            "name": "css/ar_style.css"
+        },
+        {
+            "name": "index.html"
+        }
+    ]
+}

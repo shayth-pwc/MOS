@@ -1,0 +1,122 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SafetyFacility21b.controller.Create121b">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n>Addnewprocedure}"
+		type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>FacilityName}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input change="onInputChange" liveChange="_validateSaveEnablement" id="Facility_Name1"
+										value="{ path : 'pmuFacilities>facility_name', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength: 999999}}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>FacilitiesCondition}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input change="onInputChange" liveChange="_validateSaveEnablement" id="facility_condition"
+										value="{ path : 'pmuFacilities>facility_condition', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength: 999999}}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>MaintenanceSchedule}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input change="onInputChange" liveChange="_validateSaveEnablement" id="facility_maint"
+										value="{ path : 'pmuFacilities>facility_maint', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength: 999999}}"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>UsageRate}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input change="onInputChange" liveChange="_validateSaveEnablement" id="usage_rate" type="Number" placeholder="الرجاء إدخال رقم"
+										value="{ path : 'pmuFacilities>usage_rate', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength: 999999}}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true"></form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>FacilityConditionDetails}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="facility_condition_cmis_id" required="true" enabled="{appView>/enabled}"
+										value="{pmuFacilities>facility_condition_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+										change="handleUploadPress"/>
+									<!--<Link text="{pmuFacilities>facility_condition_cmis_id}"-->
+									<!--	visible="{= ${pmuFacilities>facility_condition_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Link text=" {path: 'pmuFacilities>facility_condition_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${pmuFacilities>facility_condition_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{pmuFacilities>facility_condition_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>FacilityMaintenanceDetails}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="facility_maint_cmis_id" required="true" enabled="{appView>/enabled}"
+										value="{pmuFacilities>facility_maint_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+										change="handleUploadPress"/>
+									<!--<Link text="{pmuFacilities>facility_maint_cmis_id}"-->
+									<!--	visible="{= ${pmuFacilities>facility_maint_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Link text=" {path: 'pmuFacilities>facility_maint_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${pmuFacilities>facility_maint_cmis_id} !== '' ? true : false }" target="_blank" href="{pmuFacilities>facility_maint_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>signedDoc}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="SIGNED_DOC_MAIN_CMIS_ID" required="true" enabled="{appView>/enabled}"
+										value="{pmuFacilities>SIGNED_DOC_MAIN_CMIS_ID}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+										change="handleUploadPress"/>
+									<!--<Link text="{pmuFacilities>SIGNED_DOC_MAIN_CMIS_ID}"-->
+									<!--visible="{= ${pmuFacilities>SIGNED_DOC_MAIN_CMIS_ID} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Link text=" {path: 'pmuFacilities>SIGNED_DOC_MAIN_CMIS_ID', formatter: '.urlformatter'}"
+										visible="{= ${pmuFacilities>SIGNED_DOC_MAIN_CMIS_ID} !== '' ? true : false }" target="_blank" href="{pmuFacilities>SIGNED_DOC_MAIN_CMIS_ID}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

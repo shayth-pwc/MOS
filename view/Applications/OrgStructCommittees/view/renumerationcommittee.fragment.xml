@@ -1,0 +1,307 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.f" xmlns:cards="sap.f.cards"
+	xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:table="sap.ui.table"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OrgStructCommittees.controller.CommitteesList" displayBlock="true">
+	<Page id="page2" title="{Evalcommittee>club_com_name}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<l:VerticalLayout id="containerLayout" width="100%">
+				<l:BlockLayout id="BlockLayout" background="Dashboard">
+					<l:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+						<l:content>
+							<l:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<l:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+										content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'12D'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+												layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</l:content>
+							</l:BlockLayoutCell>
+						</l:content>
+					</l:BlockLayoutRow>
+					<l:BlockLayoutRow>
+						<l:BlockLayoutCell width="6" title="{i18n>CandidacyMechanism}">
+							<Text text="{Evalcommittee>CANDIDACY_MECHANISM}"/>
+						</l:BlockLayoutCell>
+						<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+					</l:BlockLayoutRow>
+				</l:BlockLayout>
+				<l:BlockLayout id="BlockLayout2" background="Dashboard" visible="true">
+					<l:BlockLayoutRow>
+						<l:BlockLayoutCell title="{i18n>ApprovedList2}">
+							<u:FileUploader id="com_cmis_id" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+								change=".onUploadcomlist"/>
+							<FlexBox direction="Column" renderType="Div" class="sapUiSmallMargin">
+								<PDFViewer source="{Evalcommittee>com_cmis_id}" height="1000px">
+									<layoutData>
+										<FlexItemData growFactor="1"/>
+									</layoutData>
+								</PDFViewer>
+							</FlexBox>
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+				</l:BlockLayout>
+				<l:BlockLayout>
+					<l:BlockLayoutRow>
+						<l:BlockLayoutCell width="6" class="sapUiNoContentPadding">
+							<Carousel height="auto" pages="{ path: 'Evalcommittee>EmployeeAssociation' }" loop="true" pageIndicatorPlacement="Top">
+								<customLayout>
+									<CarouselLayout visiblePagesCount=" path:{ 'Evalcommittee>EmployeeAssociation'}"/>
+								</customLayout>
+								<f:Card>
+									<f:header>
+										<cards:Header title="{i18n>FullName}: {Evalcommittee>emp_name}"
+											statusText="{i18n>PartoftheBoardofDirectors}: {path: 'Evalcommittee>EmpBoard', formatter: '.FormatBoard'}"
+											subtitle="{i18n>Position}: {Evalcommittee>position_name}" iconDisplayShape="Square"/>
+									</f:header>
+									<f:content>
+										<l:VerticalLayout class="sapUiContentPadding" width="100%">
+											<l:BlockLayout>
+												<l:BlockLayoutRow>
+													<l:BlockLayoutCell title="{i18n>MainInformation}" width="1">
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="{i18n>ContactNumber}:"/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<Text text="{Evalcommittee>emp_contactnumber}"/>
+														</HBox>
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="{i18n>Email}:"/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<Text text="{Evalcommittee>emp_email}"/>
+														</HBox>
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="{i18n>Speciality}:"/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<Text text="{Evalcommittee>emp_job_title}"/>
+														</HBox>
+														<HBox class="sapUiTinyMarginBottom" id="AreofSpecialityvalue1" visible="false">
+															<Label text="{i18n>AreofSpeciality}:"/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom" id="AreofSpecialityinput1" visible="false">
+															<Text text="{Evalcommittee>AreofSpeciality}"/>
+														</HBox>
+														<l:content>
+															<HBox xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.f" xmlns:cards="sap.f.cards" xmlns:l="sap.ui.layout"
+																xmlns:u="sap.ui.unified" xmlns:table="sap.ui.table" xmlns="sap.m" class="sapUiTinyMarginBottom">
+																<Label text="{i18n>Contract}:"/>
+															</HBox>
+														</l:content>
+														<HBox xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.f" xmlns:cards="sap.f.cards" xmlns:l="sap.ui.layout"
+															xmlns:u="sap.ui.unified" xmlns:table="sap.ui.table" xmlns="sap.m" class="sapUiSmallMarginBottom">
+															<Link xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:card="sap.f.cards" xmlns:fi="sap.f" xmlns="sap.m"
+																target="_blank" textDirection="Inherit" text="{path: 'Evalcommittee>emp_contract_cmis_id', formatter: '.formaturlcomlist'}"
+																href="{Evalcommittee>emp_contract_cmis_id}" enabled="true"/>
+															<items/>
+														</HBox>
+													</l:BlockLayoutCell>
+													<l:BlockLayoutCell title="{i18n>RelatedDocuments}" width="1">
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="لمؤهلات الأكاديمية: "/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<Link target="_blank" textDirection="Inherit" text=" {path: 'Evalcommittee>emp_edu_cert_cmis_id', formatter: '.formaturlcomlist'}"
+																href="{Evalcommittee>emp_edu_cert_cmis_id}" enabled="true"/>
+														</HBox>
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="لشهادات الاحترافية: "/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<Link target="_blank" textDirection="Inherit" text=" {path: 'Evalcommittee>emp_prof_license_cmis_id', formatter: '.formaturlcomlist'}"
+																href="{Evalcommittee>emp_prof_license_cmis_id}" enabled="true"/>
+														</HBox>
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="السيرة الذاتية:"/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<!--<Text text="{Evalcommittee>EMP_CV_CMIS_ID}"/>-->
+															<Link target="_blank" textDirection="Inherit" href="{Evalcommittee>EMP_CV_CMIS_ID}"
+																text=" {path: 'Evalcommittee>EMP_CV_CMIS_ID', formatter: '.formaturlcomlist'}" enabled="true"/>
+														</HBox>
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="بطاقة الهويّة:"/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<Link target="_blank" href="{Evalcommittee>emp_cmis_id_authcard}"
+																text=" {path: 'Evalcommittee>emp_cmis_id_authcard', formatter: '.formaturlcomlist'}" enabled="true"/>
+														</HBox>
+													</l:BlockLayoutCell>
+												</l:BlockLayoutRow>
+												<l:BlockLayoutRow>
+													<l:BlockLayoutCell id="Accent3" title="{i18n>EmployeeExperience}">
+														<Table width="auto" items="{Evalcommittee>EmployeeExperienceAssociation}" noDataText="No data" mode="None" showSeparators="All"
+															growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin">
+															<infoToolbar>
+																<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+																	<content>
+																		<Label text="{i18n>Label}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</content>
+																</Toolbar>
+															</infoToolbar>
+															<headerToolbar>
+																<OverflowToolbar width="auto" height="auto" design="Transparent" visible="false" enabled="true">
+																	<content>
+																		<Title text="Items (3)" titleStyle="Auto" width="auto" textAlign="Begin" visible="false" wrapping="true"/>
+																		<ToolbarSpacer width=""/>
+																		<OverflowToolbarButton text="{i18n>Sort}" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true"
+																			visible="true" iconDensityAware="false"/>
+																		<OverflowToolbarButton text="{i18n>Filter}" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true"
+																			visible="true" iconDensityAware="false"/>
+																		<OverflowToolbarButton text="{i18n>Group}" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true"
+																			visible="true" iconDensityAware="false"/>
+																		<OverflowToolbarButton text="{i18n>Settings}" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto"
+																			enabled="true" visible="true" iconDensityAware="false"/>
+																	</content>
+																</OverflowToolbar>
+															</headerToolbar>
+															<columns>
+																<Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+																	<header>
+																		<Text text="{i18n>JobTitle/Company}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</header>
+																	<footer/>
+																</Column>
+																<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																	<header>
+																		<Text text="{i18n>EmploymentType}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</header>
+																	<footer/>
+																</Column>
+																<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																	<header>
+																		<Text text="{i18n>Location}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</header>
+																	<footer/>
+																</Column>
+																<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																	<header>
+																		<Text text="{i18n>StartDate}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</header>
+																	<footer/>
+																</Column>
+																<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																	<header>
+																		<Text text="{i18n>EndDate}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</header>
+																	<footer/>
+																</Column>
+															</columns>
+															<items>
+																<ColumnListItem>
+																	<cells>
+																		<ObjectIdentifier title="{Evalcommittee>jobtitle}" text="@{Evalcommittee>companyname}" titleActive="false" visible="true"/>
+																		<Text text="{Evalcommittee>employement_type}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																			visible="true"/>
+																		<Text text="{Evalcommittee>location}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																		<Text text="{path: 'Evalcommittee>start_date_time', formatter: '.myFormatterDatecomlist'}" width="auto" maxLines="9" wrapping="true"
+																			textAlign="Begin" textDirection="Inherit" visible="true"/>
+																		<Text text="{path: 'Evalcommittee>end_date_time', formatter: '.myFormatterDatecomlist'}" width="auto" maxLines="9" wrapping="true"
+																			textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</cells>
+																</ColumnListItem>
+															</items>
+														</Table>
+													</l:BlockLayoutCell>
+												</l:BlockLayoutRow>
+												<l:BlockLayoutRow>
+													<l:BlockLayoutCell title="{i18n>EmployeeQualifications}">
+														<Table width="auto" noDataText="No data" mode="None" items="{Evalcommittee>EmployeeQualificationAssociation}" showSeparators="All"
+															growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin">
+															<infoToolbar>
+																<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+																	<content>
+																		<Label text="{i18n>Label}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</content>
+																</Toolbar>
+															</infoToolbar>
+															<headerToolbar>
+																<OverflowToolbar width="auto" height="auto" design="Transparent" visible="false" enabled="true">
+																	<content>
+																		<Title text="{i18n>Items}" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="true"/>
+																		<ToolbarSpacer width=""/>
+																		<OverflowToolbarButton text="{i18n>Sort}" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true"
+																			visible="true" iconDensityAware="false"/>
+																		<OverflowToolbarButton text="{i18n>Filter}" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true"
+																			visible="true" iconDensityAware="false"/>
+																		<OverflowToolbarButton text="{i18n>Group}" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true"
+																			visible="true" iconDensityAware="false"/>
+																		<OverflowToolbarButton text="{i18n>Settings}" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto"
+																			enabled="true" visible="true" iconDensityAware="false"/>
+																	</content>
+																</OverflowToolbar>
+															</headerToolbar>
+															<columns>
+																<Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+																	<header>
+																		<Text text="{i18n>Qualification/Institute}" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</header>
+																	<footer/>
+																</Column>
+																<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																	<header>
+																		<Text text="{i18n>YearAwarded}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</header>
+																	<footer/>
+																</Column>
+																<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																	<header>
+																		<Text text="{i18n>Country}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</header>
+																	<footer/>
+																</Column>
+																<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																	<header>
+																		<Text text="{i18n>Grade}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</header>
+																	<footer/>
+																</Column>
+																<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																	<header>
+																		<Text text="{i18n>%ofMarks}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</header>
+																	<footer/>
+																</Column>
+																<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																	<header>
+																		<Text text="{i18n>UploadQual}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	</header>
+																	<footer/>
+																</Column>
+															</columns>
+															<items>
+																<ColumnListItem type="Active">
+																	<cells>
+																		<ObjectIdentifier title="{Evalcommittee>qualification}" text="@{institution}" titleActive="false" visible="true"/>
+																		<Text text="{Evalcommittee>year_awarded}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+																			visible="true"/>
+																		<Text text="{Evalcommittee>country}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																		<Text text="{Evalcommittee>grade}" width="auto" maxLines="9" wrapping="true" textAlign="Center" textDirection="Inherit" visible="true"/>
+																		<Text text="{Evalcommittee>mark}%" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																		<Link text=" {path: 'Evalcommittee>EMP_QUAL_CMIS_ID', formatter: '.formaturlcomlist'}" enabled="true"
+																			href="{Evalcommittee>EMP_QUAL_CMIS_ID}"/>
+																	</cells>
+																</ColumnListItem>
+															</items>
+														</Table>
+													</l:BlockLayoutCell>
+												</l:BlockLayoutRow>
+											</l:BlockLayout>
+										</l:VerticalLayout>
+									</f:content>
+								</f:Card>
+							</Carousel>
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+				</l:BlockLayout>
+				<l:content/>
+			</l:VerticalLayout>
+		</content>
+	</Page>
+</core:FragmentDefinition>

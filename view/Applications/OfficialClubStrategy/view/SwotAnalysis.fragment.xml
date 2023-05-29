@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OfficialClubStrategy.controller.SwotAnalysis">
+	<Dialog id="SwotDialog" contentHeight="550px" contentWidth="400px" horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{OfficialClubStrategyi18n>createswot}" type="Standard" verticalScrolling="true" class="sapUiResponsiveContentPadding">
+		<content>
+			<Label text="{OfficialClubStrategyi18n>swotseason}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<DatePicker id="SwotSeasonCombo" enabled="{appView>/enabled}" value="{path:'OfficialClub>season' , type: 'sap.ui.model.odata.type.String'}" displayFormat="yyyy" valueFormat="yyyy" change="handleChange" class="sapUiSmallMarginBottom"/>
+			<Label xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" text="{OfficialClubStrategyi18n>promises}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<TextArea xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" value="{OfficialClub>promises}" rows="2" cols="50" maxLength="0" wrapping="None" enabled="{appView>/enabled}" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" visible="true" class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>Strength}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<TextArea id="StrengthText" value="{OfficialClub>strength}" rows="2" cols="50" maxLength="0" wrapping="None" enabled="{appView>/enabled}" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" visible="true" class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>weakness}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<TextArea id="weaknessText" value="{OfficialClub>weakness}" rows="2" cols="50" maxLength="0" wrapping="None" enabled="{appView>/enabled}" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" visible="true" class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>oppo}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<TextArea id="opportunitiesText" value="{OfficialClub>opportunity}" rows="2" cols="50" maxLength="0" wrapping="None" enabled="{appView>/enabled}" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" visible="true" class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>threats}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+			<TextArea id="threatsText" value="{OfficialClub>threat}" rows="2" cols="50" maxLength="0" wrapping="None" enabled="{appView>/enabled}" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" visible="true" class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>swotattachment}:" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit" visible="true"/>
+
+			<unified:FileUploader required="true" value="{OfficialClub>swot_cmis_id}" id="myFileUploadSwot" enabled="{appView>/enabled}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+			<!--<Link text="{swot_cmis_id}" visible="{= ${swot_cmis_id} !== '' ? true : false }" target="_blank" press="openlink" wrapping="true"/>-->
+			<Link text=" {path: 'OfficialClub>swot_cmis_id', formatter: '.urlformatter'}" visible="{= ${OfficialClub>swot_cmis_id} !== '' ? true : false }" target="_blank" href="{OfficialClub>swot_cmis_id}"/>
+			<Label wrapping="true"/>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{OfficialClubStrategyi18n>save}" type="Default" iconFirst="true" width="auto" enabled="{appView>/enabled}" visible="true" iconDensityAware="false" press="_onSubmit"/>
+			<Button text="{OfficialClubStrategyi18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

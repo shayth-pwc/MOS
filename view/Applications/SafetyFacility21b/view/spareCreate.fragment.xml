@@ -1,0 +1,145 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SafetyFacility21b.controller.Create21b">
+    <Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n>Addnewprocedure}" type="Standard" verticalScrolling="false">
+        <content>
+            <form:Form width="auto" editable="true" visible="true">
+                <form:formContainers>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n>FacilityName}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<Input   change="onInputChange" liveChange="_validateSaveEnablement" id="Facility_Name"
+									value="{ path : 'pmuFacilities>facility_name', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength:  999999}}"/>
+								</form:fields>
+                            </form:FormElement>
+                              <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n>FacilitesEntry}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+								<Input   change="onInputChange" liveChange="_validateSaveEnablement" id="facility_entry"
+									value="{ path : 'pmuFacilities>facility_entry', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength:  999999}}"/>
+								</form:fields>
+                            </form:FormElement>
+                              <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n>Evictions}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+								<Input   change="onInputChange" liveChange="_validateSaveEnablement" id="evictions"
+									value="{ path : 'pmuFacilities>evictions', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength:  999999}}"/>
+								</form:fields>
+                            </form:FormElement>
+                             <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n>InjuryResponse}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<Input   change="onInputChange" liveChange="_validateSaveEnablement" id="injury_response"
+									value="{ path : 'pmuFacilities>injury_response', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength:  999999}}"/>
+								</form:fields>
+                            </form:FormElement>
+                             <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n>FacilitiesCondition}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<Input   change="onInputChange" liveChange="_validateSaveEnablement" id="facility_condition"
+									value="{ path : 'pmuFacilities>facility_condition', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength:  999999}}"/>
+								</form:fields>
+                            </form:FormElement>
+                             <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n>MaintenanceSchedule}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<Input   change="onInputChange" liveChange="_validateSaveEnablement" id="facility_maint"
+									value="{ path : 'pmuFacilities>facility_maint', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength:  999999}}"/>
+								</form:fields>
+                            </form:FormElement>
+                             <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n>UsageRate}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<Input   change="onInputChange" liveChange="_validateSaveEnablement" id="usage_rate" type="Number" placeholder="الرجاء إدخال رقم"
+									value="{ path : 'pmuFacilities>usage_rate', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength:  999999}}"/>
+								</form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                        	<form:FormElement visible="true">  </form:FormElement>
+                        	  <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n>FacilitiesEntryDetails}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader id="facility_entry_cmis_id" required="true" enabled="{appView>/enabled}" value="{pmuFacilities>facility_entry_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text="{pmuFacilities>facility_entry_cmis_id}" visible="{= ${pmuFacilities>facility_entry_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n>EvictionsDetails}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader id="evictions_cmis_id" required="true" enabled="{appView>/enabled}" value="{pmuFacilities>evictions_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text="{pmuFacilities>evictions_cmis_id}" visible="{= ${pmuFacilities>evictions_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n>InjuryResponseDetails}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader id="injury_response_cmis_id" required="true" enabled="{appView>/enabled}" value="{pmuFacilities>injury_response_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text="{pmuFacilities>injury_response_cmis_id}" visible="{= ${pmuFacilities>injury_response_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                               <form:FormElement visible="true">
+                               <form:label>
+                                    <Label text="{i18n>FacilityConditionDetails}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader id="facility_condition_cmis_id" required="true" enabled="{appView>/enabled}" value="{pmuFacilities>facility_condition_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text="{pmuFacilities>facility_condition_cmis_id}" visible="{= ${pmuFacilities>facility_condition_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>
+									<Label wrapping="true"/>
+								</form:fields>
+								  </form:FormElement>
+								   <form:FormElement visible="true">
+                               <form:label>
+                                    <Label text="{i18n>FacilityMaintenanceDetails}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader id="facility_maint_cmis_id" required="true" enabled="{appView>/enabled}" value="{pmuFacilities>facility_maint_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text="{pmuFacilities>facility_maint_cmis_id}" visible="{= ${pmuFacilities>facility_maint_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>
+									<Label wrapping="true"/>
+								</form:fields>
+								  </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </content>
+        <beginButton/>
+        <buttons>
+            <Button text="{i18n>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onSubmit"/>
+            <Button text="{i18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onCancel"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,98 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.BoardCharter.controller.Dialog3">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{BoardCharteri18n>adddocument}" type="Standard"
+		verticalScrolling="true">
+		<content>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title/>
+				<form:formContainers>
+					<form:FormContainer xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" visible="true"
+					>
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{BoardCharteri18n>documentname}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0" value="{BoardCharter>document_name}" id="document_name"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{BoardCharteri18n>Priority}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0" value="{BoardCharter>priority}" id="priority"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{BoardCharteri18n>risklevel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<ComboBox editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%" id="risk_level"
+										selectedKey="{BoardCharter>risk_level}">
+										<items>
+											<core:Item text="{BoardCharteri18n>VeryHigh}" enabled="true" key="{BoardCharteri18n>VeryHigh}"/>
+											<core:Item text="{BoardCharteri18n>High}" enabled="true" key="{BoardCharteri18n>High}"/>
+											<core:Item text="{BoardCharteri18n>Medium}" enabled="true" key="{BoardCharteri18n>Medium}"/>
+											<core:Item text="{BoardCharteri18n>Low}" enabled="true" key="{BoardCharteri18n>Low}"/>
+										</items>
+									</ComboBox>
+									<!--<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" value="{risk_level}" id="risk_level"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{BoardCharteri18n>migrationmethod}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0" value="{BoardCharter>migration_method}" id="migration_method"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{BoardCharteri18n>storagemethod}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0" value="{BoardCharter>storage_method}" id="storage_method"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<Label text="{BoardCharteri18n>fileattachment}:" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							
+								
+									<!--<unified:FileUploader id="uploadcharterdata" required="true" enabled="{appView>/enabled}" value="{BoardCharter>proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>-->
+									<unified:FileUploader id="uploadcharterdata" required="true" enabled="{appView>/enabled}" value="{BoardCharter>proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+
+							<Link  text=" {path: 'BoardCharter>proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${BoardCharter>proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{BoardCharter>proof_cmis_id}" />
+								
+								
+								
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{BoardCharteri18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="{BoardCharteri18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

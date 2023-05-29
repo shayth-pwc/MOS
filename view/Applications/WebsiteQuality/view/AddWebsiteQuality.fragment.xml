@@ -1,0 +1,78 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.WebsiteQuality.controller.AddWebsiteQuality">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{WebsiteQualityi18n>AddAttachment}" type="Standard"
+		verticalScrolling="true">
+		<content>
+			<form:Form xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" width="100%" editable="true" visible="true"
+				cd:w5g.dt.context="/WEBSITEATTACHMENTS">
+				<form:title/>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{WebsiteQualityi18n>Documenttype}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<ComboBox editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%"
+										selectedKey="{WebsiteQuality>document2_type}" placeholder="{WebsiteQuality>document2_type}" id="document2_type"
+										items="{path:'WebsiteQuality>/WEBSITETYPE',filters:[{path:'active',operator:'EQ',value1:'true'}]}">
+										<items>
+											<core:Item text="{WebsiteQuality>value}" enabled="true" key="{WebsiteQuality>id}"/>
+										</items>
+									</ComboBox>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false">
+								<form:label>
+									<Label text="{WebsiteQualityi18n>DocumentDescription}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea rows="2" cols="20" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="false"
+										value="{WebsiteQuality>document2_description}" placeholder="{WebsiteQuality>document2_description}" id="document2_description"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{WebsiteQualityi18n>RelatedURL}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0" value="{WebsiteQuality>relevant_url}" id="relevant_url"/>
+								</form:fields>
+							</form:FormElement>
+						
+							<form:FormElement visible="true">
+							
+								<Label text="{WebsiteQualityi18n>FileAttachment}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+									visible="true"/>
+								<unified:FileUploader required="true" value="{WebsiteQuality>proof_cmis_id}" enabled="{appView>/enabled}" id="myFileUploadwebsitequality"
+									buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+								<!--<Link text="{WebsiteQuality>proof_cmis_id}" visible="{= ${WebsiteQuality>proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>-->
+								<Link text=" {path: 'WebsiteQuality>proof_cmis_id', formatter: '.urlformatter'}"
+									visible="{= ${WebsiteQuality>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{WebsiteQuality>proof_cmis_id}"/>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{WebsiteQualityi18n>OK}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="{WebsiteQualityi18n>Cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

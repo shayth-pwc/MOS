@@ -1,0 +1,52 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderMapping.controller.StakeholderIdentification">
+	<Dialog horizontalScrolling="true" contentWidth="700px" contentHeight="280px" showHeader="true" state="None" stretch="false" title="{StakeholderMappingi18n>worklistTitle}" type="Standard" verticalScrolling="true">
+		<content>
+			<layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Center" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" class="sapUiMediumMarginTop">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+						<items>
+							<Text text="{StakeholderMappingi18n>tableStakeholdertype}:" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<ComboBox editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%" id="stakeholder_type" selectedKey="{StakeholderMapping>stakeholder_type}" items="{path:'StakeholderMapping>/StakeholderType',filters:[{path:'active',operator:'EQ',value1:'true'}]}">
+								<items>
+									<core:Item text="{StakeholderMapping>value}" enabled="true" key="{StakeholderMapping>id}"/>
+									<!-- <core:Item text="Federation" enabled="true" key="Federation"/>
+                                    <core:Item text="Committee" enabled="true" key="Committee"/>
+                                    <core:Item text="Corporate Sponsor" enabled="true" key="Corporate Sponsor"/>
+                                    <core:Item text="Department" enabled="true" key="Department"/>
+                                    <core:Item text="Public Stakeholder" enabled="true" key="Public Stakeholder"/>
+                                    <core:Item text="Fans" enabled="true" key="Fans"/>-->
+								</items>
+							</ComboBox>
+							<Text text="{StakeholderMappingi18n>tableImpactLevel}:" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<ComboBox xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%" id="level_of_impact" selectedKey="{StakeholderMapping>level_of_impact}">
+								<items>
+									<core:Item enabled="true" key="{StakeholderMappingi18n>High}" text="{StakeholderMappingi18n>High}"/>
+									<core:Item text="{StakeholderMappingi18n>Medium}" enabled="true" key="{StakeholderMappingi18n>Medium}"/>
+									<core:Item text="{StakeholderMappingi18n>Low}" enabled="true" key="{StakeholderMappingi18n>Low}"/>
+								</items>
+							</ComboBox>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+						<items>
+							<Text text="{StakeholderMappingi18n>tableStakeholdername}:" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" id="stakeholder_name" value="{StakeholderMapping>stakeholder_name}"/>
+							<Text text="{StakeholderMappingi18n>tableImpactDescription}:" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<TextArea xmlns="sap.m" value="{StakeholderMapping>impact_description}" rows="4" id="impact_description" width="100%"/>
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{StakeholderMappingi18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+			<Button text="{StakeholderMappingi18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

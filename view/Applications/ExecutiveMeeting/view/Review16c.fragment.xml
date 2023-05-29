@@ -1,0 +1,138 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.ExecutiveMeeting.controller.Review16c">
+    <Dialog id="detailsPopover" horizontalScrolling="false" showHeader="true" state="None" contentWidth="800px" contentHeight="600px" stretch="false" title="{ExecutiveMeetingi18n>viewButtonText}" type="Standard" verticalScrolling="false">
+        <content>
+            <form:Form width="auto" editable="true" visible="true">
+                <form:formContainers>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                        	<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6_1662021991344">
+                                <form:label>
+                                    <Label xmlns="sap.m" text="{ExecutiveMeetingi18n>MeetingColumnid}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label6_1662021991343"/>
+                                    
+                                </form:label>
+                                <form:fields>
+                                    <Text xmlns="sap.m" text="{path: 'Executivemeeting>meeting_id'}" wrapping="true" id="text3_1662021991343"/>
+                                    
+                                </form:fields>
+                                </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn1}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+									<Text text="{Executivemeeting>meeting_title}" wrapping="true"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn2}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+									<Text text="{path: 'Executivemeeting>meeting_start_date', formatter: '.myFormatterDate'}" wrapping="true"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="false" id="element6_1655202407621">
+                                <form:label>
+                                    <Label xmlns="sap.m" text="{ExecutiveMeetingi18n>MeetingColumn2}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label6_1655202407620"/>
+                                    
+                                </form:label>
+                                <form:fields>
+                                    <Text xmlns="sap.m" text="{path: 'Executivemeeting>meeting_end_date', formatter: '.myFormatterDate'}" wrapping="true" id="text3"/>
+                                    
+                                </form:fields>
+                                </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn3}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+									<Text text="{Executivemeeting>meeting_description}" wrapping="true"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6_1657694404561">
+                                <form:label>
+                                    <Label xmlns="sap.m" text="{ExecutiveMeetingi18n>MeetingColumn7}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label6_1657694404561"/>
+                                    
+                                </form:label>
+                                <form:fields>
+                                    <Link text=" {path: 'Executivemeeting>regularity_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${Executivemeeting>regularity_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{Executivemeeting>regularity_proof_cmis_id}"/>
+                                    <!--<Link xmlns="sap.m" text="{Executivemeeting>regularity_proof_cmis_id}" visible="{= ${Executivemeeting>meeting_effectiveness_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true" id="link3_1657694404561"/>-->
+                                    
+                                </form:fields>
+                                </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn4}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                	 <Link text=" {path: 'Executivemeeting>achievements_evidence_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${Executivemeeting>achievements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{Executivemeeting>achievements_evidence_proof_cmis_id}"/>
+									<!--<Link text="{Executivemeeting>achievements_evidence_proof_cmis_id}" visible="{= ${Executivemeeting>meeting_effectiveness_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn5}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                	<Link text=" {path: 'Executivemeeting>quarterly_review_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${Executivemeeting>quarterly_review_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{Executivemeeting>quarterly_review_proof_cmis_id}"/>
+									<!--<Link text="{Executivemeeting>quarterly_review_proof_cmis_id}" visible="{= ${Executivemeeting>meeting_improvements_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn6}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                	<Link text=" {path: 'Executivemeeting>impressions_evidence_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${Executivemeeting>impressions_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{Executivemeeting>impressions_evidence_proof_cmis_id}"/>
+									<!--<Link text="{Executivemeeting>impressions_evidence_proof_cmis_id}" visible="{= ${Executivemeeting>meeting_achievements_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6">
+                                <form:label>
+                                    <Label xmlns="sap.m" text="{ExecutiveMeetingi18n>MeetingColumn8}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label6"/>
+                                    
+                                </form:label>
+                                <form:fields>
+                                	  	<Link text=" {path: 'Executivemeeting>improvements_evidence_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${Executivemeeting>improvements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{Executivemeeting>improvements_evidence_proof_cmis_id}"/>
+                                    <!--<Link xmlns="sap.m" text="{Executivemeeting>achievements_evidence_proof_cmis_id}" visible="{= ${Executivemeeting>meeting_achievements_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true" id="link3"/>-->
+                                    
+                                </form:fields>
+                                </form:FormElement>
+                                 <form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="element6_copy">
+                                <form:label>
+                                    <Label xmlns="sap.m" text="{ExecutiveMeetingi18n>MeetingColumnother}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label6_copy"/>
+                                    
+                                </form:label>
+                                <form:fields>
+                                    <Link text=" {path: 'Executivemeeting>other_evidence_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${Executivemeeting>improvements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{Executivemeeting>other_evidence_proof_cmis_id}" id="link5"/>
+                                    
+                                </form:fields>
+                                </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </content>
+        <beginButton/>
+        <buttons>
+            <!--<Button text="{ExecutiveMeetingi18n>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress16c"/>-->
+            			<Button text="{ExecutiveMeetingi18n>Edit}" type="Accept" press="handleEditButton"/>
+
+            <Button text="{ExecutiveMeetingi18n>cancel}" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress116c" iconDensityAware="false" type="Ghost"/>
+            <Button text="{ExecutiveMeetingi18n>deletemeeting}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onDeleteRow16c"/>
+
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

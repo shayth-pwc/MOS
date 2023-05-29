@@ -1,0 +1,111 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.SocialResponsibilityStrategy52A.controller.NewInitiative">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n52A>strategiccreate}"
+		type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n52A>strategiinittitledialog}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="InitiativeTitleInput" type="Text" value="{socialresponsibility>initiative_title}" showValueHelp="false"
+										enabled="{appView>/enabled}" visible="true" width="98%" valueHelpOnly="false" required="true" valueStateText="{i18n52A>ValueStateText}"
+										maxLength="0" class="sapUiTinyMargin"/>
+									<!--<Input id="productInput" type="Text" value="{expense_type}"  showValueHelp="true" valueHelpOnly="true"-->
+									<!--	valueHelpRequest=".onValueHelpRequest" class="sapUiSmallMarginBottom" width="auto"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n52A>strategicinitdesc}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea id="InitiativeDescription" value="{socialresponsibility>initiative_description}" rows="2" cols="60" maxLength="0" wrapping="None"
+										enabled="{appView>/enabled}" required="true" valueStateText="{i18n52A>ValueStateText}" visible="true" class="sapUiTinyMargin" width="98%"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true"
+								id="element12">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n52A>linkofinitiative}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true" id="label12"/>
+								</form:label>
+								<form:fields>
+									<Input xmlns="sap.m" id="InitiativeSpendingMethod_copy2" type="Text" value="{socialresponsibility>sharing_links}" showValueHelp="false"
+										visible="true" width="98%" valueHelpOnly="false" required="false" valueStateText="{i18n52A>ValueStateText}" maxLength="0"
+										class="sapUiTinyMargin"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true"/>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true"
+								id="element10"/>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true"
+								id="element9"/>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true"/>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n52A>strategicinitStartDate}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="InitiativeStartDatePicker" enabled="{appView>/enabled}" valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy"
+										value="{ path: 'socialresponsibility>initiative_start_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n52A>strategicinitEndDate}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<DatePicker id="InitiativeEndDatePicker" enabled="{appView>/enabled}" width="100%" valueFormat="dd/MM/yyy" displayFormat="dd/MM/yyy"
+										value="{ path: 'socialresponsibility>initiative_end_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true"/>
+							<form:FormElement visible="true"/>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true"
+								id="element12_copy">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n52A>fileupload}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true" id="label12_copy"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="linkuploader" required="true" value="{socialresponsibility>proof_cmis_id}" buttonOnly="false"
+										icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'socialresponsibility>proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${socialresponsibility>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{socialresponsibility>proof_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n52A>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n52A>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

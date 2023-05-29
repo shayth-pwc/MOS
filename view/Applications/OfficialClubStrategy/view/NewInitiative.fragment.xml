@@ -1,0 +1,74 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OfficialClubStrategy.controller.NewInitiative">
+	<Dialog contentHeight="450px" contentWidth="400px" horizontalScrolling="true" showHeader="true" state="None" stretch="false"
+		title="{OfficialClubStrategyi18n>strategiccreate}" type="Standard" verticalScrolling="true" class="sapUiResponsiveContentPadding">
+		<content>
+			<Label text="{OfficialClubStrategyi18n>strategiinittitledialog}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+				visible="true"/>
+			<Input id="InitiativeTitleInput" type="Text" value="{OfficialClub>initiative_title}" showValueHelp="false" enabled="{appView>/enabled}" visible="true"
+				width="98%" valueHelpOnly="false" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" maxLength="0" class="sapUiTinyMargin"/>
+			<Label text="{OfficialClubStrategyi18n>strategicinitdesc}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+				visible="true"/>
+			<TextArea id="InitiativeDescription" value="{OfficialClub>initiative_description}" rows="2" cols="60" maxLength="0" wrapping="None"
+				enabled="{appView>/enabled}" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" visible="true" class="sapUiTinyMargin" width="98%"/>
+			<Label text="{OfficialClubStrategyi18n>strategicinitowner}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+				visible="true"/>
+			<!--<ComboBox id="InitiativeOwnerCombo" items="{OfficialClub>/CLUB_ORG_STRUC_EMP}" selectedKey="{OfficialClub>initiative_owner}" editable="true"-->
+			<!--	enabled="{appView>/enabled}" visible="true" width="98%" valueState="None" maxWidth="100%" class="sapUiTinyMargin" required="true">-->
+			<!--	<items>-->
+			<!--		<core:Item text="{OfficialClub>emp_name}" enabled="{appView>/enabled}" key="{OfficialClub>id}"/>-->
+			<!--	</items>-->
+			<!--</ComboBox>-->
+			<Input id="InitiativeOwnerCombo" required="true" textFormatMode="Value" enabled="{appView>/enabled}"  showSuggestion="true" showValueHelp="true"
+				valueHelpRequest=".onValueHelpRequest" suggestionItems="{OfficialClub>/CLUB_ORG_STRUC_EMP}" selectedKey="{OfficialClub>initiative_owner}"  >
+				<suggestionItems>
+					<core:Item text="{OfficialClub>emp_name}" key="{OfficialClub>id}"  />
+				</suggestionItems>
+			</Input>
+			<Label text="{OfficialClubStrategyi18n>strategicinitRelatedGoal}:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+				visible="true"/>
+			<Select modelContextChange="onAddFilter" items="{OfficialClub>/ClubStrategyGoals}" selectedKey="{OfficialClub>related_strategic_goal}" enabled="{appView>/enabled}" visible="true"
+				width="98%" valueState="None" maxWidth="100%" class="sapUiTinyMargin">
+				<items>
+					<core:Item text="{OfficialClub>goal_title}" enabled="{appView>/enabled}" key="{OfficialClub>id}"/>
+				</items>
+			</Select>
+			<Label text="{OfficialClubStrategyi18n>strategicinitStartDate}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+				visible="true"/>
+			<DatePicker id="InitiativeStartDatePicker" enabled="{appView>/enabled}" change="handleCreateChange" valueFormat="yyyy-MM-ddTHH:mm:ss"
+				displayFormat="dd/MM/yyy"
+				value="{ path: 'OfficialClub>initiative_start_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+			<!--<DatePicker id="InitiativeStartDatePicker" value="{path:'initiative_start_date'}" change="handleCreateChange" placeholder="mm/dd/yyyy" width="316.22393798828125px" displayFormat="medium" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" enabled="{appView>/enabled}" visible="true" valueFormat="yyyyMMdd" class="sapUiTinyMargin"/>-->
+			<Label text="{OfficialClubStrategyi18n>strategicinitEndDate}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+				visible="true"/>
+			<DatePicker id="InitiativeEndDatePicker" enabled="{appView>/enabled}" change="handleCreateChange" width="100%"
+				valueFormat="yyyy-MM-ddTHH:mm:ss" displayFormat="dd/MM/yyy"
+				value="{ path: 'OfficialClub>initiative_end_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+			<!--<DatePicker id="InitiativeEndDatePicker" change="handleCreateChange" value="{path:'initiative_end_date',type:'sap.ui.model.type.DateTime',formatOptions: {style: 'long'}}" placeholder="mm/dd/yyyy" width="316.22393798828125px" displayFormat="medium" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" enabled="{appView>/enabled}" visible="true" valueFormat="yyyyMMdd" class="sapUiTinyMargin"/>-->
+			<Label text="{OfficialClubStrategyi18n>strategicinitBudgetType}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+				visible="true"/>
+			<Input id="InitiativeBudgetTypeInput" value="{path:'OfficialClub>initiative_resources_needed'}" type="Number" showValueHelp="false"
+				enabled="{appView>/enabled}" visible="true" width="98%" valueHelpOnly="false" required="true" valueStateText="{OfficialClubStrategyi18n>ValueStateText}"
+				maxLength="0" class="sapUiTinyMargin" fieldWidth=""/>
+				<Label text="{OfficialClubStrategyi18n>strategicinitBudgetAmount}:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+				visible="true"/>
+			<Input type="Number" showValueHelp="false" id="initiativeAmount" value="{path:'OfficialClub>initiative_budget_amount'}" enabled="{appView>/enabled}"
+				visible="true" width="98%" valueHelpOnly="false" required="false" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" maxLength="0"
+				class="sapUiTinyMargin" fieldWidth=""/>
+			<Label text="{OfficialClubStrategyi18n>strategicinithowtospend}:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+				visible="true"/>
+			<Input type="Text" value="{OfficialClub>spending_method}" showValueHelp="false" enabled="{appView>/enabled}" visible="true" width="98%"
+				valueHelpOnly="false" required="false" valueStateText="{OfficialClubStrategyi18n>ValueStateText}" maxLength="0" class="sapUiTinyMargin"/>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button id="InitiativeSubmitButton" text="{OfficialClubStrategyi18n>save}" type="Default" iconFirst="true" width="auto" enabled="{appView>/enabled}"
+				visible="true" iconDensityAware="false" press="_onSubmit"/>
+			<Button text="{OfficialClubStrategyi18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

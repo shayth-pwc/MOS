@@ -1,0 +1,199 @@
+<mvc:View xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns:table="sap.ui.table" xmlns:cards="sap.f.cards" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.f" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OrgStructure.controller.FinanceDisplay" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page2" showNavButton="true" navButtonPress="onNavBack">
+					<content>
+							<l:BlockLayout background="Dashboard">
+			<l:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+				<l:content>
+					<l:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+						<l:content>
+							<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%" content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'11D'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+								<sap.ui.layout:content>
+									<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout">
+										<sap.ui.layout.form:content>
+											<Text xmlns="sap.m" text="{hints>Description}"/>
+										</sap.ui.layout.form:content>
+									</sap.ui.layout.form:SimpleForm>
+								</sap.ui.layout:content>
+							</sap.ui.layout:VerticalLayout>
+						</l:content>
+					</l:BlockLayoutCell>
+				</l:content>
+			</l:BlockLayoutRow>
+				</l:BlockLayout>
+						<l:BlockLayout>
+							
+							<l:BlockLayoutRow>
+								<l:BlockLayoutCell width="6" class="sapUiNoContentPadding">
+									<Carousel height="auto" pages="{ path: 'evalorgstruct>/CLUB_ORG_STRUC_financedept' }" loop="true" pageIndicatorPlacement="Top">
+										<customLayout>
+											<CarouselLayout visiblePagesCount=" path:{ 'evalorgstruct>/CLUB_ORG_STRUC_financedept'}"/>
+										</customLayout>
+										<f:Card>
+											<f:header>
+												<cards:Header title="{i18n>FullName}: {evalorgstruct>emp_name}" subtitle="{i18n>Position}: {evalorgstruct>position_name}" iconDisplayShape="Square"/>
+											</f:header>
+											<f:content>
+												<l:VerticalLayout class="sapUiContentPadding" width="100%">
+													<l:BlockLayout>
+														<l:BlockLayoutRow>
+															<l:BlockLayoutCell title="{i18n>MainInformation}" width="1">
+																<HBox class="sapUiTinyMarginBottom">
+																	<Label text="{i18n>ContactNumber}:"/>
+																</HBox>
+																<HBox class="sapUiSmallMarginBottom">
+																	<Text text="{evalorgstruct>emp_contactnumber}"/>
+																</HBox>
+																<HBox class="sapUiTinyMarginBottom">
+																	<Label text="{i18n>Email}:"/>
+																</HBox>
+																<HBox class="sapUiSmallMarginBottom">
+																	<Text text="{evalorgstruct>emp_email}"/>
+																</HBox>
+																<HBox class="sapUiTinyMarginBottom">
+																	<Label text="{i18n>Speciality}:"/>
+																</HBox>
+																<HBox class="sapUiSmallMarginBottom">
+																	<Text text="{evalorgstruct>emp_job_title}"/>
+																</HBox>
+															</l:BlockLayoutCell>
+															<l:BlockLayoutCell title="{i18n>RelatedDocuments}" width="1">
+																<HBox class="sapUiTinyMarginBottom">
+																	<Label text="لمؤهلات الأكاديمية: "/>
+																</HBox>
+																<HBox class="sapUiSmallMarginBottom">
+																	<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_edu_cert_cmis_id', formatter: '.formaturlevalorg'}" href="{evalorgstruct>emp_edu_cert_cmis_id}" enabled="true"/>
+																</HBox>
+																<HBox class="sapUiTinyMarginBottom">
+																	<Label text="لشهادات الاحترافية: "/>
+																</HBox>
+																<HBox class="sapUiSmallMarginBottom">
+																	<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_prof_license_cmis_id', formatter: '.formaturlevalorg'}" href="{evalorgstruct>emp_prof_license_cmis_id}" enabled="true"/>
+																</HBox>
+																<HBox class="sapUiTinyMarginBottom">
+																	<Label text="السيرة الذاتية:"/>
+																</HBox>
+																<HBox class="sapUiSmallMarginBottom">
+																	<!--<Text text="{evalorgstruct>EMP_CV_CMIS_ID}"/>-->
+																	<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>EMP_CV_CMIS_ID', formatter: '.formaturlevalorg'}" href="{evalorgstruct>EMP_CV_CMIS_ID}" enabled="true"/>
+																</HBox>
+																<HBox class="sapUiTinyMarginBottom">
+																	<Label text="بطاقة الهويّة:"/>
+																</HBox>
+																<HBox class="sapUiSmallMarginBottom">
+																	<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_cmis_id_authcard', formatter: '.formaturlevalorg'}" href="{evalorgstruct>emp_cmis_id_authcard}" enabled="true"/>
+																</HBox>
+															</l:BlockLayoutCell>
+															<l:BlockLayoutCell title="{i18n>PositionInfo}" width="1">
+																<HBox class="sapUiTinyMarginBottom">
+																	<Label text="{i18n>PositionResponsibility}:"/>
+																</HBox>
+																<HBox class="sapUiSmallMarginBottom">
+																	<Text text="{evalorgstruct>position_description}"/>
+																</HBox>
+																<HBox class="sapUiTinyMarginBottom">
+																	<Label text="{i18n>PositionRequirments}:"/>
+																</HBox>
+																<HBox class="sapUiSmallMarginBottom">
+																	<Text text="{evalorgstruct>position_requirements}"/>
+																</HBox>
+																<HBox class="sapUiTinyMarginBottom">
+																	<Label text="{i18n>PositionRequiredSkills}:"/>
+																</HBox>
+																<HBox class="sapUiSmallMarginBottom">
+																	<Text text="{evalorgstruct>POSITION_REQUIREDSKILLS}"/>
+																</HBox>
+															</l:BlockLayoutCell>
+														</l:BlockLayoutRow>
+														<l:BlockLayoutRow>
+															<l:BlockLayoutCell title="{i18n>EmployeeQualifications}">
+																<Table width="auto" noDataText="No data" mode="None" items="{evalorgstruct>EmployeequalAssociation}" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin">
+																	<infoToolbar>
+																		<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+																			<content>
+																				<Label text="{i18n>Label}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			</content>
+																		</Toolbar>
+																	</infoToolbar>
+																	<headerToolbar>
+																		<OverflowToolbar width="auto" height="auto" design="Transparent" visible="false" enabled="true">
+																			<content>
+																				<Title text="{i18n>Items}" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="true"/>
+																				<ToolbarSpacer width=""/>
+																				<OverflowToolbarButton text="{i18n>Sort}" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+																				<OverflowToolbarButton text="{i18n>Filter}" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+																				<OverflowToolbarButton text="{i18n>Group}" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+																				<OverflowToolbarButton text="{i18n>Settings}" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+																			</content>
+																		</OverflowToolbar>
+																	</headerToolbar>
+																	<columns>
+																		<Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+																			<header>
+																				<Text text="{i18n>Qualification/Institute}" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			</header>
+																			<footer/>
+																		</Column>
+																		<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																			<header>
+																				<Text text="{i18n>YearAwarded}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			</header>
+																			<footer/>
+																		</Column>
+																		<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																			<header>
+																				<Text text="{i18n>Country}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			</header>
+																			<footer/>
+																		</Column>
+																		<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																			<header>
+																				<Text text="{i18n>Grade}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			</header>
+																			<footer/>
+																		</Column>
+																		<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																			<header>
+																				<Text text="{i18n>%ofMarks}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			</header>
+																			<footer/>
+																		</Column>
+																		<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																			<header>
+																				<Text text="{i18n>UploadQual}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																			</header>
+																			<footer/>
+																		</Column>
+																	</columns>
+																	<items>
+																		<ColumnListItem type="Active">
+																			<cells>
+																				<ObjectIdentifier title="{evalorgstruct>qualification}" text="@{institution}" titleActive="false" visible="true"/>
+																				<Text text="{evalorgstruct>year_awarded}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																				<Text text="{evalorgstruct>country}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																				<Text text="{evalorgstruct>grade}" width="auto" maxLines="9" wrapping="true" textAlign="Center" textDirection="Inherit" visible="true"/>
+																				<Text text="{evalorgstruct>mark}%" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																				<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>EMP_QUAL_CMIS_ID', formatter: '.formaturlevalorg'}" href="{evalorgstruct>EMP_QUAL_CMIS_ID}" enabled="true"/>
+																			</cells>
+																		</ColumnListItem>
+																	</items>
+																</Table>
+															</l:BlockLayoutCell>
+														</l:BlockLayoutRow>
+													</l:BlockLayout>
+												</l:VerticalLayout>
+											</f:content>
+										</f:Card>
+									</Carousel>
+								</l:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+							</l:BlockLayoutRow>
+						</l:BlockLayout>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

@@ -1,0 +1,179 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OfficialClubStrategy.controller.ReviewSwotAnalysis">
+	<Dialog contentHeight="450px" contentWidth="400px" horizontalScrolling="true" showHeader="true" state="None" stretch="false"
+		title="{OfficialClubStrategyi18n>createswot}" type="Standard" verticalScrolling="true" class="sapUiResponsiveContentPadding">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{OfficialClubStrategyi18n>Season}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{OfficialClub>season}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true">
+								<form:label>
+									<Label xmlns="sap.m" text="{OfficialClubStrategyi18n>promises}" design="Bold" width="100%" required="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{OfficialClub>promises}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{OfficialClubStrategyi18n>Strength}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{OfficialClub>strength}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{OfficialClubStrategyi18n>weakness}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{OfficialClub>weakness}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{OfficialClubStrategyi18n>oppo}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{OfficialClub>opportunity}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{OfficialClubStrategyi18n>threats}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Text text="{OfficialClub>threat}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{OfficialClubStrategyi18n>swotattachment}" design="Bold" width="100%" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Link text="{path: 'OfficialClub>swot_cmis_id', formatter: '.urlformatter'}" visible="{= ${swot_cmis_id} !== '' ? true : false }"
+										target="_blank" href="{swot_cmis_id}"/>
+								</form:fields>
+							</form:FormElement>
+							<!--                    <form:FormElement visible="true">-->
+							<!--                        <form:label>-->
+							<!--	<Label text="{OfficialClubStrategyi18n>target_percentage}:" required="true" design="Bold" width="100%"  textAlign="Begin"-->
+							<!--		textDirection="Inherit" visible="true"/>-->
+							<!--                        </form:label>-->
+							<!--                        <form:fields>-->
+							<!--<Text text="{MarketingMatchStrategy>target_percentage}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+							<!--                        </form:fields>-->
+							<!--                    </form:FormElement>-->
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<!--            <form:FormContainer visible="true">-->
+					<!--                <form:formElements>-->
+					<!--                    <form:FormElement visible="true">-->
+					<!--                        <form:label>-->
+					<!--	<Label text="{OfficialClubStrategyi18n>related_department}" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"-->
+					<!--		visible="true"/>-->
+					<!--                        </form:label>-->
+					<!--                        <form:fields>-->
+					<!--<Text text="{MarketingMatchStrategy>DEP_NAME}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+					<!--                        </form:fields>-->
+					<!--                    </form:FormElement>-->
+					<!--                    <form:FormElement visible="true">-->
+					<!--                        <form:label>-->
+					<!--	<Label text="{OfficialClubStrategyi18n>finance_resource}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit"-->
+					<!--		visible="true"/>-->
+					<!--                        </form:label>-->
+					<!--                        <form:fields>-->
+					<!--<Text text="{MarketingMatchStrategy>finance_resource}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+					<!--                        </form:fields>-->
+					<!--                    </form:FormElement>-->
+					<!--                    <form:FormElement visible="true">-->
+					<!--                         <form:label>-->
+					<!--	<Label text="{OfficialClubStrategyi18n>expense_allocation}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit"-->
+					<!--		visible="true"/>-->
+					<!--                         </form:label>-->
+					<!--                        <form:fields>-->
+					<!--<Text text="{MarketingMatchStrategy>expense_allocation}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+					<!--                        </form:fields>-->
+					<!--                    </form:FormElement>-->
+					<!--                    <form:FormElement visible="true">-->
+					<!--                         <form:label>-->
+					<!--	<Label text="{OfficialClubStrategyi18n>human_resources_number}:" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit"-->
+					<!--		visible="true"/>-->
+					<!--                         </form:label>-->
+					<!--                        <form:fields>-->
+					<!--<Text text="{MarketingMatchStrategy>human_resources_number}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+					<!--                        </form:fields>-->
+					<!--                    </form:FormElement>-->
+					<!--                    <form:FormElement visible="true">-->
+					<!--                        <form:label>-->
+					<!--	<Label text="{OfficialClubStrategyi18n>kpi_id}" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"-->
+					<!--		visible="true"/>-->
+					<!--                        </form:label>-->
+					<!--                        <form:fields>-->
+					<!--<Text text="{MarketingMatchStrategy>KPI_TITLE}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+					<!--                        </form:fields>-->
+					<!--                    </form:FormElement>-->
+					<!--                    <form:FormElement visible="true">-->
+					<!--                        <form:label>-->
+					<!--	<Label text="{OfficialClubStrategyi18n>target_date}" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"-->
+					<!--		visible="true"/>-->
+					<!--                        </form:label>-->
+					<!--                        <form:fields>-->
+					<!--<Text text="{path:'MarketingMatchStrategy>target_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+					<!--                        </form:fields>-->
+					<!--                    </form:FormElement>-->
+					<!--                    <form:FormElement visible="true">-->
+					<!--                        <form:label>-->
+					<!--	<Label text="{OfficialClubStrategyi18n>Startdate}" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"-->
+					<!--		visible="true"/>-->
+					<!--                        </form:label>-->
+					<!--                        <form:fields>-->
+					<!--<Text text="{path:'MarketingMatchStrategy>start_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+					<!--                        </form:fields>-->
+					<!--                    </form:FormElement>-->
+					<!--                    <form:FormElement visible="true">-->
+					<!--                        <form:label>-->
+					<!--	<Label text="{OfficialClubStrategyi18n>Enddate}" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"-->
+					<!--		visible="true"/>-->
+					<!--                        </form:label>-->
+					<!--                        <form:fields>-->
+					<!--<Text text="{path:'MarketingMatchStrategy>end_date_time', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' }}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+					<!--                        </form:fields>-->
+					<!--                    </form:FormElement>-->
+					<!--                </form:formElements>-->
+					<!--                <form:title/>-->
+					<!--            </form:FormContainer>-->
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<!--<Button text="{OfficialClubStrategyi18n>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>-->
+			<Button text="{OfficialClubStrategyi18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true"
+				press="_onButtonPress1" iconDensityAware="false"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

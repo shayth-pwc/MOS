@@ -1,0 +1,86 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.WebsiteQuality.controller.CopyOfAddWebsiteQuality">
+    <Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{WebsiteQualityi18n>AddAttachment}" type="Standard" verticalScrolling="true">
+        <content>
+            <form:Form xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" width="100%" editable="true" visible="true" cd:w5g.dt.context="/WEBSITEATTACHMENTS">
+                <form:title/>
+                <form:formContainers>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{WebsiteQualityi18n>Documenttype}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <!--<ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" selectedKey="{document2_type}" placeholder="{document2_type}" id="document2_type">
+                                        <items>
+                                            <core:Item text="Design Quality" enabled="true" key="Design Quality"/>
+                                            <core:Item text="Online Shop" enabled="true" key="Online Shop"/>
+                                            <core:Item text="Club Strategy" enabled="true" key="Club Strategy"/>
+                                            <core:Item text="Club News" enabled="true" key="Club News"/>
+                                            <core:Item text="Communication" enabled="true" key="Communication"/>
+                                            <core:Item text="Surveys" enabled="true" key="Surveys"/>
+                                        </items>
+                                    </ComboBox>-->
+                                    <Text xmlns="sap.m" text="{WebsiteQuality>DOCUMENT2_TYPE_NAME}" id="text0"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="false">
+                                <form:label>
+                                    <Label text="{WebsiteQualityi18n>DocumentDescription}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <Text xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{WebsiteQuality>document2_description}" id="text0_copy" visible="false"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{WebsiteQualityi18n>RelatedURL}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <Text xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{WebsiteQuality>relevant_url}" id="text0_copy2"/>
+                                </form:fields>
+                            </form:FormElement>
+                             <!--<form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{WebsiteQualityi18n>FileAttachment}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                                            </form:FormElement>-->
+
+                                                             <form:FormElement visible="true">
+
+                                
+
+            
+            <!--<unified:FileUploader id="myFileUploadwebsitequality" uploadUrl="" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete"/>
+					
+				<Link text="{proof_cmis_id}" visible="{= ${proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>
+				<Button text="{WebsiteQualityi18n>Upload}" press="handleUploadPress" width="20%"/>-->
+                            
+            
+                                                    <Label text="{WebsiteQualityi18n>FileAttachment}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<!--<Link text="{WebsiteQuality>proof_cmis_id}" visible="{= ${WebsiteQuality>proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink"/>-->
+             <Link  text=" {path: 'WebsiteQuality>proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${WebsiteQuality>proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{WebsiteQuality>proof_cmis_id}" />
+            
+            
+            
+                            </form:FormElement>
+                            
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </content>
+        <beginButton/>
+        <buttons>
+            <Button text="{WebsiteQualityi18n>OK}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

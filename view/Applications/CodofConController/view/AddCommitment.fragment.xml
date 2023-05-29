@@ -1,0 +1,55 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.CodofConController.controller.AddCommitment">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{i18n>addcommitment}" type="Standard"
+		verticalScrolling="true">
+		<content>
+			<layout:Grid xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12"
+				position="Center" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" class="sapUiMediumMarginTop"
+				cd:w5g.dt.context="/HRCODEOFCONDUCT">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{i18n>codeofconductcolumntitle1}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<ComboBox editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%"
+								selectedKey="{CodeofCond>commitment_type}" id="commitment_type" placeholder="{CodeofCond>commitment_type}"
+								items="{path:'CodeofCond>/CodeofConduct',filters:[{path:'active',operator:'EQ',value1:'true'}]}">
+								<items>
+									<core:Item text="{CodeofCond>value}" enabled="true" key="{CodeofCond>id}"/>
+								</items>
+							</ComboBox>
+							<Text text="{i18n>codeofconductcolumntitle3}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<unified:FileUploader required="true" value="{CodeofCond>proof_cmis_id}" enabled="{appView>/enabled}" id="proof_cmis_id" buttonOnly="false"
+								icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+							<Link text=" {path: 'CodeofCond>proof_cmis_id', formatter: '.urlformatter'}"
+								visible="{= ${CodeofCond>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{CodeofCond>proof_cmis_id}"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false">
+						<items>
+							<Text text="{i18n>codeofconductcolumntitle2}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<TextArea enabled="true" visible="true" rows="2" width="100%" required="false" valueStateText="Invalid entry" id="commitment_description"
+								value="{CodeofCond>commitment_description}"/>
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="{i18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

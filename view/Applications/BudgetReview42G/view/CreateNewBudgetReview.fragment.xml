@@ -1,0 +1,72 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.BudgetReview42G.controller.CreateNewBudgetReview">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n42G>CreateBudgetReview}"
+		type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n42G>BudgetReview_Column1}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" id="createsystemdevuploader" value="{EstimatedBudget>annual_Estimated_Budget_proof_cmis_id}"
+										buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'EstimatedBudget>annual_Estimated_Budget_proof_cmis_id', formatter: '.urlformatter'}" wrapping="true"
+										visible="{= ${EstimatedBudget>annual_Estimated_Budget_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{EstimatedBudget>annual_Estimated_Budget_proof_cmis_id}"/>
+									<Label class="sapUiMediumMarginBottom" wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement class="sapUiSmallMarginBottom" visible="true">
+								<form:label>
+									<Label text="{i18n42G>BudgetReview_Column2}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="createStakeholderuploader" required="true" value="{EstimatedBudget>signed_and_approved_proof_cmis_id}"
+										buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'EstimatedBudget>signed_and_approved_proof_cmis_id', formatter: '.urlformatter'}" wrapping="true"
+										visible="{= ${EstimatedBudget>signed_and_approved_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{EstimatedBudget>signed_and_approved_proof_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement class="sapUiSmallMarginBottom" visible="true">
+								<form:label>
+									<Label text="{i18n42G>BudgetReview_Column3}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="createreviewuploader" required="true" value="{EstimatedBudget>documented_report_proof_cmis_id}" buttonOnly="false"
+										icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'EstimatedBudget>documented_report_proof_cmis_id', formatter: '.urlformatter'}" wrapping="true"
+										visible="{= ${EstimatedBudget>documented_report_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{EstimatedBudget>documented_report_proof_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

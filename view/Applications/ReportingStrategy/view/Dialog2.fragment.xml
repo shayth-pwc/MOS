@@ -1,0 +1,57 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.ReportingStrategy.controller.Dialog2">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{ReportingStrategyi18n>Adddocument}" type="Standard" verticalScrolling="true">
+		<content>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title/>
+				<form:formContainers>
+					<form:FormContainer xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" visible="true" cd:w5g.dt.context="ReportingStrategy&gt;/REPORTING2">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<MessageStrip text="{ReportingStrategyi18n>DocumentQuarterly}" type="Information" showIcon="true"/>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{ReportingStrategyi18n>Documentname}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<ComboBox xmlns="sap.m" items="{ReportingStrategy>/DOCTYPE2}" id="document_name2" selectedKey="{ReportingStrategy>document_name2}">
+										<items>
+											<core:Item text="{ReportingStrategy>value}" enabled="true" key="{ReportingStrategy>id}"/>
+										</items>
+									</ComboBox>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{ReportingStrategyi18n>documentdescription}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea rows="2" cols="20" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true" value="{ReportingStrategy>document_description2}" id="document_description2"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<Label text="{ReportingStrategyi18n>FileAttachment}:" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								<unified:FileUploader required="true" value="{ReportingStrategy>proof_cmis_id2}" enabled="{appView>/enabled}" id="myFileUpload2" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+								<Link  text=" {path: 'ReportingStrategy>proof_cmis_id2', formatter: '.urlformatter'}" visible="{= ${ReportingStrategy>proof_cmis_id2} !== '' ? true : false }" target="_blank"
+																	href="{ReportingStrategy>proof_cmis_id2}" />
+								<!--<Link text="{ReportingStrategy>proof_cmis_id2}" visible="{= ${ReportingStrategy>proof_cmis_id2} !== '' ? true : false }" target="_blank" press="openlink" wrapping="true"/>-->
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{ReportingStrategyi18n>Ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+			<Button text="{ReportingStrategyi18n>Cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

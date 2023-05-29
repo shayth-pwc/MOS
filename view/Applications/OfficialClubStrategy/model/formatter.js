@@ -1,0 +1,1 @@
+sap.ui.define([],function(){"use strict";return{GoalText:function(e){var t=this.getView().getModel("i18n").getResourceBundle();switch(e){case"0":return t.getText("DepartmentTypeKey");case"1":return t.getText("GoalTypeKey");case"2":return t.getText("EmployeeTypeKey");default:return e}}}});

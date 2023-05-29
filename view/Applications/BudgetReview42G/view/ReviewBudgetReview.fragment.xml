@@ -1,0 +1,82 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.BudgetReview42G.controller.Review">
+    <Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n42G>CreateBudgetReview}" type="Standard" verticalScrolling="false">
+        <content>
+            <form:Form width="auto" editable="true" visible="true">
+                <form:formContainers>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n42G>BudgetReview_Column1}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+									<Link  text=" {path: 'EstimatedBudget>annual_Estimated_Budget_proof_cmis_id', formatter: '.urlformatter'}" wrapping="true" visible="{= ${EstimatedBudget>annual_Estimated_Budget_proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{EstimatedBudget>annual_Estimated_Budget_proof_cmis_id}" />
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n42G>BudgetReview_Column2}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+									<Link  text=" {path: 'EstimatedBudget>signed_and_approved_proof_cmis_id', formatter: '.urlformatter'}" wrapping="true" visible="{= ${EstimatedBudget>signed_and_approved_proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{EstimatedBudget>signed_and_approved_proof_cmis_id}" />
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n42G>BudgetReview_Column3}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+									<Link  text=" {path: 'EstimatedBudget>documented_report_proof_cmis_id', formatter: '.urlformatter'}" wrapping="true" visible="{= ${EstimatedBudget>documented_report_proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{EstimatedBudget>documented_report_proof_cmis_id}" />
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+         <!--           <form:FormContainer visible="true">-->
+         <!--               <form:formElements>-->
+         <!--                   <form:FormElement visible="true">-->
+         <!--                       <form:label>-->
+         <!--                           <Label text="{i18n42G>Column4}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+         <!--                       </form:label>-->
+         <!--                       <form:fields>-->
+									<!--<Link text="{players_impressions_proof_cmis_id}" visible="{= ${players_impressions_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+         <!--                       </form:fields>-->
+         <!--                   </form:FormElement>-->
+         <!--                   <form:FormElement visible="true">-->
+         <!--                       <form:label>-->
+         <!--                           <Label text="{i18n42G>Column5}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+         <!--                       </form:label>-->
+         <!--                       <form:fields>-->
+									<!--<Link text="{coaches_impressions_proof_cmis_id}" visible="{= ${coaches_impressions_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+         <!--                       </form:fields>-->
+         <!--                   </form:FormElement>-->
+         <!--                   <form:FormElement visible="true">-->
+         <!--                       <form:label>-->
+         <!--                           <Label text="{i18n42G>Column6}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+         <!--                       </form:label>-->
+         <!--                       <form:fields>-->
+									<!--<Link text="{visitors_impressions_proof_cmis_id}" visible="{= ${visitors_impressions_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+         <!--                       </form:fields>-->
+         <!--                   </form:FormElement>-->
+         <!--               </form:formElements>-->
+         <!--               <form:title/>-->
+         <!--           </form:FormContainer>-->
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </content>
+        <beginButton/>
+        <buttons>
+            <!--<Button text="{i18n42G>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>-->
+            <Button text="{i18n42G>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress1" iconDensityAware="false"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

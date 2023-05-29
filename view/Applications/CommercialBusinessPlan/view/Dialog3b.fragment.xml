@@ -1,0 +1,36 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.CommercialBusinessPlan.controller.Dialog3b">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{CommercialBusinessPlani18n>addcomercialgoal}" type="Standard" contentWidth="500px" contentHeight="240px" verticalScrolling="true">
+		<content>
+			<layout:Grid xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Left" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" cd:w5g.dt.context="CommercialPlan&gt;/COMMERCIALGOALS">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false" class="sapUiSmallMarginTop">
+						<items>
+							<Text class="sapUiTinyMarginBottom" text="{CommercialBusinessPlani18n>GoalType}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"  cd:w5g.dt.context="CommercialPlan&gt;/COMMERCIALGOALS"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{CommercialPlan>GOAL_TYPE_NAME}" />
+							<Text class="sapUiTinyMarginBottom" text="{CommercialBusinessPlani18n>GoalDescription}" width="100%" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" />
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{CommercialPlan>goal_description}" />
+							
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false" class="sapUiSmallMarginTop" >
+						<items>
+							<Text class="sapUiTinyMarginBottom" text="{CommercialBusinessPlani18n>GoalName}" width="100%" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{CommercialPlan>goal_name}" />
+							<Text class="sapUiTinyMarginBottom" text="{CommercialBusinessPlani18n>RelatedGoal}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{CommercialPlan>GOALTITLE_NAME}" />				
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{CommercialBusinessPlani18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,104 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.BankPolicy42B.controller.CreateNewBankPolicy">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n42B>CreateButtonText}"
+		type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n42B>AccountTypeLabel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Select id="AccountTypeCombo" forceSelection="false" items="{path:'ClubFinancial>/accounttype'}" selectedKey="{ClubFinancial>account_type}"
+										visible="true" width="auto" valueState="None" maxWidth="100%">
+										<items>
+											<core:Item text="{path:'ClubFinancial>account_type'}" enabled="true" key="{ClubFinancial>id}"/>
+										</items>
+									</Select>
+									<!--<Input id="productInput" type="Text" value="{expense_type}"  showValueHelp="true" valueHelpOnly="true"-->
+									<!--	valueHelpRequest=".onValueHelpRequest" class="sapUiSmallMarginBottom" width="auto"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n42B>AccountDescriptionLabel}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea required="true" id="AccDescriptionArea" value="{ClubFinancial>account_desc}" rows="2" cols="20" maxLength="0" wrapping="None"
+										valueStateText="Invalid entry" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n42B>AccountNumberLabel}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" required="true" id="AcccNumberInput" value="{ClubFinancial>account_number}" showValueHelp="false" visible="true"
+										width="auto" valueHelpOnly="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n42B>AccountPolicyLabel}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+										visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" required="true" id="AcccPolicyInput" value="{ClubFinancial>policy}" showValueHelp="false" visible="true" width="auto"
+										valueHelpOnly="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n42B>IBANLabel}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" value="{ClubFinancial>iban}" required="true" id="IBANinput" showValueHelp="false" enabled="{appView>/enabled}"
+										visible="true" width="auto" valueHelpOnly="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label fieldGroupIds="Input" text="{i18n42B>AttachmentLabel}" design="Standard" width="100%" required="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader required="true" value="{ClubFinancial>proof_cmis_id}" id="proof_cmis_id" buttonOnly="false" icon="sap-icon://upload"
+										iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<!--<Link text="{ClubFinancial>proof_cmis_id}" visible="{= ${ClubFinancial>proof_cmis_id} !== '' ? true : false }" target="_blank" press="openlink" wrapping="true"/>-->
+									<Link text=" {path: 'ClubFinancial>proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${ClubFinancial>proof_cmis_id} !== '' ? true : false }" target="_blank" href="{ClubFinancial>proof_cmis_id}"/>
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n42B>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n42B>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

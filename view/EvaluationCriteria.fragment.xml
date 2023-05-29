@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified">
+	<layout:BlockLayoutCell xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" class="sapUiNoContentPadding" width="2"
+		title="" titleAlignment="End" titleLevel="Auto">
+		<layout:content>
+			<layout:VerticalLayout xmlns:layout="sap.ui.layout" modelContextChange="Newuploadcheck" width="100%">
+				<layout:content>
+					<Label xmlns:sap.m="sap.m" id="labeltext" text="{i18n>UploadNewBoardReq}" width="100%"/>
+					<unified:FileUploader id="UploadNewBoardReq" required="true" enabled="{appView>/enabled}"
+						value="{path:'hints>attachment_link', formatter:'.urlformatter'}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true"
+						sameFilenameAllowed="true" change="UploadNewBoardReq"/>
+					<Link id="UploadNewBoardReqLink" text="{path:'hints>attachment_link', formatter:'.urlformatter'}" target="_blank"
+						href="{hints>attachment_link}"/>
+				</layout:content>
+			</layout:VerticalLayout>
+			<layout:VerticalLayout xmlns:layout="sap.ui.layout" width="100%" id="layout1" modelContextChange="Evaluation_Exception">
+				<layout:content>
+					<Label xmlns:sap.m="sap.m" text="{i18n>ExcepSwitchLabel}" width="100%" id="ExcepSwitchLabel"/>
+					<Switch id="ExcepSwitch" state="{= ${EXCEPTION_REQ} &gt; 0? true : false}" change="onChange" customTextOff="NO" customTextOn="YES"/>
+					<unified:FileUploader id="FragmentUploader" placeholder="{i18n>UploadExcepTitle}" required="true" buttonOnly="false" visible="false"
+						icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleExcepUploadPress"/>
+					<Link id="Exceplink" text="{path:'ATTACHMENT_PROOF_CMIS', formatter:'.urlformatter'}" target="_blank" href="{ATTACHMENT_PROOF_CMIS}"
+						visible="false"/>
+				</layout:content>
+			</layout:VerticalLayout>
+			<List items="{ path: '/Evaluation_Criteria', events: { dataReceived: 'Evaluation_Criteria' } }" id="CriteriaList"
+				headerText="{i18n>EvaluationCriteria}" growingThreshold="20" visible="true" sticky="ColumnHeaders" backgroundDesign="Translucent"
+				mode="SingleSelectMaster" keyboardMode="Edit" itemPress="onCriteria" busyIndicatorDelay="1" modelContextChange="Evaluation_Criteria">
+				<infoToolbar>
+					<Toolbar id="_IDEGen_toolbar0" width="50%" height="auto" design="Auto" visible="false" enabled="true">
+						<content>
+							<Label id="_IDEGen_label0" text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+						</content>
+					</Toolbar>
+				</infoToolbar>
+				<headerToolbar/>
+				<items>
+					<StandardListItem id="_IDEGen_standardlistitem6" title="{criteria_score} - {criteria_text}" infoState="Success" type="Active"
+						selected="false" visible="true" wrapping="true"
+						highlight="{parts: [ {path:'Selected'}, {path: 'criteria_score'} ], formatter:'.SelectedItems'}"/>
+				</items>
+			</List>
+		</layout:content>
+	</layout:BlockLayoutCell>
+</core:FragmentDefinition>

@@ -1,0 +1,187 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.financialstatement41G.controller.CreateNewFinancialStatement">
+    <Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n41G>createfinancialstatement}" type="Standard" verticalScrolling="true">
+        <content>
+            <form:Form width="auto" editable="true" visible="true">
+                <form:formContainers>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>quarterly1pp}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader required="false" id="quarterly1ppuploader" value="{financialstatement>quarter1_pp_cmis_id}" fileType="pptx,ppt" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>quarter1_pp_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>quarter1_pp_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>quarter1_pp_cmis_id}"/>
+					
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>quarterly2pp}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader required="false" id="quarterly2ppuploader" value="{financialstatement>quarter2_pp_cmis_id}" fileType="pptx,ppt" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>quarter2_pp_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>quarter2_pp_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>quarter2_pp_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>quarterly3pp}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader required="false" id="quarterly3ppuploader" value="{financialstatement>quarter3_pp_cmis_id}" fileType="pptx,ppt" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>quarter3_pp_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>quarter3_pp_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>quarter3_pp_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>quarterly4pp}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader required="false" id="quarterly4ppuploader" value="{financialstatement>quarter4_pp_cmis_id}" fileType="pptx,ppt" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>quarter4_pp_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>quarter4_pp_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>quarter4_pp_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>quarterl1ystatement}" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader required="false" id="quarterly1uploader" value="{financialstatement>quarter1_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>quarter1_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>quarter1_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>quarter1_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>quarterl2ystatement}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader required="false" id="quarterly2uploader" value="{financialstatement>quarter2_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>quarter2_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>quarter2_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>quarter2_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>yearlystatement}" required="true" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader id="yearlyuploader" required="true" value="{financialstatement>year_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>year_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>year_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>year_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>quarterly1excel}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader required="false" id="quarterly1exceluploader" value="{financialstatement>quarter1_excel_cmis_id}" fileType="xls,xlsx" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>quarter1_excel_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>quarter1_excel_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>quarter1_excel_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>quarterly2excel}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader required="false" id="quarterly2exceluploader" value="{financialstatement>quarter2_excel_cmis_id}" fileType="xls,xlsx" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>quarter2_excel_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>quarter2_excel_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>quarter2_excel_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>quarterly3excel}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader required="false" id="quarterly3exceluploader" value="{financialstatement>quarter3_excel_cmis_id}" fileType="xls,xlsx" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>quarter3_excel_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>quarter3_excel_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>quarter3_excel_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>quarterly4excel}" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader required="false" id="quarterly4exceluploader" value="{financialstatement>quarter4_excel_cmis_id}" buttonOnly="false" fileType="xls,xlsx" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>quarter4_excel_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>quarter4_excel_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>quarter4_excel_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>quarterl3ystatement}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader required="false" id="quarterly3uploader" value="{financialstatement>quarter3_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>quarter3_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>quarter3_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>quarter3_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>quarterl4ystatement}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader required="false" id="quarterly4uploader" value="{financialstatement>quarter4_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>quarter4_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>quarter4_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>quarter4_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n41G>externalauditcontract}" design="Standard" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader id="audituploader" required="true" value="{financialstatement>contract_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'financialstatement>contract_cmis_id', formatter: '.urlformatter'}" visible="{= ${financialstatement>contract_cmis_id} !== '' ? true : false }" target="_blank" href="{financialstatement>contract_cmis_id}"/>
+
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </content>
+        <beginButton/>
+        <buttons>
+            <Button text="{i18n41G>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onSubmit"/>
+            <Button text="{i18n41G>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onCancel"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

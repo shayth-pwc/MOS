@@ -1,0 +1,84 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.ClubBonusCommittee.controller.addCoachBonus">
+    <Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{ClubBonusCommitteei18n>addbonus2}" type="Standard" verticalScrolling="true">
+        <content>
+            <form:Form width="100%" editable="true" visible="true">
+                <form:title/>
+                <form:formContainers>
+                    <form:FormContainer xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" visible="true" cd:w5g.dt.context="/CLUBBONUSADMINS">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ClubBonusCommitteei18n>sporttype}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" selectedKey="{ClubBonusCommittee>sport_type}" id="sport_type">
+                                        <items>
+                                              <core:Item text="{i18n>رياضة فردية}" enabled="true" key="رياضة فردية"/>
+                                            <core:Item text="{i18n>رياضة جماعية}" enabled="true" key="رياضة جماعية"/>   
+                                        </items>
+                                    </ComboBox>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ClubBonusCommitteei18n>sportname}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" value="{ClubBonusCommittee>sport_name}" id="sport_name"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ClubBonusCommitteei18n>role}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+           <!--                         <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" selectedKey="{ClubBonusCommittee>role}" id="role">-->
+           <!--                             <items>-->
+           <!--                                 <core:Item text="المدربين" enabled="true" key="المدربين"/>-->
+           <!--                                 <core:Item text="الإداريين " enabled="true" key="الإداريين "/>-->
+											<!--<core:Item text=" الإداريين الرياضيين" enabled="true" key="الإداريين الرياضيين"/>-->
+										 <!--   <core:Item text="الطاقم الطبي" enabled="true" key="الطاقم الطبي"/>-->
+           <!--                             </items>-->
+           <!--                         </ComboBox>-->
+                            <ComboBox editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%" id="role" selectedKey="{ClubBonusCommittee>role}" items="{path:'ClubBonusCommittee>/staff',filters:[{path:'active',operator:'EQ',value1:'true'}]}">
+								<items>
+									<core:Item text="{ClubBonusCommittee>value}" enabled="true" key="{ClubBonusCommittee>id}"/>
+								</items>
+							</ComboBox>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ClubBonusCommitteei18n>achievement}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" value="{ClubBonusCommittee>achievement}" id="achievement"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ClubBonusCommitteei18n>bonus}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" value="{ClubBonusCommittee>bonus_amount}" id="bonus_amount"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </content>
+        <beginButton/>
+        <buttons>
+            <Button text="{ClubBonusCommitteei18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+            <Button text="{ClubBonusCommitteei18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,154 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.ExecutiveMeeting.controller.secondcreate">
+    <Dialog id="newcreatedialog" horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{ExecutiveMeetingi18n>CreateButtonText}" type="Standard" verticalScrolling="false">
+        <content>
+            <form:Form id="newactivityForm" width="auto" editable="true" visible="true">
+                <form:formContainers>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                        		<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true">
+								<form:label>
+									<Label xmlns="sap.m" text="{ExecutiveMeetingi18n>MeetingColumnid}" design="Standard" width="100%" required="true" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input xmlns="sap.m" change="onInputChange" liveChange="_validateSaveEnablement" value="{Executivemeeting>meeting_id}"/>
+								</form:fields>
+							</form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn1}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<Input change="onInputChange" liveChange="_validateSaveEnablement" id="newmeeting_title" value="{ path : 'Executivemeeting>meeting_title', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength:  999999}}"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn2}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<DateTimePicker id="newmeeting_start_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange" value="{path:'Executivemeeting>meeting_start_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="false" id="newelement9">
+                                <form:label>
+                                    <Label xmlns="sap.m" text="{ExecutiveMeetingi18n>MeetingColumn0}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="newlabel12"/>
+                                    
+                                </form:label>
+                                <form:fields>
+                                    <DateTimePicker xmlns="sap.m" id="newmeeting_end_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange" value="{path:'Executivemeeting>meeting_end_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>
+                                    <!--<DateTimePicker id="newmeeting_end_date" valueFormat="yyyy-MM-dd-HH-mm-ss" displayFormat="short" required="true" change="handleCreateChange"
+						liveChange="_validateSaveEnablement"
+						value="{path:'Executivemeeting>meeting_end_date', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'short', strictParsing: true}}"/>-->
+                                </form:fields>
+                                </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn3}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<TextArea id="newmeeting_description" liveChange="_validateSaveEnablement" change="onInputChange" value="{ path: 'Executivemeeting>meeting_description', type: 'sap.ui.model.odata.type.String' , constraints:{  minLength: 3, maxLength:999 } }" growing="true" rows="4" growingMaxLines="4" width="100%" showExceededText="true" maxLength="999"/>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+					       <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn7}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader id="newreviewuploader" required="true" enabled="{appView>/enabled}" value="{Executivemeeting>regularity_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link  text=" {path: 'Executivemeeting>regularity_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${Executivemeeting>regularity_proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{Executivemeeting>regularity_proof_cmis_id}" />
+									<!--<Link text="{Executivemeeting>regularity_proof_cmis_id}" visible="{= ${Executivemeeting>v} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn4}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader id="newAudituploader" required="true" enabled="{appView>/enabled}" value="{Executivemeeting>achievements_evidence_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress1"/>
+										<Link  text=" {path: 'Executivemeeting>achievements_evidence_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${Executivemeeting>achievements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{Executivemeeting>achievements_evidence_proof_cmis_id}" />
+									<!--<Link text="{Executivemeeting>achievements_evidence_proof_cmis_id}" visible="{= ${Executivemeeting>achievements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn5}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader id="newConductuploader" required="true" enabled="{appView>/enabled}" value="{Executivemeeting>quarterly_review_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress2"/>
+										<Link  text=" {path: 'Executivemeeting>quarterly_review_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${Executivemeeting>quarterly_review_proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{Executivemeeting>quarterly_review_proof_cmis_id}" />
+									<!--<Link text="{Executivemeeting>quarterly_review_proof_cmis_id}" visible="{= ${Executivemeeting>quarterly_review_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{ExecutiveMeetingi18n>MeetingColumn6}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+								<form:fields>
+									<unified:FileUploader id="newAwarnesuploader" required="true" enabled="{appView>/enabled}" value="{Executivemeeting>impressions_evidence_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress3"/>
+										<Link  text=" {path: 'Executivemeeting>impressions_evidence_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${Executivemeeting>impressions_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{Executivemeeting>impressions_evidence_proof_cmis_id}" />
+									<!--<Link text="{Executivemeeting>impressions_evidence_proof_cmis_id}" visible="{= ${Executivemeeting>impressions_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Label wrapping="true"/>
+								</form:fields>
+                            </form:FormElement>
+                            <form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="newelement8">
+                                <form:label>
+                                    <Label xmlns="sap.m" text="{ExecutiveMeetingi18n>MeetingColumn8}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="newlabel11"/>
+                                    
+                                </form:label>
+                                <form:fields>
+                                    <unified:FileUploader xmlns:unified="sap.ui.unified" id="newAwarnesuploader_copy" required="true" enabled="{appView>/enabled}" value="{Executivemeeting>improvements_evidence_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress4"/>
+                                    <Link  text=" {path: 'Executivemeeting>improvements_evidence_proof_cmis_id', formatter: '.urlformatter'}" visible="{= ${Executivemeeting>improvements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank"
+																	href="{Executivemeeting>improvements_evidence_proof_cmis_id}" />
+                                    <!--<Link xmlns="sap.m" text="{Executivemeeting>improvements_evidence_proof_cmis_id}" visible="{= ${Executivemeeting>improvements_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true" id="newlink4"/>-->
+                                    <Label xmlns="sap.m" wrapping="true" id="newlabel12_1655198584363"/>
+                                    </form:fields>
+                                </form:FormElement>
+                                	<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true">
+								<form:label>
+									<Label xmlns="sap.m" text="{ExecutiveMeetingi18n>MeetingColumnother}" design="Standard" width="100%" required="false" textAlign="Begin"
+										textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader xmlns:unified="sap.ui.unified" id="newother_evidence_proof_cmis_id" required="true" enabled="{appView>/enabled}"
+										value="{Executivemeeting>other_evidence_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true"
+										sameFilenameAllowed="true" change="handleUploadPress5"/>
+									<Link text=" {path: 'Executivemeeting>other_evidence_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${Executivemeeting>other_evidence_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{Executivemeeting>other_evidence_proof_cmis_id}"/>
+																													<Label xmlns="sap.m" wrapping="true" />
+
+								</form:fields>
+							</form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </content>
+        <beginButton/>
+        <buttons>
+            <Button text="{ExecutiveMeetingi18n>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onSubmit16c"/>
+            <Button text="{ExecutiveMeetingi18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onCancel16c"/>
+
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

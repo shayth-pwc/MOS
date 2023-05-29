@@ -1,0 +1,120 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.44c.controller.Review44c">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n>AddPaymentButton}" type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" width="auto" editable="true" visible="true" id="newnewform1">
+				<form:formContainers>
+					<form:FormContainer visible="true" id="newcontainer2">
+						<form:formElements>
+							<form:FormElement visible="true" id="newelement6">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n>EmployeeName}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="newlabel6"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{payment>EMP_NAME_TEXT}" id="text0"/>
+									<!--<Input change="onInputChange" liveChange="_validateSaveEnablement" id="newemployee_name_copy"-->
+									<!--	value="{ path : 'payment>employee_name', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength:  999999}}"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="newelement6_copy">
+							    <form:label>
+							        <Label xmlns="sap.m" text="{i18n>empcategory}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="newlabel7_copy"/>
+							        
+							    </form:label>
+							    <form:fields>
+							        <Text xmlns="sap.m" text="{payment>emp_category}" id="text2"/>
+							        
+							    </form:fields>
+							    </form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" visible="true" id="newelement8">
+							    <form:label>
+							        <Label xmlns="sap.m" text="{i18n>PaymentMonth}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="newlabel8"/>
+							        
+							    </form:label>
+							    <form:fields>
+							        <Text xmlns="sap.m" text="{path:'payment>last_payment_month', type: 'sap.ui.model.type.Date', formatOptions: { pattern: '01/MM/yyyy' }}" id="LastPaymentMonthText"/>
+							        
+							    </form:fields>
+							    </form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="false" id="newelement5">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n>BankStatement}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="newnewlabel6"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader xmlns:unified="sap.ui.unified" id="newbank_statement_cmis_id" required="true" enabled="{appView>/enabled}" value="{payment>bank_statement_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress1"/>
+									<Link xmlns="sap.m" text=" {path: 'payment>bank_statement_cmis_id', formatter: '.urlformatter'}" visible="{= ${payment>bank_statement_cmis_id} !== '' ? true : false }" target="_blank" href="{payment>bank_statement_cmis_id}" id="newlink2"/>
+									<!--<Label wrapping="true"/>-->
+									<!--<Text id="newdateDifference_copy" wrapping="true"/>-->
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:unified="sap.ui.unified" xmlns:form="sap.ui.layout.form" visible="true" id="newelement7">
+							    <form:label>
+							        <Label xmlns="sap.m" text="{i18n>salary}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="newlabel7"/>
+							        
+							    </form:label>
+							    <form:fields>
+							        <Text xmlns="sap.m" text="{payment>salary}" id="text0_1669185946398"/>
+							        
+							    </form:fields>
+							    </form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true" id="newcontainer3">
+						<form:formElements>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="newelement4_copy">
+							    <form:label>
+							        <Label xmlns="sap.m" text="{i18n>dateDifference}" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit" visible="true" id="newlabel5_copy"/>
+							        
+							    </form:label>
+							    <form:fields>
+							        <Text xmlns="sap.m" text=" {path: 'payment>MONTHS', formatter: '.monthsformater'}" id="text0_1669186039393_copy"/>
+							        
+							    </form:fields>
+							    </form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="newnewelement6">
+							    <form:label>
+							        <Label xmlns="sap.m" text="{i18n>revenueleftover}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="newnewlabel7"/>
+							        
+							    </form:label>
+							    <form:fields>
+							        <Text xmlns="sap.m" text="{payment>leftover_salary}" id="text1"/>
+							        
+							    </form:fields>
+							    </form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="newelement4">
+								<form:label>
+									<Label xmlns="sap.m" text="{i18n>revnenuedescription}" design="Standard" width="100%" textAlign="Begin" textDirection="Inherit" visible="true" id="newlabel5"/>
+								</form:label>
+								<form:fields>
+									<Text xmlns="sap.m" text="{payment>leftover_salary_desc}" id="text0_1669186039393"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form" visible="true" id="newelement4_1669126915660">
+							    <form:label>
+							        <Label xmlns="sap.m" text="{i18n>PaymentEvidence}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true" id="newlabel5_1669126915660"/>
+							        
+							    </form:label>
+							    <form:fields>
+							        <Link xmlns="sap.m" text=" {path: 'payment>proof_cmis_id_models', formatter: '.urlformatter'}" visible="{= ${payment>proof_cmis_id_models} !== '' ? true : false }" target="_blank" href="{payment>proof_cmis_id_models}" id="newlink1"/>
+							        <Label xmlns="sap.m" wrapping="true" id="newlabel6_1669126915660"/>
+							        </form:fields>
+							    </form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12" id="newlayout1"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<!--<Button text="{i18n>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress12c"/>-->
+			<Button text="{i18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress144c" iconDensityAware="false"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

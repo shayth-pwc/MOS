@@ -1,0 +1,295 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.44c.controller.Page44c">
+	<Page showHeader="true" title="{i18n>RegularityofmonthlysalarypaymentsTitle}" showFooter="false" showNavButton="true"
+		navButtonPress="onNavBack">
+		<content>
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+										content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'44C'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+												layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+			<layout:BlockLayout id="bl" background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin"
+								titleLevel="Auto">
+								<layout:content>
+									<IconTabBar id="bar0">
+										<items>
+											<IconTabFilter text="{i18n>RegularityofmonthlysalarypaymentsTitle}" id="filter0">
+												<content>
+													<layout:HorizontalLayout xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:unified="sap.ui.unified"
+														xmlns:layout="sap.ui.layout" id="layout3">
+														<layout:content>
+															<layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:unified="sap.ui.unified"
+																xmlns:layout="sap.ui.layout" width="100%" id="layout2_1676709186598">
+																<layout:content>
+																	<layout:HorizontalLayout xmlns:unified="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+																		xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" id="layout2">
+																		<layout:content>
+																			<unified:FileUploader xmlns:unified="sap.ui.unified" required="true" value="{payment>bank_statement_cmis_id}" enabled="{appView>/enabled}"
+																				id="uploadbank" buttonOnly="true" icon="sap-icon://upload" iconOnly="false" class="sapUiTinyMarginBegin sapUiMediumMarginEnd"
+																				sameFilenameAllowed="true" change="handleUploadPress1" buttonText="{i18n>BankStatement}" style="Emphasized"/>
+																			<Link class="sapUiTinyMarginTop" id="bankstatement" text=" {path: 'payment>bank_statement_cmis_id', formatter: '.urlformatter'}"
+																				visible="{= ${payment>bank_statement_cmis_id} !== '' ? true : false }" target="_blank" href="{payment>bank_statement_cmis_id}"/>
+																		</layout:content>
+																	</layout:HorizontalLayout>
+																	<layout:HorizontalLayout xmlns:unified="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+																		xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" id="layout2_copy3">
+																		<layout:content>
+																			<unified:FileUploader xmlns:unified="sap.ui.unified" required="true" value="{payment>social_insurance_proof}" enabled="{appView>/enabled}"
+																				id="social_insurance_proof_upload" buttonOnly="true" icon="sap-icon://upload" iconOnly="false"
+																				class="sapUiTinyMarginBegin sapUiMediumMarginEnd" sameFilenameAllowed="true" change="handleUploadPress_Social"
+																				buttonText="{i18n>social_insurance_proof_upload}" style="Emphasized"/>
+																			<Link class="sapUiTinyMarginTop" id="social_insurance_proof_link"
+																				text=" {path: 'payment>social_insurance_proof', formatter: '.urlformatter'}"
+																				visible="{= ${payment>social_insurance_proof} !== '' ? true : false }" target="_blank" href="{payment>social_insurance_proof}"/>
+																		</layout:content>
+																	</layout:HorizontalLayout>
+																</layout:content>
+															</layout:VerticalLayout>
+															<layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:unified="sap.ui.unified"
+																xmlns:layout="sap.ui.layout" width="100%" id="layout2_1676709186598_copy">
+																<layout:content>
+																	<layout:HorizontalLayout xmlns:unified="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+																		xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" id="layout2_copy4">
+																		<layout:content>
+																			<unified:FileUploader xmlns:unified="sap.ui.unified" required="true" value="{payment>VAT_proof}" enabled="{appView>/enabled}"
+																				id="VAT_proof_upload" buttonOnly="true" icon="sap-icon://upload" iconOnly="false" class="sapUiTinyMarginBegin sapUiMediumMarginEnd"
+																				sameFilenameAllowed="true" change="handleUploadPress_VAT" buttonText="{i18n>VAT_proof_upload}" style="Emphasized"/>
+																			<Link class="sapUiTinyMarginTop" id="VAT_proof_link" text=" {path: 'payment>VAT_proof', formatter: '.urlformatter'}"
+																				visible="{= ${payment>VAT_proof} !== '' ? true : false }" target="_blank" href="{payment>VAT_proof}"/>
+																		</layout:content>
+																	</layout:HorizontalLayout>
+																</layout:content>
+															</layout:VerticalLayout>
+														</layout:content>
+													</layout:HorizontalLayout>
+													<Table xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+														width="auto" items="{payment>/SALARY}" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20"
+														growingScrollToLoad="true" class="sapUiResponsiveMargin" id="table1">
+														<infoToolbar>
+															<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true" id="toolbar4">
+																<content>
+																	<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true" id="label1"/>
+																</content>
+															</Toolbar>
+														</infoToolbar>
+														<headerToolbar>
+															<OverflowToolbar width="auto" height="auto" design="Solid" visible="true" enabled="true" id="toolbar5">
+																<content>
+																	<Button text="{i18n>AddPaymentButton}" type="Default" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="false"
+																		iconDensityAware="false" press="_onButtonPress44c" id="button5"/>
+																	<ToolbarSpacer width="" id="spacer2"/>
+																</content>
+															</OverflowToolbar>
+														</headerToolbar>
+														<columns>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false"
+																id="column6">
+																<header>
+																	<Text text="{i18n>EmployeeName}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+																		id="text9"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false"
+																id="column7">
+																<header>
+																	<Text text="{i18n>empcategory}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+																		id="text10"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column xmlns:unified="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+																width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false"
+																id="newcolumn7">
+																<header>
+																	<Text text="{i18n>salary}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text11"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false"
+																id="column8">
+																<header>
+																	<Text text="{i18n>PaymentMonth}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+																		id="newtext11"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+																width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false"
+																id="column6_1669110312231">
+																<header>
+																	<Text text="{i18n>dateDifference}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+																		id="newtext9"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+																width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false"
+																id="newcolumn6">
+																<header>
+																	<Text text="{i18n>revenueleftover}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+																		id="newtext10"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false"
+																visible="false" id="column9">
+																<header>
+																	<Text text="{i18n>BankStatement}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+																		id="text12"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false"
+																id="column10">
+																<header>
+																	<Text text="{i18n>PaymentEvidence}" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"
+																		id="text13"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="10%" hAlign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"
+																id="column11">
+																<header>
+																	<Text text="" width="auto" maxLines="0" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text14"/>
+																</header>
+																<footer/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem type="Active" press="_onRowPress44c" id="item4___table1_0">
+																<cells>
+																	<Text text="{payment>EMP_NAME_TEXT}" wrapping="true" id="text15___table1_0"/>
+																	<Text text="{payment>emp_category}" wrapping="true" id="text16___table1_0"/>
+																	<Text xmlns:unified="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+																		text="{payment>salary}" wrapping="true" id="text12_copy2___table1_0"/>
+																	<Text id="LastPaymentMonthTextpage_copy___table1_0"
+																		text="{path:'payment>last_payment_month', type: 'sap.ui.model.type.Date', formatOptions: { pattern: '01/MM/yyyy' }}" wrapping="true"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+																		id="dateDifferencepage_copy___table1_0" wrapping="true" text=" {path: 'payment>MONTHS', formatter: '.monthsformater'}"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+																		text="{payment>leftover_salary}" wrapping="true" id="text11_1669109831815_copy2___table1_0"/>
+																	<Link text=" {path: 'payment>bank_statement_cmis_id', formatter: '.urlformatter'}"
+																		visible="{= ${payment>bank_statement_cmis_id} !== '' ? true : false }" target="_blank" href="{payment>bank_statement_cmis_id}"
+																		id="link2___table1_0"/>
+																	<!--<Link text=" {path: 'payment>bank_statement_cmis_id', formatter: '.urlformatter'}"-->
+																	<!--	visible="{= ${payment>bank_statement_cmis_id} !== '' ? true : false }" target="_blank" href="{payment>bank_statement_cmis_id}"/>-->
+																	<Link text=" {path: 'payment>proof_cmis_id_models', formatter: '.urlformatter'}"
+																		visible="{= ${payment>proof_cmis_id_models} !== '' ? true : false }" target="_blank" href="{payment>proof_cmis_id_models}"
+																		id="link3___table1_0"/>
+																	<!--<Link text=" {path: 'payment>proof_cmis_id_models', formatter: '.urlformatter'}"-->
+																	<!--	visible="{= ${payment>proof_cmis_id_models} !== '' ? true : false }" target="_blank" href="{payment>proof_cmis_id_models}"/>-->
+																	<FlexBox width="100%" id="box0_copy___table1_0">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="" type="Transparent"
+																				icon="sap-icon://edit" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onEditRow44c"
+																				id="button4_copy___table1_0"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="" type="Reject"
+																				icon="sap-icon://delete" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onDeleteRow44c"
+																				id="button5_copy2___table1_0"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter text="{i18n>RegularityofmonthlysalarypaymentsTitlereports}" id="filter1">
+												<content>
+													<OverflowToolbar xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+														xmlns:unified="sap.ui.unified" width="100%" id="toolbar2">
+														<content>
+															<layout:HorizontalLayout xmlns:unified="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+																xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" id="layout2_copy">
+																<layout:content>
+																	<unified:FileUploader xmlns:unified="sap.ui.unified" required="true" value="{payment>proof_cmis_id_uploadexcel}"
+																		enabled="{appView>/enabled}" id="Excelupload" buttonOnly="true" icon="sap-icon://upload" iconOnly="false"
+																		class="sapUiTinyMarginBegin sapUiMediumMarginEnd" sameFilenameAllowed="true" change="handleUploadPress2"
+																		buttonText="{i18n>Salaryuploadname}" style="Emphasized"/>
+																	<Link class="sapUiTinyMarginTop" id="Exceluploadlink" text=" {path: 'payment>proof_cmis_id_uploadexcel', formatter: '.urlformatter'}"
+																		visible="{= ${payment>proof_cmis_id_uploadexcel} !== '' ? true : false }" target="_blank" href="{payment>proof_cmis_id_uploadexcel}"/>
+																</layout:content>
+															</layout:HorizontalLayout>
+															<ToolbarSpacer id="spacer1"/>
+															<Button xmlns="sap.m" id="button3" press="onDataExport" icon="sap-icon://download"/>
+														</content>
+													</OverflowToolbar>
+													<Table xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+														width="auto" items="{payment>/SALARY_REPORTING}" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20"
+														growingScrollToLoad="true" class="sapUiResponsiveMargin" id="table2">
+														<items>
+															<ColumnListItem type="Active">
+																<cells>
+																	<Text text="{payment>emp_category}" id="text17"/>
+																	<Text text="{payment>salary_sum}" id="text18"/>
+																	<Text text="{payment>leftover_sum}" id="text19"/>
+																</cells>
+															</ColumnListItem>
+														</items>
+														<columns>
+															<Column id="column12">
+																<header>
+																	<Label text="{i18n>empcategory}" id="label2"/>
+																</header>
+															</Column>
+															<Column id="column13">
+																<header>
+																	<Label text="{i18n>salarytotal}" id="label3"/>
+																</header>
+															</Column>
+															<Column id="column14">
+																<header>
+																	<Label text="{i18n>revenueleftover}" id="label4"/>
+																</header>
+															</Column>
+														</columns>
+													</Table>
+												</content>
+											</IconTabFilter>
+										</items>
+									</IconTabBar>
+								</layout:content>
+							</layout:BlockLayoutCell>
+														<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria2" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

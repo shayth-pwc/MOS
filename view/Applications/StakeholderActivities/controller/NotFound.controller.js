@@ -1,0 +1,1 @@
+sap.ui.define(["./BaseController"],function(e){"use strict";return e.extend("pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderActivities.controller.NotFound",{onLinkPressed:function(){this.getRouter().navTo("worklist")}})});

@@ -1,0 +1,247 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.AnnualReport.controller.AnnualReport"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:f="sap.f" xmlns:cards="sap.f.cards" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	xmlns:forms="sap.ui.layout.form" xmlns:u="sap.ui.unified" xmlns:table="sap.ui.table">
+	<Page id="page2" title="Annual report">
+		<content>
+			<l:VerticalLayout id="containerLayout" width="100%">
+				<l:BlockLayout id="BlockLayout" background="Dashboard">
+					<l:BlockLayoutRow>
+						<l:BlockLayoutCell id ="Clubinfo" title="تاريخ النادي ونشأته">
+							<forms:SimpleForm xmlns:sap.ui.core="sap.ui.core" editable="false" layout="ResponsiveGridLayout">
+								<forms:content>
+									<Label text="{i18n>HistoryDescription}"/>
+									<Text text="{Annualreport>club_description}"/>
+									<Label text="{i18n>ClubCategory}"/>
+									<Text text="{Annualreport>CLUB_CATEGORY_TITLE}"/>
+									<Label text="{i18n>ClubDivision}"/>
+									<Text 
+										text="{Annualreport>CLUB_DIVISION_TITLE}"/>
+								</forms:content>
+							</forms:SimpleForm>
+							</l:BlockLayoutCell>
+							<l:BlockLayoutCell title="إنجازات النادي الرياضية">
+							<Table id="idProductsTable5" inset="false" items="{ path: 'Annualreport>/CLUB_STRATEGY_KPI', sorter: { path: 'Annualreport>kpi_title' } }">
+								<columns>
+									<Column width="12em">
+										<Text text="Goal Title"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true">
+										<Text text="Goal Description"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+										<Text text="Goal Type"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+										<Text text="Goal Type Id"/>
+									</Column>
+									<Column hAlign="Center">
+										<Text text="Select ID Title"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<ObjectIdentifier title="{Annualreport>goal_title}" text="{ProductId}"/>
+											<Text text="{Annualreport>goal_description}"/>
+											<Text text="{Annualreport>goal_type}"/>
+											<ObjectNumber number="{Annualreport>goal_type_id}"/>
+											<ObjectNumber number="{Annualreport>SELECTED_ID_TITLE}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+					<l:BlockLayoutRow accentCells="Accent3">
+						<l:BlockLayoutCell id="Accent3" title="Board of Directors Goals">
+							<Table id="idProductsTable1" inset="false" items="{ path: 'Annualreport>/CLUB_STRATEGY_GOALS', sorter: { path: 'Annualreport>goal_title' } }">
+								<columns>
+									<Column width="12em">
+										<Text text="Goal Title"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true">
+										<Text text="Goal Description"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+										<Text text="Goal Type"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+										<Text text="Goal Type Id"/>
+									</Column>
+									<Column hAlign="Center">
+										<Text text="Title"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<ObjectIdentifier title="{Annualreport>goal_title}" text="{ProductId}"/>
+											<Text text="{Annualreport>goal_description}"/>
+											<Text text="{Annualreport>goal_type}"/>
+											<ObjectNumber number="{Annualreport>goal_type_id}"/>
+											<ObjectNumber number="{Annualreport>SELECTED_ID_TITLE}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+					<l:BlockLayoutRow>
+						<l:BlockLayoutCell title="Board of Directors KPIs">
+							<Table id="idProductsTable2" inset="false" items="{ path: 'Annualreport>/CLUB_STRATEGY_KPI', sorter: { path: 'Annualreport>kpi_title' } }">
+															<columns>
+									<Column width="12em">
+										<Text text="KPI Title"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true">
+										<Text text="KPI Type"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+										<Text text="KPI Description"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+										<Text text="KPI Method of Measurments"/>
+									</Column>
+									<Column hAlign="Center">
+										<Text text="target"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<ObjectIdentifier title="{Annualreport>kpi_title}"/>
+											<Text text="{Annualreport>kpi_type}"/>
+											<Text text="{Annualreport>kpi_description}"/>
+											<ObjectNumber number="{Annualreport>kpi_method_of_measure}" unit="{Annualreport>kpi_frequency_of_measure}" />
+											<ObjectNumber number="{Annualreport>target}" unit="{CurrencyCode}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+					<l:BlockLayoutRow>
+						<l:BlockLayoutCell title="Board of Directors">
+							<Carousel height="auto" pages="{Annualreport>/CLUB_ORG_STRUC_EMP_BoardofDirectors}">
+								<customLayout>
+									<CarouselLayout visiblePagesCount="{Annualreport>/CLUB_ORG_STRUC_EMP_BoardofDirectors}"/>
+								</customLayout>
+								<f:Card>
+									<f:header>
+										<cards:Header title=" {i18n>FullName}: {Annualreport>emp_name}" subtitle=" {i18n>Position}: {Annualreport>position_name}"
+											iconDisplayShape="Square"/>
+									</f:header>
+									<f:content>
+										<l:VerticalLayout class="sapUiContentPadding" width="100%">
+											<l:BlockLayout>
+												<l:BlockLayoutRow>
+													<l:BlockLayoutCell title="{i18n>MainInformation}" width="1">
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="{i18n>ContactNumber}:"/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<Text text="{Annualreport>emp_contactnumber}"/>
+														</HBox>
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="{i18n>Email}:"/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<Text text="{Annualreport>emp_email}"/>
+														</HBox>
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="{i18n>Speciality}:"/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<Text text="{Annualreport>emp_job_title}"/>
+														</HBox>
+													</l:BlockLayoutCell>
+													<l:BlockLayoutCell title="{i18n>RelatedDocuments}" width="1">
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="لمؤهلات الأكاديمية: "/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<ObjectAttribute press="handleLinkObjectAttributePressAnnualreport" textDirection="Inherit"
+																text=" {path: 'Annualreport>emp_edu_cert_cmis_id', formatter: '.formaturlAnnualreport'}" active="true"/>
+														</HBox>
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="لشهادات الاحترافية: "/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<ObjectAttribute press="handleLinkObjectAttributePressAnnualreport" textDirection="Inherit"
+																text=" {path: 'Annualreport>emp_prof_cert_cmis_id', formatter: '.formaturlAnnualreport'}" active="true"/>
+														</HBox>
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="السيرة الذاتية:"/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<!--<Text text="{Evalcommittee>EMP_CV_CMIS_ID}"/>-->
+															<ObjectAttribute press="handleLinkObjectAttributePressAnnualreport" textDirection="Inherit"
+																text=" {path: 'Annualreport>EMP_CV_CMIS_ID', formatter: '.formaturlAnnualreport'}" active="true"/>
+														</HBox>
+														<HBox class="sapUiTinyMarginBottom">
+															<Label text="بطاقة الهويّة:"/>
+														</HBox>
+														<HBox class="sapUiSmallMarginBottom">
+															<ObjectAttribute press="handleLinkObjectAttributePressAnnualreport" textDirection="Inherit"
+																text=" {path: 'Annualreport>emp_cmis_id_authcard', formatter: '.formaturlAnnualreport'}" active="true"/>
+														</HBox>
+													</l:BlockLayoutCell>
+												</l:BlockLayoutRow>
+											</l:BlockLayout>
+										</l:VerticalLayout>
+									</f:content>
+								</f:Card>
+							</Carousel>
+						</l:BlockLayoutCell>
+						<l:BlockLayoutCell title="إنجازات النادي الحالية">
+							<FeedInput showIcon="true"/>
+							<FeedInput showIcon="true"/>
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+					<l:BlockLayoutRow accentCells="Accent1">
+						<l:BlockLayoutCell width="3" title="Mandatory Departments">
+							<Table id="idProductsTable542" inset="false"
+								items="{ path : 'Annualreport>/CLUB_ORG_STRUC_DEP', sorter: { path: 'Annualreport>club_dept_name', descending: true }, filters : [ { path : 'mandatory_essential', operator : 'NE', value1 :'Not Mandatory' }]}">
+								<columns>
+									<Column width="12em">
+										<Text text="Department Name"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem type="Active" vAlign="Middle" press="onSeePositionevalorg">
+										<cells>
+											<ObjectIdentifier title="{Annualreport>club_dept_name}" text="{ProductId}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+								<dependents>
+									<core:Fragment fragmentName="pwc.portal.eval.Evalannualreport.view.PositionDialogue" type="XML"/>
+								</dependents>
+							</Table>
+						</l:BlockLayoutCell>
+						<l:BlockLayoutCell width="3" title="Committees">
+							<Table id="idProductsTable4" inset="false"
+								items="{ path: 'Annualreport>/CLUB_ORG_STRUC_COM', sorter: { path: 'Annualreport>club_com_name' } }">
+								<columns>
+									<Column width="12em">
+										<Text text="Committee Name"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem type="Active" vAlign="Middle" press="onSeeEmployeeevalorg">
+										<cells>
+											<ObjectIdentifier title="{Annualreport>club_com_name}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+								<dependents>
+									<core:Fragment fragmentName="pwc.portal.eval.Evalannualreport.view.CommitteeDialogue" type="XML"/>
+								</dependents>
+							</Table>
+						</l:BlockLayoutCell>
+					</l:BlockLayoutRow>
+				</l:BlockLayout>
+			</l:VerticalLayout>
+		</content>
+	</Page>
+</core:FragmentDefinition>

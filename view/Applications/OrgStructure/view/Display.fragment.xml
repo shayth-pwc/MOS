@@ -1,0 +1,349 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	xmlns:card="sap.f.cards" xmlns:fi="sap.f" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.OrgStructure.controller.CeoEval"
+	afterRendering="onAfterRendering" modelContextChange="onAfterRendering">
+	<l:VerticalLayout id="containerLayout" width="100%">
+		<l:BlockLayout background="Dashboard">
+			<l:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+				<l:content>
+					<l:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+						<l:content>
+							<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+								content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'11D'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+								<sap.ui.layout:content>
+									<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+										layout="ResponsiveGridLayout">
+										<sap.ui.layout.form:content>
+											<Text xmlns="sap.m" text="{hints>Description}"/>
+										</sap.ui.layout.form:content>
+									</sap.ui.layout.form:SimpleForm>
+								</sap.ui.layout:content>
+							</sap.ui.layout:VerticalLayout>
+						</l:content>
+					</l:BlockLayoutCell>
+				</l:content>
+			</l:BlockLayoutRow>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell width="6" class="sapUiNoContentPadding">
+					<VBox class="sapUiSmallMargin">
+						<f:Form id="FormDisplay480_12120" editable="false">
+							<f:title>
+								<core:Title text="{i18n>Evaluation} {evalorgstruct&gt;position_name} "/>
+							</f:title>
+							<f:layout>
+								<f:ColumnLayout columnsM="2" columnsL="3" columnsXL="4"/>
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer title="{i18n>ContactInfo}">
+									<f:formElements>
+										<f:FormElement label="{i18n>Name}">
+											<f:fields>
+												<Text text="{evalorgstruct>emp_name}" id="nameText"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="{i18n>Email}">
+											<f:fields>
+												<Text text="{evalorgstruct>emp_email}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="{i18n>Tel}">
+											<f:fields>
+												<Text text="{evalorgstruct>emp_contactnumber}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="{i18n>BirthDate}">
+											<f:fields>
+												<Text text="{path: 'evalorgstruct>EMP_BIRTHDATE', formatter: '.myFormatterDateevalorg'}"/>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer title="{i18n>PositionInfo}">
+									<f:formElements>
+										<f:FormElement label="{i18n>PositionResponsibility}">
+											<f:fields>
+												<Text text="{evalorgstruct>position_description}"/>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+									<f:formElements>
+										<f:FormElement label="{i18n>PositionRequirments}">
+											<f:fields>
+												<Text text="{evalorgstruct>position_requirements}"/>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+									<f:formElements>
+										<f:FormElement label="{i18n>PositionRequiredSkills}">
+											<f:fields>
+												<Text text="{evalorgstruct>POSITION_REQUIREDSKILLS}"/>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+									<f:formElements>
+										<f:FormElement label="{i18n>AreofSpeciality}">
+											<f:fields>
+												<Text text="{evalorgstruct>AreofSpeciality}"/>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+						<f:Form id="FormDisplay480_12120-2" editable="false">
+							<f:title>
+								<core:Title text="{i18n>Attachments}"/>
+							</f:title>
+							<f:layout>
+								<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+									emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false"/>
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements/>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</VBox>
+					<VBox>
+						<HBox width="100%">
+							<HBox width="100%" direction="Row" height="100%" wrap="Wrap" renderType="Bare" id="procedurebox" modelContextChange="onContextProcedure">
+								<fi:Card class="sapUiTinyMargin" width="100%">
+									<fi:header>
+										<card:Header title="السيرة الذاتية" class="headercard" statusText=""/>
+									</fi:header>
+									<fi:content>
+										<VBox class="sapUiSmallMargin" width="90%" height="90%">
+											<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>EMP_CV_CMIS_ID', formatter: '.formaturlevalorg'}"
+												href="{evalorgstruct>EMP_CV_CMIS_ID}" enabled="true"/>
+										</VBox>
+									</fi:content>
+								</fi:Card>
+							</HBox>
+							<HBox width="100%" direction="Row" height="100%" wrap="Wrap" renderType="Bare" id="procedurebox2" modelContextChange="onContextProcedure">
+								<fi:Card class="sapUiTinyMargin" width="100%">
+									<fi:header>
+										<card:Header title="الشهادات الاحترافية" class="headercard" statusText=""/>
+									</fi:header>
+									<fi:content>
+										<VBox class="sapUiSmallMargin" width="90%" height="90%">
+											<!--<HBox justifyContent="SpaceBetween">-->
+											<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_prof_license_cmis_id', formatter: '.formaturlevalorg'}"
+												href="{evalorgstruct>emp_prof_license_cmis_id}" enabled="true"/>
+											<!--</HBox>-->
+										</VBox>
+									</fi:content>
+								</fi:Card>
+							</HBox>
+						</HBox>
+					</VBox>
+					<VBox>
+						<HBox width="100%">
+							<HBox width="100%" direction="Row" height="100%" wrap="Wrap" renderType="Bare" id="procedurebox7" modelContextChange="onContextProcedure">
+								<fi:Card class="sapUiTinyMargin" width="100%">
+									<fi:header>
+										<card:Header title="عقد العمل" class="headercard" statusText=""/>
+									</fi:header>
+									<fi:content>
+										<VBox class="sapUiSmallMargin" width="50%" height="90%">
+											<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_contract_cmis_id', formatter: '.formaturlevalorg'}"
+												href="{evalorgstruct>emp_contract_cmis_id}" enabled="true"/>
+										</VBox>
+									</fi:content>
+								</fi:Card>
+							</HBox>
+							<HBox width="100%" direction="Row" height="100%" wrap="Wrap" renderType="Bare" modelContextChange="onContextProcedure">
+								<fi:Card class="sapUiTinyMargin" width="100%">
+									<fi:header>
+										<card:Header title="{i18n>emp_edu_cert_cmis_id}" class="headercard" statusText=""/>
+									</fi:header>
+									<fi:content>
+										<VBox class="sapUiSmallMargin" width="90%" height="90%">
+											<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_edu_cert_cmis_id', formatter: '.formaturlevalorg'}"
+												href="{evalorgstruct>emp_edu_cert_cmis_id}" enabled="true"/>
+										</VBox>
+									</fi:content>
+								</fi:Card>
+							</HBox>
+						</HBox>
+					</VBox>
+					<VBox>
+						<HBox width="100%">
+							<HBox width="100%" direction="Row" height="100%" wrap="Wrap" renderType="Bare" id="procedurebox3" modelContextChange="onContextProcedure">
+								<fi:Card class="sapUiTinyMargin" width="100%">
+									<fi:header>
+										<card:Header title="التأمينات الاجتماعية" class="headercard" statusText=""/>
+									</fi:header>
+									<fi:content>
+										<VBox class="sapUiSmallMargin" width="90%" height="90%">
+											<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_social_insurance_cmis_id', formatter: '.formaturlevalorg'}"
+												href="{evalorgstruct>emp_social_insurance_cmis_id}" enabled="true"/>
+										</VBox>
+									</fi:content>
+								</fi:Card>
+							</HBox>
+							<HBox width="100%" direction="Row" height="100%" wrap="Wrap" renderType="Bare" id="procedurebox4" modelContextChange="onContextProcedure">
+								<fi:Card class="sapUiTinyMargin" width="100%">
+									<fi:header>
+										<card:Header title="بطاقة الهويّة" class="headercard" statusText=""/>
+									</fi:header>
+									<fi:content>
+										<VBox class="sapUiSmallMargin" width="90%" height="90%">
+											<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_cmis_id_authcard', formatter: '.formaturlevalorg'}"
+												href="{evalorgstruct>emp_cmis_id_authcard}" enabled="true"/>
+										</VBox>
+									</fi:content>
+								</fi:Card>
+							</HBox>
+						</HBox>
+					</VBox>
+					<VBox visible="{= ${evalorgstruct>position_name} === 'مدير الاستثمار' ? true : false}">
+						<HBox width="100%">
+							<HBox width="100%" direction="Row" height="100%" wrap="Wrap" renderType="Bare" id="procedurebox5" modelContextChange="onContextProcedure">
+								<fi:Card class="sapUiTinyMargin" width="100%">
+									<fi:header>
+										<card:Header title="{i18n>InvestmentLicense}" class="headercard" statusText=""/>
+									</fi:header>
+									<fi:content>
+										<VBox class="sapUiSmallMargin" width="90%" height="90%">
+											<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_invest_license_cmis_id', formatter: '.formaturlevalorg'}"
+												href="{evalorgstruct>emp_invest_license_cmis_id}" enabled="true"/>
+										</VBox>
+									</fi:content>
+								</fi:Card>
+							</HBox>
+						</HBox>
+					</VBox>
+					<VBox visible="{= ${evalorgstruct>position_name} === 'مسؤول حسابات التواصل' ? true : false}">
+						<HBox width="100%">
+							<HBox width="100%" direction="Row" height="100%" wrap="Wrap" renderType="Bare" id="procedurebox6" modelContextChange="onContextProcedure">
+								<fi:Card class="sapUiTinyMargin" width="100%">
+									<fi:header>
+										<card:Header title="{i18n>Graphicdesign}" class="headercard" statusText=""/>
+									</fi:header>
+									<fi:content>
+										<VBox class="sapUiSmallMargin" width="90%" height="90%">
+											<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_graphic_design_ws_cmis_id', formatter: '.formaturlevalorg'}"
+												href="{evalorgstruct>emp_graphic_design_ws_cmis_id}" enabled="true"/>
+										</VBox>
+									</fi:content>
+								</fi:Card>
+							</HBox>
+						</HBox>
+					</VBox>
+					<VBox visible="{= ${evalorgstruct>position_name} === 'مدير الاحتراف' ? true : false}">
+						<HBox width="100%">
+							<HBox width="100%" direction="Row" height="100%" wrap="Wrap" renderType="Bare" modelContextChange="onContextProcedure">
+								<fi:Card class="sapUiTinyMargin" width="100%">
+									<fi:header>
+										<card:Header title="{i18n>Professionalcoachform}" class="headercard" statusText=""/>
+									</fi:header>
+									<fi:content>
+										<VBox class="sapUiSmallMargin" width="90%" height="90%">
+											<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>emp_graphic_design_ws_cmis_id', formatter: '.formaturlevalorg'}"
+												href="{evalorgstruct>emp_graphic_design_ws_cmis_id}" enabled="true"/>
+										</VBox>
+									</fi:content>
+								</fi:Card>
+							</HBox>
+						</HBox>
+					</VBox>
+					<VBox class="sapUiSmallMargin">
+						<f:Form id="Qual" editable="false">
+							<f:title>
+								<core:Title text="{i18n>EmployeeQualifications}"/>
+							</f:title>
+							<f:layout>
+								<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+									emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false"/>
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements/>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</VBox>
+					<Table width="auto" noDataText="No data" mode="None" items="{evalorgstruct>EmployeeQualificationAssociation}" showSeparators="All"
+						growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin">
+						<infoToolbar>
+							<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+								<content>
+									<Label text="{i18n>Label}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</content>
+							</Toolbar>
+						</infoToolbar>
+						<headerToolbar>
+							<OverflowToolbar width="auto" height="auto" design="Transparent" visible="false" enabled="true">
+								<content>
+									<Title text="{i18n>Items}" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="true"/>
+									<ToolbarSpacer width=""/>
+									<OverflowToolbarButton text="{i18n>Sort}" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true"
+										visible="true" iconDensityAware="false"/>
+									<OverflowToolbarButton text="{i18n>Filter}" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true"
+										visible="true" iconDensityAware="false"/>
+									<OverflowToolbarButton text="{i18n>Group}" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true"
+										visible="true" iconDensityAware="false"/>
+									<OverflowToolbarButton text="{i18n>Settings}" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto"
+										enabled="true" visible="true" iconDensityAware="false"/>
+								</content>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>Qualification/Institute}" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>YearAwarded}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>Country}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>Grade}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>%ofMarks}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>UploadQual}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+								<footer/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active">
+								<cells>
+									<ObjectIdentifier title="{evalorgstruct>qualification}" text="@{institution}" titleActive="false" visible="true"/>
+									<Text text="{evalorgstruct>year_awarded}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+									<Text text="{evalorgstruct>country}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+									<Text text="{evalorgstruct>grade}" width="auto" maxLines="9" wrapping="true" textAlign="Center" textDirection="Inherit" visible="true"/>
+									<Text text="{evalorgstruct>mark}%" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+									<Link target="_blank" textDirection="Inherit" text=" {path: 'evalorgstruct>EMP_QUAL_CMIS_ID', formatter: '.formaturlevalorg'}"
+										href="{evalorgstruct>EMP_QUAL_CMIS_ID}" enabled="true"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</l:BlockLayoutCell>
+				<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+		<l:content/>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

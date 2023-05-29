@@ -1,0 +1,116 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.MediaEvid57c.controller.Create57c">
+	<Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n>AddnewprocedureButton1}"
+		type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="auto" editable="true" visible="true">
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>PlanName}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="false"/>
+								</form:label>
+								<form:fields>
+									<Input change="onInputChange" liveChange="_validateSaveEnablement" id="plan_title"
+										value="{ path : 'mediaEvid>plan_title', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength: 999999}}"
+										visible="false"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:FormElement visible="true">
+							<form:label>
+								<Label text="{i18n>ClubPlatforms}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							</form:label>
+							<form:fields>
+								<unified:FileUploader id="club_platform_proof_cmis_id" required="true" enabled="{appView>/enabled}"
+									value="{mediaEvid>club_platform_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+									change="handleUploadPress"/>
+								<Link text=" {path: 'mediaEvid>club_platform_proof_cmis_id', formatter: '.urlformatter'}"
+									visible="{= ${mediaEvid>club_platform_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{mediaEvid>club_platform_proof_cmis_id}"/>
+								<!--<Link text="{mediaEvid>club_platform_proof_cmis_id}" visible="{= ${mediaEvid>club_platform_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+								<Label wrapping="true"/>
+							</form:fields>
+						</form:FormElement>
+						<form:FormElement visible="true">
+							<form:label>
+								<Label text="{i18n>Participation}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							</form:label>
+							<form:fields>
+								<unified:FileUploader id="participation_proof_cmis_id" required="true" enabled="{appView>/enabled}"
+									value="{mediaEvid>participation_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+									change="handleUploadPress"/>
+								<Link text=" {path: 'mediaEvid>participation_proof_cmis_id', formatter: '.urlformatter'}"
+									visible="{= ${mediaEvid>participation_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{mediaEvid>participation_proof_cmis_id}"/>
+								<!--<Link text="{mediaEvid>participation_proof_cmis_id}" visible="{= ${mediaEvid>participation_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+								<Label wrapping="true"/>
+							</form:fields>
+						</form:FormElement>
+						<form:title/>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true"/>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>StaffPart}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="shareholder_participation_proof_cmis_id" required="true" enabled="{appView>/enabled}"
+										value="{mediaEvid>shareholder_participation_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true"
+										sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'mediaEvid>shareholder_participation_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${mediaEvid>shareholder_participation_proof_cmis_id} !== '' ? true : false }" target="_blank"
+										href="{mediaEvid>shareholder_participation_proof_cmis_id}"/>
+									<!--<Link text="{mediaEvid>shareholder_participation_proof_cmis_id}" visible="{= ${mediaEvid>shareholder_participation_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>Review1}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="revision_proof_cmis_id" required="true" enabled="{appView>/enabled}" value="{mediaEvid>revision_proof_cmis_id}"
+										buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true" change="handleUploadPress"/>
+									<Link text=" {path: 'mediaEvid>revision_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${mediaEvid>revision_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{mediaEvid>revision_proof_cmis_id}"/>
+									<!--<Link text="{mediaEvid>revision_proof_cmis_id}" visible="{= ${mediaEvid>revision_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>Devo}" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<unified:FileUploader id="improvement_proof_cmis_id" required="true" enabled="{appView>/enabled}"
+										value="{mediaEvid>improvement_proof_cmis_id}" buttonOnly="false" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+										change="handleUploadPress"/>
+									<Link text=" {path: 'mediaEvid>improvement_proof_cmis_id', formatter: '.urlformatter'}"
+										visible="{= ${mediaEvid>improvement_proof_cmis_id} !== '' ? true : false }" target="_blank" href="{mediaEvid>improvement_proof_cmis_id}"/>
+									<!--<Link text="{mediaEvid>improvement_proof_cmis_id}" visible="{= ${mediaEvid>improvement_proof_cmis_id} !== '' ? true : false }" target="_blank" press="Openlink" wrapping="true"/>-->
+									<Label wrapping="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>submit}" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onSubmit"/>
+			<Button text="{i18n>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onCancel"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

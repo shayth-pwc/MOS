@@ -1,0 +1,328 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.ClubBonusCommittee.controller.Page1">
+	<Page showHeader="true" title="{ClubBonusCommitteei18n>appTitle}" showFooter="true" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%" content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'12B'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+					<layout:BlockLayoutRow scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="4" title="" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true">
+										<items>
+											<IconTabFilter text="{ClubBonusCommitteei18n>GeneralItems}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0" backgroundDesign="Solid" class="sapUiSmallMarginTop">
+														<headerToolbar>
+															<Toolbar id="toolbar4_1657084658444">
+																<Title xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{ClubBonusCommitteei18n>GeneralItems}" id="title0"/>
+																<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" width="" id="spacer3"/>
+																<Button xmlns="sap.m" id="button3" press="editMainitem" type="Accept" icon="sap-icon://edit"/>
+															</Toolbar>
+														</headerToolbar>
+														<content>
+															<VBox xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" width="100%" direction="Column" id="vbox0">
+																<items>
+																	<Text xmlns="sap.m" text="{ClubBonusCommittee>item_description}" id="text31" maxLines="70" width="100%" class="sapUiSmallMarginTop"/>
+																</items>
+															</VBox>
+														</content>
+													</Panel>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter text="{ClubBonusCommitteei18n>icontabtitle2}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<OverflowToolbar width="auto" height="46px" design="Solid" visible="true" enabled="true">
+														<content>
+															<ToolbarSpacer width=""/>
+															<Button text="{ClubBonusCommitteei18n>addgoal}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="addBonusGoal"/>
+														</content>
+													</OverflowToolbar>
+													<Table xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" modelContextChange="onAddFilter" items="{ path: 'ClubBonusCommittee>/CLUBBONUSGOALS', sorter: { path: 'goal_name', descending: false } }" width="auto" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin" cd:w5g.dt.context="/CLUBBONUSGOALS">
+														<infoToolbar/>
+														<headerToolbar/>
+														<columns>
+															<Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>goalname}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>goaldescription}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>playermotivation}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>boardplayer}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="10%" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column24">
+																<header>
+																	<Text width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text57"/>
+																</header>
+																<footer/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem type="Active">
+																<cells>
+																	<ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+																	<layout:HorizontalLayout>
+																		<layout:content/>
+																	</layout:HorizontalLayout>
+																	<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+																</cells>
+															</ColumnListItem>
+															<ColumnListItem type="Active">
+																<cells>
+																	<ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+																	<layout:HorizontalLayout>
+																		<layout:content/>
+																	</layout:HorizontalLayout>
+																	<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+																</cells>
+															</ColumnListItem>
+															<ColumnListItem type="Active" press="Pressrow1">
+																<cells>
+																	<Text text="{ClubBonusCommittee>goal_name}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{ClubBonusCommittee>goal_description}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text65"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{ClubBonusCommittee>player_motivation}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text64"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{ClubBonusCommittee>board_clarity}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text63"/>
+																	<FlexBox xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic" xmlns="sap.m" width="100%" id="box0">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_1651121173831" icon="sap-icon://edit" type="Transparent" press="editBonusGoal"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button1" icon="sap-icon://delete" type="Reject" press="onRemoveRow"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter text="{ClubBonusCommitteei18n>icontabtitle3}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<OverflowToolbar width="auto" height="46px" design="Solid" visible="true" enabled="true">
+														<content>
+															<ToolbarSpacer width=""/>
+															<Button text="{ClubBonusCommitteei18n>addbonus}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="addplayerbonus"/>
+														</content>
+													</OverflowToolbar>
+													<Table xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" modelContextChange="onAddFilter" items="{ path: 'ClubBonusCommittee>/CLUBBONUSPLAYERS', sorter: { path: 'sport_type1', descending: false } }" width="auto" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin" cd:w5g.dt.context="/CLUBBONUSPLAYERS">
+														<infoToolbar/>
+														<headerToolbar/>
+														<columns>
+															<Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>sporttype}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>sportname}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>agegroup}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>achievement}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>bonus}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="10%" halign="Begin" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column24_1654082945421">
+																<header>
+																	<Text width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text57_1654082945421"/>
+																</header>
+																<footer/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem type="Active">
+																<cells>
+																	<ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+																	<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+																	<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+																</cells>
+															</ColumnListItem>
+															<ColumnListItem type="Active">
+																<cells>
+																	<ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+																	<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<layout:HorizontalLayout>
+																		<layout:content/>
+																	</layout:HorizontalLayout>
+																	<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+																	<layout:HorizontalLayout>
+																		<layout:content/>
+																	</layout:HorizontalLayout>
+																</cells>
+															</ColumnListItem>
+															<ColumnListItem type="Active" press="PressRow2">
+																<cells>
+																	<Text text="{ClubBonusCommittee>sport_type1}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{ClubBonusCommittee>sport_name1}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text68"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{ClubBonusCommittee>age_group}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text67"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{ClubBonusCommittee>achievement1}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text66"/>
+																	<Text xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" text="{ClubBonusCommittee>bonus_amount1}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text66_copy"/>
+																	<FlexBox xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic" xmlns="sap.m" width="100%" id="box0_copy">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_1651121173831_copy" icon="sap-icon://edit" type="Transparent" press="editplayerbonus"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button1_copy" icon="sap-icon://delete" type="Reject" press="onRemoveRow"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter text="{ClubBonusCommitteei18n>icontabtitle4}" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+												<content>
+													<OverflowToolbar width="auto" height="46px" design="Solid" visible="true" enabled="true">
+														<content>
+															<ToolbarSpacer width=""/>
+															<Button text="{ClubBonusCommitteei18n>addbonus2}" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="addadminbonus"/>
+														</content>
+													</OverflowToolbar>
+													<Table xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" modelContextChange="onAddFilter" items="{ path: 'ClubBonusCommittee>/CLUBBONUSADMINS', sorter: { path: 'sport_type', descending: false } }" width="auto" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin" cd:w5g.dt.context="/CLUBBONUSADMINS">
+														<infoToolbar/>
+														<headerToolbar/>
+														<columns>
+															<Column width="auto" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>sporttype}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>sportname}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>role}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>achievement}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column width="auto" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+																<header>
+																	<Text text="{ClubBonusCommitteei18n>bonus}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																</header>
+																<footer/>
+															</Column>
+															<Column xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="10%" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false" id="column24_1654084725462">
+																<header>
+																	<Text width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text57_1654084725461"/>
+																</header>
+																<footer/>
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem type="Active">
+																<cells>
+																	<ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+																	<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+																	<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+																</cells>
+															</ColumnListItem>
+															<ColumnListItem type="Active">
+																<cells>
+																	<ObjectIdentifier title="Product Name" text="Product ID" titleActive="false" visible="true"/>
+																	<Text text="Supplier Name" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<layout:HorizontalLayout>
+																		<layout:content/>
+																	</layout:HorizontalLayout>
+																	<ObjectNumber number="150.00" unit="USD" emphasized="true" state="None"/>
+																	<layout:HorizontalLayout>
+																		<layout:content/>
+																	</layout:HorizontalLayout>
+																</cells>
+															</ColumnListItem>
+															<ColumnListItem type="Active" press="PressRow3">
+																<cells>
+																	<Text text="{ClubBonusCommittee>sport_type}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{ClubBonusCommittee>sport_name}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text60"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{ClubBonusCommittee>ROLE_NAME}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text59"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{ClubBonusCommittee>achievement}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text58"/>
+																	<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{ClubBonusCommittee>bonus_amount}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text58_copy"/>
+																	<FlexBox xmlns:layout="sap.ui.layout" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic" xmlns="sap.m" width="100%" id="box0_copy2">
+																		<items>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button0_1651121173831_copy2" icon="sap-icon://edit" type="Transparent" press="editadminbonus"/>
+																			<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m" id="button1_copy2" icon="sap-icon://delete" type="Reject" press="onRemoveRow"/>
+																		</items>
+																	</FlexBox>
+																</cells>
+															</ColumnListItem>
+														</items>
+													</Table>
+												</content>
+											</IconTabFilter>
+										</items>
+										<content/>
+									</IconTabBar>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

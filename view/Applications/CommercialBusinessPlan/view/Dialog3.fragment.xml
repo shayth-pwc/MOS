@@ -1,0 +1,62 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.CommercialBusinessPlan.controller.Dialog3">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{CommercialBusinessPlani18n>addcomercialgoal}"
+		type="Standard" verticalScrolling="true">
+		<content>
+			<layout:Grid xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12"
+				position="Left" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true"
+				cd:w5g.dt.context="CommercialPlan>/COMMERCIALGOALS">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div"
+						visible="true" displayInline="false" class="sapUiSmallMarginTop">
+						<items>
+							<Text text="{CommercialBusinessPlani18n>GoalType}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true" id="text9" cd:w5g.dt.context="CommercialPlan>/COMMERCIALGOALS"/>
+							<ComboBox modelContextChange="onAddFilter" editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%"
+								id="goal_type" selectedKey="{CommercialPlan>goal_type}"
+								items="{path:'CommercialPlan>/goaltype',filters:[{path:'active',operator:'EQ',value1:'true'}]}">
+								<items>
+									<core:Item text="{CommercialPlan>value}" enabled="true" key="{CommercialPlan>id}"/>
+								</items>
+							</ComboBox>
+							<Text text="{CommercialBusinessPlani18n>GoalDescription}" width="100%" maxLines="3" wrapping="true" textAlign="Begin"
+								textDirection="Inherit" visible="true" id="text7"/>
+							<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false"
+								valueStateText="Invalid entry" maxLength="0" value="{CommercialPlan>goal_description}" id="goal_description"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" alignItems="Stretch" direction="Column" fitContainer="false"
+						width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false" class="sapUiSmallMarginTop"
+						id="vbox2">
+						<items>
+							<Text text="{CommercialBusinessPlani18n>GoalName}" width="100%" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" required="false"
+								valueStateText="Invalid entry" maxLength="0" value="{CommercialPlan>goal_name}" id="goal_name"/>
+							<Text text="{CommercialBusinessPlani18n>RelatedGoal}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit"
+								visible="true"/>
+							<ComboBox modelContextChange="onAddFilter" editable="true" enabled="true" visible="true" width="100%" valueState="None" maxWidth="100%"
+								id="related_strategic_goal" selectedKey="{CommercialPlan>related_strategic_goal}" items="{path:'CommercialPlan>/ClubStrategyGoals'}">
+								<items>
+									<core:Item text="{CommercialPlan>goal_title}" enabled="true" key="{CommercialPlan>id}"/>
+								</items>
+							</ComboBox>
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{CommercialBusinessPlani18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onButtonPress"/>
+			<Button text="{CommercialBusinessPlani18n>cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true"
+				iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

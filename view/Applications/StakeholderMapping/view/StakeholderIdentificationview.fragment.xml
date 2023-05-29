@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.StakeholderMapping.controller.StakeholderIdentificationview">
+	<Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="{StakeholderMappingi18n>worklistTitle}" type="Standard" verticalScrolling="true" contentWidth="700px" contentHeight="180px">
+		<content>
+			<layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L6 M6 S12" position="Center" width="100%" containerQuery="false" hSpacing="2" vSpacing="2" visible="true" class="sapUiMediumMarginTop">
+				<layout:content>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+						<items>
+							<Text text="{StakeholderMappingi18n>tableStakeholdertype}:" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMarginBottom"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{StakeholderMapping>STAKEHOLDER_TYPE_NAME}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text4"/>
+							<Text class="sapUiTinyMarginBottom" text="{StakeholderMappingi18n>tableImpactLevel}:" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{StakeholderMapping>level_of_impact}" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text6"/>
+						</items>
+						<layoutData/>
+					</VBox>
+					<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+						<items>
+							<Text class="sapUiTinyMarginBottom" text="{StakeholderMappingi18n>tableStakeholdername}:" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{StakeholderMapping>stakeholder_name}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text4_copy"/>
+							<Text class="sapUiTinyMarginBottom" text="{StakeholderMappingi18n>tableImpactDescription}:" width="auto" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+							<Text xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" class="sapUiTinyMarginBottom" text="{StakeholderMapping>impact_description}" width="100%" maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="text4_copy2"/>
+						</items>
+						<layoutData/>
+					</VBox>
+				</layout:content>
+			</layout:Grid>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{StakeholderMappingi18n>ok}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</core:FragmentDefinition>

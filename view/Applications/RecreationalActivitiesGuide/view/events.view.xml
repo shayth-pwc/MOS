@@ -1,0 +1,152 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.RecreationalActivitiesGuide.controller.events">
+	<Page showHeader="true" title="{i18n>55ctitle}" showFooter="true" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+										content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'53C'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+												layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+			<layout:BlockLayout id="bl" background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="6" title="" titleAlignment="Begin"
+								titleLevel="Auto">
+								<layout:content>
+									<Table modelContextChange="onAddFilter" items="{ path: 'RecreationalEvents>/RECEFF'}" noDataText="لا يوجد أي نشاط"
+										selectionChange="handleSelectionChange" id="table3">
+										<headerToolbar>
+											<OverflowToolbar width="100%" id="toolbar7">
+												<content>
+													<Title id="tableHeader" text="{RecreationalActivitiesi18n>events_businessplanpaneltitle}" level="H3"/>
+													<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+														id="spacer3"/>
+													<Button press="AddActivity" xmlns="sap.m" text="{RecreationalActivitiesi18n>events_addclubdecision}" id="button2" type="Accept"
+														icon="sap-icon://add"/>
+												</content>
+											</OverflowToolbar>
+										</headerToolbar>
+										<items>
+											<ColumnListItem type="Active" id="item3" press="_onRowPress">
+												<cells>
+													<Text xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+														xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="{RecreationalEvents>activity_name}" width="auto"
+														maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" id="DOCUMENT_TYPE_NAME_copy"
+														cd:w5g.dt.context="/HRBUSINESSPLAN"/>
+													<Text text="{path:'RecreationalEvents>activity_date',type:'sap.ui.model.type.Date',formatOptions: { pattern: 'dd/MM/yyyy' }}" width="auto"
+														maxLines="9" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Link xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+														text="{path: 'RecreationalEvents>exploitation_of_space_proof_cmis_id', formatter: '.urlformatter'}"
+														href="{RecreationalEvents>exploitation_of_space_proof_cmis_id}" target="_blank" textDirection="Inherit" id="link6"/>
+													<Link xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+														text="{path: 'RecreationalEvents>food_drinks_proof_cmis_id', formatter: '.urlformatter'}"
+														href="{RecreationalEvents>food_drinks_proof_cmis_id}" target="_blank" textDirection="Inherit" id="link7"/>
+													<Link xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+														text="{path: 'RecreationalEvents>club_brand_proof_cmis_id', formatter: '.urlformatter'}"
+														href="{RecreationalEvents>club_brand_proof_cmis_id}" target="_blank" textDirection="Inherit" id="link8"/>
+													<Link xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+														text="{path: 'RecreationalEvents>security_safety_cmis_id', formatter: '.urlformatter'}" href="{RecreationalEvents>security_safety_cmis_id}"
+														target="_blank" textDirection="Inherit" id="link9"/>
+													<Link xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+														text="{path: 'RecreationalEvents>diversification_proof', formatter: '.urlformatter'}" href="{RecreationalEvents>diversification_proof}"
+														target="_blank" textDirection="Inherit" id="link10"/>
+													<Link xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m"
+														text="{path: 'RecreationalEvents>activities_proof', formatter: '.urlformatter'}" href="{RecreationalEvents>activities_proof}"
+														target="_blank" textDirection="Inherit" id="link11"/>
+													<FlexBox xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+														xmlns="sap.m" width="100%">
+														<items>
+															<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																icon="sap-icon://edit" type="Transparent" press="EditActivity" textDirection="Inherit"/>
+															<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+																icon="sap-icon://delete" type="Reject" press="DeleteActivity" textDirection="Inherit"/>
+														</items>
+													</FlexBox>
+												</cells>
+											</ColumnListItem>
+										</items>
+										<columns>
+											<Column id="column13">
+												<header>
+													<Label wrapping="true" design="Bold" text="{RecreationalActivitiesi18n>businessplancolumntitle1}" id="label0"/>
+												</header>
+											</Column>
+											<Column id="column14_1654674082112">
+												<header>
+													<Label wrapping="true" design="Bold" text="{RecreationalActivitiesi18n>events_clubdecisionscolumntitle6}" id="label1"/>
+												</header>
+											</Column>
+											<Column id="column15">
+												<header>
+													<Label wrapping="true" design="Bold" text="{RecreationalActivitiesi18n>events_clubdecisionscolumntitle2}" id="label2"/>
+												</header>
+											</Column>
+											<Column xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" id="column15_copy">
+												<header>
+													<Label wrapping="true" design="Bold" text="{RecreationalActivitiesi18n>events_clubdecisionscolumntitle4}" id="label2_copy"/>
+												</header>
+											</Column>
+											<Column xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" id="column15_copy2">
+												<header>
+													<Label wrapping="true" design="Bold" text="{RecreationalActivitiesi18n>events_clubdecisionscolumntitle3}" id="label2_copy2"/>
+												</header>
+											</Column>
+											<Column xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" id="column15_copy3">
+												<header>
+													<Label wrapping="true" design="Bold" text="{RecreationalActivitiesi18n>events_clubdecisionscolumntitle5}" id="label2_copy3"/>
+												</header>
+											</Column>
+											<Column xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" id="column15_copy4">
+												<header>
+													<Label wrapping="true" design="Bold" text="{RecreationalActivitiesi18n>diversification_proof}" id="label2_copy4"/>
+												</header>
+											</Column>
+											<Column xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" id="column15_copy6">
+												<header>
+													<Label wrapping="true" design="Bold" text="{RecreationalActivitiesi18n>activities_proof}" id="label2_copy5"/>
+												</header>
+											</Column>
+											<Column xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns="sap.m" id="column15_copy5" width="8%"/>
+										</columns>
+										<swipeContent>
+											<OverflowToolbar xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" width="100%" id="toolbar7_copy">
+												<content>
+													<Title id="tableHeader_copy" text="{RecreationalActivitiesi18n>events_businessplanpaneltitle}" level="H3"/>
+													<ToolbarSpacer xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+														id="spacer3_copy"/>
+													<Button xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns="sap.m"
+														id="button0_copy2" activeIcon="sap-icon://add" icon="sap-icon://add" press="addnewbusinessplan"
+														text="{RecreationalActivitiesi18n>events_addbusinessplan}" type="Accept"/>
+												</content>
+											</OverflowToolbar>
+										</swipeContent>
+									</Table>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+	</Page>
+</mvc:View>

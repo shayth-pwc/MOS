@@ -1,0 +1,170 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:unified="sap.ui.unified"
+	controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.CommercialRevenues.controller.CommercialRevenues">
+	<Page title="{i18n45G>CommercialRevenues_title}" showFooter="true" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<layout:BlockLayout background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" width="6" title="{i18n>hints}" titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<sap.ui.layout:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" width="100%"
+										content="{path:'hints>/THH',filters:[{path:'Form',operator:'EQ',value1:'45C'},{path:'app_section',operator:'EQ',value1:'Evaluation'},{path:'Type',operator:'EQ',value1:'Hints'}]}">
+										<sap.ui.layout:content>
+											<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true"
+												layout="ResponsiveGridLayout">
+												<sap.ui.layout.form:content>
+													<Text xmlns="sap.m" text="{hints>Description}"/>
+												</sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm>
+										</sap.ui.layout:content>
+									</sap.ui.layout:VerticalLayout>
+								</layout:content>
+							</layout:BlockLayoutCell>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+			<layout:BlockLayout id="bl" background="Dashboard" visible="true">
+				<layout:content>
+					<layout:BlockLayoutRow class="sapUiNoContentPadding" id="blrow" scrollable="false">
+						<layout:content>
+							<layout:BlockLayoutCell class="sapUiNoContentPadding" id="_IDEGen_blocklayoutcell0" width="5" title="{i18n45G>CommercialRevenues_title}"
+								titleAlignment="Begin" titleLevel="Auto">
+								<layout:content>
+									<Table items="{path:'CommercialRevenues>/CommercialRevenues', sorter:{path:'COMMERCIAL_REVENUE_TITLE',group:true}}"
+										updateFinished="onUpdateFinish" mode="Delete" delete="onDelete_CommercialRevenues" id="CommercialRevenueTable" growingScrollToLoad="true"
+										sticky="ColumnHeaders">
+										<headerToolbar>
+											<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
+												<content>
+													<!--<DateRangeSelection id="DRS3" width="20%" showCurrentDateButton="true"  change="handleChange"/>-->
+													<!--<ToolbarSpacer width=""/>-->
+													<OverflowToolbarButton text="Add" type="Accept" icon="sap-icon://add" iconFirst="true" width="auto" enabled="true" visible="true"
+														iconDensityAware="false" press="onAddPress_CommercialRevenues"/>
+													<OverflowToolbarButton text="Print" type="Accept" icon="sap-icon://print" iconFirst="true" width="auto" enabled="true" visible="true"
+														iconDensityAware="false" press="onDataExportPDF"/>
+													<Label text="{i18n45G>UploadTitle}:" wrapping="true"/>
+													<unified:FileUploader id="systemdevuploader" required="true" buttonOnly="true" icon="sap-icon://upload" iconOnly="true"
+														sameFilenameAllowed="true" change="handleUploadPress"/>
+													<Link id="link" text=" {path: 'CommercialRevenues>valid_proof_cmis_id', formatter: '.urlformatter'}"
+														visible="{= ${CommercialRevenues>valid_proof_cmis_id} !== '' ? true : false }" target="_blank"
+														href="{CommercialRevenues>valid_proof_cmis_id}"/>
+													<Label wrapping="true"/>
+												</content>
+											</OverflowToolbar>
+										</headerToolbar>
+										<items>
+											<ColumnListItem detailPress="onViewPress_CommercialRevenues" type="Detail">
+												<cells>
+													<Text id="tbl_CommercialRevenues_commercial_revenue_type" text="{CommercialRevenues>commercial_revenue_type_name}"/>
+													<Text id="tbl_CommercialRevenues_month_1_revenue" text="{CommercialRevenues>month_1_revenue}"/>
+													<Text id="tbl_CommercialRevenues_month_2_revenue" text="{CommercialRevenues>month_2_revenue}"/>
+													<Text id="tbl_CommercialRevenues_month_3_revenue" text="{CommercialRevenues>month_3_revenue}"/>
+													<Text id="tbl_CommercialRevenues_total_monthly_revenue" text="{CommercialRevenues>total_monthly_revenue}"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+										<columns>
+											<Column>
+												<header><Label text="{i18n45G>commercial_revenue_type}"/></header>
+											</Column>
+											<Column>
+												<header><Label id="month1Lab" text="{i18n45G>month_1_revenue}"/></header>
+											</Column>
+											<Column>
+												<header><Label id="month2Lab" text="{i18n45G>month_2_revenue}"/></header>
+											</Column>
+											<Column>
+												<header><Label id="month3Lab" text="{i18n45G>month_3_revenue}"/></header>
+											</Column>
+											<Column>
+												<header><Label text="{i18n45G>total_monthly_revenue}"/></header>
+											</Column>
+										</columns>
+										<dependents>
+											<Dialog id="_CommercialRevenues_DetailsDialog" contentWidth="1000px" contentHeight="800px" showHeader="true">
+												<beginButton>
+													<Button text="{i18n45G>Edit}" type="Accept" press="onEditPress_CommercialRevenues"/>
+												</beginButton>
+												<endButton>
+													<Button text="{i18n45G>Close}" press="handleDialogCancelButton" type="Reject"/>
+												</endButton>
+												<layout:VerticalLayout class="sapUiContentPadding" width="100%">
+													<form:SimpleForm editable="true" layout="ResponsiveGridLayout" singleContainerFullSize="true">
+														<Label text="{i18n45G>commercial_revenue_type}" labelFor="display_CommercialRevenues_commercial_revenue_type"/>
+														<Text id="display_CommercialRevenues_commercial_revenue_type" text="{CommercialRevenues>COMMERCIAL_REVENUE_TITLE}"/>
+														<Label text="{i18n45G>month_revenue_type_name}" labelFor="CommercialRevenues_revenue_type_name" required="true"/>
+														<Text id="display_CommercialRevenues_commercial_revenue_type_name" text="{CommercialRevenues>commercial_revenue_type_name}"/>
+														<Label text="{i18n45G>month_1_revenue}" id="month1rev" labelFor="display_CommercialRevenues_month_1_revenue"/>
+														<Text id="display_CommercialRevenues_month_1_revenue" text="{CommercialRevenues>month_1_revenue}"/>
+														<Label text="{i18n45G>month_2_revenue}" id="month2rev" labelFor="display_CommercialRevenues_month_2_revenue"/>
+														<Text id="display_CommercialRevenues_month_2_revenue" text="{CommercialRevenues>month_2_revenue}"/>
+														<Label text="{i18n45G>month_3_revenue}" id="month3rev" labelFor="display_CommercialRevenues_month_3_revenue"/>
+														<Text id="display_CommercialRevenues_month_3_revenue" text="{CommercialRevenues>month_3_revenue}"/>
+														<Label text="{i18n45G>total_monthly_revenue}" labelFor="display_CommercialRevenues_total_monthly_revenue"/>
+														<Text id="display_CommercialRevenues_total_monthly_revenue" text="{CommercialRevenues>total_monthly_revenue}"/>
+														<Label text="{i18n45G>proof_cmis_id}" wrapping="true"/>
+														<Link text=" {path: 'CommercialRevenues>proof_cmis_id', formatter: '.urlformatter'}" target="_blank"
+															href="{CommercialRevenues>proof_cmis_id}"/>
+														<Label wrapping="true"/>
+														<Label text="{i18n45G>contractproof}" wrapping="true"/>
+														<Link text=" {path: 'CommercialRevenues>contract_cmis_id', formatter: '.urlformatter'}" target="_blank"
+															href="{CommercialRevenues>contract_cmis_id}"/>
+														<Label wrapping="true"/>
+													</form:SimpleForm>
+												</layout:VerticalLayout><content/></Dialog>
+											<Dialog xmlns="sap.m" id="_CommercialRevenues_FormDialog" contentWidth="1000px" contentHeight="800px" showHeader="true">
+												<beginButton>
+													<Button text="{i18n45G>Save}" type="Accept" press="handleDialogSaveButton"/>
+												</beginButton>
+												<endButton>
+													<Button text="{i18n45G>Cancel}" press="handleDialogCancelButton" type="Reject"/>
+												</endButton>
+												<layout:VerticalLayout class="sapUiContentPadding" width="100%">
+													<form:SimpleForm id="CommercialRevenuesForm" editable="true" layout="ResponsiveGridLayout" adjustLabelSpan="false" columnsL="2"
+														emptySpanL="5" width="auto" labelSpanM="4" columnsM="2" emptySpanS="5">
+														<form:content>
+															<Label text="{i18n45G>commercial_revenue_type}" labelFor="CommercialRevenues_commercial_revenue_type" required="true"/>
+															<Select id="form_CommercialRevenues_commercial_revenue_type" selectedKey="{CommercialRevenues>commercial_revenue_type}"
+																forceSelection="false" change="handleChangeSelect" width="100%"
+																items="{path:'CommercialRevenues>/commercial_revenues_types',filters:[{path:'isCommercial',operator:'EQ',value1:'1'}]}">
+																<core:Item key="{CommercialRevenues>id}" text="{CommercialRevenues>value}"/>
+															</Select>
+															<Label text="{i18n45G>month_revenue_type_name}" labelFor="CommercialRevenues_revenue_type_name" required="true"/>
+															<Input id="form_CommercialRevenues_revenue_type_name" value="{CommercialRevenues>commercial_revenue_type_name}"/>
+															<Label text="{i18n45G>month_1_revenue}" id="month1" labelFor="CommercialRevenues_month_1_revenue" required="true"/>
+															<Input id="form_CommercialRevenues_month_1_revenue" value="{CommercialRevenues>month_1_revenue}" type="Number"/>
+															<Label text="{i18n45G>month_2_revenue}" id="month2" labelFor="CommercialRevenues_month_2_revenue" required="true"/>
+															<Input id="form_CommercialRevenues_month_2_revenue" value="{CommercialRevenues>month_2_revenue}" type="Number"/>
+															<Label text="{i18n45G>month_3_revenue}" id="month3" labelFor="CommercialRevenues_month_3_revenue" required="true"/>
+															<Input id="form_CommercialRevenues_month_3_revenue" value="{CommercialRevenues>month_3_revenue}" type="Number"/>
+															<Label text=" {i18n45G>proof_cmis_id}" wrapping="true"/>
+															<unified:FileUploader required="true" buttonOnly="true" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+																change="handleContractUploadPress"/>
+															<Link text=" {path: 'CommercialRevenues>proof_cmis_id', formatter: '.urlformatter'}" target="_blank"
+																href="{CommercialRevenues>proof_cmis_id}"/>
+															<Label wrapping="true"/>
+															<Label text="{i18n45G>contractproof}" wrapping="true"/>
+															<unified:FileUploader required="true" buttonOnly="true" icon="sap-icon://upload" iconOnly="true" sameFilenameAllowed="true"
+																change="handleContractUploadPress"/>
+															<Link text=" {path: 'CommercialRevenues>contract_cmis_id', formatter: '.urlformatter'}" target="_blank"
+																href="{CommercialRevenues>contract_cmis_id}"/>
+															<Label wrapping="true"/>
+														</form:content>
+													</form:SimpleForm>
+												</layout:VerticalLayout>
+											</Dialog>
+										</dependents>
+									</Table>
+								</layout:content>
+							</layout:BlockLayoutCell>
+							<core:Fragment fragmentName="pwc.portal.eval.ClubEvaluations.view.EvaluationCriteria" type="XML"/>
+						</layout:content>
+					</layout:BlockLayoutRow>
+				</layout:content>
+			</layout:BlockLayout>
+		</content>
+	</Page>
+</mvc:View>

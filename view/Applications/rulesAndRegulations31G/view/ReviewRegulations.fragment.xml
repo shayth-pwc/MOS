@@ -1,0 +1,96 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="pwc.portal.eval.ClubEvaluations.view.Applications.rulesAndRegulations31G.controller.ReviewRegulations">
+    <Dialog horizontalScrolling="false" showHeader="true" state="None" contentWidth="auto" stretch="false" title="{i18n31G>CreateButtonText}" type="Standard" verticalScrolling="false">
+        <content>
+            <form:Form width="auto" editable="true" visible="true">
+                <form:formContainers>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n31G>Regulations_Column1}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                	<Link text=" {path: 'regulations>internal_systems_development_proof_cmis_id', formatter: '.urlformatter'}"
+														visible="{= ${regulations>internal_systems_development_proof_cmis_id} !== '' ? true : false }" target="_blank"
+														href="{regulations>internal_systems_development_proof_cmis_id}"/>
+												
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n31G>Regulations_Column2}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                		<Link text=" {path: 'regulations>informing_stakeholders_proof_cmis_id', formatter: '.urlformatter'}"
+														visible="{= ${regulations>informing_stakeholders_proof_cmis_id} !== '' ? true : false }" target="_blank"
+														href="{regulations>informing_stakeholders_proof_cmis_id}"/>
+													
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n31G>Regulations_Column3}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                	<Link text=" {path: 'regulations>non_compliance_review_proof_cmis_id', formatter: '.urlformatter'}"
+														visible="{= ${regulations>non_compliance_review_proof_cmis_id} !== '' ? true : false }" target="_blank"
+														href="{regulations>non_compliance_review_proof_cmis_id}"/>
+												
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n31G>Regulations_Column4}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                		<Link text=" {path: 'regulations>internal_audit_proof_cmis_id', formatter: '.urlformatter'}"
+														visible="{= ${regulations>internal_audit_proof_cmis_id} !== '' ? true : false }" target="_blank"
+														href="{regulations>internal_audit_proof_cmis_id}"/>
+												
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n31G>Regulations_Column5}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                		<Link text=" {path: 'regulations>code_of_conduct_proof_cmis_id', formatter: '.urlformatter'}"
+														visible="{= ${regulations>code_of_conduct_proof_cmis_id} !== '' ? true : false }" target="_blank"
+														href="{regulations>code_of_conduct_proof_cmis_id}"/>
+												
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n31G>Regulations_Column6}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                		<Link text=" {path: 'regulations>sports_regulations_awareness_proof_cmis_id', formatter: '.urlformatter'}"
+														visible="{= ${regulations>sports_regulations_awareness_proof_cmis_id} !== '' ? true : false }" target="_blank"
+														href="{regulations>sports_regulations_awareness_proof_cmis_id}"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="true" columnsL="2" labelSpanL="12" columnsM="2" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </content>
+        <beginButton/>
+        <buttons>
+            <!--<Button text="{i18n31G>submit}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>-->
+            <Button text="{i18n31G>cancel}" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" press="_onButtonPress1" iconDensityAware="false"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>
